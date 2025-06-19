@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pycdo"
-verionn="0.1"
+version="0.1"
 description = 'A wrapper of the cdo command line utility' 
 readme = "README.md"
 requires-python = ">=3.9"
