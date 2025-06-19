@@ -74,7 +74,6 @@ all = []
 
 for op in OPERATORS:
     extra_files, parameters = make_arguments(op)
-    parameters_list = "[" + ", ".join(parameters) + "]"
     parameters_dic = "{" + ", ".join([f'"{par}": {par}' for par in parameters]) + "}"
     files_list = "[" + ", ".join(extra_files) + "]"
     name = op["name"]
@@ -86,7 +85,7 @@ for op in OPERATORS:
         docstring = make_docstring(op),
         num_inputs = op["num_inputs"],
         num_outputs = op["num_outputs"],
-        parameters_list = parameters_list,
+        parameters_list = str(parameters),
         parameters_dic = parameters_dic,
         files_list = files_list,
         signature = "self, " + ", ".join(extra_files + parameters)
