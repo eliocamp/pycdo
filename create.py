@@ -28,7 +28,7 @@ OPERATORS = [
             }
     },
     {
-        "name": "setllonlatbox",
+        "name": "sellonlatbox",
         "num_inputs": 1,
         "num_outputs": 1,
         "parameters": {
@@ -56,7 +56,7 @@ def make_docstring(op):
     return "\n".join(lines)
 
 TEMPLATE = '''
-from cdo_operator import CdoOperator
+from ..cdo_operator import CdoOperator
 inf=float("inf")
 def {name}({signature}):
     """
@@ -70,6 +70,7 @@ def {name}({signature}):
 '''
 
 out_dir="pycdo/operators"
+all = []
 
 for op in OPERATORS:
     extra_files, parameters = make_arguments(op)
@@ -77,6 +78,9 @@ for op in OPERATORS:
     parameters_dic = "{" + ", ".join([f'"{par}": {par}' for par in parameters]) + "}"
     files_list = "[" + ", ".join(extra_files) + "]"
     name = op["name"]
+
+    all.append(f"from .{name} import {name}")
+
     code = TEMPLATE.format(
         name = op["name"],
         docstring = make_docstring(op),
@@ -90,3 +94,8 @@ for op in OPERATORS:
     
     with open(os.path.join(out_dir, f"{name}.py"), "w") as f: 
         f.write(code)
+
+
+    
+with open(os.path.join(out_dir, "__init__.py"), "w") as f: 
+    f.write("\n".join(all))

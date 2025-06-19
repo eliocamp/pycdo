@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pycdo"
+verionn="0.1"
+description = 'A wrapper of the cdo command line utility' 
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Elio Campitelli", email = "eliocampitelli@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12"
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/Elio Campitelli/pycdo#readme"
+Issues = "https://github.com/Elio Campitelli/pycdo/issues"
+Source = "https://github.com/Elio Campitelli/pycdo"
+
+
