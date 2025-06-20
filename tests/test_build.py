@@ -1,5 +1,5 @@
 import pytest
-from ..pycdo import cdo
+from pycdo import cdo
 
 def test_ymonmean_build():
     op = cdo("file.nc").ymonmean()
