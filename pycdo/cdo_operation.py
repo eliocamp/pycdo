@@ -11,9 +11,9 @@ def cdo(input):
     return CdoOperation(input=input)
 
 class CdoOperation:
-    def __init__(self, input=None, operator = None, parameters = None):        
+    def __init__(self, input=None, operator = None, params = None):        
         if operator is None: 
-            operator = CdoOperator(name="noop", num_inputs=0, num_outputs=self._get_num_outputs(input), parameters=[])
+            operator = CdoOperator(command="noop", n_input=0, n_output=self._get_n_output(input), params=[])
     
         self.operator = operator
         if input is None:
@@ -23,14 +23,14 @@ class CdoOperation:
         else:
             self.input = [input]
 
-        self.parameters = parameters or {}
+        self.params = params or {}
         
     @staticmethod
-    def _get_num_outputs(input): 
+    def _get_n_output(input): 
         if input is None: 
             return 0
         if isinstance(input, CdoOperation): 
-            return input.operator.num_outputs
+            return input.operator.n_output
 
         if isinstance(input, str): 
             return 1       
@@ -38,11 +38,11 @@ class CdoOperation:
         if isinstance(input, list): 
             return float("inf")
 
-    def _new_op(self, operator, inputs, parameters=None):
+    def _new_op(self, operator, inputs, params=None):
         
-        prev_output = self.operator.num_outputs + len(inputs)
+        prev_output = self.operator.n_output + len(inputs)
         
-        this_input = operator.num_inputs
+        this_input = operator.n_input
 
         zero_input = this_input == 0 
         unequal_values = this_input != prev_output and this_input != float("inf") 
@@ -50,10 +50,10 @@ class CdoOperation:
         operation_incompatible = zero_input or unequal_values
 
         if operation_incompatible: 
-            raise ValueError(f"Chaining error: {operator.name} expects {this_input} but {self.operator.name} outputs {prev_output} files.")
+            raise ValueError(f"Chaining error: {operator.command} expects {this_input} but {self.operator.command} outputs {prev_output} files.")
 
         inputs = [self] + inputs
-        return CdoOperation(inputs, operator, parameters)
+        return CdoOperation(inputs, operator, params)
 
     def build(self, top_level=True, options=None, options_replace=False):
         """
@@ -62,7 +62,7 @@ class CdoOperation:
         Only the top-level operation should be prefixed with 'cdo'.
         """
 
-        if self.operator.name == "noop":
+        if self.operator.command == "noop":
             # Just return the input file(s)
             return " ".join(self.input)
 
@@ -73,10 +73,10 @@ class CdoOperation:
             options_str = " ".join(options)
             cmd.append(options_str)
 
-        # Operator name and parameters
-        op_str = f"-{self.operator.name}"
-        if self.parameters:
-            param_values = [str(self.parameters[parameter]) for parameter in self.operator.parameters]
+        # Operator command and params
+        op_str = f"-{self.operator.command}"
+        if self.params:
+            param_values = [str(self.params[parameter]) for parameter in self.operator.params]
             op_str += "," + ",".join(param_values)
         cmd.append(op_str)
 

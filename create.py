@@ -2,36 +2,36 @@ import os
 
 OPERATORS = [
     {
-        "name": "ymonmean",
-        "num_inputs": 1,
-        "num_outputs": 1,
-        "parameters": {}
+        "command": "ymonmean",
+        "n_input": 1,
+        "n_output": 1,
+        "params": {}
     },
     {
-        "name": "sub",
-        "num_inputs": 2,
-        "num_outputs": 1,
-        "parameters": {}
+        "command": "sub",
+        "n_input": 2,
+        "n_output": 1,
+        "params": {}
     },
     {
-        "name": "mergetime",
-        "num_inputs": float("inf"),
-        "num_outputs": 1,
-        "parameters": {}
+        "command": "mergetime",
+        "n_input": float("inf"),
+        "n_output": 1,
+        "params": {}
     },
     {
-        "name": "remapbil",
-        "num_inputs": 1,
-        "num_outputs": 1,
-        "parameters": {
+        "command": "remapbil",
+        "n_input": 1,
+        "n_output": 1,
+        "params": {
             "grid": "grid to remap to"
             }
     },
     {
-        "name": "sellonlatbox",
-        "num_inputs": 1,
-        "num_outputs": 1,
-        "parameters": {
+        "command": "sellonlatbox",
+        "n_input": 1,
+        "n_output": 1,
+        "params": {
             "lon1": "left longitude",
             "lon2": "right longitude",
             "lat1": "lower latitude",
@@ -41,57 +41,57 @@ OPERATORS = [
 ]
 
 def make_arguments(op):
-    params = list(op["parameters"].keys())
+    params = list(op["params"].keys())
     extra_files = []
-    if op["num_inputs"] != float("inf"):
-        extra_files = [f"ifile{i}" for i in range(2, int(op["num_inputs"]) + 1)]
+    if op["n_input"] != float("inf"):
+        extra_files = [f"ifile{i}" for i in range(2, int(op["n_input"]) + 1)]
     return extra_files, params
 
 def make_docstring(op):
-    if not op["parameters"]:
-        return f"CDO operator: {op['name']}"
-    lines = [f"CDO operator: {op['name']}", "Parameters:"]
-    for k, v in op["parameters"].items():
+    if not op["params"]:
+        return f"CDO operator: {op['command']}"
+    lines = [f"CDO operator: {op['command']}", "Parameters:"]
+    for k, v in op["params"].items():
         lines.append(f"    {k}: {v}")
     return "\n".join(lines)
 
 TEMPLATE = '''
 from ..cdo_operator import CdoOperator
 inf=float("inf")
-def {name}({signature}):
+def {command}({signature}):
     """
     {docstring}
     """
-    operator = CdoOperator(name="{name}",
-                           num_inputs={num_inputs}, 
-                           num_outputs={num_outputs}, 
-                           parameters={parameters_list})
-    return self._new_op(operator, {files_list}, {parameters_dic})
+    operator = CdoOperator(command="{command}",
+                           n_input={n_input}, 
+                           n_output={n_output}, 
+                           params={params_list})
+    return self._new_op(operator, {files_list}, {params_dic})
 '''
 
 out_dir="pycdo/operators"
 all = []
 
 for op in OPERATORS:
-    extra_files, parameters = make_arguments(op)
-    parameters_dic = "{" + ", ".join([f'"{par}": {par}' for par in parameters]) + "}"
+    extra_files, params = make_arguments(op)
+    params_dic = "{" + ", ".join([f'"{par}": {par}' for par in params]) + "}"
     files_list = "[" + ", ".join(extra_files) + "]"
-    name = op["name"]
+    command = op["command"]
 
-    all.append(f"from .{name} import {name}")
+    all.append(f"from .{command} import {command}")
 
     code = TEMPLATE.format(
-        name = op["name"],
+        command = op["command"],
         docstring = make_docstring(op),
-        num_inputs = op["num_inputs"],
-        num_outputs = op["num_outputs"],
-        parameters_list = str(parameters),
-        parameters_dic = parameters_dic,
+        n_input = op["n_input"],
+        n_output = op["n_output"],
+        params_list = str(params),
+        params_dic = params_dic,
         files_list = files_list,
-        signature = "self, " + ", ".join(extra_files + parameters)
+        signature = "self, " + ", ".join(extra_files + params)
     )
     
-    with open(os.path.join(out_dir, f"{name}.py"), "w") as f: 
+    with open(os.path.join(out_dir, f"{command}.py"), "w") as f: 
         f.write(code)
 
 
