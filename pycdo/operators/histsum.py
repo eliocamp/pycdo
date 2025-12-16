@@ -1,0 +1,14 @@
+
+from ..cdo_operator import CdoOperator
+inf=float("inf")
+def histsum(self, optional):
+    r"""
+    CDO operator: histsum
+Parameters:
+    optional: FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)
+    """
+    operator = CdoOperator(command="histsum",
+                           n_input=1, 
+                           n_output=1, 
+                           params=['optional'])
+    return self._new_op(operator, [], {"optional": optional})

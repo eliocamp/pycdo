@@ -1,14 +1,14 @@
 
 from ..cdo_operator import CdoOperator
 inf=float("inf")
-def remapbil(self, grid):
-    """
+def remapbil(self, optional):
+    r"""
     CDO operator: remapbil
 Parameters:
-    grid: grid to remap to
+    optional: ['STRING - Target grid description file or name', 'BOOL - Generate all mapfiles of the first 3D field']
     """
-    operator = CdoOperator(name="remapbil",
-                           num_inputs=1, 
-                           num_outputs=1, 
-                           parameters=['grid'])
-    return self._new_op(operator, [], {"grid": grid})
+    operator = CdoOperator(command="remapbil",
+                           n_input=1, 
+                           n_output=1, 
+                           params=['optional'])
+    return self._new_op(operator, [], {"optional": optional})

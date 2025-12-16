@@ -40,6 +40,23 @@ OPERATORS = [
     }
 ]
 
+
+import json
+
+# n_input or n_output can be "Inf", parse it correctly
+def inf_hook(obj):
+    for k, v in obj.items():
+        if isinstance(v, str) and v.lower() == "inf":
+            obj[k] = float("inf")
+    return obj
+
+with open('operators.json', 'r') as file:
+    OPERATORS = json.load(file, object_hook=inf_hook)
+
+OPERATORS = list(OPERATORS.values())
+
+
+
 def make_arguments(op):
     params = list(op["params"].keys())
     extra_files = []
@@ -59,7 +76,7 @@ TEMPLATE = '''
 from ..cdo_operator import CdoOperator
 inf=float("inf")
 def {command}({signature}):
-    """
+    r"""
     {docstring}
     """
     operator = CdoOperator(command="{command}",
@@ -72,7 +89,15 @@ def {command}({signature}):
 out_dir="pycdo/operators"
 all = []
 
+import os
+os.system("rm -r pycdo/operators/*")
+
+
 for op in OPERATORS:
+    if (op["command"] == "not"):
+        op["command"] = "negate"
+        
+    print(op["command"])
     extra_files, params = make_arguments(op)
     params_dic = "{" + ", ".join([f'"{par}": {par}' for par in params]) + "}"
     files_list = "[" + ", ".join(extra_files) + "]"
@@ -91,9 +116,9 @@ for op in OPERATORS:
         signature = "self, " + ", ".join(extra_files + params)
     )
     
+
     with open(os.path.join(out_dir, f"{command}.py"), "w") as f: 
         f.write(code)
-
 
     
 with open(os.path.join(out_dir, "__init__.py"), "w") as f: 

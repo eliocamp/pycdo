@@ -7,11 +7,11 @@ from inspect import getmembers, isfunction
 import tempfile
 import subprocess
 
-def cdo(input):
+def cdo(input) -> "CdoOperation":
     return CdoOperation(input=input)
 
 class CdoOperation:
-    def __init__(self, input=None, operator = None, params = None):        
+    def __init__(self, input=None, operator = None, params = None) -> "CdoOperation":        
         if operator is None: 
             operator = CdoOperator(command="noop", n_input=0, n_output=self._get_n_output(input), params=[])
     
@@ -39,7 +39,6 @@ class CdoOperation:
             return float("inf")
 
     def _new_op(self, operator, inputs, params=None):
-        
         prev_output = self.operator.n_output + len(inputs)
         
         this_input = operator.n_input

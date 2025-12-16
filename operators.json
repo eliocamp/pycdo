@@ -1,0 +1,5693 @@
+{
+  "info": {
+    "command": "info",
+    "params": {},
+    "family": "info",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "infon": {
+    "command": "infon",
+    "params": {},
+    "family": "info",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "cinfo": {
+    "command": "cinfo",
+    "params": {},
+    "family": "info",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "map": {
+    "command": "map",
+    "params": {},
+    "family": "info",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "sinfo": {
+    "command": "sinfo",
+    "params": {},
+    "family": "sinfo",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "sinfon": {
+    "command": "sinfon",
+    "params": {},
+    "family": "sinfo",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "xsinfo": {
+    "command": "xsinfo",
+    "params": {},
+    "family": "xsinfo",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "xsinfop": {
+    "command": "xsinfop",
+    "params": {},
+    "family": "xsinfo",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "diff": {
+    "command": "diff",
+    "params": {
+      "optional": ["INTEGER - Stop after maxcount different fields", "FLOAT - Limit of the maximum absolute difference (default: 0)", "FLOAT - Limit of the maximum relative difference (default: 1)", "STRING - Consideration of the variable names of only one input file (left/right) or the intersection of both (intersect)."]
+    },
+    "family": "diff",
+    "n_input": 2,
+    "n_output": 0
+  },
+  "diffn": {
+    "command": "diffn",
+    "params": {
+      "optional": ["INTEGER - Stop after maxcount different fields", "FLOAT - Limit of the maximum absolute difference (default: 0)", "FLOAT - Limit of the maximum relative difference (default: 1)", "STRING - Consideration of the variable names of only one input file (left/right) or the intersection of both (intersect)."]
+    },
+    "family": "diff",
+    "n_input": 2,
+    "n_output": 0
+  },
+  "npar": {
+    "command": "npar",
+    "params": {},
+    "family": "ninfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "nlevel": {
+    "command": "nlevel",
+    "params": {},
+    "family": "ninfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "nyear": {
+    "command": "nyear",
+    "params": {},
+    "family": "ninfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "nmon": {
+    "command": "nmon",
+    "params": {},
+    "family": "ninfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "ndate": {
+    "command": "ndate",
+    "params": {},
+    "family": "ninfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "ntime": {
+    "command": "ntime",
+    "params": {},
+    "family": "ninfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "ngridpoints": {
+    "command": "ngridpoints",
+    "params": {},
+    "family": "ninfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "ngrids": {
+    "command": "ngrids",
+    "params": {},
+    "family": "ninfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "showformat": {
+    "command": "showformat",
+    "params": {},
+    "family": "showinfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "showcode": {
+    "command": "showcode",
+    "params": {},
+    "family": "showinfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "showname": {
+    "command": "showname",
+    "params": {},
+    "family": "showinfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "showstdname": {
+    "command": "showstdname",
+    "params": {},
+    "family": "showinfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "showlevel": {
+    "command": "showlevel",
+    "params": {},
+    "family": "showinfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "showltype": {
+    "command": "showltype",
+    "params": {},
+    "family": "showinfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "showyear": {
+    "command": "showyear",
+    "params": {},
+    "family": "showinfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "showmon": {
+    "command": "showmon",
+    "params": {},
+    "family": "showinfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "showdate": {
+    "command": "showdate",
+    "params": {},
+    "family": "showinfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "showtime": {
+    "command": "showtime",
+    "params": {},
+    "family": "showinfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "showtimestamp": {
+    "command": "showtimestamp",
+    "params": {},
+    "family": "showinfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "showfilter": {
+    "command": "showfilter",
+    "params": {},
+    "family": "showinfo",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "showattribute": {
+    "command": "showattribute",
+    "params": {
+      "optional": "STRING - Comma-separated list of attributes."
+    },
+    "family": "showattribute",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "partab": {
+    "command": "partab",
+    "params": {},
+    "family": "filedes",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "codetab": {
+    "command": "codetab",
+    "params": {},
+    "family": "filedes",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "griddes": {
+    "command": "griddes",
+    "params": {},
+    "family": "filedes",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "zaxisdes": {
+    "command": "zaxisdes",
+    "params": {},
+    "family": "filedes",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "vct": {
+    "command": "vct",
+    "params": {},
+    "family": "filedes",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "copy": {
+    "command": "copy",
+    "params": {},
+    "family": "copy",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "clone": {
+    "command": "clone",
+    "params": {},
+    "family": "copy",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "cat": {
+    "command": "cat",
+    "params": {},
+    "family": "copy",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "tee": {
+    "command": "tee",
+    "params": {
+      "optional": "STRING - Destination filename for the copy of the input file"
+    },
+    "family": "tee",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "pack": {
+    "command": "pack",
+    "params": {
+      "optional": ["BOOL - Print pack parameters to stdout for each variable", "STRING - Read pack parameters from file for each variable\\[format: name=<> add_offset=<> scale_factor=<>\\]"]
+    },
+    "family": "pack",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "unpack": {
+    "command": "unpack",
+    "params": {},
+    "family": "unpack",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setfilter": {
+    "command": "setfilter",
+    "params": {
+      "optional": "STRING - Read filter specification per variable from file \\[format: varname=\\\"<filterspec>\\\"\\]"
+    },
+    "family": "setfilter",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "bitrounding": {
+    "command": "bitrounding",
+    "params": {
+      "optional": ["FLOAT - Information level (0 - 1) \\[default: 0.9999\\]", "INTEGER - Add bits to the number of significant bits \\[default: 0\\]", "INTEGER - Minimum value of the number of bits \\[default: 1\\]", "INTEGER - Maximum value of the number of bits \\[default: 23\\]", "INTEGER - Set to 1 to run the calculation only in the first time step", "INTEGER - Set number of significant bits", "BOOL - Print max. numbits per variable of 1st timestep to stdout \\[format: name=numbits\\]", "STRING - Read number of significant bits per variable from file \\[format: name=numbits\\]"]
+    },
+    "family": "bitrounding",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "replace": {
+    "command": "replace",
+    "params": {},
+    "family": "replace",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "duplicate": {
+    "command": "duplicate",
+    "params": {
+      "optional": "INTEGER - Number of duplicates, default is 2."
+    },
+    "family": "duplicate",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "mergegrid": {
+    "command": "mergegrid",
+    "params": {},
+    "family": "mergegrid",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "merge": {
+    "command": "merge",
+    "params": {
+      "optional": ["BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.", "STRING - Fill missing variable names with missing values (union) or use the intersection (intersect)."]
+    },
+    "family": "merge",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "mergetime": {
+    "command": "mergetime",
+    "params": {
+      "optional": ["BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.", "STRING - Fill missing variable names with missing values (union) or use the intersection (intersect)."]
+    },
+    "family": "merge",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "splitcode": {
+    "command": "splitcode",
+    "params": {
+      "optional": ["STRING - Swap the position of obase and xxx in the output filename", "STRING - Add a UUID as global attribute <attname> to each output file"]
+    },
+    "family": "split",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splitparam": {
+    "command": "splitparam",
+    "params": {
+      "optional": ["STRING - Swap the position of obase and xxx in the output filename", "STRING - Add a UUID as global attribute <attname> to each output file"]
+    },
+    "family": "split",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splitname": {
+    "command": "splitname",
+    "params": {
+      "optional": ["STRING - Swap the position of obase and xxx in the output filename", "STRING - Add a UUID as global attribute <attname> to each output file"]
+    },
+    "family": "split",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splitlevel": {
+    "command": "splitlevel",
+    "params": {
+      "optional": ["STRING - Swap the position of obase and xxx in the output filename", "STRING - Add a UUID as global attribute <attname> to each output file"]
+    },
+    "family": "split",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splitgrid": {
+    "command": "splitgrid",
+    "params": {
+      "optional": ["STRING - Swap the position of obase and xxx in the output filename", "STRING - Add a UUID as global attribute <attname> to each output file"]
+    },
+    "family": "split",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splitzaxis": {
+    "command": "splitzaxis",
+    "params": {
+      "optional": ["STRING - Swap the position of obase and xxx in the output filename", "STRING - Add a UUID as global attribute <attname> to each output file"]
+    },
+    "family": "split",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splittabnum": {
+    "command": "splittabnum",
+    "params": {
+      "optional": ["STRING - Swap the position of obase and xxx in the output filename", "STRING - Add a UUID as global attribute <attname> to each output file"]
+    },
+    "family": "split",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splithour": {
+    "command": "splithour",
+    "params": {
+      "optional": "STRING - C-style format for strftime() (e.g. %B for the full month name)"
+    },
+    "family": "splittime",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splitday": {
+    "command": "splitday",
+    "params": {
+      "optional": "STRING - C-style format for strftime() (e.g. %B for the full month name)"
+    },
+    "family": "splittime",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splitseas": {
+    "command": "splitseas",
+    "params": {
+      "optional": "STRING - C-style format for strftime() (e.g. %B for the full month name)"
+    },
+    "family": "splittime",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splityear": {
+    "command": "splityear",
+    "params": {
+      "optional": "STRING - C-style format for strftime() (e.g. %B for the full month name)"
+    },
+    "family": "splittime",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splityearmon": {
+    "command": "splityearmon",
+    "params": {
+      "optional": "STRING - C-style format for strftime() (e.g. %B for the full month name)"
+    },
+    "family": "splittime",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splitmon": {
+    "command": "splitmon",
+    "params": {
+      "optional": "STRING - C-style format for strftime() (e.g. %B for the full month name)"
+    },
+    "family": "splittime",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splitsel": {
+    "command": "splitsel",
+    "params": {
+      "optional": ["INTEGER - Number of input timesteps for each output file", "INTEGER - Number of input timesteps skipped before the first timestep range (optional)", "INTEGER - Number of input timesteps skipped between timestep ranges (optional)"]
+    },
+    "family": "splitsel",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "splitdate": {
+    "command": "splitdate",
+    "params": {},
+    "family": "splitdate",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "distgrid": {
+    "command": "distgrid",
+    "params": {
+      "optional": ["INTEGER - Number of regions in x direction, or number of pieces for unstructured grids", "INTEGER - Number of regions in y direction \\[default: 1\\]"]
+    },
+    "family": "distgrid",
+    "n_input": 1,
+    "n_output": "Inf"
+  },
+  "collgrid": {
+    "command": "collgrid",
+    "params": {
+      "optional": ["INTEGER - Number of regions in x direction \\[default: number of input files\\]", "STRING - Comma-separated list of variable names \\[default: all variables\\]"]
+    },
+    "family": "collgrid",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "select": {
+    "command": "select",
+    "params": {
+      "optional": ["STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "FLOAT - Comma-separated list of vertical levels.", "FLOAT - First and last value of the level range.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "STRING - Comma-separated list of zaxis names.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of zaxis numbers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of grid numbers.", "STRING - Comma-separated list of timestep types (constant|avg|accum|min|max|range|diff|sum)", "STRING - Comma-separated list of dates (format: YYYY-MM-DDThh:mm:ss).", "STRING - Start date (format: YYYY-MM-DDThh:mm:ss).", "STRING - End date (format: YYYY-MM-DDThh:mm:ss).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of minutes.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of hours.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of days.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of months.", "STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of years.", "STRING - Comma-separated list of the day of month (e.g. 29feb).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of timesteps. Negative values select timesteps from the end (NetCDF only).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of timesteps of year.", "STRING - Read timesteps from a mask file."]
+    },
+    "family": "select",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "delete": {
+    "command": "delete",
+    "params": {
+      "optional": ["STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "FLOAT - Comma-separated list of vertical levels.", "FLOAT - First and last value of the level range.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "STRING - Comma-separated list of zaxis names.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of zaxis numbers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of grid numbers.", "STRING - Comma-separated list of timestep types (constant|avg|accum|min|max|range|diff|sum)", "STRING - Comma-separated list of dates (format: YYYY-MM-DDThh:mm:ss).", "STRING - Start date (format: YYYY-MM-DDThh:mm:ss).", "STRING - End date (format: YYYY-MM-DDThh:mm:ss).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of minutes.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of hours.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of days.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of months.", "STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of years.", "STRING - Comma-separated list of the day of month (e.g. 29feb).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of timesteps. Negative values select timesteps from the end (NetCDF only).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of timesteps of year.", "STRING - Read timesteps from a mask file."]
+    },
+    "family": "select",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "selmulti": {
+    "command": "selmulti",
+    "params": {},
+    "family": "selmulti",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "delmulti": {
+    "command": "delmulti",
+    "params": {},
+    "family": "selmulti",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "changemulti": {
+    "command": "changemulti",
+    "params": {},
+    "family": "selmulti",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selparam": {
+    "command": "selparam",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "delparam": {
+    "command": "delparam",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selcode": {
+    "command": "selcode",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "delcode": {
+    "command": "delcode",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selname": {
+    "command": "selname",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "delname": {
+    "command": "delname",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selstdname": {
+    "command": "selstdname",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "sellevel": {
+    "command": "sellevel",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "sellevidx": {
+    "command": "sellevidx",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selgrid": {
+    "command": "selgrid",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selzaxis": {
+    "command": "selzaxis",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selzaxisname": {
+    "command": "selzaxisname",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selltype": {
+    "command": "selltype",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seltabnum": {
+    "command": "seltabnum",
+    "params": {
+      "optional": ["STRING - Comma-separated list of parameter identifiers.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of code numbers.", "STRING - Comma-separated list of variable names.", "STRING - Comma-separated list of standard names.", "FLOAT - Comma-separated list of vertical levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of index of levels.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of GRIB level types.", "STRING - Comma-separated list of grid names or numbers.", "STRING - Comma-separated list of z-axis types or numbers.", "STRING - Comma-separated list of z-axis names.", "INTEGER - Comma-separated list or range of parameter table numbers."]
+    },
+    "family": "selvar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seltimestep": {
+    "command": "seltimestep",
+    "params": {
+      "optional": ["INTEGER - Comma-separated list or first/last\\[/inc\\] range of timesteps. Negative values select timesteps from the end (NetCDF only).", "STRING - Comma-separated list of times (format hh:mm:ss).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of hours.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of days.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of months.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of years.", "STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).", "STRING - Start date (format: YYYY-MM-DDThh:mm:ss).", "STRING - End date (format: YYYY-MM-DDThh:mm:ss) \\[default: startdate\\].", "INTEGER - Number of timesteps before the selected month \\[default: 0\\].", "INTEGER - Number of timesteps after the selected month \\[default: nts1\\]."]
+    },
+    "family": "seltime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seltime": {
+    "command": "seltime",
+    "params": {
+      "optional": ["INTEGER - Comma-separated list or first/last\\[/inc\\] range of timesteps. Negative values select timesteps from the end (NetCDF only).", "STRING - Comma-separated list of times (format hh:mm:ss).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of hours.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of days.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of months.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of years.", "STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).", "STRING - Start date (format: YYYY-MM-DDThh:mm:ss).", "STRING - End date (format: YYYY-MM-DDThh:mm:ss) \\[default: startdate\\].", "INTEGER - Number of timesteps before the selected month \\[default: 0\\].", "INTEGER - Number of timesteps after the selected month \\[default: nts1\\]."]
+    },
+    "family": "seltime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selhour": {
+    "command": "selhour",
+    "params": {
+      "optional": ["INTEGER - Comma-separated list or first/last\\[/inc\\] range of timesteps. Negative values select timesteps from the end (NetCDF only).", "STRING - Comma-separated list of times (format hh:mm:ss).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of hours.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of days.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of months.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of years.", "STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).", "STRING - Start date (format: YYYY-MM-DDThh:mm:ss).", "STRING - End date (format: YYYY-MM-DDThh:mm:ss) \\[default: startdate\\].", "INTEGER - Number of timesteps before the selected month \\[default: 0\\].", "INTEGER - Number of timesteps after the selected month \\[default: nts1\\]."]
+    },
+    "family": "seltime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selday": {
+    "command": "selday",
+    "params": {
+      "optional": ["INTEGER - Comma-separated list or first/last\\[/inc\\] range of timesteps. Negative values select timesteps from the end (NetCDF only).", "STRING - Comma-separated list of times (format hh:mm:ss).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of hours.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of days.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of months.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of years.", "STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).", "STRING - Start date (format: YYYY-MM-DDThh:mm:ss).", "STRING - End date (format: YYYY-MM-DDThh:mm:ss) \\[default: startdate\\].", "INTEGER - Number of timesteps before the selected month \\[default: 0\\].", "INTEGER - Number of timesteps after the selected month \\[default: nts1\\]."]
+    },
+    "family": "seltime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selmonth": {
+    "command": "selmonth",
+    "params": {
+      "optional": ["INTEGER - Comma-separated list or first/last\\[/inc\\] range of timesteps. Negative values select timesteps from the end (NetCDF only).", "STRING - Comma-separated list of times (format hh:mm:ss).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of hours.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of days.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of months.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of years.", "STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).", "STRING - Start date (format: YYYY-MM-DDThh:mm:ss).", "STRING - End date (format: YYYY-MM-DDThh:mm:ss) \\[default: startdate\\].", "INTEGER - Number of timesteps before the selected month \\[default: 0\\].", "INTEGER - Number of timesteps after the selected month \\[default: nts1\\]."]
+    },
+    "family": "seltime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selyear": {
+    "command": "selyear",
+    "params": {
+      "optional": ["INTEGER - Comma-separated list or first/last\\[/inc\\] range of timesteps. Negative values select timesteps from the end (NetCDF only).", "STRING - Comma-separated list of times (format hh:mm:ss).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of hours.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of days.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of months.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of years.", "STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).", "STRING - Start date (format: YYYY-MM-DDThh:mm:ss).", "STRING - End date (format: YYYY-MM-DDThh:mm:ss) \\[default: startdate\\].", "INTEGER - Number of timesteps before the selected month \\[default: 0\\].", "INTEGER - Number of timesteps after the selected month \\[default: nts1\\]."]
+    },
+    "family": "seltime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selseason": {
+    "command": "selseason",
+    "params": {
+      "optional": ["INTEGER - Comma-separated list or first/last\\[/inc\\] range of timesteps. Negative values select timesteps from the end (NetCDF only).", "STRING - Comma-separated list of times (format hh:mm:ss).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of hours.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of days.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of months.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of years.", "STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).", "STRING - Start date (format: YYYY-MM-DDThh:mm:ss).", "STRING - End date (format: YYYY-MM-DDThh:mm:ss) \\[default: startdate\\].", "INTEGER - Number of timesteps before the selected month \\[default: 0\\].", "INTEGER - Number of timesteps after the selected month \\[default: nts1\\]."]
+    },
+    "family": "seltime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seldate": {
+    "command": "seldate",
+    "params": {
+      "optional": ["INTEGER - Comma-separated list or first/last\\[/inc\\] range of timesteps. Negative values select timesteps from the end (NetCDF only).", "STRING - Comma-separated list of times (format hh:mm:ss).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of hours.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of days.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of months.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of years.", "STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).", "STRING - Start date (format: YYYY-MM-DDThh:mm:ss).", "STRING - End date (format: YYYY-MM-DDThh:mm:ss) \\[default: startdate\\].", "INTEGER - Number of timesteps before the selected month \\[default: 0\\].", "INTEGER - Number of timesteps after the selected month \\[default: nts1\\]."]
+    },
+    "family": "seltime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selsmon": {
+    "command": "selsmon",
+    "params": {
+      "optional": ["INTEGER - Comma-separated list or first/last\\[/inc\\] range of timesteps. Negative values select timesteps from the end (NetCDF only).", "STRING - Comma-separated list of times (format hh:mm:ss).", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of hours.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of days.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of months.", "INTEGER - Comma-separated list or first/last\\[/inc\\] range of years.", "STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).", "STRING - Start date (format: YYYY-MM-DDThh:mm:ss).", "STRING - End date (format: YYYY-MM-DDThh:mm:ss) \\[default: startdate\\].", "INTEGER - Number of timesteps before the selected month \\[default: 0\\].", "INTEGER - Number of timesteps after the selected month \\[default: nts1\\]."]
+    },
+    "family": "seltime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "sellonlatbox": {
+    "command": "sellonlatbox",
+    "params": {
+      "optional": ["FLOAT - Western longitude in degrees", "FLOAT - Eastern longitude in degrees", "FLOAT - Southern or northern latitude in degrees", "FLOAT - Northern or southern latitude in degrees", "INTEGER - Index of first longitude (1 - nlon)", "INTEGER - Index of last longitude (1 - nlon)", "INTEGER - Index of first latitude (1 - nlat)", "INTEGER - Index of last latitude (1 - nlat)"]
+    },
+    "family": "selbox",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selindexbox": {
+    "command": "selindexbox",
+    "params": {
+      "optional": ["FLOAT - Western longitude in degrees", "FLOAT - Eastern longitude in degrees", "FLOAT - Southern or northern latitude in degrees", "FLOAT - Northern or southern latitude in degrees", "INTEGER - Index of first longitude (1 - nlon)", "INTEGER - Index of last longitude (1 - nlon)", "INTEGER - Index of first latitude (1 - nlat)", "INTEGER - Index of last latitude (1 - nlat)"]
+    },
+    "family": "selbox",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selregion": {
+    "command": "selregion",
+    "params": {
+      "optional": ["STRING - Comma-separated list of ASCII formatted files with different regions", "FLOAT - Longitude of the center of the circle in degrees, default lon=0.0", "FLOAT - Latitude of the center of the circle in degrees, default lat=0.0", "STRING - Radius of the circle, default radius=1deg (units: deg, rad, km, m)"]
+    },
+    "family": "selregion",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selcircle": {
+    "command": "selcircle",
+    "params": {
+      "optional": ["STRING - Comma-separated list of ASCII formatted files with different regions", "FLOAT - Longitude of the center of the circle in degrees, default lon=0.0", "FLOAT - Latitude of the center of the circle in degrees, default lat=0.0", "STRING - Radius of the circle, default radius=1deg (units: deg, rad, km, m)"]
+    },
+    "family": "selregion",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selgridcell": {
+    "command": "selgridcell",
+    "params": {
+      "optional": "INTEGER - Comma-separated list or first/last\\[/inc\\] range of indices"
+    },
+    "family": "selgridcell",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "delgridcell": {
+    "command": "delgridcell",
+    "params": {
+      "optional": "INTEGER - Comma-separated list or first/last\\[/inc\\] range of indices"
+    },
+    "family": "selgridcell",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "samplegrid": {
+    "command": "samplegrid",
+    "params": {
+      "optional": "INTEGER - Resample factor, typically 2, which will half the resolution"
+    },
+    "family": "samplegrid",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "selyearidx": {
+    "command": "selyearidx",
+    "params": {},
+    "family": "selyearidx",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "seltimeidx": {
+    "command": "seltimeidx",
+    "params": {},
+    "family": "seltimeidx",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "bottomvalue": {
+    "command": "bottomvalue",
+    "params": {
+      "optional": "FLOAT - Isosurface value"
+    },
+    "family": "selsurface",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "topvalue": {
+    "command": "topvalue",
+    "params": {
+      "optional": "FLOAT - Isosurface value"
+    },
+    "family": "selsurface",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "isosurface": {
+    "command": "isosurface",
+    "params": {
+      "optional": "FLOAT - Isosurface value"
+    },
+    "family": "selsurface",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ifthen": {
+    "command": "ifthen",
+    "params": {},
+    "family": "cond",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ifnotthen": {
+    "command": "ifnotthen",
+    "params": {},
+    "family": "cond",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ifthenelse": {
+    "command": "ifthenelse",
+    "params": {},
+    "family": "cond2",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "ifthenc": {
+    "command": "ifthenc",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "condc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ifnotthenc": {
+    "command": "ifnotthenc",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "condc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "reducegrid": {
+    "command": "reducegrid",
+    "params": {
+      "optional": ["STRING - file which holds the mask field", "STRING - optional parameter to limit coordinates output: 'nobounds' disables coordinate bounds, 'nocoords' avoids all coordinate information"]
+    },
+    "family": "mapreduce",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eq": {
+    "command": "eq",
+    "params": {},
+    "family": "comp",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ne": {
+    "command": "ne",
+    "params": {},
+    "family": "comp",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "le": {
+    "command": "le",
+    "params": {},
+    "family": "comp",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "lt": {
+    "command": "lt",
+    "params": {},
+    "family": "comp",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ge": {
+    "command": "ge",
+    "params": {},
+    "family": "comp",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "gt": {
+    "command": "gt",
+    "params": {},
+    "family": "comp",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eqc": {
+    "command": "eqc",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "compc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "nec": {
+    "command": "nec",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "compc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "lec": {
+    "command": "lec",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "compc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ltc": {
+    "command": "ltc",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "compc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gec": {
+    "command": "gec",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "compc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gtc": {
+    "command": "gtc",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "compc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ymoneq": {
+    "command": "ymoneq",
+    "params": {},
+    "family": "ymoncomp",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ymonne": {
+    "command": "ymonne",
+    "params": {},
+    "family": "ymoncomp",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ymonle": {
+    "command": "ymonle",
+    "params": {},
+    "family": "ymoncomp",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ymonlt": {
+    "command": "ymonlt",
+    "params": {},
+    "family": "ymoncomp",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ymonge": {
+    "command": "ymonge",
+    "params": {},
+    "family": "ymoncomp",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ymongt": {
+    "command": "ymongt",
+    "params": {},
+    "family": "ymoncomp",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "setattribute": {
+    "command": "setattribute",
+    "params": {
+      "optional": "STRING - Comma-separated list of attributes."
+    },
+    "family": "setattribute",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "delattribute": {
+    "command": "delattribute",
+    "params": {
+      "optional": "STRING - Comma-separated list of attributes."
+    },
+    "family": "setattribute",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setpartabp": {
+    "command": "setpartabp",
+    "params": {
+      "optional": ["STRING - Parameter table file or name", "STRING - Converts the units if necessary"]
+    },
+    "family": "setpartab",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setpartabn": {
+    "command": "setpartabn",
+    "params": {
+      "optional": ["STRING - Parameter table file or name", "STRING - Converts the units if necessary"]
+    },
+    "family": "setpartab",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setcodetab": {
+    "command": "setcodetab",
+    "params": {
+      "optional": ["STRING - Parameter table file or name", "INTEGER - Code number", "STRING - Parameter identifier (GRIB1: code\\[.tabnum\\]; GRIB2: num\\[.cat\\[.dis\\]\\])", "STRING - Variable name", "FLOAT - New level", "INTEGER - GRIB level type", "INTEGER - Maximum number of timesteps"]
+    },
+    "family": "set",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setcode": {
+    "command": "setcode",
+    "params": {
+      "optional": ["STRING - Parameter table file or name", "INTEGER - Code number", "STRING - Parameter identifier (GRIB1: code\\[.tabnum\\]; GRIB2: num\\[.cat\\[.dis\\]\\])", "STRING - Variable name", "FLOAT - New level", "INTEGER - GRIB level type", "INTEGER - Maximum number of timesteps"]
+    },
+    "family": "set",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setparam": {
+    "command": "setparam",
+    "params": {
+      "optional": ["STRING - Parameter table file or name", "INTEGER - Code number", "STRING - Parameter identifier (GRIB1: code\\[.tabnum\\]; GRIB2: num\\[.cat\\[.dis\\]\\])", "STRING - Variable name", "FLOAT - New level", "INTEGER - GRIB level type", "INTEGER - Maximum number of timesteps"]
+    },
+    "family": "set",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setname": {
+    "command": "setname",
+    "params": {
+      "optional": ["STRING - Parameter table file or name", "INTEGER - Code number", "STRING - Parameter identifier (GRIB1: code\\[.tabnum\\]; GRIB2: num\\[.cat\\[.dis\\]\\])", "STRING - Variable name", "FLOAT - New level", "INTEGER - GRIB level type", "INTEGER - Maximum number of timesteps"]
+    },
+    "family": "set",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setunit": {
+    "command": "setunit",
+    "params": {
+      "optional": ["STRING - Parameter table file or name", "INTEGER - Code number", "STRING - Parameter identifier (GRIB1: code\\[.tabnum\\]; GRIB2: num\\[.cat\\[.dis\\]\\])", "STRING - Variable name", "FLOAT - New level", "INTEGER - GRIB level type", "INTEGER - Maximum number of timesteps"]
+    },
+    "family": "set",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setlevel": {
+    "command": "setlevel",
+    "params": {
+      "optional": ["STRING - Parameter table file or name", "INTEGER - Code number", "STRING - Parameter identifier (GRIB1: code\\[.tabnum\\]; GRIB2: num\\[.cat\\[.dis\\]\\])", "STRING - Variable name", "FLOAT - New level", "INTEGER - GRIB level type", "INTEGER - Maximum number of timesteps"]
+    },
+    "family": "set",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setltype": {
+    "command": "setltype",
+    "params": {
+      "optional": ["STRING - Parameter table file or name", "INTEGER - Code number", "STRING - Parameter identifier (GRIB1: code\\[.tabnum\\]; GRIB2: num\\[.cat\\[.dis\\]\\])", "STRING - Variable name", "FLOAT - New level", "INTEGER - GRIB level type", "INTEGER - Maximum number of timesteps"]
+    },
+    "family": "set",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setmaxsteps": {
+    "command": "setmaxsteps",
+    "params": {
+      "optional": ["STRING - Parameter table file or name", "INTEGER - Code number", "STRING - Parameter identifier (GRIB1: code\\[.tabnum\\]; GRIB2: num\\[.cat\\[.dis\\]\\])", "STRING - Variable name", "FLOAT - New level", "INTEGER - GRIB level type", "INTEGER - Maximum number of timesteps"]
+    },
+    "family": "set",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setdate": {
+    "command": "setdate",
+    "params": {
+      "optional": ["INTEGER - Value of the new day", "INTEGER - Value of the new month", "INTEGER - Value of the new year", "STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)", "STRING - Date (format: YYYY-MM-DD)", "STRING - Time (format: hh:mm:ss)", "STRING - Optional increment (seconds|minutes|hours|days|months|years) \\[default: 1hour\\]", "STRING - Frequency of the time series (hour|day|month|year)", "STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)", "STRING - Shift value (e.g. -3hour)"]
+    },
+    "family": "settime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "settime": {
+    "command": "settime",
+    "params": {
+      "optional": ["INTEGER - Value of the new day", "INTEGER - Value of the new month", "INTEGER - Value of the new year", "STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)", "STRING - Date (format: YYYY-MM-DD)", "STRING - Time (format: hh:mm:ss)", "STRING - Optional increment (seconds|minutes|hours|days|months|years) \\[default: 1hour\\]", "STRING - Frequency of the time series (hour|day|month|year)", "STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)", "STRING - Shift value (e.g. -3hour)"]
+    },
+    "family": "settime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setday": {
+    "command": "setday",
+    "params": {
+      "optional": ["INTEGER - Value of the new day", "INTEGER - Value of the new month", "INTEGER - Value of the new year", "STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)", "STRING - Date (format: YYYY-MM-DD)", "STRING - Time (format: hh:mm:ss)", "STRING - Optional increment (seconds|minutes|hours|days|months|years) \\[default: 1hour\\]", "STRING - Frequency of the time series (hour|day|month|year)", "STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)", "STRING - Shift value (e.g. -3hour)"]
+    },
+    "family": "settime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setmon": {
+    "command": "setmon",
+    "params": {
+      "optional": ["INTEGER - Value of the new day", "INTEGER - Value of the new month", "INTEGER - Value of the new year", "STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)", "STRING - Date (format: YYYY-MM-DD)", "STRING - Time (format: hh:mm:ss)", "STRING - Optional increment (seconds|minutes|hours|days|months|years) \\[default: 1hour\\]", "STRING - Frequency of the time series (hour|day|month|year)", "STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)", "STRING - Shift value (e.g. -3hour)"]
+    },
+    "family": "settime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setyear": {
+    "command": "setyear",
+    "params": {
+      "optional": ["INTEGER - Value of the new day", "INTEGER - Value of the new month", "INTEGER - Value of the new year", "STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)", "STRING - Date (format: YYYY-MM-DD)", "STRING - Time (format: hh:mm:ss)", "STRING - Optional increment (seconds|minutes|hours|days|months|years) \\[default: 1hour\\]", "STRING - Frequency of the time series (hour|day|month|year)", "STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)", "STRING - Shift value (e.g. -3hour)"]
+    },
+    "family": "settime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "settunits": {
+    "command": "settunits",
+    "params": {
+      "optional": ["INTEGER - Value of the new day", "INTEGER - Value of the new month", "INTEGER - Value of the new year", "STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)", "STRING - Date (format: YYYY-MM-DD)", "STRING - Time (format: hh:mm:ss)", "STRING - Optional increment (seconds|minutes|hours|days|months|years) \\[default: 1hour\\]", "STRING - Frequency of the time series (hour|day|month|year)", "STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)", "STRING - Shift value (e.g. -3hour)"]
+    },
+    "family": "settime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "settaxis": {
+    "command": "settaxis",
+    "params": {
+      "optional": ["INTEGER - Value of the new day", "INTEGER - Value of the new month", "INTEGER - Value of the new year", "STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)", "STRING - Date (format: YYYY-MM-DD)", "STRING - Time (format: hh:mm:ss)", "STRING - Optional increment (seconds|minutes|hours|days|months|years) \\[default: 1hour\\]", "STRING - Frequency of the time series (hour|day|month|year)", "STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)", "STRING - Shift value (e.g. -3hour)"]
+    },
+    "family": "settime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "settbounds": {
+    "command": "settbounds",
+    "params": {
+      "optional": ["INTEGER - Value of the new day", "INTEGER - Value of the new month", "INTEGER - Value of the new year", "STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)", "STRING - Date (format: YYYY-MM-DD)", "STRING - Time (format: hh:mm:ss)", "STRING - Optional increment (seconds|minutes|hours|days|months|years) \\[default: 1hour\\]", "STRING - Frequency of the time series (hour|day|month|year)", "STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)", "STRING - Shift value (e.g. -3hour)"]
+    },
+    "family": "settime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setreftime": {
+    "command": "setreftime",
+    "params": {
+      "optional": ["INTEGER - Value of the new day", "INTEGER - Value of the new month", "INTEGER - Value of the new year", "STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)", "STRING - Date (format: YYYY-MM-DD)", "STRING - Time (format: hh:mm:ss)", "STRING - Optional increment (seconds|minutes|hours|days|months|years) \\[default: 1hour\\]", "STRING - Frequency of the time series (hour|day|month|year)", "STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)", "STRING - Shift value (e.g. -3hour)"]
+    },
+    "family": "settime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setcalendar": {
+    "command": "setcalendar",
+    "params": {
+      "optional": ["INTEGER - Value of the new day", "INTEGER - Value of the new month", "INTEGER - Value of the new year", "STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)", "STRING - Date (format: YYYY-MM-DD)", "STRING - Time (format: hh:mm:ss)", "STRING - Optional increment (seconds|minutes|hours|days|months|years) \\[default: 1hour\\]", "STRING - Frequency of the time series (hour|day|month|year)", "STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)", "STRING - Shift value (e.g. -3hour)"]
+    },
+    "family": "settime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "shifttime": {
+    "command": "shifttime",
+    "params": {
+      "optional": ["INTEGER - Value of the new day", "INTEGER - Value of the new month", "INTEGER - Value of the new year", "STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)", "STRING - Date (format: YYYY-MM-DD)", "STRING - Time (format: hh:mm:ss)", "STRING - Optional increment (seconds|minutes|hours|days|months|years) \\[default: 1hour\\]", "STRING - Frequency of the time series (hour|day|month|year)", "STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)", "STRING - Shift value (e.g. -3hour)"]
+    },
+    "family": "settime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "chcode": {
+    "command": "chcode",
+    "params": {
+      "optional": ["INTEGER - Code number", "INTEGER - Pairs of old and new code numbers", "INTEGER - Pairs of old and new code numbers", "STRING - Pairs of old and new parameter identifiers", "STRING - Pairs of old and new parameter identifiers", "STRING - Variable name", "STRING - Pairs of old and new variable names", "STRING - Pairs of old and new variable names", "FLOAT - Old level", "FLOAT - New level"]
+    },
+    "family": "change",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "chparam": {
+    "command": "chparam",
+    "params": {
+      "optional": ["INTEGER - Code number", "INTEGER - Pairs of old and new code numbers", "INTEGER - Pairs of old and new code numbers", "STRING - Pairs of old and new parameter identifiers", "STRING - Pairs of old and new parameter identifiers", "STRING - Variable name", "STRING - Pairs of old and new variable names", "STRING - Pairs of old and new variable names", "FLOAT - Old level", "FLOAT - New level"]
+    },
+    "family": "change",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "chname": {
+    "command": "chname",
+    "params": {
+      "optional": ["INTEGER - Code number", "INTEGER - Pairs of old and new code numbers", "INTEGER - Pairs of old and new code numbers", "STRING - Pairs of old and new parameter identifiers", "STRING - Pairs of old and new parameter identifiers", "STRING - Variable name", "STRING - Pairs of old and new variable names", "STRING - Pairs of old and new variable names", "FLOAT - Old level", "FLOAT - New level"]
+    },
+    "family": "change",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "chunit": {
+    "command": "chunit",
+    "params": {
+      "optional": ["INTEGER - Code number", "INTEGER - Pairs of old and new code numbers", "INTEGER - Pairs of old and new code numbers", "STRING - Pairs of old and new parameter identifiers", "STRING - Pairs of old and new parameter identifiers", "STRING - Variable name", "STRING - Pairs of old and new variable names", "STRING - Pairs of old and new variable names", "FLOAT - Old level", "FLOAT - New level"]
+    },
+    "family": "change",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "chlevel": {
+    "command": "chlevel",
+    "params": {
+      "optional": ["INTEGER - Code number", "INTEGER - Pairs of old and new code numbers", "INTEGER - Pairs of old and new code numbers", "STRING - Pairs of old and new parameter identifiers", "STRING - Pairs of old and new parameter identifiers", "STRING - Variable name", "STRING - Pairs of old and new variable names", "STRING - Pairs of old and new variable names", "FLOAT - Old level", "FLOAT - New level"]
+    },
+    "family": "change",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "chlevelc": {
+    "command": "chlevelc",
+    "params": {
+      "optional": ["INTEGER - Code number", "INTEGER - Pairs of old and new code numbers", "INTEGER - Pairs of old and new code numbers", "STRING - Pairs of old and new parameter identifiers", "STRING - Pairs of old and new parameter identifiers", "STRING - Variable name", "STRING - Pairs of old and new variable names", "STRING - Pairs of old and new variable names", "FLOAT - Old level", "FLOAT - New level"]
+    },
+    "family": "change",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "chlevelv": {
+    "command": "chlevelv",
+    "params": {
+      "optional": ["INTEGER - Code number", "INTEGER - Pairs of old and new code numbers", "INTEGER - Pairs of old and new code numbers", "STRING - Pairs of old and new parameter identifiers", "STRING - Pairs of old and new parameter identifiers", "STRING - Variable name", "STRING - Pairs of old and new variable names", "STRING - Pairs of old and new variable names", "FLOAT - Old level", "FLOAT - New level"]
+    },
+    "family": "change",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setgrid": {
+    "command": "setgrid",
+    "params": {
+      "optional": ["STRING - Grid description file or name", "STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)", "STRING - Data file, the first field is used as grid cell area", "STRING - Data file, the first field is used as grid mask", "STRING - Proj library parameter (e.g.:+init=EPSG:3413)"]
+    },
+    "family": "setgrid",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setgridtype": {
+    "command": "setgridtype",
+    "params": {
+      "optional": ["STRING - Grid description file or name", "STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)", "STRING - Data file, the first field is used as grid cell area", "STRING - Data file, the first field is used as grid mask", "STRING - Proj library parameter (e.g.:+init=EPSG:3413)"]
+    },
+    "family": "setgrid",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setgridarea": {
+    "command": "setgridarea",
+    "params": {
+      "optional": ["STRING - Grid description file or name", "STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)", "STRING - Data file, the first field is used as grid cell area", "STRING - Data file, the first field is used as grid mask", "STRING - Proj library parameter (e.g.:+init=EPSG:3413)"]
+    },
+    "family": "setgrid",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setgridmask": {
+    "command": "setgridmask",
+    "params": {
+      "optional": ["STRING - Grid description file or name", "STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)", "STRING - Data file, the first field is used as grid cell area", "STRING - Data file, the first field is used as grid mask", "STRING - Proj library parameter (e.g.:+init=EPSG:3413)"]
+    },
+    "family": "setgrid",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setprojparams": {
+    "command": "setprojparams",
+    "params": {
+      "optional": ["STRING - Grid description file or name", "STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)", "STRING - Data file, the first field is used as grid cell area", "STRING - Data file, the first field is used as grid mask", "STRING - Proj library parameter (e.g.:+init=EPSG:3413)"]
+    },
+    "family": "setgrid",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setzaxis": {
+    "command": "setzaxis",
+    "params": {
+      "optional": ["STRING - Z-axis description file or name of the target z-axis", "FLOAT - Specifying the bottom of the vertical column. Must have the same units as z-axis.", "FLOAT - Specifying the top of the vertical column. Must have the same units as z-axis."]
+    },
+    "family": "setzaxis",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "genlevelbounds": {
+    "command": "genlevelbounds",
+    "params": {
+      "optional": ["STRING - Z-axis description file or name of the target z-axis", "FLOAT - Specifying the bottom of the vertical column. Must have the same units as z-axis.", "FLOAT - Specifying the top of the vertical column. Must have the same units as z-axis."]
+    },
+    "family": "setzaxis",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "invertlat": {
+    "command": "invertlat",
+    "params": {},
+    "family": "invert",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "invertlev": {
+    "command": "invertlev",
+    "params": {},
+    "family": "invertlev",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "shiftx": {
+    "command": "shiftx",
+    "params": {
+      "optional": ["INTEGER - Number of grid cells to shift (default: 1)", "STRING - If set, cells are filled up cyclic (default: missing value)", "STRING - If set, coordinates are also shifted"]
+    },
+    "family": "shiftxy",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "shifty": {
+    "command": "shifty",
+    "params": {
+      "optional": ["INTEGER - Number of grid cells to shift (default: 1)", "STRING - If set, cells are filled up cyclic (default: missing value)", "STRING - If set, coordinates are also shifted"]
+    },
+    "family": "shiftxy",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "maskregion": {
+    "command": "maskregion",
+    "params": {
+      "optional": "STRING - Comma-separated list of ASCII formatted files with different regions"
+    },
+    "family": "maskregion",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "masklonlatbox": {
+    "command": "masklonlatbox",
+    "params": {
+      "optional": ["FLOAT - Western longitude", "FLOAT - Eastern longitude", "FLOAT - Southern or northern latitude", "FLOAT - Northern or southern latitude", "INTEGER - Index of first longitude", "INTEGER - Index of last longitude", "INTEGER - Index of first latitude", "INTEGER - Index of last latitude"]
+    },
+    "family": "maskbox",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "maskindexbox": {
+    "command": "maskindexbox",
+    "params": {
+      "optional": ["FLOAT - Western longitude", "FLOAT - Eastern longitude", "FLOAT - Southern or northern latitude", "FLOAT - Northern or southern latitude", "INTEGER - Index of first longitude", "INTEGER - Index of last longitude", "INTEGER - Index of first latitude", "INTEGER - Index of last latitude"]
+    },
+    "family": "maskbox",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setclonlatbox": {
+    "command": "setclonlatbox",
+    "params": {
+      "optional": ["FLOAT - Constant", "FLOAT - Western longitude", "FLOAT - Eastern longitude", "FLOAT - Southern or northern latitude", "FLOAT - Northern or southern latitude", "INTEGER - Index of first longitude", "INTEGER - Index of last longitude", "INTEGER - Index of first latitude", "INTEGER - Index of last latitude"]
+    },
+    "family": "setbox",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setcindexbox": {
+    "command": "setcindexbox",
+    "params": {
+      "optional": ["FLOAT - Constant", "FLOAT - Western longitude", "FLOAT - Eastern longitude", "FLOAT - Southern or northern latitude", "FLOAT - Northern or southern latitude", "INTEGER - Index of first longitude", "INTEGER - Index of last longitude", "INTEGER - Index of first latitude", "INTEGER - Index of last latitude"]
+    },
+    "family": "setbox",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "enlarge": {
+    "command": "enlarge",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "enlarge",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setmissval": {
+    "command": "setmissval",
+    "params": {
+      "optional": ["INTEGER - Number of nearest neighbors", "FLOAT - New missing value", "FLOAT - Constant", "FLOAT - Lower bound", "FLOAT - Upper bound"]
+    },
+    "family": "setmiss",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setctomiss": {
+    "command": "setctomiss",
+    "params": {
+      "optional": ["INTEGER - Number of nearest neighbors", "FLOAT - New missing value", "FLOAT - Constant", "FLOAT - Lower bound", "FLOAT - Upper bound"]
+    },
+    "family": "setmiss",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setmisstoc": {
+    "command": "setmisstoc",
+    "params": {
+      "optional": ["INTEGER - Number of nearest neighbors", "FLOAT - New missing value", "FLOAT - Constant", "FLOAT - Lower bound", "FLOAT - Upper bound"]
+    },
+    "family": "setmiss",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setrtomiss": {
+    "command": "setrtomiss",
+    "params": {
+      "optional": ["INTEGER - Number of nearest neighbors", "FLOAT - New missing value", "FLOAT - Constant", "FLOAT - Lower bound", "FLOAT - Upper bound"]
+    },
+    "family": "setmiss",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setvrange": {
+    "command": "setvrange",
+    "params": {
+      "optional": ["INTEGER - Number of nearest neighbors", "FLOAT - New missing value", "FLOAT - Constant", "FLOAT - Lower bound", "FLOAT - Upper bound"]
+    },
+    "family": "setmiss",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setmisstonn": {
+    "command": "setmisstonn",
+    "params": {
+      "optional": ["INTEGER - Number of nearest neighbors", "FLOAT - New missing value", "FLOAT - Constant", "FLOAT - Lower bound", "FLOAT - Upper bound"]
+    },
+    "family": "setmiss",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setmisstodis": {
+    "command": "setmisstodis",
+    "params": {
+      "optional": ["INTEGER - Number of nearest neighbors", "FLOAT - New missing value", "FLOAT - Constant", "FLOAT - Lower bound", "FLOAT - Upper bound"]
+    },
+    "family": "setmiss",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "vertfillmiss": {
+    "command": "vertfillmiss",
+    "params": {
+      "optional": ["STRING - Fill method \\[nearest|linear|forward|backward\\] (default: nearest)", "INTEGER - The maximum number of consecutive missing values to fill (default: all)", "INTEGER - The maximum number of gaps to fill (default: all)"]
+    },
+    "family": "vertfillmiss",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timfillmiss": {
+    "command": "timfillmiss",
+    "params": {
+      "optional": ["STRING - Fill method \\[nearest|linear|forward|backward\\] (default: nearest)", "INTEGER - The maximum number of consecutive missing values to fill (default: all)", "INTEGER - The maximum number of gaps to fill (default: all)"]
+    },
+    "family": "timfillmiss",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setgridcell": {
+    "command": "setgridcell",
+    "params": {
+      "optional": ["FLOAT - Value of the grid cell", "INTEGER - Comma-separated list of grid cell indices", "STRING - Name of the data file which contains the mask"]
+    },
+    "family": "setgridcell",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "expr": {
+    "command": "expr",
+    "params": {
+      "optional": ["STRING - Processing instructions (need to be 'quoted' in most cases)", "STRING - File with processing instructions"]
+    },
+    "family": "expr",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "exprf": {
+    "command": "exprf",
+    "params": {
+      "optional": ["STRING - Processing instructions (need to be 'quoted' in most cases)", "STRING - File with processing instructions"]
+    },
+    "family": "expr",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "aexpr": {
+    "command": "aexpr",
+    "params": {
+      "optional": ["STRING - Processing instructions (need to be 'quoted' in most cases)", "STRING - File with processing instructions"]
+    },
+    "family": "expr",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "aexprf": {
+    "command": "aexprf",
+    "params": {
+      "optional": ["STRING - Processing instructions (need to be 'quoted' in most cases)", "STRING - File with processing instructions"]
+    },
+    "family": "expr",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "abs": {
+    "command": "abs",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "int": {
+    "command": "int",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "nint": {
+    "command": "nint",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "pow": {
+    "command": "pow",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "sqr": {
+    "command": "sqr",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "sqrt": {
+    "command": "sqrt",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "exp": {
+    "command": "exp",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ln": {
+    "command": "ln",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "log10": {
+    "command": "log10",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "sin": {
+    "command": "sin",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "cos": {
+    "command": "cos",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "tan": {
+    "command": "tan",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "asin": {
+    "command": "asin",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "acos": {
+    "command": "acos",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "atan": {
+    "command": "atan",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "reci": {
+    "command": "reci",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "not": {
+    "command": "not",
+    "params": {},
+    "family": "math",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "addc": {
+    "command": "addc",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "arithc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "subc": {
+    "command": "subc",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "arithc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "mulc": {
+    "command": "mulc",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "arithc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "divc": {
+    "command": "divc",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "arithc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "minc": {
+    "command": "minc",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "arithc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "maxc": {
+    "command": "maxc",
+    "params": {
+      "optional": "FLOAT - Constant"
+    },
+    "family": "arithc",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "add": {
+    "command": "add",
+    "params": {},
+    "family": "arith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "sub": {
+    "command": "sub",
+    "params": {},
+    "family": "arith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "mul": {
+    "command": "mul",
+    "params": {},
+    "family": "arith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "div": {
+    "command": "div",
+    "params": {},
+    "family": "arith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "min": {
+    "command": "min",
+    "params": {},
+    "family": "arith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "max": {
+    "command": "max",
+    "params": {},
+    "family": "arith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "atan2": {
+    "command": "atan2",
+    "params": {},
+    "family": "arith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "dayadd": {
+    "command": "dayadd",
+    "params": {},
+    "family": "dayarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "daysub": {
+    "command": "daysub",
+    "params": {},
+    "family": "dayarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "daymul": {
+    "command": "daymul",
+    "params": {},
+    "family": "dayarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "daydiv": {
+    "command": "daydiv",
+    "params": {},
+    "family": "dayarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "monadd": {
+    "command": "monadd",
+    "params": {},
+    "family": "monarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "monsub": {
+    "command": "monsub",
+    "params": {},
+    "family": "monarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "monmul": {
+    "command": "monmul",
+    "params": {},
+    "family": "monarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "mondiv": {
+    "command": "mondiv",
+    "params": {},
+    "family": "monarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "yearadd": {
+    "command": "yearadd",
+    "params": {},
+    "family": "yeararith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "yearsub": {
+    "command": "yearsub",
+    "params": {},
+    "family": "yeararith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "yearmul": {
+    "command": "yearmul",
+    "params": {},
+    "family": "yeararith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "yeardiv": {
+    "command": "yeardiv",
+    "params": {},
+    "family": "yeararith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "yhouradd": {
+    "command": "yhouradd",
+    "params": {},
+    "family": "yhourarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "yhoursub": {
+    "command": "yhoursub",
+    "params": {},
+    "family": "yhourarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "yhourmul": {
+    "command": "yhourmul",
+    "params": {},
+    "family": "yhourarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "yhourdiv": {
+    "command": "yhourdiv",
+    "params": {},
+    "family": "yhourarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ydayadd": {
+    "command": "ydayadd",
+    "params": {},
+    "family": "ydayarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ydaysub": {
+    "command": "ydaysub",
+    "params": {},
+    "family": "ydayarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ydaymul": {
+    "command": "ydaymul",
+    "params": {},
+    "family": "ydayarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ydaydiv": {
+    "command": "ydaydiv",
+    "params": {},
+    "family": "ydayarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ymonadd": {
+    "command": "ymonadd",
+    "params": {},
+    "family": "ymonarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ymonsub": {
+    "command": "ymonsub",
+    "params": {},
+    "family": "ymonarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ymonmul": {
+    "command": "ymonmul",
+    "params": {},
+    "family": "ymonarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "ymondiv": {
+    "command": "ymondiv",
+    "params": {},
+    "family": "ymonarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "yseasadd": {
+    "command": "yseasadd",
+    "params": {},
+    "family": "yseasarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "yseassub": {
+    "command": "yseassub",
+    "params": {},
+    "family": "yseasarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "yseasmul": {
+    "command": "yseasmul",
+    "params": {},
+    "family": "yseasarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "yseasdiv": {
+    "command": "yseasdiv",
+    "params": {},
+    "family": "yseasarith",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "muldpm": {
+    "command": "muldpm",
+    "params": {},
+    "family": "arithdays",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "divdpm": {
+    "command": "divdpm",
+    "params": {},
+    "family": "arithdays",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "muldpy": {
+    "command": "muldpy",
+    "params": {},
+    "family": "arithdays",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "divdpy": {
+    "command": "divdpy",
+    "params": {},
+    "family": "arithdays",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "mulcoslat": {
+    "command": "mulcoslat",
+    "params": {},
+    "family": "arithlat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "divcoslat": {
+    "command": "divcoslat",
+    "params": {},
+    "family": "arithlat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timcumsum": {
+    "command": "timcumsum",
+    "params": {},
+    "family": "timcumsum",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "consecsum": {
+    "command": "consecsum",
+    "params": {},
+    "family": "consecstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "consects": {
+    "command": "consects",
+    "params": {},
+    "family": "consecstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "varsmin": {
+    "command": "varsmin",
+    "params": {},
+    "family": "varsstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "varsmax": {
+    "command": "varsmax",
+    "params": {},
+    "family": "varsstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "varsrange": {
+    "command": "varsrange",
+    "params": {},
+    "family": "varsstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "varssum": {
+    "command": "varssum",
+    "params": {},
+    "family": "varsstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "varsmean": {
+    "command": "varsmean",
+    "params": {},
+    "family": "varsstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "varsavg": {
+    "command": "varsavg",
+    "params": {},
+    "family": "varsstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "varsstd": {
+    "command": "varsstd",
+    "params": {},
+    "family": "varsstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "varsstd1": {
+    "command": "varsstd1",
+    "params": {},
+    "family": "varsstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "varsvar": {
+    "command": "varsvar",
+    "params": {},
+    "family": "varsstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "varsvar1": {
+    "command": "varsvar1",
+    "params": {},
+    "family": "varsstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ensmin": {
+    "command": "ensmin",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "ensmax": {
+    "command": "ensmax",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "ensrange": {
+    "command": "ensrange",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "enssum": {
+    "command": "enssum",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "ensmean": {
+    "command": "ensmean",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "ensavg": {
+    "command": "ensavg",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "ensstd": {
+    "command": "ensstd",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "ensstd1": {
+    "command": "ensstd1",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "ensvar": {
+    "command": "ensvar",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "ensvar1": {
+    "command": "ensvar1",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "ensskew": {
+    "command": "ensskew",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "enskurt": {
+    "command": "enskurt",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "ensmedian": {
+    "command": "ensmedian",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "enspctl": {
+    "command": "enspctl",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ensstat",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "ensrkhistspace": {
+    "command": "ensrkhistspace",
+    "params": {},
+    "family": "ensstat2",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "ensrkhisttime": {
+    "command": "ensrkhisttime",
+    "params": {},
+    "family": "ensstat2",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "ensroc": {
+    "command": "ensroc",
+    "params": {},
+    "family": "ensstat2",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "enscrps": {
+    "command": "enscrps",
+    "params": {},
+    "family": "ensval",
+    "n_input": "Inf",
+    "n_output": "Inf"
+  },
+  "ensbrs": {
+    "command": "ensbrs",
+    "params": {},
+    "family": "ensval",
+    "n_input": "Inf",
+    "n_output": "Inf"
+  },
+  "fldmin": {
+    "command": "fldmin",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldmax": {
+    "command": "fldmax",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldrange": {
+    "command": "fldrange",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldsum": {
+    "command": "fldsum",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldint": {
+    "command": "fldint",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldmean": {
+    "command": "fldmean",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldavg": {
+    "command": "fldavg",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldstd": {
+    "command": "fldstd",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldstd1": {
+    "command": "fldstd1",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldvar": {
+    "command": "fldvar",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldvar1": {
+    "command": "fldvar1",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldskew": {
+    "command": "fldskew",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldkurt": {
+    "command": "fldkurt",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldmedian": {
+    "command": "fldmedian",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldcount": {
+    "command": "fldcount",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fldpctl": {
+    "command": "fldpctl",
+    "params": {
+      "optional": ["BOOL - weights=FALSE disables weighting by grid cell area \\[default: weights=TRUE\\]", "FLOAT - Percentile number in \\{0, ..., 100\\}"]
+    },
+    "family": "fldstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonmin": {
+    "command": "zonmin",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonmax": {
+    "command": "zonmax",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonrange": {
+    "command": "zonrange",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonsum": {
+    "command": "zonsum",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonmean": {
+    "command": "zonmean",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonavg": {
+    "command": "zonavg",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonstd": {
+    "command": "zonstd",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonstd1": {
+    "command": "zonstd1",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonvar": {
+    "command": "zonvar",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonvar1": {
+    "command": "zonvar1",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonskew": {
+    "command": "zonskew",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonkurt": {
+    "command": "zonkurt",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonmedian": {
+    "command": "zonmedian",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "zonpctl": {
+    "command": "zonpctl",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees."]
+    },
+    "family": "zonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "mermin": {
+    "command": "mermin",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "mermax": {
+    "command": "mermax",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "merrange": {
+    "command": "merrange",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "mersum": {
+    "command": "mersum",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "mermean": {
+    "command": "mermean",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "meravg": {
+    "command": "meravg",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "merstd": {
+    "command": "merstd",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "merstd1": {
+    "command": "merstd1",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "mervar": {
+    "command": "mervar",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "mervar1": {
+    "command": "mervar1",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "merskew": {
+    "command": "merskew",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "merkurt": {
+    "command": "merkurt",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "mermedian": {
+    "command": "mermedian",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "merpctl": {
+    "command": "merpctl",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "merstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridboxmin": {
+    "command": "gridboxmin",
+    "params": {
+      "optional": ["INTEGER - Number of grid boxes in x direction", "INTEGER - Number of grid boxes in y direction"]
+    },
+    "family": "gridboxstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridboxmax": {
+    "command": "gridboxmax",
+    "params": {
+      "optional": ["INTEGER - Number of grid boxes in x direction", "INTEGER - Number of grid boxes in y direction"]
+    },
+    "family": "gridboxstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridboxrange": {
+    "command": "gridboxrange",
+    "params": {
+      "optional": ["INTEGER - Number of grid boxes in x direction", "INTEGER - Number of grid boxes in y direction"]
+    },
+    "family": "gridboxstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridboxsum": {
+    "command": "gridboxsum",
+    "params": {
+      "optional": ["INTEGER - Number of grid boxes in x direction", "INTEGER - Number of grid boxes in y direction"]
+    },
+    "family": "gridboxstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridboxmean": {
+    "command": "gridboxmean",
+    "params": {
+      "optional": ["INTEGER - Number of grid boxes in x direction", "INTEGER - Number of grid boxes in y direction"]
+    },
+    "family": "gridboxstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridboxavg": {
+    "command": "gridboxavg",
+    "params": {
+      "optional": ["INTEGER - Number of grid boxes in x direction", "INTEGER - Number of grid boxes in y direction"]
+    },
+    "family": "gridboxstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridboxstd": {
+    "command": "gridboxstd",
+    "params": {
+      "optional": ["INTEGER - Number of grid boxes in x direction", "INTEGER - Number of grid boxes in y direction"]
+    },
+    "family": "gridboxstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridboxstd1": {
+    "command": "gridboxstd1",
+    "params": {
+      "optional": ["INTEGER - Number of grid boxes in x direction", "INTEGER - Number of grid boxes in y direction"]
+    },
+    "family": "gridboxstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridboxvar": {
+    "command": "gridboxvar",
+    "params": {
+      "optional": ["INTEGER - Number of grid boxes in x direction", "INTEGER - Number of grid boxes in y direction"]
+    },
+    "family": "gridboxstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridboxvar1": {
+    "command": "gridboxvar1",
+    "params": {
+      "optional": ["INTEGER - Number of grid boxes in x direction", "INTEGER - Number of grid boxes in y direction"]
+    },
+    "family": "gridboxstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridboxskew": {
+    "command": "gridboxskew",
+    "params": {
+      "optional": ["INTEGER - Number of grid boxes in x direction", "INTEGER - Number of grid boxes in y direction"]
+    },
+    "family": "gridboxstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridboxkurt": {
+    "command": "gridboxkurt",
+    "params": {
+      "optional": ["INTEGER - Number of grid boxes in x direction", "INTEGER - Number of grid boxes in y direction"]
+    },
+    "family": "gridboxstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridboxmedian": {
+    "command": "gridboxmedian",
+    "params": {
+      "optional": ["INTEGER - Number of grid boxes in x direction", "INTEGER - Number of grid boxes in y direction"]
+    },
+    "family": "gridboxstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapmin": {
+    "command": "remapmin",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remapstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapmax": {
+    "command": "remapmax",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remapstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remaprange": {
+    "command": "remaprange",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remapstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapsum": {
+    "command": "remapsum",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remapstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapmean": {
+    "command": "remapmean",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remapstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapavg": {
+    "command": "remapavg",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remapstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapstd": {
+    "command": "remapstd",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remapstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapstd1": {
+    "command": "remapstd1",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remapstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapvar": {
+    "command": "remapvar",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remapstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapvar1": {
+    "command": "remapvar1",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remapstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapskew": {
+    "command": "remapskew",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remapstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapkurt": {
+    "command": "remapkurt",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remapstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapmedian": {
+    "command": "remapmedian",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remapstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "vertmin": {
+    "command": "vertmin",
+    "params": {
+      "optional": "BOOL - weights=FALSE disables weighting by layer thickness \\[default: weights=TRUE\\]"
+    },
+    "family": "vertstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "vertmax": {
+    "command": "vertmax",
+    "params": {
+      "optional": "BOOL - weights=FALSE disables weighting by layer thickness \\[default: weights=TRUE\\]"
+    },
+    "family": "vertstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "vertrange": {
+    "command": "vertrange",
+    "params": {
+      "optional": "BOOL - weights=FALSE disables weighting by layer thickness \\[default: weights=TRUE\\]"
+    },
+    "family": "vertstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "vertsum": {
+    "command": "vertsum",
+    "params": {
+      "optional": "BOOL - weights=FALSE disables weighting by layer thickness \\[default: weights=TRUE\\]"
+    },
+    "family": "vertstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "vertmean": {
+    "command": "vertmean",
+    "params": {
+      "optional": "BOOL - weights=FALSE disables weighting by layer thickness \\[default: weights=TRUE\\]"
+    },
+    "family": "vertstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "vertavg": {
+    "command": "vertavg",
+    "params": {
+      "optional": "BOOL - weights=FALSE disables weighting by layer thickness \\[default: weights=TRUE\\]"
+    },
+    "family": "vertstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "vertstd": {
+    "command": "vertstd",
+    "params": {
+      "optional": "BOOL - weights=FALSE disables weighting by layer thickness \\[default: weights=TRUE\\]"
+    },
+    "family": "vertstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "vertstd1": {
+    "command": "vertstd1",
+    "params": {
+      "optional": "BOOL - weights=FALSE disables weighting by layer thickness \\[default: weights=TRUE\\]"
+    },
+    "family": "vertstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "vertvar": {
+    "command": "vertvar",
+    "params": {
+      "optional": "BOOL - weights=FALSE disables weighting by layer thickness \\[default: weights=TRUE\\]"
+    },
+    "family": "vertstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "vertvar1": {
+    "command": "vertvar1",
+    "params": {
+      "optional": "BOOL - weights=FALSE disables weighting by layer thickness \\[default: weights=TRUE\\]"
+    },
+    "family": "vertstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timselmin": {
+    "command": "timselmin",
+    "params": {
+      "optional": ["INTEGER - Number of input timesteps for each output timestep", "INTEGER - Number of input timesteps skipped before the first timestep range (optional)", "INTEGER - Number of input timesteps skipped between timestep ranges (optional)"]
+    },
+    "family": "timselstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timselmax": {
+    "command": "timselmax",
+    "params": {
+      "optional": ["INTEGER - Number of input timesteps for each output timestep", "INTEGER - Number of input timesteps skipped before the first timestep range (optional)", "INTEGER - Number of input timesteps skipped between timestep ranges (optional)"]
+    },
+    "family": "timselstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timselrange": {
+    "command": "timselrange",
+    "params": {
+      "optional": ["INTEGER - Number of input timesteps for each output timestep", "INTEGER - Number of input timesteps skipped before the first timestep range (optional)", "INTEGER - Number of input timesteps skipped between timestep ranges (optional)"]
+    },
+    "family": "timselstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timselsum": {
+    "command": "timselsum",
+    "params": {
+      "optional": ["INTEGER - Number of input timesteps for each output timestep", "INTEGER - Number of input timesteps skipped before the first timestep range (optional)", "INTEGER - Number of input timesteps skipped between timestep ranges (optional)"]
+    },
+    "family": "timselstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timselmean": {
+    "command": "timselmean",
+    "params": {
+      "optional": ["INTEGER - Number of input timesteps for each output timestep", "INTEGER - Number of input timesteps skipped before the first timestep range (optional)", "INTEGER - Number of input timesteps skipped between timestep ranges (optional)"]
+    },
+    "family": "timselstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timselavg": {
+    "command": "timselavg",
+    "params": {
+      "optional": ["INTEGER - Number of input timesteps for each output timestep", "INTEGER - Number of input timesteps skipped before the first timestep range (optional)", "INTEGER - Number of input timesteps skipped between timestep ranges (optional)"]
+    },
+    "family": "timselstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timselstd": {
+    "command": "timselstd",
+    "params": {
+      "optional": ["INTEGER - Number of input timesteps for each output timestep", "INTEGER - Number of input timesteps skipped before the first timestep range (optional)", "INTEGER - Number of input timesteps skipped between timestep ranges (optional)"]
+    },
+    "family": "timselstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timselstd1": {
+    "command": "timselstd1",
+    "params": {
+      "optional": ["INTEGER - Number of input timesteps for each output timestep", "INTEGER - Number of input timesteps skipped before the first timestep range (optional)", "INTEGER - Number of input timesteps skipped between timestep ranges (optional)"]
+    },
+    "family": "timselstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timselvar": {
+    "command": "timselvar",
+    "params": {
+      "optional": ["INTEGER - Number of input timesteps for each output timestep", "INTEGER - Number of input timesteps skipped before the first timestep range (optional)", "INTEGER - Number of input timesteps skipped between timestep ranges (optional)"]
+    },
+    "family": "timselstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timselvar1": {
+    "command": "timselvar1",
+    "params": {
+      "optional": ["INTEGER - Number of input timesteps for each output timestep", "INTEGER - Number of input timesteps skipped before the first timestep range (optional)", "INTEGER - Number of input timesteps skipped between timestep ranges (optional)"]
+    },
+    "family": "timselstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timselpctl": {
+    "command": "timselpctl",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "INTEGER - Number of input timesteps for each output timestep", "INTEGER - Number of input timesteps skipped before the first timestep range (optional)", "INTEGER - Number of input timesteps skipped between timestep ranges (optional)"]
+    },
+    "family": "timselpctl",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "runmin": {
+    "command": "runmin",
+    "params": {
+      "optional": "INTEGER - Number of timesteps"
+    },
+    "family": "runstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "runmax": {
+    "command": "runmax",
+    "params": {
+      "optional": "INTEGER - Number of timesteps"
+    },
+    "family": "runstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "runrange": {
+    "command": "runrange",
+    "params": {
+      "optional": "INTEGER - Number of timesteps"
+    },
+    "family": "runstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "runsum": {
+    "command": "runsum",
+    "params": {
+      "optional": "INTEGER - Number of timesteps"
+    },
+    "family": "runstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "runmean": {
+    "command": "runmean",
+    "params": {
+      "optional": "INTEGER - Number of timesteps"
+    },
+    "family": "runstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "runavg": {
+    "command": "runavg",
+    "params": {
+      "optional": "INTEGER - Number of timesteps"
+    },
+    "family": "runstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "runstd": {
+    "command": "runstd",
+    "params": {
+      "optional": "INTEGER - Number of timesteps"
+    },
+    "family": "runstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "runstd1": {
+    "command": "runstd1",
+    "params": {
+      "optional": "INTEGER - Number of timesteps"
+    },
+    "family": "runstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "runvar": {
+    "command": "runvar",
+    "params": {
+      "optional": "INTEGER - Number of timesteps"
+    },
+    "family": "runstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "runvar1": {
+    "command": "runvar1",
+    "params": {
+      "optional": "INTEGER - Number of timesteps"
+    },
+    "family": "runstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "runpctl": {
+    "command": "runpctl",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "INTEGER - Number of timesteps"]
+    },
+    "family": "runpctl",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timmin": {
+    "command": "timmin",
+    "params": {},
+    "family": "timstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timmax": {
+    "command": "timmax",
+    "params": {},
+    "family": "timstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timminidx": {
+    "command": "timminidx",
+    "params": {},
+    "family": "timstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timmaxidx": {
+    "command": "timmaxidx",
+    "params": {},
+    "family": "timstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timrange": {
+    "command": "timrange",
+    "params": {},
+    "family": "timstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timsum": {
+    "command": "timsum",
+    "params": {},
+    "family": "timstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timmean": {
+    "command": "timmean",
+    "params": {},
+    "family": "timstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timavg": {
+    "command": "timavg",
+    "params": {},
+    "family": "timstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timstd": {
+    "command": "timstd",
+    "params": {},
+    "family": "timstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timstd1": {
+    "command": "timstd1",
+    "params": {},
+    "family": "timstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timvar": {
+    "command": "timvar",
+    "params": {},
+    "family": "timstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timvar1": {
+    "command": "timvar1",
+    "params": {},
+    "family": "timstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "timpctl": {
+    "command": "timpctl",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "timpctl",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "hourmin": {
+    "command": "hourmin",
+    "params": {},
+    "family": "hourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "hourmax": {
+    "command": "hourmax",
+    "params": {},
+    "family": "hourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "hourrange": {
+    "command": "hourrange",
+    "params": {},
+    "family": "hourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "hoursum": {
+    "command": "hoursum",
+    "params": {},
+    "family": "hourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "hourmean": {
+    "command": "hourmean",
+    "params": {},
+    "family": "hourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "houravg": {
+    "command": "houravg",
+    "params": {},
+    "family": "hourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "hourstd": {
+    "command": "hourstd",
+    "params": {},
+    "family": "hourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "hourstd1": {
+    "command": "hourstd1",
+    "params": {},
+    "family": "hourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "hourvar": {
+    "command": "hourvar",
+    "params": {},
+    "family": "hourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "hourvar1": {
+    "command": "hourvar1",
+    "params": {},
+    "family": "hourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "hourpctl": {
+    "command": "hourpctl",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "hourpctl",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "daymin": {
+    "command": "daymin",
+    "params": {
+      "optional": "BOOL - Process the last day only if it is complete"
+    },
+    "family": "daystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "daymax": {
+    "command": "daymax",
+    "params": {
+      "optional": "BOOL - Process the last day only if it is complete"
+    },
+    "family": "daystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dayrange": {
+    "command": "dayrange",
+    "params": {
+      "optional": "BOOL - Process the last day only if it is complete"
+    },
+    "family": "daystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "daysum": {
+    "command": "daysum",
+    "params": {
+      "optional": "BOOL - Process the last day only if it is complete"
+    },
+    "family": "daystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "daymean": {
+    "command": "daymean",
+    "params": {
+      "optional": "BOOL - Process the last day only if it is complete"
+    },
+    "family": "daystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dayavg": {
+    "command": "dayavg",
+    "params": {
+      "optional": "BOOL - Process the last day only if it is complete"
+    },
+    "family": "daystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "daystd": {
+    "command": "daystd",
+    "params": {
+      "optional": "BOOL - Process the last day only if it is complete"
+    },
+    "family": "daystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "daystd1": {
+    "command": "daystd1",
+    "params": {
+      "optional": "BOOL - Process the last day only if it is complete"
+    },
+    "family": "daystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dayvar": {
+    "command": "dayvar",
+    "params": {
+      "optional": "BOOL - Process the last day only if it is complete"
+    },
+    "family": "daystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dayvar1": {
+    "command": "dayvar1",
+    "params": {
+      "optional": "BOOL - Process the last day only if it is complete"
+    },
+    "family": "daystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "daypctl": {
+    "command": "daypctl",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "daypctl",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "monmin": {
+    "command": "monmin",
+    "params": {
+      "optional": "BOOL - Process the last month only if it is complete"
+    },
+    "family": "monstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "monmax": {
+    "command": "monmax",
+    "params": {
+      "optional": "BOOL - Process the last month only if it is complete"
+    },
+    "family": "monstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "monrange": {
+    "command": "monrange",
+    "params": {
+      "optional": "BOOL - Process the last month only if it is complete"
+    },
+    "family": "monstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "monsum": {
+    "command": "monsum",
+    "params": {
+      "optional": "BOOL - Process the last month only if it is complete"
+    },
+    "family": "monstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "monmean": {
+    "command": "monmean",
+    "params": {
+      "optional": "BOOL - Process the last month only if it is complete"
+    },
+    "family": "monstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "monavg": {
+    "command": "monavg",
+    "params": {
+      "optional": "BOOL - Process the last month only if it is complete"
+    },
+    "family": "monstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "monstd": {
+    "command": "monstd",
+    "params": {
+      "optional": "BOOL - Process the last month only if it is complete"
+    },
+    "family": "monstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "monstd1": {
+    "command": "monstd1",
+    "params": {
+      "optional": "BOOL - Process the last month only if it is complete"
+    },
+    "family": "monstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "monvar": {
+    "command": "monvar",
+    "params": {
+      "optional": "BOOL - Process the last month only if it is complete"
+    },
+    "family": "monstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "monvar1": {
+    "command": "monvar1",
+    "params": {
+      "optional": "BOOL - Process the last month only if it is complete"
+    },
+    "family": "monstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "monpctl": {
+    "command": "monpctl",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "monpctl",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "yearmonmean": {
+    "command": "yearmonmean",
+    "params": {},
+    "family": "yearmonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yearmin": {
+    "command": "yearmin",
+    "params": {
+      "optional": "BOOL - Process the last year only if it is complete"
+    },
+    "family": "yearstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yearmax": {
+    "command": "yearmax",
+    "params": {
+      "optional": "BOOL - Process the last year only if it is complete"
+    },
+    "family": "yearstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yearminidx": {
+    "command": "yearminidx",
+    "params": {
+      "optional": "BOOL - Process the last year only if it is complete"
+    },
+    "family": "yearstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yearmaxidx": {
+    "command": "yearmaxidx",
+    "params": {
+      "optional": "BOOL - Process the last year only if it is complete"
+    },
+    "family": "yearstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yearrange": {
+    "command": "yearrange",
+    "params": {
+      "optional": "BOOL - Process the last year only if it is complete"
+    },
+    "family": "yearstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yearsum": {
+    "command": "yearsum",
+    "params": {
+      "optional": "BOOL - Process the last year only if it is complete"
+    },
+    "family": "yearstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yearmean": {
+    "command": "yearmean",
+    "params": {
+      "optional": "BOOL - Process the last year only if it is complete"
+    },
+    "family": "yearstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yearavg": {
+    "command": "yearavg",
+    "params": {
+      "optional": "BOOL - Process the last year only if it is complete"
+    },
+    "family": "yearstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yearstd": {
+    "command": "yearstd",
+    "params": {
+      "optional": "BOOL - Process the last year only if it is complete"
+    },
+    "family": "yearstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yearstd1": {
+    "command": "yearstd1",
+    "params": {
+      "optional": "BOOL - Process the last year only if it is complete"
+    },
+    "family": "yearstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yearvar": {
+    "command": "yearvar",
+    "params": {
+      "optional": "BOOL - Process the last year only if it is complete"
+    },
+    "family": "yearstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yearvar1": {
+    "command": "yearvar1",
+    "params": {
+      "optional": "BOOL - Process the last year only if it is complete"
+    },
+    "family": "yearstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yearpctl": {
+    "command": "yearpctl",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "yearpctl",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "seasmin": {
+    "command": "seasmin",
+    "params": {},
+    "family": "seasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seasmax": {
+    "command": "seasmax",
+    "params": {},
+    "family": "seasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seasrange": {
+    "command": "seasrange",
+    "params": {},
+    "family": "seasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seassum": {
+    "command": "seassum",
+    "params": {},
+    "family": "seasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seasmean": {
+    "command": "seasmean",
+    "params": {},
+    "family": "seasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seasavg": {
+    "command": "seasavg",
+    "params": {},
+    "family": "seasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seasstd": {
+    "command": "seasstd",
+    "params": {},
+    "family": "seasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seasstd1": {
+    "command": "seasstd1",
+    "params": {},
+    "family": "seasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seasvar": {
+    "command": "seasvar",
+    "params": {},
+    "family": "seasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seasvar1": {
+    "command": "seasvar1",
+    "params": {},
+    "family": "seasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "seaspctl": {
+    "command": "seaspctl",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "seaspctl",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "yhourmin": {
+    "command": "yhourmin",
+    "params": {},
+    "family": "yhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yhourmax": {
+    "command": "yhourmax",
+    "params": {},
+    "family": "yhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yhourrange": {
+    "command": "yhourrange",
+    "params": {},
+    "family": "yhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yhoursum": {
+    "command": "yhoursum",
+    "params": {},
+    "family": "yhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yhourmean": {
+    "command": "yhourmean",
+    "params": {},
+    "family": "yhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yhouravg": {
+    "command": "yhouravg",
+    "params": {},
+    "family": "yhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yhourstd": {
+    "command": "yhourstd",
+    "params": {},
+    "family": "yhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yhourstd1": {
+    "command": "yhourstd1",
+    "params": {},
+    "family": "yhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yhourvar": {
+    "command": "yhourvar",
+    "params": {},
+    "family": "yhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yhourvar1": {
+    "command": "yhourvar1",
+    "params": {},
+    "family": "yhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dhourmin": {
+    "command": "dhourmin",
+    "params": {},
+    "family": "dhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dhourmax": {
+    "command": "dhourmax",
+    "params": {},
+    "family": "dhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dhourrange": {
+    "command": "dhourrange",
+    "params": {},
+    "family": "dhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dhoursum": {
+    "command": "dhoursum",
+    "params": {},
+    "family": "dhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dhourmean": {
+    "command": "dhourmean",
+    "params": {},
+    "family": "dhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dhouravg": {
+    "command": "dhouravg",
+    "params": {},
+    "family": "dhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dhourstd": {
+    "command": "dhourstd",
+    "params": {},
+    "family": "dhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dhourstd1": {
+    "command": "dhourstd1",
+    "params": {},
+    "family": "dhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dhourvar": {
+    "command": "dhourvar",
+    "params": {},
+    "family": "dhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dhourvar1": {
+    "command": "dhourvar1",
+    "params": {},
+    "family": "dhourstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dminutemin": {
+    "command": "dminutemin",
+    "params": {},
+    "family": "dminutestat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dminutemax": {
+    "command": "dminutemax",
+    "params": {},
+    "family": "dminutestat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dminuterange": {
+    "command": "dminuterange",
+    "params": {},
+    "family": "dminutestat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dminutesum": {
+    "command": "dminutesum",
+    "params": {},
+    "family": "dminutestat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dminutemean": {
+    "command": "dminutemean",
+    "params": {},
+    "family": "dminutestat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dminuteavg": {
+    "command": "dminuteavg",
+    "params": {},
+    "family": "dminutestat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dminutestd": {
+    "command": "dminutestd",
+    "params": {},
+    "family": "dminutestat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dminutestd1": {
+    "command": "dminutestd1",
+    "params": {},
+    "family": "dminutestat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dminutevar": {
+    "command": "dminutevar",
+    "params": {},
+    "family": "dminutestat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dminutevar1": {
+    "command": "dminutevar1",
+    "params": {},
+    "family": "dminutestat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydaymin": {
+    "command": "ydaymin",
+    "params": {},
+    "family": "ydaystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydaymax": {
+    "command": "ydaymax",
+    "params": {},
+    "family": "ydaystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydayrange": {
+    "command": "ydayrange",
+    "params": {},
+    "family": "ydaystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydaysum": {
+    "command": "ydaysum",
+    "params": {},
+    "family": "ydaystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydaymean": {
+    "command": "ydaymean",
+    "params": {},
+    "family": "ydaystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydayavg": {
+    "command": "ydayavg",
+    "params": {},
+    "family": "ydaystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydaystd": {
+    "command": "ydaystd",
+    "params": {},
+    "family": "ydaystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydaystd1": {
+    "command": "ydaystd1",
+    "params": {},
+    "family": "ydaystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydayvar": {
+    "command": "ydayvar",
+    "params": {},
+    "family": "ydaystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydayvar1": {
+    "command": "ydayvar1",
+    "params": {},
+    "family": "ydaystat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydaypctl": {
+    "command": "ydaypctl",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ydaypctl",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "ymonmin": {
+    "command": "ymonmin",
+    "params": {},
+    "family": "ymonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ymonmax": {
+    "command": "ymonmax",
+    "params": {},
+    "family": "ymonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ymonrange": {
+    "command": "ymonrange",
+    "params": {},
+    "family": "ymonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ymonsum": {
+    "command": "ymonsum",
+    "params": {},
+    "family": "ymonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ymonmean": {
+    "command": "ymonmean",
+    "params": {},
+    "family": "ymonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ymonavg": {
+    "command": "ymonavg",
+    "params": {},
+    "family": "ymonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ymonstd": {
+    "command": "ymonstd",
+    "params": {},
+    "family": "ymonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ymonstd1": {
+    "command": "ymonstd1",
+    "params": {},
+    "family": "ymonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ymonvar": {
+    "command": "ymonvar",
+    "params": {},
+    "family": "ymonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ymonvar1": {
+    "command": "ymonvar1",
+    "params": {},
+    "family": "ymonstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ymonpctl": {
+    "command": "ymonpctl",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "ymonpctl",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "yseasmin": {
+    "command": "yseasmin",
+    "params": {},
+    "family": "yseasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yseasmax": {
+    "command": "yseasmax",
+    "params": {},
+    "family": "yseasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yseasrange": {
+    "command": "yseasrange",
+    "params": {},
+    "family": "yseasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yseassum": {
+    "command": "yseassum",
+    "params": {},
+    "family": "yseasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yseasmean": {
+    "command": "yseasmean",
+    "params": {},
+    "family": "yseasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yseasavg": {
+    "command": "yseasavg",
+    "params": {},
+    "family": "yseasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yseasstd": {
+    "command": "yseasstd",
+    "params": {},
+    "family": "yseasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yseasstd1": {
+    "command": "yseasstd1",
+    "params": {},
+    "family": "yseasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yseasvar": {
+    "command": "yseasvar",
+    "params": {},
+    "family": "yseasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yseasvar1": {
+    "command": "yseasvar1",
+    "params": {},
+    "family": "yseasstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "yseaspctl": {
+    "command": "yseaspctl",
+    "params": {
+      "optional": "FLOAT - Percentile number in \\{0, ..., 100\\}"
+    },
+    "family": "yseaspctl",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "ydrunmin": {
+    "command": "ydrunmin",
+    "params": {
+      "optional": ["INTEGER - Number of timesteps", "STRING - Read method circular"]
+    },
+    "family": "ydrunstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydrunmax": {
+    "command": "ydrunmax",
+    "params": {
+      "optional": ["INTEGER - Number of timesteps", "STRING - Read method circular"]
+    },
+    "family": "ydrunstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydrunsum": {
+    "command": "ydrunsum",
+    "params": {
+      "optional": ["INTEGER - Number of timesteps", "STRING - Read method circular"]
+    },
+    "family": "ydrunstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydrunmean": {
+    "command": "ydrunmean",
+    "params": {
+      "optional": ["INTEGER - Number of timesteps", "STRING - Read method circular"]
+    },
+    "family": "ydrunstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydrunavg": {
+    "command": "ydrunavg",
+    "params": {
+      "optional": ["INTEGER - Number of timesteps", "STRING - Read method circular"]
+    },
+    "family": "ydrunstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydrunstd": {
+    "command": "ydrunstd",
+    "params": {
+      "optional": ["INTEGER - Number of timesteps", "STRING - Read method circular"]
+    },
+    "family": "ydrunstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydrunstd1": {
+    "command": "ydrunstd1",
+    "params": {
+      "optional": ["INTEGER - Number of timesteps", "STRING - Read method circular"]
+    },
+    "family": "ydrunstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydrunvar": {
+    "command": "ydrunvar",
+    "params": {
+      "optional": ["INTEGER - Number of timesteps", "STRING - Read method circular"]
+    },
+    "family": "ydrunstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydrunvar1": {
+    "command": "ydrunvar1",
+    "params": {
+      "optional": ["INTEGER - Number of timesteps", "STRING - Read method circular"]
+    },
+    "family": "ydrunstat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ydrunpctl": {
+    "command": "ydrunpctl",
+    "params": {
+      "optional": ["FLOAT - Percentile number in \\{0, ..., 100\\}", "INTEGER - Number of timesteps", "STRING - Read method circular", "STRING - Percentile method rtype8"]
+    },
+    "family": "ydrunpctl",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "fldcor": {
+    "command": "fldcor",
+    "params": {},
+    "family": "fldcor",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "timcor": {
+    "command": "timcor",
+    "params": {},
+    "family": "timcor",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "fldcovar": {
+    "command": "fldcovar",
+    "params": {},
+    "family": "fldcovar",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "timcovar": {
+    "command": "timcovar",
+    "params": {},
+    "family": "timcovar",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "regres": {
+    "command": "regres",
+    "params": {
+      "optional": "BOOL - Set to false for unequal distributed timesteps (default: true)"
+    },
+    "family": "regres",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "detrend": {
+    "command": "detrend",
+    "params": {
+      "optional": "BOOL - Set to false for unequal distributed timesteps (default: true)"
+    },
+    "family": "detrend",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "trend": {
+    "command": "trend",
+    "params": {
+      "optional": "BOOL - Set to false for unequal distributed timesteps (default: true)"
+    },
+    "family": "trend",
+    "n_input": 1,
+    "n_output": 2
+  },
+  "addtrend": {
+    "command": "addtrend",
+    "params": {
+      "optional": "BOOL - Set to false for unequal distributed timesteps (default: true)"
+    },
+    "family": "trendarith",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "subtrend": {
+    "command": "subtrend",
+    "params": {
+      "optional": "BOOL - Set to false for unequal distributed timesteps (default: true)"
+    },
+    "family": "trendarith",
+    "n_input": 3,
+    "n_output": 1
+  },
+  "eof": {
+    "command": "eof",
+    "params": {
+      "optional": "INTEGER - Number of eigen functions"
+    },
+    "family": "eofs",
+    "n_input": 1,
+    "n_output": 2
+  },
+  "eoftime": {
+    "command": "eoftime",
+    "params": {
+      "optional": "INTEGER - Number of eigen functions"
+    },
+    "family": "eofs",
+    "n_input": 1,
+    "n_output": 2
+  },
+  "eofspatial": {
+    "command": "eofspatial",
+    "params": {
+      "optional": "INTEGER - Number of eigen functions"
+    },
+    "family": "eofs",
+    "n_input": 1,
+    "n_output": 2
+  },
+  "eof3d": {
+    "command": "eof3d",
+    "params": {
+      "optional": "INTEGER - Number of eigen functions"
+    },
+    "family": "eofs",
+    "n_input": 1,
+    "n_output": 2
+  },
+  "eofcoeff": {
+    "command": "eofcoeff",
+    "params": {},
+    "family": "eofcoeff",
+    "n_input": 2,
+    "n_output": "Inf"
+  },
+  "remapbil": {
+    "command": "remapbil",
+    "params": {
+      "optional": ["STRING - Target grid description file or name", "BOOL - Generate all mapfiles of the first 3D field"]
+    },
+    "family": "remapbil",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "genbil": {
+    "command": "genbil",
+    "params": {
+      "optional": ["STRING - Target grid description file or name", "BOOL - Generate all mapfiles of the first 3D field"]
+    },
+    "family": "remapbil",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapbic": {
+    "command": "remapbic",
+    "params": {
+      "optional": ["STRING - Target grid description file or name", "BOOL - Generate all mapfiles of the first 3D field"]
+    },
+    "family": "remapbic",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "genbic": {
+    "command": "genbic",
+    "params": {
+      "optional": ["STRING - Target grid description file or name", "BOOL - Generate all mapfiles of the first 3D field"]
+    },
+    "family": "remapbic",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapnn": {
+    "command": "remapnn",
+    "params": {
+      "optional": ["STRING - Target grid description file or name", "BOOL - Generate all mapfiles of the first 3D field"]
+    },
+    "family": "remapnn",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gennn": {
+    "command": "gennn",
+    "params": {
+      "optional": ["STRING - Target grid description file or name", "BOOL - Generate all mapfiles of the first 3D field"]
+    },
+    "family": "remapnn",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapdis": {
+    "command": "remapdis",
+    "params": {
+      "optional": ["STRING - Target grid description file or name", "INTEGER - Number of nearest neighbors \\[default: 4\\]", "BOOL - Generate all mapfiles of the first 3D field"]
+    },
+    "family": "remapdis",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gendis": {
+    "command": "gendis",
+    "params": {
+      "optional": ["STRING - Target grid description file or name", "INTEGER - Number of nearest neighbors \\[default: 4\\]", "BOOL - Generate all mapfiles of the first 3D field"]
+    },
+    "family": "remapdis",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapcon": {
+    "command": "remapcon",
+    "params": {
+      "optional": ["STRING - Target grid description file or name", "BOOL - Generate all mapfiles of the first 3D field"]
+    },
+    "family": "remapcon",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gencon": {
+    "command": "gencon",
+    "params": {
+      "optional": ["STRING - Target grid description file or name", "BOOL - Generate all mapfiles of the first 3D field"]
+    },
+    "family": "remapcon",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remaplaf": {
+    "command": "remaplaf",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remaplaf",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "genlaf": {
+    "command": "genlaf",
+    "params": {
+      "optional": "STRING - Target grid description file or name"
+    },
+    "family": "remaplaf",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remap": {
+    "command": "remap",
+    "params": {
+      "optional": ["STRING - Target grid description file or name", "STRING - Interpolation weights (SCRIP NetCDF file)"]
+    },
+    "family": "remap",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "remapeta": {
+    "command": "remapeta",
+    "params": {
+      "optional": ["STRING - File name of an ASCII dataset with the vertical coordinate table", "STRING - File name with the orography (surf. geopotential) of the target dataset (optional)"]
+    },
+    "family": "remapeta",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ml2pl": {
+    "command": "ml2pl",
+    "params": {
+      "optional": ["FLOAT - Pressure levels in pascal", "FLOAT - Height levels in meter"]
+    },
+    "family": "vertintml",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ml2hl": {
+    "command": "ml2hl",
+    "params": {
+      "optional": ["FLOAT - Pressure levels in pascal", "FLOAT - Height levels in meter"]
+    },
+    "family": "vertintml",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "ap2pl": {
+    "command": "ap2pl",
+    "params": {
+      "optional": "FLOAT - Comma-separated list of pressure levels in pascal"
+    },
+    "family": "vertintap",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gh2hl": {
+    "command": "gh2hl",
+    "params": {
+      "optional": "FLOAT - Comma-separated list of height levels in meter"
+    },
+    "family": "vertintgh",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "intlevel": {
+    "command": "intlevel",
+    "params": {
+      "optional": ["FLOAT - Comma-separated list of target levels", "STRING - Path to a file containing a description of the Z-axis", "STRING - Use zvarname as the vertical 3D source coordinate instead of the 1D coordinate variable", "BOOL - Fill target layers out of the source layer range with the nearest source layer"]
+    },
+    "family": "intlevel",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "intlevel3d": {
+    "command": "intlevel3d",
+    "params": {
+      "optional": "STRING - filename for 3D vertical target coordinates"
+    },
+    "family": "intlevel3d",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "intlevelx3d": {
+    "command": "intlevelx3d",
+    "params": {
+      "optional": "STRING - filename for 3D vertical target coordinates"
+    },
+    "family": "intlevel3d",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "inttime": {
+    "command": "inttime",
+    "params": {
+      "optional": ["STRING - Start date (format YYYY-MM-DD)", "STRING - Start time (format hh:mm:ss)", "STRING - Optional increment (seconds, minutes, hours, days, months, years) \\[default: 0hour\\]", "INTEGER - Number of timesteps from one timestep to the next"]
+    },
+    "family": "inttime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "intntime": {
+    "command": "intntime",
+    "params": {
+      "optional": ["STRING - Start date (format YYYY-MM-DD)", "STRING - Start time (format hh:mm:ss)", "STRING - Optional increment (seconds, minutes, hours, days, months, years) \\[default: 0hour\\]", "INTEGER - Number of timesteps from one timestep to the next"]
+    },
+    "family": "inttime",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "intyear": {
+    "command": "intyear",
+    "params": {
+      "optional": "INTEGER - Comma-separated list or first/last\\[/inc\\] range of years"
+    },
+    "family": "intyear",
+    "n_input": 2,
+    "n_output": "Inf"
+  },
+  "sp2gp": {
+    "command": "sp2gp",
+    "params": {
+      "optional": ["STRING - Type of the grid: quadratic, linear, cubic (default: type=quadratic)", "STRING - Triangular truncation"]
+    },
+    "family": "spectral",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gp2sp": {
+    "command": "gp2sp",
+    "params": {
+      "optional": ["STRING - Type of the grid: quadratic, linear, cubic (default: type=quadratic)", "STRING - Triangular truncation"]
+    },
+    "family": "spectral",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "sp2sp": {
+    "command": "sp2sp",
+    "params": {
+      "optional": "INTEGER - New spectral resolution"
+    },
+    "family": "specconv",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dv2ps": {
+    "command": "dv2ps",
+    "params": {},
+    "family": "wind2",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "dv2uv": {
+    "command": "dv2uv",
+    "params": {
+      "optional": "STRING - Type of the grid: quadratic, linear, cubic (default: quadratic)"
+    },
+    "family": "wind",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "uv2dv": {
+    "command": "uv2dv",
+    "params": {
+      "optional": "STRING - Type of the grid: quadratic, linear, cubic (default: quadratic)"
+    },
+    "family": "wind",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "fourier": {
+    "command": "fourier",
+    "params": {
+      "optional": "INTEGER - -1: forward transformation; 1: backward transformation"
+    },
+    "family": "fourier",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "import_binary": {
+    "command": "import_binary",
+    "params": {},
+    "family": "importbinary",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "import_cmsaf": {
+    "command": "import_cmsaf",
+    "params": {},
+    "family": "importcmsaf",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "import_amsr": {
+    "command": "import_amsr",
+    "params": {},
+    "family": "importamsr",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "input": {
+    "command": "input",
+    "params": {
+      "optional": ["STRING - Grid description file or name", "STRING - Z-axis description file"]
+    },
+    "family": "input",
+    "n_input": 0,
+    "n_output": 1
+  },
+  "inputsrv": {
+    "command": "inputsrv",
+    "params": {
+      "optional": ["STRING - Grid description file or name", "STRING - Z-axis description file"]
+    },
+    "family": "input",
+    "n_input": 0,
+    "n_output": 1
+  },
+  "inputext": {
+    "command": "inputext",
+    "params": {
+      "optional": ["STRING - Grid description file or name", "STRING - Z-axis description file"]
+    },
+    "family": "input",
+    "n_input": 0,
+    "n_output": 1
+  },
+  "output": {
+    "command": "output",
+    "params": {
+      "optional": ["STRING - C-style format for one element (e.g. %13.6g)", "INTEGER - Number of elements for each row (default: nelem = 1)"]
+    },
+    "family": "output",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "outputf": {
+    "command": "outputf",
+    "params": {
+      "optional": ["STRING - C-style format for one element (e.g. %13.6g)", "INTEGER - Number of elements for each row (default: nelem = 1)"]
+    },
+    "family": "output",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "outputint": {
+    "command": "outputint",
+    "params": {
+      "optional": ["STRING - C-style format for one element (e.g. %13.6g)", "INTEGER - Number of elements for each row (default: nelem = 1)"]
+    },
+    "family": "output",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "outputsrv": {
+    "command": "outputsrv",
+    "params": {
+      "optional": ["STRING - C-style format for one element (e.g. %13.6g)", "INTEGER - Number of elements for each row (default: nelem = 1)"]
+    },
+    "family": "output",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "outputext": {
+    "command": "outputext",
+    "params": {
+      "optional": ["STRING - C-style format for one element (e.g. %13.6g)", "INTEGER - Number of elements for each row (default: nelem = 1)"]
+    },
+    "family": "output",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "outputtab": {
+    "command": "outputtab",
+    "params": {
+      "optional": "STRING - Comma-separated list of keynames, one for each column of the table"
+    },
+    "family": "outputtab",
+    "n_input": "Inf",
+    "n_output": 0
+  },
+  "gmtxyz": {
+    "command": "gmtxyz",
+    "params": {},
+    "family": "outputgmt",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "gmtcells": {
+    "command": "gmtcells",
+    "params": {},
+    "family": "outputgmt",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "gradsdes": {
+    "command": "gradsdes",
+    "params": {
+      "optional": "INTEGER - Format version of the GrADS map file for GRIB1 datasets. Use 1 for a machinespecific version 1 GrADS map file, 2 for a machine independent version 2 GrADS map fileand 4 to support GRIB files >2GB.A version 2 map file can be used only with GrADS version 1.8 or newer.A version 4 map file can be used only with GrADS version 2.0 or newer.The default is 4 for files >2GB, otherwise 2."
+    },
+    "family": "gradsdes",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "after": {
+    "command": "after",
+    "params": {
+      "optional": "STRING - File with VCT in ASCII format"
+    },
+    "family": "afterburner",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "bandpass": {
+    "command": "bandpass",
+    "params": {
+      "optional": ["FLOAT\tMinimum - frequency per year that passes the filter.", "FLOAT\tMaximum - frequency per year that passes the filter."]
+    },
+    "family": "filter",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "lowpass": {
+    "command": "lowpass",
+    "params": {
+      "optional": ["FLOAT\tMinimum - frequency per year that passes the filter.", "FLOAT\tMaximum - frequency per year that passes the filter."]
+    },
+    "family": "filter",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "highpass": {
+    "command": "highpass",
+    "params": {
+      "optional": ["FLOAT\tMinimum - frequency per year that passes the filter.", "FLOAT\tMaximum - frequency per year that passes the filter."]
+    },
+    "family": "filter",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridarea": {
+    "command": "gridarea",
+    "params": {
+      "optional": "FLOAT - Planet radius in meter"
+    },
+    "family": "gridcell",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridweights": {
+    "command": "gridweights",
+    "params": {
+      "optional": "FLOAT - Planet radius in meter"
+    },
+    "family": "gridcell",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "smooth": {
+    "command": "smooth",
+    "params": {
+      "optional": ["INTEGER - Number of times to smooth, default nsmooth=1", "STRING - Search radius, default radius=1deg (units: deg, rad, km, m)", "INTEGER - Maximum number of points, default maxpoints=<gridsize>", "STRING - Weighting method, default weighted=linear", "FLOAT - Weight at distance 0, default weight0=0.25", "FLOAT - Weight at the search radius, default weightR=0.25"]
+    },
+    "family": "smooth",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "smooth9": {
+    "command": "smooth9",
+    "params": {
+      "optional": ["INTEGER - Number of times to smooth, default nsmooth=1", "STRING - Search radius, default radius=1deg (units: deg, rad, km, m)", "INTEGER - Maximum number of points, default maxpoints=<gridsize>", "STRING - Weighting method, default weighted=linear", "FLOAT - Weight at distance 0, default weight0=0.25", "FLOAT - Weight at the search radius, default weightR=0.25"]
+    },
+    "family": "smooth",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "deltat": {
+    "command": "deltat",
+    "params": {},
+    "family": "deltat",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setvals": {
+    "command": "setvals",
+    "params": {
+      "optional": ["FLOAT - Pairs of old and new values", "FLOAT - Pairs of old and new values", "FLOAT - Lower bound", "FLOAT - Upper bound", "FLOAT - New value - inside range", "FLOAT - New value - outside range"]
+    },
+    "family": "replacevalues",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setrtoc": {
+    "command": "setrtoc",
+    "params": {
+      "optional": ["FLOAT - Pairs of old and new values", "FLOAT - Pairs of old and new values", "FLOAT - Lower bound", "FLOAT - Upper bound", "FLOAT - New value - inside range", "FLOAT - New value - outside range"]
+    },
+    "family": "replacevalues",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "setrtoc2": {
+    "command": "setrtoc2",
+    "params": {
+      "optional": ["FLOAT - Pairs of old and new values", "FLOAT - Pairs of old and new values", "FLOAT - Lower bound", "FLOAT - Upper bound", "FLOAT - New value - inside range", "FLOAT - New value - outside range"]
+    },
+    "family": "replacevalues",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gridcellindex": {
+    "command": "gridcellindex",
+    "params": {
+      "optional": ["INTEGER - Longitude of the grid cell in degree", "INTEGER - Latitude of the grid cell in degree"]
+    },
+    "family": "getgridcell",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "const": {
+    "command": "const",
+    "params": {
+      "optional": ["FLOAT - Constant", "INTEGER - The seed for a new sequence of pseudo-random numbers \\[default: 1\\]", "STRING - Target grid description file or name", "FLOAT - Start value of the loop", "FLOAT - End value of the loop", "FLOAT - Increment of the loop \\[default: 1\\]", "FLOAT - Target levels in metre above surface"]
+    },
+    "family": "vargen",
+    "n_input": 0,
+    "n_output": 1
+  },
+  "random": {
+    "command": "random",
+    "params": {
+      "optional": ["FLOAT - Constant", "INTEGER - The seed for a new sequence of pseudo-random numbers \\[default: 1\\]", "STRING - Target grid description file or name", "FLOAT - Start value of the loop", "FLOAT - End value of the loop", "FLOAT - Increment of the loop \\[default: 1\\]", "FLOAT - Target levels in metre above surface"]
+    },
+    "family": "vargen",
+    "n_input": 0,
+    "n_output": 1
+  },
+  "topo": {
+    "command": "topo",
+    "params": {
+      "optional": ["FLOAT - Constant", "INTEGER - The seed for a new sequence of pseudo-random numbers \\[default: 1\\]", "STRING - Target grid description file or name", "FLOAT - Start value of the loop", "FLOAT - End value of the loop", "FLOAT - Increment of the loop \\[default: 1\\]", "FLOAT - Target levels in metre above surface"]
+    },
+    "family": "vargen",
+    "n_input": 0,
+    "n_output": 1
+  },
+  "seq": {
+    "command": "seq",
+    "params": {
+      "optional": ["FLOAT - Constant", "INTEGER - The seed for a new sequence of pseudo-random numbers \\[default: 1\\]", "STRING - Target grid description file or name", "FLOAT - Start value of the loop", "FLOAT - End value of the loop", "FLOAT - Increment of the loop \\[default: 1\\]", "FLOAT - Target levels in metre above surface"]
+    },
+    "family": "vargen",
+    "n_input": 0,
+    "n_output": 1
+  },
+  "stdatm": {
+    "command": "stdatm",
+    "params": {
+      "optional": ["FLOAT - Constant", "INTEGER - The seed for a new sequence of pseudo-random numbers \\[default: 1\\]", "STRING - Target grid description file or name", "FLOAT - Start value of the loop", "FLOAT - End value of the loop", "FLOAT - Increment of the loop \\[default: 1\\]", "FLOAT - Target levels in metre above surface"]
+    },
+    "family": "vargen",
+    "n_input": 0,
+    "n_output": 1
+  },
+  "timsort": {
+    "command": "timsort",
+    "params": {},
+    "family": "timsort",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "rotuvb": {
+    "command": "rotuvb",
+    "params": {
+      "optional": ["STRING - Pairs of zonal and meridional velocity components (use variable names or code numbers)", "STRING - Pairs of zonal and meridional velocity components (use variable names or code numbers)"]
+    },
+    "family": "rotuvb",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "mrotuvb": {
+    "command": "mrotuvb",
+    "params": {},
+    "family": "mrotuvb",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "mastrfu": {
+    "command": "mastrfu",
+    "params": {},
+    "family": "mastrfu",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "pressure_half": {
+    "command": "pressure_half",
+    "params": {},
+    "family": "pressure",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "pressure": {
+    "command": "pressure",
+    "params": {},
+    "family": "pressure",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "delta_pressure": {
+    "command": "delta_pressure",
+    "params": {},
+    "family": "pressure",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "sealevelpressure": {
+    "command": "sealevelpressure",
+    "params": {},
+    "family": "derivepar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gheight": {
+    "command": "gheight",
+    "params": {},
+    "family": "derivepar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "gheight_half": {
+    "command": "gheight_half",
+    "params": {},
+    "family": "derivepar",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "adisit": {
+    "command": "adisit",
+    "params": {
+      "optional": "FLOAT - Pressure in bar (constant value assigned to all levels)"
+    },
+    "family": "adisit",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "adipot": {
+    "command": "adipot",
+    "params": {
+      "optional": "FLOAT - Pressure in bar (constant value assigned to all levels)"
+    },
+    "family": "adisit",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "rhopot": {
+    "command": "rhopot",
+    "params": {
+      "optional": "FLOAT - Pressure in bar (constant value assigned to all levels)"
+    },
+    "family": "rhopot",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "histcount": {
+    "command": "histcount",
+    "params": {
+      "optional": "FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)"
+    },
+    "family": "histogram",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "histsum": {
+    "command": "histsum",
+    "params": {
+      "optional": "FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)"
+    },
+    "family": "histogram",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "histmean": {
+    "command": "histmean",
+    "params": {
+      "optional": "FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)"
+    },
+    "family": "histogram",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "histfreq": {
+    "command": "histfreq",
+    "params": {
+      "optional": "FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)"
+    },
+    "family": "histogram",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "sethalo": {
+    "command": "sethalo",
+    "params": {
+      "optional": ["INTEGER - East halo", "INTEGER - West halo", "INTEGER - South halo", "INTEGER - North halo", "FLOAT - Fill value (default is the missing value)"]
+    },
+    "family": "sethalo",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "wct": {
+    "command": "wct",
+    "params": {},
+    "family": "wct",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "fdns": {
+    "command": "fdns",
+    "params": {},
+    "family": "fdns",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "strwin": {
+    "command": "strwin",
+    "params": {
+      "optional": "FLOAT - Horizontal wind speed threshold (m/s, default v = 10.5 m/s)"
+    },
+    "family": "strwin",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "strbre": {
+    "command": "strbre",
+    "params": {},
+    "family": "strbre",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "strgal": {
+    "command": "strgal",
+    "params": {},
+    "family": "strgal",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "hurr": {
+    "command": "hurr",
+    "params": {},
+    "family": "hurr",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "cmorlite": {
+    "command": "cmorlite",
+    "params": {
+      "optional": ["STRING - Name of the CMOR table as specified from PCMDI", "STRING - Converts the units if necessary"]
+    },
+    "family": "cmorlite",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "verifygrid": {
+    "command": "verifygrid",
+    "params": {},
+    "family": "verifygrid",
+    "n_input": 1,
+    "n_output": 0
+  },
+  "hpdegrade": {
+    "command": "hpdegrade",
+    "params": {
+      "optional": ["INTEGER - The nside of the target healpix, must be a power of two \\[default: same as input\\].", "STRING - Pixel ordering of the target healpix ('nested' or 'ring').", "FLOAT - If non-zero, divide the result by (nside\\[in\\]/nside\\[out\\])**power. power=-2 keeps the sum of the map invariant."]
+    },
+    "family": "healpix",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "hpupgrade": {
+    "command": "hpupgrade",
+    "params": {
+      "optional": ["INTEGER - The nside of the target healpix, must be a power of two \\[default: same as input\\].", "STRING - Pixel ordering of the target healpix ('nested' or 'ring').", "FLOAT - If non-zero, divide the result by (nside\\[in\\]/nside\\[out\\])**power. power=-2 keeps the sum of the map invariant."]
+    },
+    "family": "healpix",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "uv2vr_cfd": {
+    "command": "uv2vr_cfd",
+    "params": {
+      "optional": ["STRING - Name of variable u (default: u)", "STRING - Name of variable v (default: v)", "INTEGER - Boundary condition option (0-3) (default: 0/1 for cyclic grids)", "STRING - Output mode new/append (default: new)"]
+    },
+    "family": "ncl_wind",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "uv2dv_cfd": {
+    "command": "uv2dv_cfd",
+    "params": {
+      "optional": ["STRING - Name of variable u (default: u)", "STRING - Name of variable v (default: v)", "INTEGER - Boundary condition option (0-3) (default: 0/1 for cyclic grids)", "STRING - Output mode new/append (default: new)"]
+    },
+    "family": "ncl_wind",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "contour": {
+    "command": "contour",
+    "params": {
+      "optional": "STRING - Comma-separated list of plot parameters"
+    },
+    "family": "magplot",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "shaded": {
+    "command": "shaded",
+    "params": {
+      "optional": "STRING - Comma-separated list of plot parameters"
+    },
+    "family": "magplot",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "grfill": {
+    "command": "grfill",
+    "params": {
+      "optional": "STRING - Comma-separated list of plot parameters"
+    },
+    "family": "magplot",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "vector": {
+    "command": "vector",
+    "params": {
+      "optional": "STRING - Comma-separated list of plot parameters"
+    },
+    "family": "magvector",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "graph": {
+    "command": "graph",
+    "params": {
+      "optional": "STRING - Comma-separated list of plot parameters"
+    },
+    "family": "maggraph",
+    "n_input": "Inf",
+    "n_output": 1
+  },
+  "eca_cdd": {
+    "command": "eca_cdd",
+    "params": {
+      "optional": ["FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)", "INTEGER - Minimum number of days exceeded (default: N = 5)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecacdd",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "etccdi_cdd": {
+    "command": "etccdi_cdd",
+    "params": {
+      "optional": ["FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)", "INTEGER - Minimum number of days exceeded (default: N = 5)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecacdd",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_cfd": {
+    "command": "eca_cfd",
+    "params": {
+      "optional": "INTEGER - Minimum number of days exceeded (default: N = 5)"
+    },
+    "family": "ecacfd",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_csu": {
+    "command": "eca_csu",
+    "params": {
+      "optional": ["FLOAT - Temperature threshold (unit: °C; default: T = 25°C)", "INTEGER - Minimum number of days exceeded (default: N = 5)"]
+    },
+    "family": "ecacsu",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_cwd": {
+    "command": "eca_cwd",
+    "params": {
+      "optional": ["FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)", "INTEGER - Minimum number of days exceeded (default: N = 5)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecacwd",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "etccdi_cwd": {
+    "command": "etccdi_cwd",
+    "params": {
+      "optional": ["FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)", "INTEGER - Minimum number of days exceeded (default: N = 5)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecacwd",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_cwdi": {
+    "command": "eca_cwdi",
+    "params": {
+      "optional": ["INTEGER - Number of consecutive days (default: nday = 6)", "FLOAT - Temperature offset (unit: °C; default: T = 5°C)"]
+    },
+    "family": "ecacwdi",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_cwfi": {
+    "command": "eca_cwfi",
+    "params": {
+      "optional": ["INTEGER - Number of consecutive days (default: nday = 6)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecacwfi",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "etccdi_csdi": {
+    "command": "etccdi_csdi",
+    "params": {
+      "optional": ["INTEGER - Number of consecutive days (default: nday = 6)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecacwfi",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_etr": {
+    "command": "eca_etr",
+    "params": {},
+    "family": "ecaetr",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_fd": {
+    "command": "eca_fd",
+    "params": {
+      "optional": "STRING - Output frequency (year, month)"
+    },
+    "family": "ecafd",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "etccdi_fd": {
+    "command": "etccdi_fd",
+    "params": {
+      "optional": "STRING - Output frequency (year, month)"
+    },
+    "family": "ecafd",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_gsl": {
+    "command": "eca_gsl",
+    "params": {
+      "optional": ["INTEGER - Number of consecutive days (default: nday = 6)", "FLOAT - Temperature threshold (unit: °C; default: T = 5°C)", "FLOAT - Land fraction threshold (default: fland = 0.5)"]
+    },
+    "family": "ecagsl",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_hd": {
+    "command": "eca_hd",
+    "params": {
+      "optional": ["FLOAT - Temperature limit (unit: °C; default: T1 = 17°C)", "FLOAT - Temperature limit (unit: °C; default: T2 = T1)"]
+    },
+    "family": "ecahd",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_hwdi": {
+    "command": "eca_hwdi",
+    "params": {
+      "optional": ["INTEGER - Number of consecutive days (default: nday = 6)", "FLOAT - Temperature offset (unit: °C; default: T = 5°C)"]
+    },
+    "family": "ecahwdi",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_hwfi": {
+    "command": "eca_hwfi",
+    "params": {
+      "optional": ["INTEGER - Number of consecutive days (default: nday = 6)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecahwfi",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "etccdi_wsdi": {
+    "command": "etccdi_wsdi",
+    "params": {
+      "optional": ["INTEGER - Number of consecutive days (default: nday = 6)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecahwfi",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_id": {
+    "command": "eca_id",
+    "params": {
+      "optional": "STRING - Output frequency (year, month)"
+    },
+    "family": "ecaid",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "etccdi_id": {
+    "command": "etccdi_id",
+    "params": {
+      "optional": "STRING - Output frequency (year, month)"
+    },
+    "family": "ecaid",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_r75p": {
+    "command": "eca_r75p",
+    "params": {},
+    "family": "ecar75p",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_r75ptot": {
+    "command": "eca_r75ptot",
+    "params": {},
+    "family": "ecar75ptot",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_r90p": {
+    "command": "eca_r90p",
+    "params": {},
+    "family": "ecar90p",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_r90ptot": {
+    "command": "eca_r90ptot",
+    "params": {},
+    "family": "ecar90ptot",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_r95p": {
+    "command": "eca_r95p",
+    "params": {},
+    "family": "ecar95p",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_r95ptot": {
+    "command": "eca_r95ptot",
+    "params": {},
+    "family": "ecar95ptot",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_r99p": {
+    "command": "eca_r99p",
+    "params": {},
+    "family": "ecar99p",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_r99ptot": {
+    "command": "eca_r99ptot",
+    "params": {},
+    "family": "ecar99ptot",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_pd": {
+    "command": "eca_pd",
+    "params": {
+      "optional": ["FLOAT - Daily precipitation amount threshold in \\[mm\\]", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecapd",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_r10mm": {
+    "command": "eca_r10mm",
+    "params": {
+      "optional": ["FLOAT - Daily precipitation amount threshold in \\[mm\\]", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecapd",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_r20mm": {
+    "command": "eca_r20mm",
+    "params": {
+      "optional": ["FLOAT - Daily precipitation amount threshold in \\[mm\\]", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecapd",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "etccdi_r1mm": {
+    "command": "etccdi_r1mm",
+    "params": {
+      "optional": ["FLOAT - Daily precipitation amount threshold in \\[mm\\]", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecapd",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_rr1": {
+    "command": "eca_rr1",
+    "params": {
+      "optional": "FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)"
+    },
+    "family": "ecarr1",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_rx1day": {
+    "command": "eca_rx1day",
+    "params": {
+      "optional": "STRING - Output frequency (year, month)"
+    },
+    "family": "ecarx1day",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "etccdi_rx1day": {
+    "command": "etccdi_rx1day",
+    "params": {
+      "optional": "STRING - Output frequency (year, month)"
+    },
+    "family": "ecarx1day",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_rx5day": {
+    "command": "eca_rx5day",
+    "params": {
+      "optional": ["FLOAT - Precipitation threshold (unit: mm; default: x = 50 mm)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecarx5day",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "etccdi_rx5day": {
+    "command": "etccdi_rx5day",
+    "params": {
+      "optional": ["FLOAT - Precipitation threshold (unit: mm; default: x = 50 mm)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecarx5day",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_sdii": {
+    "command": "eca_sdii",
+    "params": {
+      "optional": "FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)"
+    },
+    "family": "ecasdii",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_su": {
+    "command": "eca_su",
+    "params": {
+      "optional": ["FLOAT - Temperature threshold (unit: °C; default: T = 25°C)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecasu",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "etccdi_su": {
+    "command": "etccdi_su",
+    "params": {
+      "optional": ["FLOAT - Temperature threshold (unit: °C; default: T = 25°C)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecasu",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_tg10p": {
+    "command": "eca_tg10p",
+    "params": {},
+    "family": "ecatg10p",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_tg90p": {
+    "command": "eca_tg90p",
+    "params": {},
+    "family": "ecatg90p",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_tn10p": {
+    "command": "eca_tn10p",
+    "params": {},
+    "family": "ecatn10p",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_tn90p": {
+    "command": "eca_tn90p",
+    "params": {},
+    "family": "ecatn90p",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_tr": {
+    "command": "eca_tr",
+    "params": {
+      "optional": ["FLOAT - Temperature threshold (unit: °C; default: T = 20°C)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecatr",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "etccdi_tr": {
+    "command": "etccdi_tr",
+    "params": {
+      "optional": ["FLOAT - Temperature threshold (unit: °C; default: T = 20°C)", "STRING - Output frequency (year, month)"]
+    },
+    "family": "ecatr",
+    "n_input": 1,
+    "n_output": 1
+  },
+  "eca_tx10p": {
+    "command": "eca_tx10p",
+    "params": {},
+    "family": "ecatx10p",
+    "n_input": 2,
+    "n_output": 1
+  },
+  "eca_tx90p": {
+    "command": "eca_tx90p",
+    "params": {},
+    "family": "ecatx90p",
+    "n_input": 2,
+    "n_output": 1
+  }
+}
