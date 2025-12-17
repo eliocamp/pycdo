@@ -1,4 +1,23 @@
 class CdoOptions:
+    """
+    Manage CDO options
+    
+    Parameters
+    ----------
+    options : str 
+        Options for CDO to use globally (e.g. "-L")
+    
+        
+
+    Examples
+    --------
+    from pycdo import cdo_options
+    # Use thread safe implementation
+    cdo_options$set("-L")
+
+    # Remove all options
+    cdo_options$clear()
+    """
     def __init__(self):
         self._options = None
 

@@ -8,6 +8,29 @@ import subprocess
 inf=float("inf")
 
 def cdo(input) -> "CdoOperation":
+    """
+    Create a CDO operation
+    
+    Parameters
+    ----------
+    input : str or list of str
+            Path to the file or files. 
+    
+    Returns
+    -------
+    CdoOperation
+        A no-op CDO operation. Chain methods to chain other CDO operators and execute
+        the operation with the execute method. 
+    
+    Examples
+    --------
+
+    clim_sh_temperature = cdo("temperature.nc").\
+        sellonlatbox(0, 360, -90, 0).\
+        ymonmean().\
+        execute()
+    """
+
     return CdoOperation._start(ifile=input)
 
 class CdoOperation:
@@ -58,12 +81,6 @@ class CdoOperation:
         return CdoOperation(inputs, operator, params)
 
     def _build(self, top_level=True, options=None, options_replace=False):
-        """
-        Build the CDO command as a string.
-        If an input is a CdoOperation, recursively build its command (without 'cdo') and wrap in parentheses.
-        Only the top-level operation should be prefixed with 'cdo'.
-        """
-
         cmd = []
         if top_level:
             cmd.append("cdo")
@@ -102,25 +119,44 @@ class CdoOperation:
         # for cleaner output
         return " ".join(cmd).replace("  ", " ")
 
-    def execute(self, output_file=None, options=None) -> str:
+    def execute(self, output=None, options=None, options_replace=False) -> str:
         """
-        Build the CDO command, append the output file, and execute it as a system call.
-        If output_file is not provided, use a random temporary file.
+        Execute a CdoOperation
 
-        :param output_file: Path to the output file (optional).
-        :return: (returncode, output_file)
+        Parameters
+        ----------
+        output : str or None
+            The path to the output or output paths to save the result. If None, 
+            then a temporary file will be used. 
+
+        options : str or None
+            Optional options to use for this operation. 
+        options_replace : Boolean
+            Whether to replace the global options defined in pycdo.cdo_options or just add them. 
+        
+        Returns
+        -------
+        str or list of str
+            The output. If the operator returns one or more files, the path to the file(s). 
+            If the operator prints info (such as cdo().griddes()) the output of that operator.
+        
         """
-        if output_file is None:
-            fd, output_file = tempfile.mkstemp()
-            os.close(fd)  # Close the file descriptor, CDO will write to the path
 
-        cmd = f"{self._build(options = options)} {output_file}"
+        if (self.operator.command == "noop"):
+            return self.input
+        
+        if output is None:
+            fd, output = tempfile.mkstemp()
+            os.close(fd) 
+
+        output_str = " ".join(output)
+        cmd = f"{self._build(options = options, options_replace = options_replace)} {output_str}"
         result = subprocess.run(cmd, shell=True)
 
         if result.returncode != 0:
             raise subprocess.CalledProcessError(result.returncode, cmd)
         
-        return output_file
+        return output
 
     def __repr__(self):
         return("CDO operation.\n"+ self._build() + " {output}")
