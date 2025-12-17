@@ -152,20 +152,37 @@ class CdoOperation:
             return self.input
         
         if output is None:
-            fd, output = tempfile.mkstemp()
-            os.close(fd) 
-
-        output_str = " ".join(output)
+            n_files = self.operator.n_output
+            output = []
+            for _ in range(n_files):
+                fd, file = tempfile.mkstemp()
+                output.append(file)
+                os.close(fd) 
+        
+        if isinstance(output, list):
+            output_str = " ".join(output)
+        else:
+            output_str = output
+        
         cmd = f"{self._build(options = options, options_replace = options_replace)} {output_str}"
-        result = subprocess.run(cmd, shell=True)
+        result = subprocess.run(cmd, shell = True, capture_output = True)
 
         if result.returncode != 0:
             raise subprocess.CalledProcessError(result.returncode, cmd)
+        if n_files == 0:
+            return result.stdout
         
+        if isinstance(output, list) and len(output) == 1:
+            output = output[0]
         return output
 
     def __repr__(self):
-        return("CDO operation.\n"+ self._build() + " {output}")
+        n_files = self.operator.n_output
+        if n_files > 0:
+            placeholder = " {output}"
+        else:
+            placeholder = ""
+        return("CDO operation.\n"+ self._build() + placeholder)
 
 ## <<start operators>>
 
