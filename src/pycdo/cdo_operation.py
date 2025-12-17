@@ -7,7 +7,7 @@ import subprocess
 
 inf=float("inf")
 
-def cdo(input) -> "CdoOperation":
+def cdo(input = None) -> "CdoOperation":
     """
     Create a CDO operation
     
@@ -36,9 +36,12 @@ def cdo(input) -> "CdoOperation":
 class CdoOperation:
     @staticmethod
     def _start(ifile):
-        if (isinstance(ifile, list)):
+        if isinstance(ifile, list):
             n_input = len(ifile)
             input = ifile
+        elif ifile is None:
+            n_input = 0
+            input = [None]
         else:
             n_input = 1
             input = [ifile]
@@ -101,23 +104,26 @@ class CdoOperation:
 
         # Build input strings
         input_strs = []
+
         for inp in self.input:
             if isinstance(inp, CdoOperation):
                 # Recursively build without 'cdo' and wrap in parentheses
                 input_strs.append(f"{inp._build(top_level=False)}")
-            else:
-                input_strs.append(str(inp))
-        
-        if (self.operator.command != "noop"):
-            input_strs  = "[ " + " ".join(input_strs) + " ] "
-        else:
-            input_strs = " ".join(input_strs)
+            elif inp is None:
+                input_strs = ""
+            else: 
+                input_strs.append(shlex.quote(str(inp)))
+             
+        input_strs = " ".join(input_strs)
+
+        if self.operator.command != "noop" and input_strs != "":
+            input_strs  = "[ " + input_strs + " ] "
         
         cmd.append(input_strs)
 
         # Some parts can create double spaces. I remove it 
         # for cleaner output
-        return " ".join(cmd).replace("  ", " ")
+        return " ".join(cmd).replace("  ", " ").rstrip()
 
     def execute(self, output=None, options=None, options_replace=False) -> str:
         """
