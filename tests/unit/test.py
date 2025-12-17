@@ -1,4 +1,4 @@
-from pycdo import cdo
+from pycdo import cdo, cdo_options
 import shlex
 
 def expect_command(op, command):
@@ -35,5 +35,17 @@ def test_chaining():
     """Chains commands"""
     expect_command(cdo("file.nc").sellonlatbox(0, 360, -90, 0).ymonmean(), 
                    "cdo -ymonmean [ -sellonlatbox,0,360,-90,0 [ " + shlex.quote("file.nc") + " ] ]")
+
+def test_options():
+    cdo_options.set("-L")
+    assert cdo_options.get() == "-L"
+
+    expect_command(cdo("file"), "cdo -L file")
+
+    assert cdo("file")._build(options = "-f nc") == "cdo -L -f nc file"
+    assert cdo("file")._build(options = "-f nc", options_replace=True) == "cdo -f nc file"
+
+    cdo_options.clear()
+    assert cdo_options.get() == None
 
 
