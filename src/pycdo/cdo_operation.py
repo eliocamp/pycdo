@@ -274,11 +274,11 @@ class CdoOperation:
     def diff(self, ifile2, maxcount = None, abslim = None, rellim = None, names = None):
         r"""
         CDO operator: diff
-Parameters:
-    maxcount: INTEGER - Stop after maxcount different fields
-    abslim: FLOAT - Limit of the maximum absolute difference (default: 0)
-    rellim: FLOAT - Limit of the maximum relative difference (default: 1)
-    names: STRING - Consideration of the variable names of only one input file (left/right) or the intersection of both (intersect).
+        Parameters:
+           maxcount: INTEGER - Stop after maxcount different fields
+           abslim: FLOAT - Limit of the maximum absolute difference (default: 0)
+           rellim: FLOAT - Limit of the maximum relative difference (default: 1)
+           names: STRING - Consideration of the variable names of only one input file (left/right) or the intersection of both (intersect).
         """
         operator = CdoOperator(command="diff",
                                n_input=2, 
@@ -290,11 +290,11 @@ Parameters:
     def diffn(self, ifile2, maxcount = None, abslim = None, rellim = None, names = None):
         r"""
         CDO operator: diffn
-Parameters:
-    maxcount: INTEGER - Stop after maxcount different fields
-    abslim: FLOAT - Limit of the maximum absolute difference (default: 0)
-    rellim: FLOAT - Limit of the maximum relative difference (default: 1)
-    names: STRING - Consideration of the variable names of only one input file (left/right) or the intersection of both (intersect).
+        Parameters:
+           maxcount: INTEGER - Stop after maxcount different fields
+           abslim: FLOAT - Limit of the maximum absolute difference (default: 0)
+           rellim: FLOAT - Limit of the maximum relative difference (default: 1)
+           names: STRING - Consideration of the variable names of only one input file (left/right) or the intersection of both (intersect).
         """
         operator = CdoOperator(command="diffn",
                                n_input=2, 
@@ -526,8 +526,8 @@ Parameters:
     def showattribute(self, attributes = None):
         r"""
         CDO operator: showattribute
-Parameters:
-    attributes: STRING - Comma-separated list of attributes.
+        Parameters:
+           attributes: STRING - Comma-separated list of attributes.
         """
         operator = CdoOperator(command="showattribute",
                                n_input=1, 
@@ -627,8 +627,8 @@ Parameters:
     def tee(self, outfile2 = None):
         r"""
         CDO operator: tee
-Parameters:
-    outfile2: STRING - Destination filename for the copy of the input file
+        Parameters:
+           outfile2: STRING - Destination filename for the copy of the input file
         """
         operator = CdoOperator(command="tee",
                                n_input=1, 
@@ -640,9 +640,9 @@ Parameters:
     def pack(self, printparam = None, filename = None):
         r"""
         CDO operator: pack
-Parameters:
-    printparam: BOOL - Print pack parameters to stdout for each variable
-    filename: STRING - Read pack parameters from file for each variable\[format: name=<> add_offset=<> scale_factor=<>\]
+        Parameters:
+           printparam: BOOL - Print pack parameters to stdout for each variable
+           filename: STRING - Read pack parameters from file for each variable\[format: name=<> add_offset=<> scale_factor=<>\]
         """
         operator = CdoOperator(command="pack",
                                n_input=1, 
@@ -665,8 +665,8 @@ Parameters:
     def setfilter(self, filename = None):
         r"""
         CDO operator: setfilter
-Parameters:
-    filename: STRING - Read filter specification per variable from file \[format: varname=\"<filterspec>\"\]
+        Parameters:
+           filename: STRING - Read filter specification per variable from file \[format: varname=\"<filterspec>\"\]
         """
         operator = CdoOperator(command="setfilter",
                                n_input=1, 
@@ -678,15 +678,15 @@ Parameters:
     def bitrounding(self, inflevel = None, addbits = None, minbits = None, maxbits = None, numsteps = None, numbits = None, printbits = None, filename = None):
         r"""
         CDO operator: bitrounding
-Parameters:
-    inflevel: FLOAT - Information level (0 - 1) \[default: 0.9999\]
-    addbits: INTEGER - Add bits to the number of significant bits \[default: 0\]
-    minbits: INTEGER - Minimum value of the number of bits \[default: 1\]
-    maxbits: INTEGER - Maximum value of the number of bits \[default: 23\]
-    numsteps: INTEGER - Set to 1 to run the calculation only in the first time step
-    numbits: INTEGER - Set number of significant bits
-    printbits: BOOL - Print max. numbits per variable of 1st timestep to stdout \[format: name=numbits\]
-    filename: STRING - Read number of significant bits per variable from file \[format: name=numbits\]
+        Parameters:
+           inflevel: FLOAT - Information level (0 - 1) \[default: 0.9999\]
+           addbits: INTEGER - Add bits to the number of significant bits \[default: 0\]
+           minbits: INTEGER - Minimum value of the number of bits \[default: 1\]
+           maxbits: INTEGER - Maximum value of the number of bits \[default: 23\]
+           numsteps: INTEGER - Set to 1 to run the calculation only in the first time step
+           numbits: INTEGER - Set number of significant bits
+           printbits: BOOL - Print max. numbits per variable of 1st timestep to stdout \[format: name=numbits\]
+           filename: STRING - Read number of significant bits per variable from file \[format: name=numbits\]
         """
         operator = CdoOperator(command="bitrounding",
                                n_input=1, 
@@ -709,8 +709,8 @@ Parameters:
     def duplicate(self, ndup = None):
         r"""
         CDO operator: duplicate
-Parameters:
-    ndup: INTEGER - Number of duplicates, default is 2.
+        Parameters:
+           ndup: INTEGER - Number of duplicates, default is 2.
         """
         operator = CdoOperator(command="duplicate",
                                n_input=1, 
@@ -733,9 +733,9 @@ Parameters:
     def merge(self, skip_same_time = None, names = None):
         r"""
         CDO operator: merge
-Parameters:
-    skip_same_time: BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.
-    names: STRING - Fill missing variable names with missing values (union) or use the intersection (intersect).
+        Parameters:
+           skip_same_time: BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.
+           names: STRING - Fill missing variable names with missing values (union) or use the intersection (intersect).
         """
         operator = CdoOperator(command="merge",
                                n_input=inf, 
@@ -747,9 +747,9 @@ Parameters:
     def mergetime(self, skip_same_time = None, names = None):
         r"""
         CDO operator: mergetime
-Parameters:
-    skip_same_time: BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.
-    names: STRING - Fill missing variable names with missing values (union) or use the intersection (intersect).
+        Parameters:
+           skip_same_time: BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.
+           names: STRING - Fill missing variable names with missing values (union) or use the intersection (intersect).
         """
         operator = CdoOperator(command="mergetime",
                                n_input=inf, 
@@ -761,9 +761,9 @@ Parameters:
     def splitcode(self, swap = None, uuid = None):
         r"""
         CDO operator: splitcode
-Parameters:
-    swap: STRING - Swap the position of obase and xxx in the output filename
-    uuid: STRING - Add a UUID as global attribute <attname> to each output file
+        Parameters:
+           swap: STRING - Swap the position of obase and xxx in the output filename
+           uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
         operator = CdoOperator(command="splitcode",
                                n_input=1, 
@@ -775,9 +775,9 @@ Parameters:
     def splitparam(self, swap = None, uuid = None):
         r"""
         CDO operator: splitparam
-Parameters:
-    swap: STRING - Swap the position of obase and xxx in the output filename
-    uuid: STRING - Add a UUID as global attribute <attname> to each output file
+        Parameters:
+           swap: STRING - Swap the position of obase and xxx in the output filename
+           uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
         operator = CdoOperator(command="splitparam",
                                n_input=1, 
@@ -789,9 +789,9 @@ Parameters:
     def splitname(self, swap = None, uuid = None):
         r"""
         CDO operator: splitname
-Parameters:
-    swap: STRING - Swap the position of obase and xxx in the output filename
-    uuid: STRING - Add a UUID as global attribute <attname> to each output file
+        Parameters:
+           swap: STRING - Swap the position of obase and xxx in the output filename
+           uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
         operator = CdoOperator(command="splitname",
                                n_input=1, 
@@ -803,9 +803,9 @@ Parameters:
     def splitlevel(self, swap = None, uuid = None):
         r"""
         CDO operator: splitlevel
-Parameters:
-    swap: STRING - Swap the position of obase and xxx in the output filename
-    uuid: STRING - Add a UUID as global attribute <attname> to each output file
+        Parameters:
+           swap: STRING - Swap the position of obase and xxx in the output filename
+           uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
         operator = CdoOperator(command="splitlevel",
                                n_input=1, 
@@ -817,9 +817,9 @@ Parameters:
     def splitgrid(self, swap = None, uuid = None):
         r"""
         CDO operator: splitgrid
-Parameters:
-    swap: STRING - Swap the position of obase and xxx in the output filename
-    uuid: STRING - Add a UUID as global attribute <attname> to each output file
+        Parameters:
+           swap: STRING - Swap the position of obase and xxx in the output filename
+           uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
         operator = CdoOperator(command="splitgrid",
                                n_input=1, 
@@ -831,9 +831,9 @@ Parameters:
     def splitzaxis(self, swap = None, uuid = None):
         r"""
         CDO operator: splitzaxis
-Parameters:
-    swap: STRING - Swap the position of obase and xxx in the output filename
-    uuid: STRING - Add a UUID as global attribute <attname> to each output file
+        Parameters:
+           swap: STRING - Swap the position of obase and xxx in the output filename
+           uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
         operator = CdoOperator(command="splitzaxis",
                                n_input=1, 
@@ -845,9 +845,9 @@ Parameters:
     def splittabnum(self, swap = None, uuid = None):
         r"""
         CDO operator: splittabnum
-Parameters:
-    swap: STRING - Swap the position of obase and xxx in the output filename
-    uuid: STRING - Add a UUID as global attribute <attname> to each output file
+        Parameters:
+           swap: STRING - Swap the position of obase and xxx in the output filename
+           uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
         operator = CdoOperator(command="splittabnum",
                                n_input=1, 
@@ -859,8 +859,8 @@ Parameters:
     def splithour(self, format = None):
         r"""
         CDO operator: splithour
-Parameters:
-    format: STRING - C-style format for strftime() (e.g. %B for the full month name)
+        Parameters:
+           format: STRING - C-style format for strftime() (e.g. %B for the full month name)
         """
         operator = CdoOperator(command="splithour",
                                n_input=1, 
@@ -872,8 +872,8 @@ Parameters:
     def splitday(self, format = None):
         r"""
         CDO operator: splitday
-Parameters:
-    format: STRING - C-style format for strftime() (e.g. %B for the full month name)
+        Parameters:
+           format: STRING - C-style format for strftime() (e.g. %B for the full month name)
         """
         operator = CdoOperator(command="splitday",
                                n_input=1, 
@@ -885,8 +885,8 @@ Parameters:
     def splitseas(self, format = None):
         r"""
         CDO operator: splitseas
-Parameters:
-    format: STRING - C-style format for strftime() (e.g. %B for the full month name)
+        Parameters:
+           format: STRING - C-style format for strftime() (e.g. %B for the full month name)
         """
         operator = CdoOperator(command="splitseas",
                                n_input=1, 
@@ -898,8 +898,8 @@ Parameters:
     def splityear(self, format = None):
         r"""
         CDO operator: splityear
-Parameters:
-    format: STRING - C-style format for strftime() (e.g. %B for the full month name)
+        Parameters:
+           format: STRING - C-style format for strftime() (e.g. %B for the full month name)
         """
         operator = CdoOperator(command="splityear",
                                n_input=1, 
@@ -911,8 +911,8 @@ Parameters:
     def splityearmon(self, format = None):
         r"""
         CDO operator: splityearmon
-Parameters:
-    format: STRING - C-style format for strftime() (e.g. %B for the full month name)
+        Parameters:
+           format: STRING - C-style format for strftime() (e.g. %B for the full month name)
         """
         operator = CdoOperator(command="splityearmon",
                                n_input=1, 
@@ -924,8 +924,8 @@ Parameters:
     def splitmon(self, format = None):
         r"""
         CDO operator: splitmon
-Parameters:
-    format: STRING - C-style format for strftime() (e.g. %B for the full month name)
+        Parameters:
+           format: STRING - C-style format for strftime() (e.g. %B for the full month name)
         """
         operator = CdoOperator(command="splitmon",
                                n_input=1, 
@@ -937,10 +937,10 @@ Parameters:
     def splitsel(self, nsets = None, noffset = None, nskip = None):
         r"""
         CDO operator: splitsel
-Parameters:
-    nsets: INTEGER - Number of input timesteps for each output file
-    noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
-    nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
+        Parameters:
+           nsets: INTEGER - Number of input timesteps for each output file
+           noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
+           nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
         operator = CdoOperator(command="splitsel",
                                n_input=1, 
@@ -963,9 +963,9 @@ Parameters:
     def distgrid(self, nx = None, ny = None):
         r"""
         CDO operator: distgrid
-Parameters:
-    nx: INTEGER - Number of regions in x direction, or number of pieces for unstructured grids
-    ny: INTEGER - Number of regions in y direction \[default: 1\]
+        Parameters:
+           nx: INTEGER - Number of regions in x direction, or number of pieces for unstructured grids
+           ny: INTEGER - Number of regions in y direction \[default: 1\]
         """
         operator = CdoOperator(command="distgrid",
                                n_input=1, 
@@ -977,9 +977,9 @@ Parameters:
     def collgrid(self, nx = None, names = None):
         r"""
         CDO operator: collgrid
-Parameters:
-    nx: INTEGER - Number of regions in x direction \[default: number of input files\]
-    names: STRING - Comma-separated list of variable names \[default: all variables\]
+        Parameters:
+           nx: INTEGER - Number of regions in x direction \[default: number of input files\]
+           names: STRING - Comma-separated list of variable names \[default: all variables\]
         """
         operator = CdoOperator(command="collgrid",
                                n_input=inf, 
@@ -991,32 +991,32 @@ Parameters:
     def select(self, name = None, param = None, code = None, level = None, levrange = None, levidx = None, zaxisname = None, zaxisnum = None, ltype = None, gridname = None, gridnum = None, steptype = None, date = None, startdate = None, enddate = None, minute = None, hour = None, day = None, month = None, season = None, year = None, dom = None, timestep = None, timestep_of_year = None, timestepmask = None):
         r"""
         CDO operator: select
-Parameters:
-    name: STRING - Comma-separated list of variable names.
-    param: STRING - Comma-separated list of parameter identifiers.
-    code: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    level: FLOAT - Comma-separated list of vertical levels.
-    levrange: FLOAT - First and last value of the level range.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    zaxisname: STRING - Comma-separated list of zaxis names.
-    zaxisnum: INTEGER - Comma-separated list or first/last\[/inc\] range of zaxis numbers.
-    ltype: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    gridname: STRING - Comma-separated list of grid names.
-    gridnum: INTEGER - Comma-separated list or first/last\[/inc\] range of grid numbers.
-    steptype: STRING - Comma-separated list of timestep types (constant|avg|accum|min|max|range|diff|sum)
-    date: STRING - Comma-separated list of dates (format: YYYY-MM-DDThh:mm:ss).
-    startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
-    enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss).
-    minute: INTEGER - Comma-separated list or first/last\[/inc\] range of minutes.
-    hour: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
-    day: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
-    month: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
-    season: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
-    year: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
-    dom: STRING - Comma-separated list of the day of month (e.g. 29feb).
-    timestep: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
-    timestep_of_year: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps of year.
-    timestepmask: STRING - Read timesteps from a mask file.
+        Parameters:
+           name: STRING - Comma-separated list of variable names.
+           param: STRING - Comma-separated list of parameter identifiers.
+           code: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           level: FLOAT - Comma-separated list of vertical levels.
+           levrange: FLOAT - First and last value of the level range.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           zaxisname: STRING - Comma-separated list of zaxis names.
+           zaxisnum: INTEGER - Comma-separated list or first/last\[/inc\] range of zaxis numbers.
+           ltype: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           gridname: STRING - Comma-separated list of grid names.
+           gridnum: INTEGER - Comma-separated list or first/last\[/inc\] range of grid numbers.
+           steptype: STRING - Comma-separated list of timestep types (constant|avg|accum|min|max|range|diff|sum)
+           date: STRING - Comma-separated list of dates (format: YYYY-MM-DDThh:mm:ss).
+           startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+           enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss).
+           minute: INTEGER - Comma-separated list or first/last\[/inc\] range of minutes.
+           hour: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
+           day: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
+           month: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
+           season: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
+           year: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
+           dom: STRING - Comma-separated list of the day of month (e.g. 29feb).
+           timestep: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
+           timestep_of_year: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps of year.
+           timestepmask: STRING - Read timesteps from a mask file.
         """
         operator = CdoOperator(command="select",
                                n_input=inf, 
@@ -1028,32 +1028,32 @@ Parameters:
     def delete(self, name = None, param = None, code = None, level = None, levrange = None, levidx = None, zaxisname = None, zaxisnum = None, ltype = None, gridname = None, gridnum = None, steptype = None, date = None, startdate = None, enddate = None, minute = None, hour = None, day = None, month = None, season = None, year = None, dom = None, timestep = None, timestep_of_year = None, timestepmask = None):
         r"""
         CDO operator: delete
-Parameters:
-    name: STRING - Comma-separated list of variable names.
-    param: STRING - Comma-separated list of parameter identifiers.
-    code: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    level: FLOAT - Comma-separated list of vertical levels.
-    levrange: FLOAT - First and last value of the level range.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    zaxisname: STRING - Comma-separated list of zaxis names.
-    zaxisnum: INTEGER - Comma-separated list or first/last\[/inc\] range of zaxis numbers.
-    ltype: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    gridname: STRING - Comma-separated list of grid names.
-    gridnum: INTEGER - Comma-separated list or first/last\[/inc\] range of grid numbers.
-    steptype: STRING - Comma-separated list of timestep types (constant|avg|accum|min|max|range|diff|sum)
-    date: STRING - Comma-separated list of dates (format: YYYY-MM-DDThh:mm:ss).
-    startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
-    enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss).
-    minute: INTEGER - Comma-separated list or first/last\[/inc\] range of minutes.
-    hour: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
-    day: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
-    month: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
-    season: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
-    year: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
-    dom: STRING - Comma-separated list of the day of month (e.g. 29feb).
-    timestep: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
-    timestep_of_year: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps of year.
-    timestepmask: STRING - Read timesteps from a mask file.
+        Parameters:
+           name: STRING - Comma-separated list of variable names.
+           param: STRING - Comma-separated list of parameter identifiers.
+           code: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           level: FLOAT - Comma-separated list of vertical levels.
+           levrange: FLOAT - First and last value of the level range.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           zaxisname: STRING - Comma-separated list of zaxis names.
+           zaxisnum: INTEGER - Comma-separated list or first/last\[/inc\] range of zaxis numbers.
+           ltype: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           gridname: STRING - Comma-separated list of grid names.
+           gridnum: INTEGER - Comma-separated list or first/last\[/inc\] range of grid numbers.
+           steptype: STRING - Comma-separated list of timestep types (constant|avg|accum|min|max|range|diff|sum)
+           date: STRING - Comma-separated list of dates (format: YYYY-MM-DDThh:mm:ss).
+           startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+           enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss).
+           minute: INTEGER - Comma-separated list or first/last\[/inc\] range of minutes.
+           hour: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
+           day: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
+           month: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
+           season: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
+           year: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
+           dom: STRING - Comma-separated list of the day of month (e.g. 29feb).
+           timestep: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
+           timestep_of_year: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps of year.
+           timestepmask: STRING - Read timesteps from a mask file.
         """
         operator = CdoOperator(command="delete",
                                n_input=inf, 
@@ -1098,18 +1098,18 @@ Parameters:
     def selparam(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: selparam
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="selparam",
                                n_input=1, 
@@ -1121,18 +1121,18 @@ Parameters:
     def delparam(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: delparam
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="delparam",
                                n_input=1, 
@@ -1144,18 +1144,18 @@ Parameters:
     def selcode(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: selcode
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="selcode",
                                n_input=1, 
@@ -1167,18 +1167,18 @@ Parameters:
     def delcode(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: delcode
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="delcode",
                                n_input=1, 
@@ -1190,18 +1190,18 @@ Parameters:
     def selname(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: selname
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="selname",
                                n_input=1, 
@@ -1213,18 +1213,18 @@ Parameters:
     def delname(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: delname
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="delname",
                                n_input=1, 
@@ -1236,18 +1236,18 @@ Parameters:
     def selstdname(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: selstdname
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="selstdname",
                                n_input=1, 
@@ -1259,18 +1259,18 @@ Parameters:
     def sellevel(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: sellevel
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="sellevel",
                                n_input=1, 
@@ -1282,18 +1282,18 @@ Parameters:
     def sellevidx(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: sellevidx
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="sellevidx",
                                n_input=1, 
@@ -1305,18 +1305,18 @@ Parameters:
     def selgrid(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: selgrid
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="selgrid",
                                n_input=1, 
@@ -1328,18 +1328,18 @@ Parameters:
     def selzaxis(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: selzaxis
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="selzaxis",
                                n_input=1, 
@@ -1351,18 +1351,18 @@ Parameters:
     def selzaxisname(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: selzaxisname
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="selzaxisname",
                                n_input=1, 
@@ -1374,18 +1374,18 @@ Parameters:
     def selltype(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: selltype
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="selltype",
                                n_input=1, 
@@ -1397,18 +1397,18 @@ Parameters:
     def seltabnum(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
         r"""
         CDO operator: seltabnum
-Parameters:
-    parameter: STRING - Comma-separated list of parameter identifiers.
-    codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
-    names: STRING - Comma-separated list of variable names.
-    stdnames: STRING - Comma-separated list of standard names.
-    levels: FLOAT - Comma-separated list of vertical levels.
-    levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
-    ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
-    grids: STRING - Comma-separated list of grid names or numbers.
-    zaxes: STRING - Comma-separated list of z-axis types or numbers.
-    zaxisnames: STRING - Comma-separated list of z-axis names.
-    tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
+        Parameters:
+           parameter: STRING - Comma-separated list of parameter identifiers.
+           codes: INTEGER - Comma-separated list or first/last\[/inc\] range of code numbers.
+           names: STRING - Comma-separated list of variable names.
+           stdnames: STRING - Comma-separated list of standard names.
+           levels: FLOAT - Comma-separated list of vertical levels.
+           levidx: INTEGER - Comma-separated list or first/last\[/inc\] range of index of levels.
+           ltypes: INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
+           grids: STRING - Comma-separated list of grid names or numbers.
+           zaxes: STRING - Comma-separated list of z-axis types or numbers.
+           zaxisnames: STRING - Comma-separated list of z-axis names.
+           tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
         operator = CdoOperator(command="seltabnum",
                                n_input=1, 
@@ -1420,18 +1420,18 @@ Parameters:
     def seltimestep(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
         r"""
         CDO operator: seltimestep
-Parameters:
-    timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
-    times: STRING - Comma-separated list of times (format hh:mm:ss).
-    hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
-    days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
-    months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
-    years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
-    seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
-    startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
-    enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
-    nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
-    nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
+        Parameters:
+           timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
+           times: STRING - Comma-separated list of times (format hh:mm:ss).
+           hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
+           days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
+           months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
+           years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
+           seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
+           startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+           enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
+           nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
+           nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
         operator = CdoOperator(command="seltimestep",
                                n_input=1, 
@@ -1443,18 +1443,18 @@ Parameters:
     def seltime(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
         r"""
         CDO operator: seltime
-Parameters:
-    timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
-    times: STRING - Comma-separated list of times (format hh:mm:ss).
-    hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
-    days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
-    months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
-    years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
-    seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
-    startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
-    enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
-    nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
-    nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
+        Parameters:
+           timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
+           times: STRING - Comma-separated list of times (format hh:mm:ss).
+           hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
+           days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
+           months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
+           years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
+           seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
+           startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+           enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
+           nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
+           nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
         operator = CdoOperator(command="seltime",
                                n_input=1, 
@@ -1466,18 +1466,18 @@ Parameters:
     def selhour(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
         r"""
         CDO operator: selhour
-Parameters:
-    timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
-    times: STRING - Comma-separated list of times (format hh:mm:ss).
-    hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
-    days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
-    months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
-    years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
-    seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
-    startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
-    enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
-    nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
-    nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
+        Parameters:
+           timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
+           times: STRING - Comma-separated list of times (format hh:mm:ss).
+           hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
+           days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
+           months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
+           years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
+           seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
+           startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+           enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
+           nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
+           nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
         operator = CdoOperator(command="selhour",
                                n_input=1, 
@@ -1489,18 +1489,18 @@ Parameters:
     def selday(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
         r"""
         CDO operator: selday
-Parameters:
-    timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
-    times: STRING - Comma-separated list of times (format hh:mm:ss).
-    hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
-    days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
-    months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
-    years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
-    seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
-    startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
-    enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
-    nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
-    nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
+        Parameters:
+           timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
+           times: STRING - Comma-separated list of times (format hh:mm:ss).
+           hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
+           days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
+           months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
+           years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
+           seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
+           startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+           enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
+           nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
+           nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
         operator = CdoOperator(command="selday",
                                n_input=1, 
@@ -1512,18 +1512,18 @@ Parameters:
     def selmonth(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
         r"""
         CDO operator: selmonth
-Parameters:
-    timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
-    times: STRING - Comma-separated list of times (format hh:mm:ss).
-    hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
-    days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
-    months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
-    years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
-    seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
-    startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
-    enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
-    nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
-    nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
+        Parameters:
+           timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
+           times: STRING - Comma-separated list of times (format hh:mm:ss).
+           hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
+           days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
+           months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
+           years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
+           seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
+           startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+           enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
+           nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
+           nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
         operator = CdoOperator(command="selmonth",
                                n_input=1, 
@@ -1535,18 +1535,18 @@ Parameters:
     def selyear(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
         r"""
         CDO operator: selyear
-Parameters:
-    timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
-    times: STRING - Comma-separated list of times (format hh:mm:ss).
-    hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
-    days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
-    months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
-    years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
-    seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
-    startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
-    enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
-    nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
-    nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
+        Parameters:
+           timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
+           times: STRING - Comma-separated list of times (format hh:mm:ss).
+           hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
+           days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
+           months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
+           years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
+           seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
+           startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+           enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
+           nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
+           nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
         operator = CdoOperator(command="selyear",
                                n_input=1, 
@@ -1558,18 +1558,18 @@ Parameters:
     def selseason(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
         r"""
         CDO operator: selseason
-Parameters:
-    timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
-    times: STRING - Comma-separated list of times (format hh:mm:ss).
-    hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
-    days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
-    months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
-    years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
-    seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
-    startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
-    enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
-    nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
-    nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
+        Parameters:
+           timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
+           times: STRING - Comma-separated list of times (format hh:mm:ss).
+           hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
+           days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
+           months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
+           years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
+           seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
+           startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+           enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
+           nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
+           nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
         operator = CdoOperator(command="selseason",
                                n_input=1, 
@@ -1581,18 +1581,18 @@ Parameters:
     def seldate(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
         r"""
         CDO operator: seldate
-Parameters:
-    timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
-    times: STRING - Comma-separated list of times (format hh:mm:ss).
-    hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
-    days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
-    months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
-    years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
-    seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
-    startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
-    enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
-    nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
-    nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
+        Parameters:
+           timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
+           times: STRING - Comma-separated list of times (format hh:mm:ss).
+           hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
+           days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
+           months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
+           years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
+           seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
+           startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+           enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
+           nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
+           nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
         operator = CdoOperator(command="seldate",
                                n_input=1, 
@@ -1604,18 +1604,18 @@ Parameters:
     def selsmon(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
         r"""
         CDO operator: selsmon
-Parameters:
-    timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
-    times: STRING - Comma-separated list of times (format hh:mm:ss).
-    hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
-    days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
-    months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
-    years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
-    seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
-    startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
-    enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
-    nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
-    nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
+        Parameters:
+           timesteps: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
+           times: STRING - Comma-separated list of times (format hh:mm:ss).
+           hours: INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
+           days: INTEGER - Comma-separated list or first/last\[/inc\] range of days.
+           months: INTEGER - Comma-separated list or first/last\[/inc\] range of months.
+           years: INTEGER - Comma-separated list or first/last\[/inc\] range of years.
+           seasons: STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
+           startdate: STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+           enddate: STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
+           nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
+           nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
         operator = CdoOperator(command="selsmon",
                                n_input=1, 
@@ -1627,15 +1627,15 @@ Parameters:
     def sellonlatbox(self, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None):
         r"""
         CDO operator: sellonlatbox
-Parameters:
-    lon1: FLOAT - Western longitude in degrees
-    lon2: FLOAT - Eastern longitude in degrees
-    lat1: FLOAT - Southern or northern latitude in degrees
-    lat2: FLOAT - Northern or southern latitude in degrees
-    idx1: INTEGER - Index of first longitude (1 - nlon)
-    idx2: INTEGER - Index of last longitude (1 - nlon)
-    idy1: INTEGER - Index of first latitude (1 - nlat)
-    idy2: INTEGER - Index of last latitude (1 - nlat)
+        Parameters:
+           lon1: FLOAT - Western longitude in degrees
+           lon2: FLOAT - Eastern longitude in degrees
+           lat1: FLOAT - Southern or northern latitude in degrees
+           lat2: FLOAT - Northern or southern latitude in degrees
+           idx1: INTEGER - Index of first longitude (1 - nlon)
+           idx2: INTEGER - Index of last longitude (1 - nlon)
+           idy1: INTEGER - Index of first latitude (1 - nlat)
+           idy2: INTEGER - Index of last latitude (1 - nlat)
         """
         operator = CdoOperator(command="sellonlatbox",
                                n_input=1, 
@@ -1647,15 +1647,15 @@ Parameters:
     def selindexbox(self, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None):
         r"""
         CDO operator: selindexbox
-Parameters:
-    lon1: FLOAT - Western longitude in degrees
-    lon2: FLOAT - Eastern longitude in degrees
-    lat1: FLOAT - Southern or northern latitude in degrees
-    lat2: FLOAT - Northern or southern latitude in degrees
-    idx1: INTEGER - Index of first longitude (1 - nlon)
-    idx2: INTEGER - Index of last longitude (1 - nlon)
-    idy1: INTEGER - Index of first latitude (1 - nlat)
-    idy2: INTEGER - Index of last latitude (1 - nlat)
+        Parameters:
+           lon1: FLOAT - Western longitude in degrees
+           lon2: FLOAT - Eastern longitude in degrees
+           lat1: FLOAT - Southern or northern latitude in degrees
+           lat2: FLOAT - Northern or southern latitude in degrees
+           idx1: INTEGER - Index of first longitude (1 - nlon)
+           idx2: INTEGER - Index of last longitude (1 - nlon)
+           idy1: INTEGER - Index of first latitude (1 - nlat)
+           idy2: INTEGER - Index of last latitude (1 - nlat)
         """
         operator = CdoOperator(command="selindexbox",
                                n_input=1, 
@@ -1667,11 +1667,11 @@ Parameters:
     def selregion(self, regions = None, lon = None, lat = None, radius = None):
         r"""
         CDO operator: selregion
-Parameters:
-    regions: STRING - Comma-separated list of ASCII formatted files with different regions
-    lon: FLOAT - Longitude of the center of the circle in degrees, default lon=0.0
-    lat: FLOAT - Latitude of the center of the circle in degrees, default lat=0.0
-    radius: STRING - Radius of the circle, default radius=1deg (units: deg, rad, km, m)
+        Parameters:
+           regions: STRING - Comma-separated list of ASCII formatted files with different regions
+           lon: FLOAT - Longitude of the center of the circle in degrees, default lon=0.0
+           lat: FLOAT - Latitude of the center of the circle in degrees, default lat=0.0
+           radius: STRING - Radius of the circle, default radius=1deg (units: deg, rad, km, m)
         """
         operator = CdoOperator(command="selregion",
                                n_input=1, 
@@ -1683,11 +1683,11 @@ Parameters:
     def selcircle(self, regions = None, lon = None, lat = None, radius = None):
         r"""
         CDO operator: selcircle
-Parameters:
-    regions: STRING - Comma-separated list of ASCII formatted files with different regions
-    lon: FLOAT - Longitude of the center of the circle in degrees, default lon=0.0
-    lat: FLOAT - Latitude of the center of the circle in degrees, default lat=0.0
-    radius: STRING - Radius of the circle, default radius=1deg (units: deg, rad, km, m)
+        Parameters:
+           regions: STRING - Comma-separated list of ASCII formatted files with different regions
+           lon: FLOAT - Longitude of the center of the circle in degrees, default lon=0.0
+           lat: FLOAT - Latitude of the center of the circle in degrees, default lat=0.0
+           radius: STRING - Radius of the circle, default radius=1deg (units: deg, rad, km, m)
         """
         operator = CdoOperator(command="selcircle",
                                n_input=1, 
@@ -1699,8 +1699,8 @@ Parameters:
     def selgridcell(self, indices = None):
         r"""
         CDO operator: selgridcell
-Parameters:
-    indices: INTEGER - Comma-separated list or first/last\[/inc\] range of indices
+        Parameters:
+           indices: INTEGER - Comma-separated list or first/last\[/inc\] range of indices
         """
         operator = CdoOperator(command="selgridcell",
                                n_input=1, 
@@ -1712,8 +1712,8 @@ Parameters:
     def delgridcell(self, indices = None):
         r"""
         CDO operator: delgridcell
-Parameters:
-    indices: INTEGER - Comma-separated list or first/last\[/inc\] range of indices
+        Parameters:
+           indices: INTEGER - Comma-separated list or first/last\[/inc\] range of indices
         """
         operator = CdoOperator(command="delgridcell",
                                n_input=1, 
@@ -1725,8 +1725,8 @@ Parameters:
     def samplegrid(self, factor = None):
         r"""
         CDO operator: samplegrid
-Parameters:
-    factor: INTEGER - Resample factor, typically 2, which will half the resolution
+        Parameters:
+           factor: INTEGER - Resample factor, typically 2, which will half the resolution
         """
         operator = CdoOperator(command="samplegrid",
                                n_input=1, 
@@ -1760,8 +1760,8 @@ Parameters:
     def bottomvalue(self, isovalue = None):
         r"""
         CDO operator: bottomvalue
-Parameters:
-    isovalue: FLOAT - Isosurface value
+        Parameters:
+           isovalue: FLOAT - Isosurface value
         """
         operator = CdoOperator(command="bottomvalue",
                                n_input=1, 
@@ -1773,8 +1773,8 @@ Parameters:
     def topvalue(self, isovalue = None):
         r"""
         CDO operator: topvalue
-Parameters:
-    isovalue: FLOAT - Isosurface value
+        Parameters:
+           isovalue: FLOAT - Isosurface value
         """
         operator = CdoOperator(command="topvalue",
                                n_input=1, 
@@ -1786,8 +1786,8 @@ Parameters:
     def isosurface(self, isovalue = None):
         r"""
         CDO operator: isosurface
-Parameters:
-    isovalue: FLOAT - Isosurface value
+        Parameters:
+           isovalue: FLOAT - Isosurface value
         """
         operator = CdoOperator(command="isosurface",
                                n_input=1, 
@@ -1832,8 +1832,8 @@ Parameters:
     def ifthenc(self, c = None):
         r"""
         CDO operator: ifthenc
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="ifthenc",
                                n_input=1, 
@@ -1845,8 +1845,8 @@ Parameters:
     def ifnotthenc(self, c = None):
         r"""
         CDO operator: ifnotthenc
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="ifnotthenc",
                                n_input=1, 
@@ -1858,9 +1858,9 @@ Parameters:
     def reducegrid(self, mask = None, limitCoordsOutput = None):
         r"""
         CDO operator: reducegrid
-Parameters:
-    mask: STRING - file which holds the mask field
-    limitCoordsOutput: STRING - optional parameter to limit coordinates output: 'nobounds' disables coordinate bounds, 'nocoords' avoids all coordinate information
+        Parameters:
+           mask: STRING - file which holds the mask field
+           limitCoordsOutput: STRING - optional parameter to limit coordinates output: 'nobounds' disables coordinate bounds, 'nocoords' avoids all coordinate information
         """
         operator = CdoOperator(command="reducegrid",
                                n_input=1, 
@@ -1938,8 +1938,8 @@ Parameters:
     def eqc(self, c = None):
         r"""
         CDO operator: eqc
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="eqc",
                                n_input=1, 
@@ -1951,8 +1951,8 @@ Parameters:
     def nec(self, c = None):
         r"""
         CDO operator: nec
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="nec",
                                n_input=1, 
@@ -1964,8 +1964,8 @@ Parameters:
     def lec(self, c = None):
         r"""
         CDO operator: lec
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="lec",
                                n_input=1, 
@@ -1977,8 +1977,8 @@ Parameters:
     def ltc(self, c = None):
         r"""
         CDO operator: ltc
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="ltc",
                                n_input=1, 
@@ -1990,8 +1990,8 @@ Parameters:
     def gec(self, c = None):
         r"""
         CDO operator: gec
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="gec",
                                n_input=1, 
@@ -2003,8 +2003,8 @@ Parameters:
     def gtc(self, c = None):
         r"""
         CDO operator: gtc
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="gtc",
                                n_input=1, 
@@ -2082,8 +2082,8 @@ Parameters:
     def setattribute(self, attributes = None):
         r"""
         CDO operator: setattribute
-Parameters:
-    attributes: STRING - Comma-separated list of attributes.
+        Parameters:
+           attributes: STRING - Comma-separated list of attributes.
         """
         operator = CdoOperator(command="setattribute",
                                n_input=1, 
@@ -2095,8 +2095,8 @@ Parameters:
     def delattribute(self, attributes = None):
         r"""
         CDO operator: delattribute
-Parameters:
-    attributes: STRING - Comma-separated list of attributes.
+        Parameters:
+           attributes: STRING - Comma-separated list of attributes.
         """
         operator = CdoOperator(command="delattribute",
                                n_input=1, 
@@ -2108,9 +2108,9 @@ Parameters:
     def setpartabp(self, table = None, convert = None):
         r"""
         CDO operator: setpartabp
-Parameters:
-    table: STRING - Parameter table file or name
-    convert: STRING - Converts the units if necessary
+        Parameters:
+           table: STRING - Parameter table file or name
+           convert: STRING - Converts the units if necessary
         """
         operator = CdoOperator(command="setpartabp",
                                n_input=1, 
@@ -2122,9 +2122,9 @@ Parameters:
     def setpartabn(self, table = None, convert = None):
         r"""
         CDO operator: setpartabn
-Parameters:
-    table: STRING - Parameter table file or name
-    convert: STRING - Converts the units if necessary
+        Parameters:
+           table: STRING - Parameter table file or name
+           convert: STRING - Converts the units if necessary
         """
         operator = CdoOperator(command="setpartabn",
                                n_input=1, 
@@ -2136,14 +2136,14 @@ Parameters:
     def setcodetab(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
         r"""
         CDO operator: setcodetab
-Parameters:
-    table: STRING - Parameter table file or name
-    code: INTEGER - Code number
-    param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
-    name: STRING - Variable name
-    level: FLOAT - New level
-    ltype: INTEGER - GRIB level type
-    maxsteps: INTEGER - Maximum number of timesteps
+        Parameters:
+           table: STRING - Parameter table file or name
+           code: INTEGER - Code number
+           param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
+           name: STRING - Variable name
+           level: FLOAT - New level
+           ltype: INTEGER - GRIB level type
+           maxsteps: INTEGER - Maximum number of timesteps
         """
         operator = CdoOperator(command="setcodetab",
                                n_input=1, 
@@ -2155,14 +2155,14 @@ Parameters:
     def setcode(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
         r"""
         CDO operator: setcode
-Parameters:
-    table: STRING - Parameter table file or name
-    code: INTEGER - Code number
-    param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
-    name: STRING - Variable name
-    level: FLOAT - New level
-    ltype: INTEGER - GRIB level type
-    maxsteps: INTEGER - Maximum number of timesteps
+        Parameters:
+           table: STRING - Parameter table file or name
+           code: INTEGER - Code number
+           param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
+           name: STRING - Variable name
+           level: FLOAT - New level
+           ltype: INTEGER - GRIB level type
+           maxsteps: INTEGER - Maximum number of timesteps
         """
         operator = CdoOperator(command="setcode",
                                n_input=1, 
@@ -2174,14 +2174,14 @@ Parameters:
     def setparam(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
         r"""
         CDO operator: setparam
-Parameters:
-    table: STRING - Parameter table file or name
-    code: INTEGER - Code number
-    param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
-    name: STRING - Variable name
-    level: FLOAT - New level
-    ltype: INTEGER - GRIB level type
-    maxsteps: INTEGER - Maximum number of timesteps
+        Parameters:
+           table: STRING - Parameter table file or name
+           code: INTEGER - Code number
+           param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
+           name: STRING - Variable name
+           level: FLOAT - New level
+           ltype: INTEGER - GRIB level type
+           maxsteps: INTEGER - Maximum number of timesteps
         """
         operator = CdoOperator(command="setparam",
                                n_input=1, 
@@ -2193,14 +2193,14 @@ Parameters:
     def setname(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
         r"""
         CDO operator: setname
-Parameters:
-    table: STRING - Parameter table file or name
-    code: INTEGER - Code number
-    param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
-    name: STRING - Variable name
-    level: FLOAT - New level
-    ltype: INTEGER - GRIB level type
-    maxsteps: INTEGER - Maximum number of timesteps
+        Parameters:
+           table: STRING - Parameter table file or name
+           code: INTEGER - Code number
+           param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
+           name: STRING - Variable name
+           level: FLOAT - New level
+           ltype: INTEGER - GRIB level type
+           maxsteps: INTEGER - Maximum number of timesteps
         """
         operator = CdoOperator(command="setname",
                                n_input=1, 
@@ -2212,14 +2212,14 @@ Parameters:
     def setunit(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
         r"""
         CDO operator: setunit
-Parameters:
-    table: STRING - Parameter table file or name
-    code: INTEGER - Code number
-    param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
-    name: STRING - Variable name
-    level: FLOAT - New level
-    ltype: INTEGER - GRIB level type
-    maxsteps: INTEGER - Maximum number of timesteps
+        Parameters:
+           table: STRING - Parameter table file or name
+           code: INTEGER - Code number
+           param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
+           name: STRING - Variable name
+           level: FLOAT - New level
+           ltype: INTEGER - GRIB level type
+           maxsteps: INTEGER - Maximum number of timesteps
         """
         operator = CdoOperator(command="setunit",
                                n_input=1, 
@@ -2231,14 +2231,14 @@ Parameters:
     def setlevel(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
         r"""
         CDO operator: setlevel
-Parameters:
-    table: STRING - Parameter table file or name
-    code: INTEGER - Code number
-    param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
-    name: STRING - Variable name
-    level: FLOAT - New level
-    ltype: INTEGER - GRIB level type
-    maxsteps: INTEGER - Maximum number of timesteps
+        Parameters:
+           table: STRING - Parameter table file or name
+           code: INTEGER - Code number
+           param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
+           name: STRING - Variable name
+           level: FLOAT - New level
+           ltype: INTEGER - GRIB level type
+           maxsteps: INTEGER - Maximum number of timesteps
         """
         operator = CdoOperator(command="setlevel",
                                n_input=1, 
@@ -2250,14 +2250,14 @@ Parameters:
     def setltype(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
         r"""
         CDO operator: setltype
-Parameters:
-    table: STRING - Parameter table file or name
-    code: INTEGER - Code number
-    param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
-    name: STRING - Variable name
-    level: FLOAT - New level
-    ltype: INTEGER - GRIB level type
-    maxsteps: INTEGER - Maximum number of timesteps
+        Parameters:
+           table: STRING - Parameter table file or name
+           code: INTEGER - Code number
+           param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
+           name: STRING - Variable name
+           level: FLOAT - New level
+           ltype: INTEGER - GRIB level type
+           maxsteps: INTEGER - Maximum number of timesteps
         """
         operator = CdoOperator(command="setltype",
                                n_input=1, 
@@ -2269,14 +2269,14 @@ Parameters:
     def setmaxsteps(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
         r"""
         CDO operator: setmaxsteps
-Parameters:
-    table: STRING - Parameter table file or name
-    code: INTEGER - Code number
-    param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
-    name: STRING - Variable name
-    level: FLOAT - New level
-    ltype: INTEGER - GRIB level type
-    maxsteps: INTEGER - Maximum number of timesteps
+        Parameters:
+           table: STRING - Parameter table file or name
+           code: INTEGER - Code number
+           param: STRING - Parameter identifier (GRIB1: code\[.tabnum\]; GRIB2: num\[.cat\[.dis\]\])
+           name: STRING - Variable name
+           level: FLOAT - New level
+           ltype: INTEGER - GRIB level type
+           maxsteps: INTEGER - Maximum number of timesteps
         """
         operator = CdoOperator(command="setmaxsteps",
                                n_input=1, 
@@ -2288,17 +2288,17 @@ Parameters:
     def setdate(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
         r"""
         CDO operator: setdate
-Parameters:
-    day: INTEGER - Value of the new day
-    month: INTEGER - Value of the new month
-    year: INTEGER - Value of the new year
-    units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
-    date: STRING - Date (format: YYYY-MM-DD)
-    time: STRING - Time (format: hh:mm:ss)
-    inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
-    frequency: STRING - Frequency of the time series (hour|day|month|year)
-    calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
-    shiftValue: STRING - Shift value (e.g. -3hour)
+        Parameters:
+           day: INTEGER - Value of the new day
+           month: INTEGER - Value of the new month
+           year: INTEGER - Value of the new year
+           units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
+           date: STRING - Date (format: YYYY-MM-DD)
+           time: STRING - Time (format: hh:mm:ss)
+           inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
+           frequency: STRING - Frequency of the time series (hour|day|month|year)
+           calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
+           shiftValue: STRING - Shift value (e.g. -3hour)
         """
         operator = CdoOperator(command="setdate",
                                n_input=1, 
@@ -2310,17 +2310,17 @@ Parameters:
     def settime(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
         r"""
         CDO operator: settime
-Parameters:
-    day: INTEGER - Value of the new day
-    month: INTEGER - Value of the new month
-    year: INTEGER - Value of the new year
-    units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
-    date: STRING - Date (format: YYYY-MM-DD)
-    time: STRING - Time (format: hh:mm:ss)
-    inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
-    frequency: STRING - Frequency of the time series (hour|day|month|year)
-    calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
-    shiftValue: STRING - Shift value (e.g. -3hour)
+        Parameters:
+           day: INTEGER - Value of the new day
+           month: INTEGER - Value of the new month
+           year: INTEGER - Value of the new year
+           units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
+           date: STRING - Date (format: YYYY-MM-DD)
+           time: STRING - Time (format: hh:mm:ss)
+           inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
+           frequency: STRING - Frequency of the time series (hour|day|month|year)
+           calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
+           shiftValue: STRING - Shift value (e.g. -3hour)
         """
         operator = CdoOperator(command="settime",
                                n_input=1, 
@@ -2332,17 +2332,17 @@ Parameters:
     def setday(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
         r"""
         CDO operator: setday
-Parameters:
-    day: INTEGER - Value of the new day
-    month: INTEGER - Value of the new month
-    year: INTEGER - Value of the new year
-    units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
-    date: STRING - Date (format: YYYY-MM-DD)
-    time: STRING - Time (format: hh:mm:ss)
-    inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
-    frequency: STRING - Frequency of the time series (hour|day|month|year)
-    calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
-    shiftValue: STRING - Shift value (e.g. -3hour)
+        Parameters:
+           day: INTEGER - Value of the new day
+           month: INTEGER - Value of the new month
+           year: INTEGER - Value of the new year
+           units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
+           date: STRING - Date (format: YYYY-MM-DD)
+           time: STRING - Time (format: hh:mm:ss)
+           inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
+           frequency: STRING - Frequency of the time series (hour|day|month|year)
+           calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
+           shiftValue: STRING - Shift value (e.g. -3hour)
         """
         operator = CdoOperator(command="setday",
                                n_input=1, 
@@ -2354,17 +2354,17 @@ Parameters:
     def setmon(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
         r"""
         CDO operator: setmon
-Parameters:
-    day: INTEGER - Value of the new day
-    month: INTEGER - Value of the new month
-    year: INTEGER - Value of the new year
-    units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
-    date: STRING - Date (format: YYYY-MM-DD)
-    time: STRING - Time (format: hh:mm:ss)
-    inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
-    frequency: STRING - Frequency of the time series (hour|day|month|year)
-    calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
-    shiftValue: STRING - Shift value (e.g. -3hour)
+        Parameters:
+           day: INTEGER - Value of the new day
+           month: INTEGER - Value of the new month
+           year: INTEGER - Value of the new year
+           units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
+           date: STRING - Date (format: YYYY-MM-DD)
+           time: STRING - Time (format: hh:mm:ss)
+           inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
+           frequency: STRING - Frequency of the time series (hour|day|month|year)
+           calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
+           shiftValue: STRING - Shift value (e.g. -3hour)
         """
         operator = CdoOperator(command="setmon",
                                n_input=1, 
@@ -2376,17 +2376,17 @@ Parameters:
     def setyear(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
         r"""
         CDO operator: setyear
-Parameters:
-    day: INTEGER - Value of the new day
-    month: INTEGER - Value of the new month
-    year: INTEGER - Value of the new year
-    units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
-    date: STRING - Date (format: YYYY-MM-DD)
-    time: STRING - Time (format: hh:mm:ss)
-    inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
-    frequency: STRING - Frequency of the time series (hour|day|month|year)
-    calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
-    shiftValue: STRING - Shift value (e.g. -3hour)
+        Parameters:
+           day: INTEGER - Value of the new day
+           month: INTEGER - Value of the new month
+           year: INTEGER - Value of the new year
+           units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
+           date: STRING - Date (format: YYYY-MM-DD)
+           time: STRING - Time (format: hh:mm:ss)
+           inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
+           frequency: STRING - Frequency of the time series (hour|day|month|year)
+           calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
+           shiftValue: STRING - Shift value (e.g. -3hour)
         """
         operator = CdoOperator(command="setyear",
                                n_input=1, 
@@ -2398,17 +2398,17 @@ Parameters:
     def settunits(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
         r"""
         CDO operator: settunits
-Parameters:
-    day: INTEGER - Value of the new day
-    month: INTEGER - Value of the new month
-    year: INTEGER - Value of the new year
-    units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
-    date: STRING - Date (format: YYYY-MM-DD)
-    time: STRING - Time (format: hh:mm:ss)
-    inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
-    frequency: STRING - Frequency of the time series (hour|day|month|year)
-    calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
-    shiftValue: STRING - Shift value (e.g. -3hour)
+        Parameters:
+           day: INTEGER - Value of the new day
+           month: INTEGER - Value of the new month
+           year: INTEGER - Value of the new year
+           units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
+           date: STRING - Date (format: YYYY-MM-DD)
+           time: STRING - Time (format: hh:mm:ss)
+           inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
+           frequency: STRING - Frequency of the time series (hour|day|month|year)
+           calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
+           shiftValue: STRING - Shift value (e.g. -3hour)
         """
         operator = CdoOperator(command="settunits",
                                n_input=1, 
@@ -2420,17 +2420,17 @@ Parameters:
     def settaxis(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
         r"""
         CDO operator: settaxis
-Parameters:
-    day: INTEGER - Value of the new day
-    month: INTEGER - Value of the new month
-    year: INTEGER - Value of the new year
-    units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
-    date: STRING - Date (format: YYYY-MM-DD)
-    time: STRING - Time (format: hh:mm:ss)
-    inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
-    frequency: STRING - Frequency of the time series (hour|day|month|year)
-    calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
-    shiftValue: STRING - Shift value (e.g. -3hour)
+        Parameters:
+           day: INTEGER - Value of the new day
+           month: INTEGER - Value of the new month
+           year: INTEGER - Value of the new year
+           units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
+           date: STRING - Date (format: YYYY-MM-DD)
+           time: STRING - Time (format: hh:mm:ss)
+           inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
+           frequency: STRING - Frequency of the time series (hour|day|month|year)
+           calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
+           shiftValue: STRING - Shift value (e.g. -3hour)
         """
         operator = CdoOperator(command="settaxis",
                                n_input=1, 
@@ -2442,17 +2442,17 @@ Parameters:
     def settbounds(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
         r"""
         CDO operator: settbounds
-Parameters:
-    day: INTEGER - Value of the new day
-    month: INTEGER - Value of the new month
-    year: INTEGER - Value of the new year
-    units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
-    date: STRING - Date (format: YYYY-MM-DD)
-    time: STRING - Time (format: hh:mm:ss)
-    inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
-    frequency: STRING - Frequency of the time series (hour|day|month|year)
-    calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
-    shiftValue: STRING - Shift value (e.g. -3hour)
+        Parameters:
+           day: INTEGER - Value of the new day
+           month: INTEGER - Value of the new month
+           year: INTEGER - Value of the new year
+           units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
+           date: STRING - Date (format: YYYY-MM-DD)
+           time: STRING - Time (format: hh:mm:ss)
+           inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
+           frequency: STRING - Frequency of the time series (hour|day|month|year)
+           calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
+           shiftValue: STRING - Shift value (e.g. -3hour)
         """
         operator = CdoOperator(command="settbounds",
                                n_input=1, 
@@ -2464,17 +2464,17 @@ Parameters:
     def setreftime(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
         r"""
         CDO operator: setreftime
-Parameters:
-    day: INTEGER - Value of the new day
-    month: INTEGER - Value of the new month
-    year: INTEGER - Value of the new year
-    units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
-    date: STRING - Date (format: YYYY-MM-DD)
-    time: STRING - Time (format: hh:mm:ss)
-    inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
-    frequency: STRING - Frequency of the time series (hour|day|month|year)
-    calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
-    shiftValue: STRING - Shift value (e.g. -3hour)
+        Parameters:
+           day: INTEGER - Value of the new day
+           month: INTEGER - Value of the new month
+           year: INTEGER - Value of the new year
+           units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
+           date: STRING - Date (format: YYYY-MM-DD)
+           time: STRING - Time (format: hh:mm:ss)
+           inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
+           frequency: STRING - Frequency of the time series (hour|day|month|year)
+           calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
+           shiftValue: STRING - Shift value (e.g. -3hour)
         """
         operator = CdoOperator(command="setreftime",
                                n_input=1, 
@@ -2486,17 +2486,17 @@ Parameters:
     def setcalendar(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
         r"""
         CDO operator: setcalendar
-Parameters:
-    day: INTEGER - Value of the new day
-    month: INTEGER - Value of the new month
-    year: INTEGER - Value of the new year
-    units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
-    date: STRING - Date (format: YYYY-MM-DD)
-    time: STRING - Time (format: hh:mm:ss)
-    inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
-    frequency: STRING - Frequency of the time series (hour|day|month|year)
-    calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
-    shiftValue: STRING - Shift value (e.g. -3hour)
+        Parameters:
+           day: INTEGER - Value of the new day
+           month: INTEGER - Value of the new month
+           year: INTEGER - Value of the new year
+           units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
+           date: STRING - Date (format: YYYY-MM-DD)
+           time: STRING - Time (format: hh:mm:ss)
+           inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
+           frequency: STRING - Frequency of the time series (hour|day|month|year)
+           calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
+           shiftValue: STRING - Shift value (e.g. -3hour)
         """
         operator = CdoOperator(command="setcalendar",
                                n_input=1, 
@@ -2508,17 +2508,17 @@ Parameters:
     def shifttime(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
         r"""
         CDO operator: shifttime
-Parameters:
-    day: INTEGER - Value of the new day
-    month: INTEGER - Value of the new month
-    year: INTEGER - Value of the new year
-    units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
-    date: STRING - Date (format: YYYY-MM-DD)
-    time: STRING - Time (format: hh:mm:ss)
-    inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
-    frequency: STRING - Frequency of the time series (hour|day|month|year)
-    calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
-    shiftValue: STRING - Shift value (e.g. -3hour)
+        Parameters:
+           day: INTEGER - Value of the new day
+           month: INTEGER - Value of the new month
+           year: INTEGER - Value of the new year
+           units: STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
+           date: STRING - Date (format: YYYY-MM-DD)
+           time: STRING - Time (format: hh:mm:ss)
+           inc: STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
+           frequency: STRING - Frequency of the time series (hour|day|month|year)
+           calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
+           shiftValue: STRING - Shift value (e.g. -3hour)
         """
         operator = CdoOperator(command="shifttime",
                                n_input=1, 
@@ -2530,17 +2530,17 @@ Parameters:
     def chcode(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
         r"""
         CDO operator: chcode
-Parameters:
-    code: INTEGER - Code number
-    oldcode: INTEGER - Pairs of old and new code numbers
-    newcode: INTEGER - Pairs of old and new code numbers
-    oldparam: STRING - Pairs of old and new parameter identifiers
-    newparam: STRING - Pairs of old and new parameter identifiers
-    name: STRING - Variable name
-    oldname: STRING - Pairs of old and new variable names
-    newname: STRING - Pairs of old and new variable names
-    oldlev: FLOAT - Old level
-    newlev: FLOAT - New level
+        Parameters:
+           code: INTEGER - Code number
+           oldcode: INTEGER - Pairs of old and new code numbers
+           newcode: INTEGER - Pairs of old and new code numbers
+           oldparam: STRING - Pairs of old and new parameter identifiers
+           newparam: STRING - Pairs of old and new parameter identifiers
+           name: STRING - Variable name
+           oldname: STRING - Pairs of old and new variable names
+           newname: STRING - Pairs of old and new variable names
+           oldlev: FLOAT - Old level
+           newlev: FLOAT - New level
         """
         operator = CdoOperator(command="chcode",
                                n_input=1, 
@@ -2552,17 +2552,17 @@ Parameters:
     def chparam(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
         r"""
         CDO operator: chparam
-Parameters:
-    code: INTEGER - Code number
-    oldcode: INTEGER - Pairs of old and new code numbers
-    newcode: INTEGER - Pairs of old and new code numbers
-    oldparam: STRING - Pairs of old and new parameter identifiers
-    newparam: STRING - Pairs of old and new parameter identifiers
-    name: STRING - Variable name
-    oldname: STRING - Pairs of old and new variable names
-    newname: STRING - Pairs of old and new variable names
-    oldlev: FLOAT - Old level
-    newlev: FLOAT - New level
+        Parameters:
+           code: INTEGER - Code number
+           oldcode: INTEGER - Pairs of old and new code numbers
+           newcode: INTEGER - Pairs of old and new code numbers
+           oldparam: STRING - Pairs of old and new parameter identifiers
+           newparam: STRING - Pairs of old and new parameter identifiers
+           name: STRING - Variable name
+           oldname: STRING - Pairs of old and new variable names
+           newname: STRING - Pairs of old and new variable names
+           oldlev: FLOAT - Old level
+           newlev: FLOAT - New level
         """
         operator = CdoOperator(command="chparam",
                                n_input=1, 
@@ -2574,17 +2574,17 @@ Parameters:
     def chname(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
         r"""
         CDO operator: chname
-Parameters:
-    code: INTEGER - Code number
-    oldcode: INTEGER - Pairs of old and new code numbers
-    newcode: INTEGER - Pairs of old and new code numbers
-    oldparam: STRING - Pairs of old and new parameter identifiers
-    newparam: STRING - Pairs of old and new parameter identifiers
-    name: STRING - Variable name
-    oldname: STRING - Pairs of old and new variable names
-    newname: STRING - Pairs of old and new variable names
-    oldlev: FLOAT - Old level
-    newlev: FLOAT - New level
+        Parameters:
+           code: INTEGER - Code number
+           oldcode: INTEGER - Pairs of old and new code numbers
+           newcode: INTEGER - Pairs of old and new code numbers
+           oldparam: STRING - Pairs of old and new parameter identifiers
+           newparam: STRING - Pairs of old and new parameter identifiers
+           name: STRING - Variable name
+           oldname: STRING - Pairs of old and new variable names
+           newname: STRING - Pairs of old and new variable names
+           oldlev: FLOAT - Old level
+           newlev: FLOAT - New level
         """
         operator = CdoOperator(command="chname",
                                n_input=1, 
@@ -2596,17 +2596,17 @@ Parameters:
     def chunit(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
         r"""
         CDO operator: chunit
-Parameters:
-    code: INTEGER - Code number
-    oldcode: INTEGER - Pairs of old and new code numbers
-    newcode: INTEGER - Pairs of old and new code numbers
-    oldparam: STRING - Pairs of old and new parameter identifiers
-    newparam: STRING - Pairs of old and new parameter identifiers
-    name: STRING - Variable name
-    oldname: STRING - Pairs of old and new variable names
-    newname: STRING - Pairs of old and new variable names
-    oldlev: FLOAT - Old level
-    newlev: FLOAT - New level
+        Parameters:
+           code: INTEGER - Code number
+           oldcode: INTEGER - Pairs of old and new code numbers
+           newcode: INTEGER - Pairs of old and new code numbers
+           oldparam: STRING - Pairs of old and new parameter identifiers
+           newparam: STRING - Pairs of old and new parameter identifiers
+           name: STRING - Variable name
+           oldname: STRING - Pairs of old and new variable names
+           newname: STRING - Pairs of old and new variable names
+           oldlev: FLOAT - Old level
+           newlev: FLOAT - New level
         """
         operator = CdoOperator(command="chunit",
                                n_input=1, 
@@ -2618,17 +2618,17 @@ Parameters:
     def chlevel(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
         r"""
         CDO operator: chlevel
-Parameters:
-    code: INTEGER - Code number
-    oldcode: INTEGER - Pairs of old and new code numbers
-    newcode: INTEGER - Pairs of old and new code numbers
-    oldparam: STRING - Pairs of old and new parameter identifiers
-    newparam: STRING - Pairs of old and new parameter identifiers
-    name: STRING - Variable name
-    oldname: STRING - Pairs of old and new variable names
-    newname: STRING - Pairs of old and new variable names
-    oldlev: FLOAT - Old level
-    newlev: FLOAT - New level
+        Parameters:
+           code: INTEGER - Code number
+           oldcode: INTEGER - Pairs of old and new code numbers
+           newcode: INTEGER - Pairs of old and new code numbers
+           oldparam: STRING - Pairs of old and new parameter identifiers
+           newparam: STRING - Pairs of old and new parameter identifiers
+           name: STRING - Variable name
+           oldname: STRING - Pairs of old and new variable names
+           newname: STRING - Pairs of old and new variable names
+           oldlev: FLOAT - Old level
+           newlev: FLOAT - New level
         """
         operator = CdoOperator(command="chlevel",
                                n_input=1, 
@@ -2640,17 +2640,17 @@ Parameters:
     def chlevelc(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
         r"""
         CDO operator: chlevelc
-Parameters:
-    code: INTEGER - Code number
-    oldcode: INTEGER - Pairs of old and new code numbers
-    newcode: INTEGER - Pairs of old and new code numbers
-    oldparam: STRING - Pairs of old and new parameter identifiers
-    newparam: STRING - Pairs of old and new parameter identifiers
-    name: STRING - Variable name
-    oldname: STRING - Pairs of old and new variable names
-    newname: STRING - Pairs of old and new variable names
-    oldlev: FLOAT - Old level
-    newlev: FLOAT - New level
+        Parameters:
+           code: INTEGER - Code number
+           oldcode: INTEGER - Pairs of old and new code numbers
+           newcode: INTEGER - Pairs of old and new code numbers
+           oldparam: STRING - Pairs of old and new parameter identifiers
+           newparam: STRING - Pairs of old and new parameter identifiers
+           name: STRING - Variable name
+           oldname: STRING - Pairs of old and new variable names
+           newname: STRING - Pairs of old and new variable names
+           oldlev: FLOAT - Old level
+           newlev: FLOAT - New level
         """
         operator = CdoOperator(command="chlevelc",
                                n_input=1, 
@@ -2662,17 +2662,17 @@ Parameters:
     def chlevelv(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
         r"""
         CDO operator: chlevelv
-Parameters:
-    code: INTEGER - Code number
-    oldcode: INTEGER - Pairs of old and new code numbers
-    newcode: INTEGER - Pairs of old and new code numbers
-    oldparam: STRING - Pairs of old and new parameter identifiers
-    newparam: STRING - Pairs of old and new parameter identifiers
-    name: STRING - Variable name
-    oldname: STRING - Pairs of old and new variable names
-    newname: STRING - Pairs of old and new variable names
-    oldlev: FLOAT - Old level
-    newlev: FLOAT - New level
+        Parameters:
+           code: INTEGER - Code number
+           oldcode: INTEGER - Pairs of old and new code numbers
+           newcode: INTEGER - Pairs of old and new code numbers
+           oldparam: STRING - Pairs of old and new parameter identifiers
+           newparam: STRING - Pairs of old and new parameter identifiers
+           name: STRING - Variable name
+           oldname: STRING - Pairs of old and new variable names
+           newname: STRING - Pairs of old and new variable names
+           oldlev: FLOAT - Old level
+           newlev: FLOAT - New level
         """
         operator = CdoOperator(command="chlevelv",
                                n_input=1, 
@@ -2684,12 +2684,12 @@ Parameters:
     def setgrid(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None):
         r"""
         CDO operator: setgrid
-Parameters:
-    grid: STRING - Grid description file or name
-    gridtype: STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)
-    gridarea: STRING - Data file, the first field is used as grid cell area
-    gridmask: STRING - Data file, the first field is used as grid mask
-    projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
+        Parameters:
+           grid: STRING - Grid description file or name
+           gridtype: STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)
+           gridarea: STRING - Data file, the first field is used as grid cell area
+           gridmask: STRING - Data file, the first field is used as grid mask
+           projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
         """
         operator = CdoOperator(command="setgrid",
                                n_input=1, 
@@ -2701,12 +2701,12 @@ Parameters:
     def setgridtype(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None):
         r"""
         CDO operator: setgridtype
-Parameters:
-    grid: STRING - Grid description file or name
-    gridtype: STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)
-    gridarea: STRING - Data file, the first field is used as grid cell area
-    gridmask: STRING - Data file, the first field is used as grid mask
-    projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
+        Parameters:
+           grid: STRING - Grid description file or name
+           gridtype: STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)
+           gridarea: STRING - Data file, the first field is used as grid cell area
+           gridmask: STRING - Data file, the first field is used as grid mask
+           projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
         """
         operator = CdoOperator(command="setgridtype",
                                n_input=1, 
@@ -2718,12 +2718,12 @@ Parameters:
     def setgridarea(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None):
         r"""
         CDO operator: setgridarea
-Parameters:
-    grid: STRING - Grid description file or name
-    gridtype: STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)
-    gridarea: STRING - Data file, the first field is used as grid cell area
-    gridmask: STRING - Data file, the first field is used as grid mask
-    projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
+        Parameters:
+           grid: STRING - Grid description file or name
+           gridtype: STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)
+           gridarea: STRING - Data file, the first field is used as grid cell area
+           gridmask: STRING - Data file, the first field is used as grid mask
+           projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
         """
         operator = CdoOperator(command="setgridarea",
                                n_input=1, 
@@ -2735,12 +2735,12 @@ Parameters:
     def setgridmask(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None):
         r"""
         CDO operator: setgridmask
-Parameters:
-    grid: STRING - Grid description file or name
-    gridtype: STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)
-    gridarea: STRING - Data file, the first field is used as grid cell area
-    gridmask: STRING - Data file, the first field is used as grid mask
-    projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
+        Parameters:
+           grid: STRING - Grid description file or name
+           gridtype: STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)
+           gridarea: STRING - Data file, the first field is used as grid cell area
+           gridmask: STRING - Data file, the first field is used as grid mask
+           projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
         """
         operator = CdoOperator(command="setgridmask",
                                n_input=1, 
@@ -2752,12 +2752,12 @@ Parameters:
     def setprojparams(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None):
         r"""
         CDO operator: setprojparams
-Parameters:
-    grid: STRING - Grid description file or name
-    gridtype: STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)
-    gridarea: STRING - Data file, the first field is used as grid cell area
-    gridmask: STRING - Data file, the first field is used as grid mask
-    projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
+        Parameters:
+           grid: STRING - Grid description file or name
+           gridtype: STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)
+           gridarea: STRING - Data file, the first field is used as grid cell area
+           gridmask: STRING - Data file, the first field is used as grid mask
+           projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
         """
         operator = CdoOperator(command="setprojparams",
                                n_input=1, 
@@ -2769,10 +2769,10 @@ Parameters:
     def setzaxis(self, zaxis = None, zbot = None, ztop = None):
         r"""
         CDO operator: setzaxis
-Parameters:
-    zaxis: STRING - Z-axis description file or name of the target z-axis
-    zbot: FLOAT - Specifying the bottom of the vertical column. Must have the same units as z-axis.
-    ztop: FLOAT - Specifying the top of the vertical column. Must have the same units as z-axis.
+        Parameters:
+           zaxis: STRING - Z-axis description file or name of the target z-axis
+           zbot: FLOAT - Specifying the bottom of the vertical column. Must have the same units as z-axis.
+           ztop: FLOAT - Specifying the top of the vertical column. Must have the same units as z-axis.
         """
         operator = CdoOperator(command="setzaxis",
                                n_input=1, 
@@ -2784,10 +2784,10 @@ Parameters:
     def genlevelbounds(self, zaxis = None, zbot = None, ztop = None):
         r"""
         CDO operator: genlevelbounds
-Parameters:
-    zaxis: STRING - Z-axis description file or name of the target z-axis
-    zbot: FLOAT - Specifying the bottom of the vertical column. Must have the same units as z-axis.
-    ztop: FLOAT - Specifying the top of the vertical column. Must have the same units as z-axis.
+        Parameters:
+           zaxis: STRING - Z-axis description file or name of the target z-axis
+           zbot: FLOAT - Specifying the bottom of the vertical column. Must have the same units as z-axis.
+           ztop: FLOAT - Specifying the top of the vertical column. Must have the same units as z-axis.
         """
         operator = CdoOperator(command="genlevelbounds",
                                n_input=1, 
@@ -2821,10 +2821,10 @@ Parameters:
     def shiftx(self, nshift = None, cyclic = None, coord = None):
         r"""
         CDO operator: shiftx
-Parameters:
-    nshift: INTEGER - Number of grid cells to shift (default: 1)
-    cyclic: STRING - If set, cells are filled up cyclic (default: missing value)
-    coord: STRING - If set, coordinates are also shifted
+        Parameters:
+           nshift: INTEGER - Number of grid cells to shift (default: 1)
+           cyclic: STRING - If set, cells are filled up cyclic (default: missing value)
+           coord: STRING - If set, coordinates are also shifted
         """
         operator = CdoOperator(command="shiftx",
                                n_input=1, 
@@ -2836,10 +2836,10 @@ Parameters:
     def shifty(self, nshift = None, cyclic = None, coord = None):
         r"""
         CDO operator: shifty
-Parameters:
-    nshift: INTEGER - Number of grid cells to shift (default: 1)
-    cyclic: STRING - If set, cells are filled up cyclic (default: missing value)
-    coord: STRING - If set, coordinates are also shifted
+        Parameters:
+           nshift: INTEGER - Number of grid cells to shift (default: 1)
+           cyclic: STRING - If set, cells are filled up cyclic (default: missing value)
+           coord: STRING - If set, coordinates are also shifted
         """
         operator = CdoOperator(command="shifty",
                                n_input=1, 
@@ -2851,8 +2851,8 @@ Parameters:
     def maskregion(self, regions = None):
         r"""
         CDO operator: maskregion
-Parameters:
-    regions: STRING - Comma-separated list of ASCII formatted files with different regions
+        Parameters:
+           regions: STRING - Comma-separated list of ASCII formatted files with different regions
         """
         operator = CdoOperator(command="maskregion",
                                n_input=1, 
@@ -2864,15 +2864,15 @@ Parameters:
     def masklonlatbox(self, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None):
         r"""
         CDO operator: masklonlatbox
-Parameters:
-    lon1: FLOAT - Western longitude
-    lon2: FLOAT - Eastern longitude
-    lat1: FLOAT - Southern or northern latitude
-    lat2: FLOAT - Northern or southern latitude
-    idx1: INTEGER - Index of first longitude
-    idx2: INTEGER - Index of last longitude
-    idy1: INTEGER - Index of first latitude
-    idy2: INTEGER - Index of last latitude
+        Parameters:
+           lon1: FLOAT - Western longitude
+           lon2: FLOAT - Eastern longitude
+           lat1: FLOAT - Southern or northern latitude
+           lat2: FLOAT - Northern or southern latitude
+           idx1: INTEGER - Index of first longitude
+           idx2: INTEGER - Index of last longitude
+           idy1: INTEGER - Index of first latitude
+           idy2: INTEGER - Index of last latitude
         """
         operator = CdoOperator(command="masklonlatbox",
                                n_input=1, 
@@ -2884,15 +2884,15 @@ Parameters:
     def maskindexbox(self, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None):
         r"""
         CDO operator: maskindexbox
-Parameters:
-    lon1: FLOAT - Western longitude
-    lon2: FLOAT - Eastern longitude
-    lat1: FLOAT - Southern or northern latitude
-    lat2: FLOAT - Northern or southern latitude
-    idx1: INTEGER - Index of first longitude
-    idx2: INTEGER - Index of last longitude
-    idy1: INTEGER - Index of first latitude
-    idy2: INTEGER - Index of last latitude
+        Parameters:
+           lon1: FLOAT - Western longitude
+           lon2: FLOAT - Eastern longitude
+           lat1: FLOAT - Southern or northern latitude
+           lat2: FLOAT - Northern or southern latitude
+           idx1: INTEGER - Index of first longitude
+           idx2: INTEGER - Index of last longitude
+           idy1: INTEGER - Index of first latitude
+           idy2: INTEGER - Index of last latitude
         """
         operator = CdoOperator(command="maskindexbox",
                                n_input=1, 
@@ -2904,16 +2904,16 @@ Parameters:
     def setclonlatbox(self, c = None, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None):
         r"""
         CDO operator: setclonlatbox
-Parameters:
-    c: FLOAT - Constant
-    lon1: FLOAT - Western longitude
-    lon2: FLOAT - Eastern longitude
-    lat1: FLOAT - Southern or northern latitude
-    lat2: FLOAT - Northern or southern latitude
-    idx1: INTEGER - Index of first longitude
-    idx2: INTEGER - Index of last longitude
-    idy1: INTEGER - Index of first latitude
-    idy2: INTEGER - Index of last latitude
+        Parameters:
+           c: FLOAT - Constant
+           lon1: FLOAT - Western longitude
+           lon2: FLOAT - Eastern longitude
+           lat1: FLOAT - Southern or northern latitude
+           lat2: FLOAT - Northern or southern latitude
+           idx1: INTEGER - Index of first longitude
+           idx2: INTEGER - Index of last longitude
+           idy1: INTEGER - Index of first latitude
+           idy2: INTEGER - Index of last latitude
         """
         operator = CdoOperator(command="setclonlatbox",
                                n_input=1, 
@@ -2925,16 +2925,16 @@ Parameters:
     def setcindexbox(self, c = None, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None):
         r"""
         CDO operator: setcindexbox
-Parameters:
-    c: FLOAT - Constant
-    lon1: FLOAT - Western longitude
-    lon2: FLOAT - Eastern longitude
-    lat1: FLOAT - Southern or northern latitude
-    lat2: FLOAT - Northern or southern latitude
-    idx1: INTEGER - Index of first longitude
-    idx2: INTEGER - Index of last longitude
-    idy1: INTEGER - Index of first latitude
-    idy2: INTEGER - Index of last latitude
+        Parameters:
+           c: FLOAT - Constant
+           lon1: FLOAT - Western longitude
+           lon2: FLOAT - Eastern longitude
+           lat1: FLOAT - Southern or northern latitude
+           lat2: FLOAT - Northern or southern latitude
+           idx1: INTEGER - Index of first longitude
+           idx2: INTEGER - Index of last longitude
+           idy1: INTEGER - Index of first latitude
+           idy2: INTEGER - Index of last latitude
         """
         operator = CdoOperator(command="setcindexbox",
                                n_input=1, 
@@ -2946,8 +2946,8 @@ Parameters:
     def enlarge(self, grid = None):
         r"""
         CDO operator: enlarge
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="enlarge",
                                n_input=1, 
@@ -2959,12 +2959,12 @@ Parameters:
     def setmissval(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
         r"""
         CDO operator: setmissval
-Parameters:
-    neighbors: INTEGER - Number of nearest neighbors
-    newmiss: FLOAT - New missing value
-    c: FLOAT - Constant
-    rmin: FLOAT - Lower bound
-    rmax: FLOAT - Upper bound
+        Parameters:
+           neighbors: INTEGER - Number of nearest neighbors
+           newmiss: FLOAT - New missing value
+           c: FLOAT - Constant
+           rmin: FLOAT - Lower bound
+           rmax: FLOAT - Upper bound
         """
         operator = CdoOperator(command="setmissval",
                                n_input=1, 
@@ -2976,12 +2976,12 @@ Parameters:
     def setctomiss(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
         r"""
         CDO operator: setctomiss
-Parameters:
-    neighbors: INTEGER - Number of nearest neighbors
-    newmiss: FLOAT - New missing value
-    c: FLOAT - Constant
-    rmin: FLOAT - Lower bound
-    rmax: FLOAT - Upper bound
+        Parameters:
+           neighbors: INTEGER - Number of nearest neighbors
+           newmiss: FLOAT - New missing value
+           c: FLOAT - Constant
+           rmin: FLOAT - Lower bound
+           rmax: FLOAT - Upper bound
         """
         operator = CdoOperator(command="setctomiss",
                                n_input=1, 
@@ -2993,12 +2993,12 @@ Parameters:
     def setmisstoc(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
         r"""
         CDO operator: setmisstoc
-Parameters:
-    neighbors: INTEGER - Number of nearest neighbors
-    newmiss: FLOAT - New missing value
-    c: FLOAT - Constant
-    rmin: FLOAT - Lower bound
-    rmax: FLOAT - Upper bound
+        Parameters:
+           neighbors: INTEGER - Number of nearest neighbors
+           newmiss: FLOAT - New missing value
+           c: FLOAT - Constant
+           rmin: FLOAT - Lower bound
+           rmax: FLOAT - Upper bound
         """
         operator = CdoOperator(command="setmisstoc",
                                n_input=1, 
@@ -3010,12 +3010,12 @@ Parameters:
     def setrtomiss(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
         r"""
         CDO operator: setrtomiss
-Parameters:
-    neighbors: INTEGER - Number of nearest neighbors
-    newmiss: FLOAT - New missing value
-    c: FLOAT - Constant
-    rmin: FLOAT - Lower bound
-    rmax: FLOAT - Upper bound
+        Parameters:
+           neighbors: INTEGER - Number of nearest neighbors
+           newmiss: FLOAT - New missing value
+           c: FLOAT - Constant
+           rmin: FLOAT - Lower bound
+           rmax: FLOAT - Upper bound
         """
         operator = CdoOperator(command="setrtomiss",
                                n_input=1, 
@@ -3027,12 +3027,12 @@ Parameters:
     def setvrange(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
         r"""
         CDO operator: setvrange
-Parameters:
-    neighbors: INTEGER - Number of nearest neighbors
-    newmiss: FLOAT - New missing value
-    c: FLOAT - Constant
-    rmin: FLOAT - Lower bound
-    rmax: FLOAT - Upper bound
+        Parameters:
+           neighbors: INTEGER - Number of nearest neighbors
+           newmiss: FLOAT - New missing value
+           c: FLOAT - Constant
+           rmin: FLOAT - Lower bound
+           rmax: FLOAT - Upper bound
         """
         operator = CdoOperator(command="setvrange",
                                n_input=1, 
@@ -3044,12 +3044,12 @@ Parameters:
     def setmisstonn(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
         r"""
         CDO operator: setmisstonn
-Parameters:
-    neighbors: INTEGER - Number of nearest neighbors
-    newmiss: FLOAT - New missing value
-    c: FLOAT - Constant
-    rmin: FLOAT - Lower bound
-    rmax: FLOAT - Upper bound
+        Parameters:
+           neighbors: INTEGER - Number of nearest neighbors
+           newmiss: FLOAT - New missing value
+           c: FLOAT - Constant
+           rmin: FLOAT - Lower bound
+           rmax: FLOAT - Upper bound
         """
         operator = CdoOperator(command="setmisstonn",
                                n_input=1, 
@@ -3061,12 +3061,12 @@ Parameters:
     def setmisstodis(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
         r"""
         CDO operator: setmisstodis
-Parameters:
-    neighbors: INTEGER - Number of nearest neighbors
-    newmiss: FLOAT - New missing value
-    c: FLOAT - Constant
-    rmin: FLOAT - Lower bound
-    rmax: FLOAT - Upper bound
+        Parameters:
+           neighbors: INTEGER - Number of nearest neighbors
+           newmiss: FLOAT - New missing value
+           c: FLOAT - Constant
+           rmin: FLOAT - Lower bound
+           rmax: FLOAT - Upper bound
         """
         operator = CdoOperator(command="setmisstodis",
                                n_input=1, 
@@ -3078,10 +3078,10 @@ Parameters:
     def vertfillmiss(self, method = None, limit = None, max_gaps = None):
         r"""
         CDO operator: vertfillmiss
-Parameters:
-    method: STRING - Fill method \[nearest|linear|forward|backward\] (default: nearest)
-    limit: INTEGER - The maximum number of consecutive missing values to fill (default: all)
-    max_gaps: INTEGER - The maximum number of gaps to fill (default: all)
+        Parameters:
+           method: STRING - Fill method \[nearest|linear|forward|backward\] (default: nearest)
+           limit: INTEGER - The maximum number of consecutive missing values to fill (default: all)
+           max_gaps: INTEGER - The maximum number of gaps to fill (default: all)
         """
         operator = CdoOperator(command="vertfillmiss",
                                n_input=1, 
@@ -3093,10 +3093,10 @@ Parameters:
     def timfillmiss(self, method = None, limit = None, max_gaps = None):
         r"""
         CDO operator: timfillmiss
-Parameters:
-    method: STRING - Fill method \[nearest|linear|forward|backward\] (default: nearest)
-    limit: INTEGER - The maximum number of consecutive missing values to fill (default: all)
-    max_gaps: INTEGER - The maximum number of gaps to fill (default: all)
+        Parameters:
+           method: STRING - Fill method \[nearest|linear|forward|backward\] (default: nearest)
+           limit: INTEGER - The maximum number of consecutive missing values to fill (default: all)
+           max_gaps: INTEGER - The maximum number of gaps to fill (default: all)
         """
         operator = CdoOperator(command="timfillmiss",
                                n_input=1, 
@@ -3108,10 +3108,10 @@ Parameters:
     def setgridcell(self, value = None, cell = None, mask = None):
         r"""
         CDO operator: setgridcell
-Parameters:
-    value: FLOAT - Value of the grid cell
-    cell: INTEGER - Comma-separated list of grid cell indices
-    mask: STRING - Name of the data file which contains the mask
+        Parameters:
+           value: FLOAT - Value of the grid cell
+           cell: INTEGER - Comma-separated list of grid cell indices
+           mask: STRING - Name of the data file which contains the mask
         """
         operator = CdoOperator(command="setgridcell",
                                n_input=1, 
@@ -3123,9 +3123,9 @@ Parameters:
     def expr(self, instr = None, filename = None):
         r"""
         CDO operator: expr
-Parameters:
-    instr: STRING - Processing instructions (need to be 'quoted' in most cases)
-    filename: STRING - File with processing instructions
+        Parameters:
+           instr: STRING - Processing instructions (need to be 'quoted' in most cases)
+           filename: STRING - File with processing instructions
         """
         operator = CdoOperator(command="expr",
                                n_input=1, 
@@ -3137,9 +3137,9 @@ Parameters:
     def exprf(self, instr = None, filename = None):
         r"""
         CDO operator: exprf
-Parameters:
-    instr: STRING - Processing instructions (need to be 'quoted' in most cases)
-    filename: STRING - File with processing instructions
+        Parameters:
+           instr: STRING - Processing instructions (need to be 'quoted' in most cases)
+           filename: STRING - File with processing instructions
         """
         operator = CdoOperator(command="exprf",
                                n_input=1, 
@@ -3151,9 +3151,9 @@ Parameters:
     def aexpr(self, instr = None, filename = None):
         r"""
         CDO operator: aexpr
-Parameters:
-    instr: STRING - Processing instructions (need to be 'quoted' in most cases)
-    filename: STRING - File with processing instructions
+        Parameters:
+           instr: STRING - Processing instructions (need to be 'quoted' in most cases)
+           filename: STRING - File with processing instructions
         """
         operator = CdoOperator(command="aexpr",
                                n_input=1, 
@@ -3165,9 +3165,9 @@ Parameters:
     def aexprf(self, instr = None, filename = None):
         r"""
         CDO operator: aexprf
-Parameters:
-    instr: STRING - Processing instructions (need to be 'quoted' in most cases)
-    filename: STRING - File with processing instructions
+        Parameters:
+           instr: STRING - Processing instructions (need to be 'quoted' in most cases)
+           filename: STRING - File with processing instructions
         """
         operator = CdoOperator(command="aexprf",
                                n_input=1, 
@@ -3366,8 +3366,8 @@ Parameters:
     def addc(self, c = None):
         r"""
         CDO operator: addc
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="addc",
                                n_input=1, 
@@ -3379,8 +3379,8 @@ Parameters:
     def subc(self, c = None):
         r"""
         CDO operator: subc
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="subc",
                                n_input=1, 
@@ -3392,8 +3392,8 @@ Parameters:
     def mulc(self, c = None):
         r"""
         CDO operator: mulc
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="mulc",
                                n_input=1, 
@@ -3405,8 +3405,8 @@ Parameters:
     def divc(self, c = None):
         r"""
         CDO operator: divc
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="divc",
                                n_input=1, 
@@ -3418,8 +3418,8 @@ Parameters:
     def minc(self, c = None):
         r"""
         CDO operator: minc
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="minc",
                                n_input=1, 
@@ -3431,8 +3431,8 @@ Parameters:
     def maxc(self, c = None):
         r"""
         CDO operator: maxc
-Parameters:
-    c: FLOAT - Constant
+        Parameters:
+           c: FLOAT - Constant
         """
         operator = CdoOperator(command="maxc",
                                n_input=1, 
@@ -4038,8 +4038,8 @@ Parameters:
     def ensmin(self, p = None):
         r"""
         CDO operator: ensmin
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="ensmin",
                                n_input=inf, 
@@ -4051,8 +4051,8 @@ Parameters:
     def ensmax(self, p = None):
         r"""
         CDO operator: ensmax
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="ensmax",
                                n_input=inf, 
@@ -4064,8 +4064,8 @@ Parameters:
     def ensrange(self, p = None):
         r"""
         CDO operator: ensrange
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="ensrange",
                                n_input=inf, 
@@ -4077,8 +4077,8 @@ Parameters:
     def enssum(self, p = None):
         r"""
         CDO operator: enssum
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="enssum",
                                n_input=inf, 
@@ -4090,8 +4090,8 @@ Parameters:
     def ensmean(self, p = None):
         r"""
         CDO operator: ensmean
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="ensmean",
                                n_input=inf, 
@@ -4103,8 +4103,8 @@ Parameters:
     def ensavg(self, p = None):
         r"""
         CDO operator: ensavg
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="ensavg",
                                n_input=inf, 
@@ -4116,8 +4116,8 @@ Parameters:
     def ensstd(self, p = None):
         r"""
         CDO operator: ensstd
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="ensstd",
                                n_input=inf, 
@@ -4129,8 +4129,8 @@ Parameters:
     def ensstd1(self, p = None):
         r"""
         CDO operator: ensstd1
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="ensstd1",
                                n_input=inf, 
@@ -4142,8 +4142,8 @@ Parameters:
     def ensvar(self, p = None):
         r"""
         CDO operator: ensvar
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="ensvar",
                                n_input=inf, 
@@ -4155,8 +4155,8 @@ Parameters:
     def ensvar1(self, p = None):
         r"""
         CDO operator: ensvar1
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="ensvar1",
                                n_input=inf, 
@@ -4168,8 +4168,8 @@ Parameters:
     def ensskew(self, p = None):
         r"""
         CDO operator: ensskew
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="ensskew",
                                n_input=inf, 
@@ -4181,8 +4181,8 @@ Parameters:
     def enskurt(self, p = None):
         r"""
         CDO operator: enskurt
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="enskurt",
                                n_input=inf, 
@@ -4194,8 +4194,8 @@ Parameters:
     def ensmedian(self, p = None):
         r"""
         CDO operator: ensmedian
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="ensmedian",
                                n_input=inf, 
@@ -4207,8 +4207,8 @@ Parameters:
     def enspctl(self, p = None):
         r"""
         CDO operator: enspctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="enspctl",
                                n_input=inf, 
@@ -4275,9 +4275,9 @@ Parameters:
     def fldmin(self, weights = None, p = None):
         r"""
         CDO operator: fldmin
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldmin",
                                n_input=1, 
@@ -4289,9 +4289,9 @@ Parameters:
     def fldmax(self, weights = None, p = None):
         r"""
         CDO operator: fldmax
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldmax",
                                n_input=1, 
@@ -4303,9 +4303,9 @@ Parameters:
     def fldrange(self, weights = None, p = None):
         r"""
         CDO operator: fldrange
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldrange",
                                n_input=1, 
@@ -4317,9 +4317,9 @@ Parameters:
     def fldsum(self, weights = None, p = None):
         r"""
         CDO operator: fldsum
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldsum",
                                n_input=1, 
@@ -4331,9 +4331,9 @@ Parameters:
     def fldint(self, weights = None, p = None):
         r"""
         CDO operator: fldint
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldint",
                                n_input=1, 
@@ -4345,9 +4345,9 @@ Parameters:
     def fldmean(self, weights = None, p = None):
         r"""
         CDO operator: fldmean
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldmean",
                                n_input=1, 
@@ -4359,9 +4359,9 @@ Parameters:
     def fldavg(self, weights = None, p = None):
         r"""
         CDO operator: fldavg
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldavg",
                                n_input=1, 
@@ -4373,9 +4373,9 @@ Parameters:
     def fldstd(self, weights = None, p = None):
         r"""
         CDO operator: fldstd
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldstd",
                                n_input=1, 
@@ -4387,9 +4387,9 @@ Parameters:
     def fldstd1(self, weights = None, p = None):
         r"""
         CDO operator: fldstd1
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldstd1",
                                n_input=1, 
@@ -4401,9 +4401,9 @@ Parameters:
     def fldvar(self, weights = None, p = None):
         r"""
         CDO operator: fldvar
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldvar",
                                n_input=1, 
@@ -4415,9 +4415,9 @@ Parameters:
     def fldvar1(self, weights = None, p = None):
         r"""
         CDO operator: fldvar1
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldvar1",
                                n_input=1, 
@@ -4429,9 +4429,9 @@ Parameters:
     def fldskew(self, weights = None, p = None):
         r"""
         CDO operator: fldskew
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldskew",
                                n_input=1, 
@@ -4443,9 +4443,9 @@ Parameters:
     def fldkurt(self, weights = None, p = None):
         r"""
         CDO operator: fldkurt
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldkurt",
                                n_input=1, 
@@ -4457,9 +4457,9 @@ Parameters:
     def fldmedian(self, weights = None, p = None):
         r"""
         CDO operator: fldmedian
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldmedian",
                                n_input=1, 
@@ -4471,9 +4471,9 @@ Parameters:
     def fldcount(self, weights = None, p = None):
         r"""
         CDO operator: fldcount
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldcount",
                                n_input=1, 
@@ -4485,9 +4485,9 @@ Parameters:
     def fldpctl(self, weights = None, p = None):
         r"""
         CDO operator: fldpctl
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="fldpctl",
                                n_input=1, 
@@ -4499,9 +4499,9 @@ Parameters:
     def zonmin(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonmin
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonmin",
                                n_input=1, 
@@ -4513,9 +4513,9 @@ Parameters:
     def zonmax(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonmax
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonmax",
                                n_input=1, 
@@ -4527,9 +4527,9 @@ Parameters:
     def zonrange(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonrange
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonrange",
                                n_input=1, 
@@ -4541,9 +4541,9 @@ Parameters:
     def zonsum(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonsum
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonsum",
                                n_input=1, 
@@ -4555,9 +4555,9 @@ Parameters:
     def zonmean(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonmean
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonmean",
                                n_input=1, 
@@ -4569,9 +4569,9 @@ Parameters:
     def zonavg(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonavg
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonavg",
                                n_input=1, 
@@ -4583,9 +4583,9 @@ Parameters:
     def zonstd(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonstd
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonstd",
                                n_input=1, 
@@ -4597,9 +4597,9 @@ Parameters:
     def zonstd1(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonstd1
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonstd1",
                                n_input=1, 
@@ -4611,9 +4611,9 @@ Parameters:
     def zonvar(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonvar
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonvar",
                                n_input=1, 
@@ -4625,9 +4625,9 @@ Parameters:
     def zonvar1(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonvar1
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonvar1",
                                n_input=1, 
@@ -4639,9 +4639,9 @@ Parameters:
     def zonskew(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonskew
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonskew",
                                n_input=1, 
@@ -4653,9 +4653,9 @@ Parameters:
     def zonkurt(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonkurt
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonkurt",
                                n_input=1, 
@@ -4667,9 +4667,9 @@ Parameters:
     def zonmedian(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonmedian
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonmedian",
                                n_input=1, 
@@ -4681,9 +4681,9 @@ Parameters:
     def zonpctl(self, p = None, zonaldes = None):
         r"""
         CDO operator: zonpctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
         operator = CdoOperator(command="zonpctl",
                                n_input=1, 
@@ -4695,8 +4695,8 @@ Parameters:
     def mermin(self, p = None):
         r"""
         CDO operator: mermin
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="mermin",
                                n_input=1, 
@@ -4708,8 +4708,8 @@ Parameters:
     def mermax(self, p = None):
         r"""
         CDO operator: mermax
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="mermax",
                                n_input=1, 
@@ -4721,8 +4721,8 @@ Parameters:
     def merrange(self, p = None):
         r"""
         CDO operator: merrange
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="merrange",
                                n_input=1, 
@@ -4734,8 +4734,8 @@ Parameters:
     def mersum(self, p = None):
         r"""
         CDO operator: mersum
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="mersum",
                                n_input=1, 
@@ -4747,8 +4747,8 @@ Parameters:
     def mermean(self, p = None):
         r"""
         CDO operator: mermean
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="mermean",
                                n_input=1, 
@@ -4760,8 +4760,8 @@ Parameters:
     def meravg(self, p = None):
         r"""
         CDO operator: meravg
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="meravg",
                                n_input=1, 
@@ -4773,8 +4773,8 @@ Parameters:
     def merstd(self, p = None):
         r"""
         CDO operator: merstd
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="merstd",
                                n_input=1, 
@@ -4786,8 +4786,8 @@ Parameters:
     def merstd1(self, p = None):
         r"""
         CDO operator: merstd1
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="merstd1",
                                n_input=1, 
@@ -4799,8 +4799,8 @@ Parameters:
     def mervar(self, p = None):
         r"""
         CDO operator: mervar
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="mervar",
                                n_input=1, 
@@ -4812,8 +4812,8 @@ Parameters:
     def mervar1(self, p = None):
         r"""
         CDO operator: mervar1
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="mervar1",
                                n_input=1, 
@@ -4825,8 +4825,8 @@ Parameters:
     def merskew(self, p = None):
         r"""
         CDO operator: merskew
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="merskew",
                                n_input=1, 
@@ -4838,8 +4838,8 @@ Parameters:
     def merkurt(self, p = None):
         r"""
         CDO operator: merkurt
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="merkurt",
                                n_input=1, 
@@ -4851,8 +4851,8 @@ Parameters:
     def mermedian(self, p = None):
         r"""
         CDO operator: mermedian
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="mermedian",
                                n_input=1, 
@@ -4864,8 +4864,8 @@ Parameters:
     def merpctl(self, p = None):
         r"""
         CDO operator: merpctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="merpctl",
                                n_input=1, 
@@ -4877,9 +4877,9 @@ Parameters:
     def gridboxmin(self, nx = None, ny = None):
         r"""
         CDO operator: gridboxmin
-Parameters:
-    nx: INTEGER - Number of grid boxes in x direction
-    ny: INTEGER - Number of grid boxes in y direction
+        Parameters:
+           nx: INTEGER - Number of grid boxes in x direction
+           ny: INTEGER - Number of grid boxes in y direction
         """
         operator = CdoOperator(command="gridboxmin",
                                n_input=1, 
@@ -4891,9 +4891,9 @@ Parameters:
     def gridboxmax(self, nx = None, ny = None):
         r"""
         CDO operator: gridboxmax
-Parameters:
-    nx: INTEGER - Number of grid boxes in x direction
-    ny: INTEGER - Number of grid boxes in y direction
+        Parameters:
+           nx: INTEGER - Number of grid boxes in x direction
+           ny: INTEGER - Number of grid boxes in y direction
         """
         operator = CdoOperator(command="gridboxmax",
                                n_input=1, 
@@ -4905,9 +4905,9 @@ Parameters:
     def gridboxrange(self, nx = None, ny = None):
         r"""
         CDO operator: gridboxrange
-Parameters:
-    nx: INTEGER - Number of grid boxes in x direction
-    ny: INTEGER - Number of grid boxes in y direction
+        Parameters:
+           nx: INTEGER - Number of grid boxes in x direction
+           ny: INTEGER - Number of grid boxes in y direction
         """
         operator = CdoOperator(command="gridboxrange",
                                n_input=1, 
@@ -4919,9 +4919,9 @@ Parameters:
     def gridboxsum(self, nx = None, ny = None):
         r"""
         CDO operator: gridboxsum
-Parameters:
-    nx: INTEGER - Number of grid boxes in x direction
-    ny: INTEGER - Number of grid boxes in y direction
+        Parameters:
+           nx: INTEGER - Number of grid boxes in x direction
+           ny: INTEGER - Number of grid boxes in y direction
         """
         operator = CdoOperator(command="gridboxsum",
                                n_input=1, 
@@ -4933,9 +4933,9 @@ Parameters:
     def gridboxmean(self, nx = None, ny = None):
         r"""
         CDO operator: gridboxmean
-Parameters:
-    nx: INTEGER - Number of grid boxes in x direction
-    ny: INTEGER - Number of grid boxes in y direction
+        Parameters:
+           nx: INTEGER - Number of grid boxes in x direction
+           ny: INTEGER - Number of grid boxes in y direction
         """
         operator = CdoOperator(command="gridboxmean",
                                n_input=1, 
@@ -4947,9 +4947,9 @@ Parameters:
     def gridboxavg(self, nx = None, ny = None):
         r"""
         CDO operator: gridboxavg
-Parameters:
-    nx: INTEGER - Number of grid boxes in x direction
-    ny: INTEGER - Number of grid boxes in y direction
+        Parameters:
+           nx: INTEGER - Number of grid boxes in x direction
+           ny: INTEGER - Number of grid boxes in y direction
         """
         operator = CdoOperator(command="gridboxavg",
                                n_input=1, 
@@ -4961,9 +4961,9 @@ Parameters:
     def gridboxstd(self, nx = None, ny = None):
         r"""
         CDO operator: gridboxstd
-Parameters:
-    nx: INTEGER - Number of grid boxes in x direction
-    ny: INTEGER - Number of grid boxes in y direction
+        Parameters:
+           nx: INTEGER - Number of grid boxes in x direction
+           ny: INTEGER - Number of grid boxes in y direction
         """
         operator = CdoOperator(command="gridboxstd",
                                n_input=1, 
@@ -4975,9 +4975,9 @@ Parameters:
     def gridboxstd1(self, nx = None, ny = None):
         r"""
         CDO operator: gridboxstd1
-Parameters:
-    nx: INTEGER - Number of grid boxes in x direction
-    ny: INTEGER - Number of grid boxes in y direction
+        Parameters:
+           nx: INTEGER - Number of grid boxes in x direction
+           ny: INTEGER - Number of grid boxes in y direction
         """
         operator = CdoOperator(command="gridboxstd1",
                                n_input=1, 
@@ -4989,9 +4989,9 @@ Parameters:
     def gridboxvar(self, nx = None, ny = None):
         r"""
         CDO operator: gridboxvar
-Parameters:
-    nx: INTEGER - Number of grid boxes in x direction
-    ny: INTEGER - Number of grid boxes in y direction
+        Parameters:
+           nx: INTEGER - Number of grid boxes in x direction
+           ny: INTEGER - Number of grid boxes in y direction
         """
         operator = CdoOperator(command="gridboxvar",
                                n_input=1, 
@@ -5003,9 +5003,9 @@ Parameters:
     def gridboxvar1(self, nx = None, ny = None):
         r"""
         CDO operator: gridboxvar1
-Parameters:
-    nx: INTEGER - Number of grid boxes in x direction
-    ny: INTEGER - Number of grid boxes in y direction
+        Parameters:
+           nx: INTEGER - Number of grid boxes in x direction
+           ny: INTEGER - Number of grid boxes in y direction
         """
         operator = CdoOperator(command="gridboxvar1",
                                n_input=1, 
@@ -5017,9 +5017,9 @@ Parameters:
     def gridboxskew(self, nx = None, ny = None):
         r"""
         CDO operator: gridboxskew
-Parameters:
-    nx: INTEGER - Number of grid boxes in x direction
-    ny: INTEGER - Number of grid boxes in y direction
+        Parameters:
+           nx: INTEGER - Number of grid boxes in x direction
+           ny: INTEGER - Number of grid boxes in y direction
         """
         operator = CdoOperator(command="gridboxskew",
                                n_input=1, 
@@ -5031,9 +5031,9 @@ Parameters:
     def gridboxkurt(self, nx = None, ny = None):
         r"""
         CDO operator: gridboxkurt
-Parameters:
-    nx: INTEGER - Number of grid boxes in x direction
-    ny: INTEGER - Number of grid boxes in y direction
+        Parameters:
+           nx: INTEGER - Number of grid boxes in x direction
+           ny: INTEGER - Number of grid boxes in y direction
         """
         operator = CdoOperator(command="gridboxkurt",
                                n_input=1, 
@@ -5045,9 +5045,9 @@ Parameters:
     def gridboxmedian(self, nx = None, ny = None):
         r"""
         CDO operator: gridboxmedian
-Parameters:
-    nx: INTEGER - Number of grid boxes in x direction
-    ny: INTEGER - Number of grid boxes in y direction
+        Parameters:
+           nx: INTEGER - Number of grid boxes in x direction
+           ny: INTEGER - Number of grid boxes in y direction
         """
         operator = CdoOperator(command="gridboxmedian",
                                n_input=1, 
@@ -5059,8 +5059,8 @@ Parameters:
     def remapmin(self, grid = None):
         r"""
         CDO operator: remapmin
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remapmin",
                                n_input=1, 
@@ -5072,8 +5072,8 @@ Parameters:
     def remapmax(self, grid = None):
         r"""
         CDO operator: remapmax
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remapmax",
                                n_input=1, 
@@ -5085,8 +5085,8 @@ Parameters:
     def remaprange(self, grid = None):
         r"""
         CDO operator: remaprange
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remaprange",
                                n_input=1, 
@@ -5098,8 +5098,8 @@ Parameters:
     def remapsum(self, grid = None):
         r"""
         CDO operator: remapsum
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remapsum",
                                n_input=1, 
@@ -5111,8 +5111,8 @@ Parameters:
     def remapmean(self, grid = None):
         r"""
         CDO operator: remapmean
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remapmean",
                                n_input=1, 
@@ -5124,8 +5124,8 @@ Parameters:
     def remapavg(self, grid = None):
         r"""
         CDO operator: remapavg
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remapavg",
                                n_input=1, 
@@ -5137,8 +5137,8 @@ Parameters:
     def remapstd(self, grid = None):
         r"""
         CDO operator: remapstd
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remapstd",
                                n_input=1, 
@@ -5150,8 +5150,8 @@ Parameters:
     def remapstd1(self, grid = None):
         r"""
         CDO operator: remapstd1
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remapstd1",
                                n_input=1, 
@@ -5163,8 +5163,8 @@ Parameters:
     def remapvar(self, grid = None):
         r"""
         CDO operator: remapvar
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remapvar",
                                n_input=1, 
@@ -5176,8 +5176,8 @@ Parameters:
     def remapvar1(self, grid = None):
         r"""
         CDO operator: remapvar1
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remapvar1",
                                n_input=1, 
@@ -5189,8 +5189,8 @@ Parameters:
     def remapskew(self, grid = None):
         r"""
         CDO operator: remapskew
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remapskew",
                                n_input=1, 
@@ -5202,8 +5202,8 @@ Parameters:
     def remapkurt(self, grid = None):
         r"""
         CDO operator: remapkurt
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remapkurt",
                                n_input=1, 
@@ -5215,8 +5215,8 @@ Parameters:
     def remapmedian(self, grid = None):
         r"""
         CDO operator: remapmedian
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remapmedian",
                                n_input=1, 
@@ -5228,8 +5228,8 @@ Parameters:
     def vertmin(self, weights = None):
         r"""
         CDO operator: vertmin
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
         operator = CdoOperator(command="vertmin",
                                n_input=1, 
@@ -5241,8 +5241,8 @@ Parameters:
     def vertmax(self, weights = None):
         r"""
         CDO operator: vertmax
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
         operator = CdoOperator(command="vertmax",
                                n_input=1, 
@@ -5254,8 +5254,8 @@ Parameters:
     def vertrange(self, weights = None):
         r"""
         CDO operator: vertrange
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
         operator = CdoOperator(command="vertrange",
                                n_input=1, 
@@ -5267,8 +5267,8 @@ Parameters:
     def vertsum(self, weights = None):
         r"""
         CDO operator: vertsum
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
         operator = CdoOperator(command="vertsum",
                                n_input=1, 
@@ -5280,8 +5280,8 @@ Parameters:
     def vertmean(self, weights = None):
         r"""
         CDO operator: vertmean
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
         operator = CdoOperator(command="vertmean",
                                n_input=1, 
@@ -5293,8 +5293,8 @@ Parameters:
     def vertavg(self, weights = None):
         r"""
         CDO operator: vertavg
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
         operator = CdoOperator(command="vertavg",
                                n_input=1, 
@@ -5306,8 +5306,8 @@ Parameters:
     def vertstd(self, weights = None):
         r"""
         CDO operator: vertstd
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
         operator = CdoOperator(command="vertstd",
                                n_input=1, 
@@ -5319,8 +5319,8 @@ Parameters:
     def vertstd1(self, weights = None):
         r"""
         CDO operator: vertstd1
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
         operator = CdoOperator(command="vertstd1",
                                n_input=1, 
@@ -5332,8 +5332,8 @@ Parameters:
     def vertvar(self, weights = None):
         r"""
         CDO operator: vertvar
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
         operator = CdoOperator(command="vertvar",
                                n_input=1, 
@@ -5345,8 +5345,8 @@ Parameters:
     def vertvar1(self, weights = None):
         r"""
         CDO operator: vertvar1
-Parameters:
-    weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
+        Parameters:
+           weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
         operator = CdoOperator(command="vertvar1",
                                n_input=1, 
@@ -5358,10 +5358,10 @@ Parameters:
     def timselmin(self, nsets = None, noffset = None, nskip = None):
         r"""
         CDO operator: timselmin
-Parameters:
-    nsets: INTEGER - Number of input timesteps for each output timestep
-    noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
-    nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
+        Parameters:
+           nsets: INTEGER - Number of input timesteps for each output timestep
+           noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
+           nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
         operator = CdoOperator(command="timselmin",
                                n_input=1, 
@@ -5373,10 +5373,10 @@ Parameters:
     def timselmax(self, nsets = None, noffset = None, nskip = None):
         r"""
         CDO operator: timselmax
-Parameters:
-    nsets: INTEGER - Number of input timesteps for each output timestep
-    noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
-    nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
+        Parameters:
+           nsets: INTEGER - Number of input timesteps for each output timestep
+           noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
+           nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
         operator = CdoOperator(command="timselmax",
                                n_input=1, 
@@ -5388,10 +5388,10 @@ Parameters:
     def timselrange(self, nsets = None, noffset = None, nskip = None):
         r"""
         CDO operator: timselrange
-Parameters:
-    nsets: INTEGER - Number of input timesteps for each output timestep
-    noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
-    nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
+        Parameters:
+           nsets: INTEGER - Number of input timesteps for each output timestep
+           noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
+           nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
         operator = CdoOperator(command="timselrange",
                                n_input=1, 
@@ -5403,10 +5403,10 @@ Parameters:
     def timselsum(self, nsets = None, noffset = None, nskip = None):
         r"""
         CDO operator: timselsum
-Parameters:
-    nsets: INTEGER - Number of input timesteps for each output timestep
-    noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
-    nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
+        Parameters:
+           nsets: INTEGER - Number of input timesteps for each output timestep
+           noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
+           nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
         operator = CdoOperator(command="timselsum",
                                n_input=1, 
@@ -5418,10 +5418,10 @@ Parameters:
     def timselmean(self, nsets = None, noffset = None, nskip = None):
         r"""
         CDO operator: timselmean
-Parameters:
-    nsets: INTEGER - Number of input timesteps for each output timestep
-    noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
-    nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
+        Parameters:
+           nsets: INTEGER - Number of input timesteps for each output timestep
+           noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
+           nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
         operator = CdoOperator(command="timselmean",
                                n_input=1, 
@@ -5433,10 +5433,10 @@ Parameters:
     def timselavg(self, nsets = None, noffset = None, nskip = None):
         r"""
         CDO operator: timselavg
-Parameters:
-    nsets: INTEGER - Number of input timesteps for each output timestep
-    noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
-    nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
+        Parameters:
+           nsets: INTEGER - Number of input timesteps for each output timestep
+           noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
+           nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
         operator = CdoOperator(command="timselavg",
                                n_input=1, 
@@ -5448,10 +5448,10 @@ Parameters:
     def timselstd(self, nsets = None, noffset = None, nskip = None):
         r"""
         CDO operator: timselstd
-Parameters:
-    nsets: INTEGER - Number of input timesteps for each output timestep
-    noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
-    nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
+        Parameters:
+           nsets: INTEGER - Number of input timesteps for each output timestep
+           noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
+           nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
         operator = CdoOperator(command="timselstd",
                                n_input=1, 
@@ -5463,10 +5463,10 @@ Parameters:
     def timselstd1(self, nsets = None, noffset = None, nskip = None):
         r"""
         CDO operator: timselstd1
-Parameters:
-    nsets: INTEGER - Number of input timesteps for each output timestep
-    noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
-    nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
+        Parameters:
+           nsets: INTEGER - Number of input timesteps for each output timestep
+           noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
+           nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
         operator = CdoOperator(command="timselstd1",
                                n_input=1, 
@@ -5478,10 +5478,10 @@ Parameters:
     def timselvar(self, nsets = None, noffset = None, nskip = None):
         r"""
         CDO operator: timselvar
-Parameters:
-    nsets: INTEGER - Number of input timesteps for each output timestep
-    noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
-    nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
+        Parameters:
+           nsets: INTEGER - Number of input timesteps for each output timestep
+           noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
+           nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
         operator = CdoOperator(command="timselvar",
                                n_input=1, 
@@ -5493,10 +5493,10 @@ Parameters:
     def timselvar1(self, nsets = None, noffset = None, nskip = None):
         r"""
         CDO operator: timselvar1
-Parameters:
-    nsets: INTEGER - Number of input timesteps for each output timestep
-    noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
-    nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
+        Parameters:
+           nsets: INTEGER - Number of input timesteps for each output timestep
+           noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
+           nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
         operator = CdoOperator(command="timselvar1",
                                n_input=1, 
@@ -5508,11 +5508,11 @@ Parameters:
     def timselpctl(self, ifile2, ifile3, p = None, nsets = None, noffset = None, nskip = None):
         r"""
         CDO operator: timselpctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    nsets: INTEGER - Number of input timesteps for each output timestep
-    noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
-    nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           nsets: INTEGER - Number of input timesteps for each output timestep
+           noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
+           nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
         operator = CdoOperator(command="timselpctl",
                                n_input=3, 
@@ -5524,8 +5524,8 @@ Parameters:
     def runmin(self, nts = None):
         r"""
         CDO operator: runmin
-Parameters:
-    nts: INTEGER - Number of timesteps
+        Parameters:
+           nts: INTEGER - Number of timesteps
         """
         operator = CdoOperator(command="runmin",
                                n_input=1, 
@@ -5537,8 +5537,8 @@ Parameters:
     def runmax(self, nts = None):
         r"""
         CDO operator: runmax
-Parameters:
-    nts: INTEGER - Number of timesteps
+        Parameters:
+           nts: INTEGER - Number of timesteps
         """
         operator = CdoOperator(command="runmax",
                                n_input=1, 
@@ -5550,8 +5550,8 @@ Parameters:
     def runrange(self, nts = None):
         r"""
         CDO operator: runrange
-Parameters:
-    nts: INTEGER - Number of timesteps
+        Parameters:
+           nts: INTEGER - Number of timesteps
         """
         operator = CdoOperator(command="runrange",
                                n_input=1, 
@@ -5563,8 +5563,8 @@ Parameters:
     def runsum(self, nts = None):
         r"""
         CDO operator: runsum
-Parameters:
-    nts: INTEGER - Number of timesteps
+        Parameters:
+           nts: INTEGER - Number of timesteps
         """
         operator = CdoOperator(command="runsum",
                                n_input=1, 
@@ -5576,8 +5576,8 @@ Parameters:
     def runmean(self, nts = None):
         r"""
         CDO operator: runmean
-Parameters:
-    nts: INTEGER - Number of timesteps
+        Parameters:
+           nts: INTEGER - Number of timesteps
         """
         operator = CdoOperator(command="runmean",
                                n_input=1, 
@@ -5589,8 +5589,8 @@ Parameters:
     def runavg(self, nts = None):
         r"""
         CDO operator: runavg
-Parameters:
-    nts: INTEGER - Number of timesteps
+        Parameters:
+           nts: INTEGER - Number of timesteps
         """
         operator = CdoOperator(command="runavg",
                                n_input=1, 
@@ -5602,8 +5602,8 @@ Parameters:
     def runstd(self, nts = None):
         r"""
         CDO operator: runstd
-Parameters:
-    nts: INTEGER - Number of timesteps
+        Parameters:
+           nts: INTEGER - Number of timesteps
         """
         operator = CdoOperator(command="runstd",
                                n_input=1, 
@@ -5615,8 +5615,8 @@ Parameters:
     def runstd1(self, nts = None):
         r"""
         CDO operator: runstd1
-Parameters:
-    nts: INTEGER - Number of timesteps
+        Parameters:
+           nts: INTEGER - Number of timesteps
         """
         operator = CdoOperator(command="runstd1",
                                n_input=1, 
@@ -5628,8 +5628,8 @@ Parameters:
     def runvar(self, nts = None):
         r"""
         CDO operator: runvar
-Parameters:
-    nts: INTEGER - Number of timesteps
+        Parameters:
+           nts: INTEGER - Number of timesteps
         """
         operator = CdoOperator(command="runvar",
                                n_input=1, 
@@ -5641,8 +5641,8 @@ Parameters:
     def runvar1(self, nts = None):
         r"""
         CDO operator: runvar1
-Parameters:
-    nts: INTEGER - Number of timesteps
+        Parameters:
+           nts: INTEGER - Number of timesteps
         """
         operator = CdoOperator(command="runvar1",
                                n_input=1, 
@@ -5654,9 +5654,9 @@ Parameters:
     def runpctl(self, p = None, nts = None):
         r"""
         CDO operator: runpctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    nts: INTEGER - Number of timesteps
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           nts: INTEGER - Number of timesteps
         """
         operator = CdoOperator(command="runpctl",
                                n_input=1, 
@@ -5800,8 +5800,8 @@ Parameters:
     def timpctl(self, ifile2, ifile3, p = None):
         r"""
         CDO operator: timpctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="timpctl",
                                n_input=3, 
@@ -5923,8 +5923,8 @@ Parameters:
     def hourpctl(self, ifile2, ifile3, p = None):
         r"""
         CDO operator: hourpctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="hourpctl",
                                n_input=3, 
@@ -5936,8 +5936,8 @@ Parameters:
     def daymin(self, complete_only = None):
         r"""
         CDO operator: daymin
-Parameters:
-    complete_only: BOOL - Process the last day only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last day only if it is complete
         """
         operator = CdoOperator(command="daymin",
                                n_input=1, 
@@ -5949,8 +5949,8 @@ Parameters:
     def daymax(self, complete_only = None):
         r"""
         CDO operator: daymax
-Parameters:
-    complete_only: BOOL - Process the last day only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last day only if it is complete
         """
         operator = CdoOperator(command="daymax",
                                n_input=1, 
@@ -5962,8 +5962,8 @@ Parameters:
     def dayrange(self, complete_only = None):
         r"""
         CDO operator: dayrange
-Parameters:
-    complete_only: BOOL - Process the last day only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last day only if it is complete
         """
         operator = CdoOperator(command="dayrange",
                                n_input=1, 
@@ -5975,8 +5975,8 @@ Parameters:
     def daysum(self, complete_only = None):
         r"""
         CDO operator: daysum
-Parameters:
-    complete_only: BOOL - Process the last day only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last day only if it is complete
         """
         operator = CdoOperator(command="daysum",
                                n_input=1, 
@@ -5988,8 +5988,8 @@ Parameters:
     def daymean(self, complete_only = None):
         r"""
         CDO operator: daymean
-Parameters:
-    complete_only: BOOL - Process the last day only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last day only if it is complete
         """
         operator = CdoOperator(command="daymean",
                                n_input=1, 
@@ -6001,8 +6001,8 @@ Parameters:
     def dayavg(self, complete_only = None):
         r"""
         CDO operator: dayavg
-Parameters:
-    complete_only: BOOL - Process the last day only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last day only if it is complete
         """
         operator = CdoOperator(command="dayavg",
                                n_input=1, 
@@ -6014,8 +6014,8 @@ Parameters:
     def daystd(self, complete_only = None):
         r"""
         CDO operator: daystd
-Parameters:
-    complete_only: BOOL - Process the last day only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last day only if it is complete
         """
         operator = CdoOperator(command="daystd",
                                n_input=1, 
@@ -6027,8 +6027,8 @@ Parameters:
     def daystd1(self, complete_only = None):
         r"""
         CDO operator: daystd1
-Parameters:
-    complete_only: BOOL - Process the last day only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last day only if it is complete
         """
         operator = CdoOperator(command="daystd1",
                                n_input=1, 
@@ -6040,8 +6040,8 @@ Parameters:
     def dayvar(self, complete_only = None):
         r"""
         CDO operator: dayvar
-Parameters:
-    complete_only: BOOL - Process the last day only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last day only if it is complete
         """
         operator = CdoOperator(command="dayvar",
                                n_input=1, 
@@ -6053,8 +6053,8 @@ Parameters:
     def dayvar1(self, complete_only = None):
         r"""
         CDO operator: dayvar1
-Parameters:
-    complete_only: BOOL - Process the last day only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last day only if it is complete
         """
         operator = CdoOperator(command="dayvar1",
                                n_input=1, 
@@ -6066,8 +6066,8 @@ Parameters:
     def daypctl(self, ifile2, ifile3, p = None):
         r"""
         CDO operator: daypctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="daypctl",
                                n_input=3, 
@@ -6079,8 +6079,8 @@ Parameters:
     def monmin(self, complete_only = None):
         r"""
         CDO operator: monmin
-Parameters:
-    complete_only: BOOL - Process the last month only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last month only if it is complete
         """
         operator = CdoOperator(command="monmin",
                                n_input=1, 
@@ -6092,8 +6092,8 @@ Parameters:
     def monmax(self, complete_only = None):
         r"""
         CDO operator: monmax
-Parameters:
-    complete_only: BOOL - Process the last month only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last month only if it is complete
         """
         operator = CdoOperator(command="monmax",
                                n_input=1, 
@@ -6105,8 +6105,8 @@ Parameters:
     def monrange(self, complete_only = None):
         r"""
         CDO operator: monrange
-Parameters:
-    complete_only: BOOL - Process the last month only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last month only if it is complete
         """
         operator = CdoOperator(command="monrange",
                                n_input=1, 
@@ -6118,8 +6118,8 @@ Parameters:
     def monsum(self, complete_only = None):
         r"""
         CDO operator: monsum
-Parameters:
-    complete_only: BOOL - Process the last month only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last month only if it is complete
         """
         operator = CdoOperator(command="monsum",
                                n_input=1, 
@@ -6131,8 +6131,8 @@ Parameters:
     def monmean(self, complete_only = None):
         r"""
         CDO operator: monmean
-Parameters:
-    complete_only: BOOL - Process the last month only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last month only if it is complete
         """
         operator = CdoOperator(command="monmean",
                                n_input=1, 
@@ -6144,8 +6144,8 @@ Parameters:
     def monavg(self, complete_only = None):
         r"""
         CDO operator: monavg
-Parameters:
-    complete_only: BOOL - Process the last month only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last month only if it is complete
         """
         operator = CdoOperator(command="monavg",
                                n_input=1, 
@@ -6157,8 +6157,8 @@ Parameters:
     def monstd(self, complete_only = None):
         r"""
         CDO operator: monstd
-Parameters:
-    complete_only: BOOL - Process the last month only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last month only if it is complete
         """
         operator = CdoOperator(command="monstd",
                                n_input=1, 
@@ -6170,8 +6170,8 @@ Parameters:
     def monstd1(self, complete_only = None):
         r"""
         CDO operator: monstd1
-Parameters:
-    complete_only: BOOL - Process the last month only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last month only if it is complete
         """
         operator = CdoOperator(command="monstd1",
                                n_input=1, 
@@ -6183,8 +6183,8 @@ Parameters:
     def monvar(self, complete_only = None):
         r"""
         CDO operator: monvar
-Parameters:
-    complete_only: BOOL - Process the last month only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last month only if it is complete
         """
         operator = CdoOperator(command="monvar",
                                n_input=1, 
@@ -6196,8 +6196,8 @@ Parameters:
     def monvar1(self, complete_only = None):
         r"""
         CDO operator: monvar1
-Parameters:
-    complete_only: BOOL - Process the last month only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last month only if it is complete
         """
         operator = CdoOperator(command="monvar1",
                                n_input=1, 
@@ -6209,8 +6209,8 @@ Parameters:
     def monpctl(self, ifile2, ifile3, p = None):
         r"""
         CDO operator: monpctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="monpctl",
                                n_input=3, 
@@ -6233,8 +6233,8 @@ Parameters:
     def yearmin(self, complete_only = None):
         r"""
         CDO operator: yearmin
-Parameters:
-    complete_only: BOOL - Process the last year only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last year only if it is complete
         """
         operator = CdoOperator(command="yearmin",
                                n_input=1, 
@@ -6246,8 +6246,8 @@ Parameters:
     def yearmax(self, complete_only = None):
         r"""
         CDO operator: yearmax
-Parameters:
-    complete_only: BOOL - Process the last year only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last year only if it is complete
         """
         operator = CdoOperator(command="yearmax",
                                n_input=1, 
@@ -6259,8 +6259,8 @@ Parameters:
     def yearminidx(self, complete_only = None):
         r"""
         CDO operator: yearminidx
-Parameters:
-    complete_only: BOOL - Process the last year only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last year only if it is complete
         """
         operator = CdoOperator(command="yearminidx",
                                n_input=1, 
@@ -6272,8 +6272,8 @@ Parameters:
     def yearmaxidx(self, complete_only = None):
         r"""
         CDO operator: yearmaxidx
-Parameters:
-    complete_only: BOOL - Process the last year only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last year only if it is complete
         """
         operator = CdoOperator(command="yearmaxidx",
                                n_input=1, 
@@ -6285,8 +6285,8 @@ Parameters:
     def yearrange(self, complete_only = None):
         r"""
         CDO operator: yearrange
-Parameters:
-    complete_only: BOOL - Process the last year only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last year only if it is complete
         """
         operator = CdoOperator(command="yearrange",
                                n_input=1, 
@@ -6298,8 +6298,8 @@ Parameters:
     def yearsum(self, complete_only = None):
         r"""
         CDO operator: yearsum
-Parameters:
-    complete_only: BOOL - Process the last year only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last year only if it is complete
         """
         operator = CdoOperator(command="yearsum",
                                n_input=1, 
@@ -6311,8 +6311,8 @@ Parameters:
     def yearmean(self, complete_only = None):
         r"""
         CDO operator: yearmean
-Parameters:
-    complete_only: BOOL - Process the last year only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last year only if it is complete
         """
         operator = CdoOperator(command="yearmean",
                                n_input=1, 
@@ -6324,8 +6324,8 @@ Parameters:
     def yearavg(self, complete_only = None):
         r"""
         CDO operator: yearavg
-Parameters:
-    complete_only: BOOL - Process the last year only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last year only if it is complete
         """
         operator = CdoOperator(command="yearavg",
                                n_input=1, 
@@ -6337,8 +6337,8 @@ Parameters:
     def yearstd(self, complete_only = None):
         r"""
         CDO operator: yearstd
-Parameters:
-    complete_only: BOOL - Process the last year only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last year only if it is complete
         """
         operator = CdoOperator(command="yearstd",
                                n_input=1, 
@@ -6350,8 +6350,8 @@ Parameters:
     def yearstd1(self, complete_only = None):
         r"""
         CDO operator: yearstd1
-Parameters:
-    complete_only: BOOL - Process the last year only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last year only if it is complete
         """
         operator = CdoOperator(command="yearstd1",
                                n_input=1, 
@@ -6363,8 +6363,8 @@ Parameters:
     def yearvar(self, complete_only = None):
         r"""
         CDO operator: yearvar
-Parameters:
-    complete_only: BOOL - Process the last year only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last year only if it is complete
         """
         operator = CdoOperator(command="yearvar",
                                n_input=1, 
@@ -6376,8 +6376,8 @@ Parameters:
     def yearvar1(self, complete_only = None):
         r"""
         CDO operator: yearvar1
-Parameters:
-    complete_only: BOOL - Process the last year only if it is complete
+        Parameters:
+           complete_only: BOOL - Process the last year only if it is complete
         """
         operator = CdoOperator(command="yearvar1",
                                n_input=1, 
@@ -6389,8 +6389,8 @@ Parameters:
     def yearpctl(self, ifile2, ifile3, p = None):
         r"""
         CDO operator: yearpctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="yearpctl",
                                n_input=3, 
@@ -6512,8 +6512,8 @@ Parameters:
     def seaspctl(self, ifile2, ifile3, p = None):
         r"""
         CDO operator: seaspctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="seaspctl",
                                n_input=3, 
@@ -6965,8 +6965,8 @@ Parameters:
     def ydaypctl(self, ifile2, ifile3, p = None):
         r"""
         CDO operator: ydaypctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="ydaypctl",
                                n_input=3, 
@@ -7088,8 +7088,8 @@ Parameters:
     def ymonpctl(self, ifile2, ifile3, p = None):
         r"""
         CDO operator: ymonpctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="ymonpctl",
                                n_input=3, 
@@ -7211,8 +7211,8 @@ Parameters:
     def yseaspctl(self, ifile2, ifile3, p = None):
         r"""
         CDO operator: yseaspctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
         """
         operator = CdoOperator(command="yseaspctl",
                                n_input=3, 
@@ -7224,9 +7224,9 @@ Parameters:
     def ydrunmin(self, nts = None, rm_c = None):
         r"""
         CDO operator: ydrunmin
-Parameters:
-    nts: INTEGER - Number of timesteps
-    rm_c: STRING - Read method circular
+        Parameters:
+           nts: INTEGER - Number of timesteps
+           rm_c: STRING - Read method circular
         """
         operator = CdoOperator(command="ydrunmin",
                                n_input=1, 
@@ -7238,9 +7238,9 @@ Parameters:
     def ydrunmax(self, nts = None, rm_c = None):
         r"""
         CDO operator: ydrunmax
-Parameters:
-    nts: INTEGER - Number of timesteps
-    rm_c: STRING - Read method circular
+        Parameters:
+           nts: INTEGER - Number of timesteps
+           rm_c: STRING - Read method circular
         """
         operator = CdoOperator(command="ydrunmax",
                                n_input=1, 
@@ -7252,9 +7252,9 @@ Parameters:
     def ydrunsum(self, nts = None, rm_c = None):
         r"""
         CDO operator: ydrunsum
-Parameters:
-    nts: INTEGER - Number of timesteps
-    rm_c: STRING - Read method circular
+        Parameters:
+           nts: INTEGER - Number of timesteps
+           rm_c: STRING - Read method circular
         """
         operator = CdoOperator(command="ydrunsum",
                                n_input=1, 
@@ -7266,9 +7266,9 @@ Parameters:
     def ydrunmean(self, nts = None, rm_c = None):
         r"""
         CDO operator: ydrunmean
-Parameters:
-    nts: INTEGER - Number of timesteps
-    rm_c: STRING - Read method circular
+        Parameters:
+           nts: INTEGER - Number of timesteps
+           rm_c: STRING - Read method circular
         """
         operator = CdoOperator(command="ydrunmean",
                                n_input=1, 
@@ -7280,9 +7280,9 @@ Parameters:
     def ydrunavg(self, nts = None, rm_c = None):
         r"""
         CDO operator: ydrunavg
-Parameters:
-    nts: INTEGER - Number of timesteps
-    rm_c: STRING - Read method circular
+        Parameters:
+           nts: INTEGER - Number of timesteps
+           rm_c: STRING - Read method circular
         """
         operator = CdoOperator(command="ydrunavg",
                                n_input=1, 
@@ -7294,9 +7294,9 @@ Parameters:
     def ydrunstd(self, nts = None, rm_c = None):
         r"""
         CDO operator: ydrunstd
-Parameters:
-    nts: INTEGER - Number of timesteps
-    rm_c: STRING - Read method circular
+        Parameters:
+           nts: INTEGER - Number of timesteps
+           rm_c: STRING - Read method circular
         """
         operator = CdoOperator(command="ydrunstd",
                                n_input=1, 
@@ -7308,9 +7308,9 @@ Parameters:
     def ydrunstd1(self, nts = None, rm_c = None):
         r"""
         CDO operator: ydrunstd1
-Parameters:
-    nts: INTEGER - Number of timesteps
-    rm_c: STRING - Read method circular
+        Parameters:
+           nts: INTEGER - Number of timesteps
+           rm_c: STRING - Read method circular
         """
         operator = CdoOperator(command="ydrunstd1",
                                n_input=1, 
@@ -7322,9 +7322,9 @@ Parameters:
     def ydrunvar(self, nts = None, rm_c = None):
         r"""
         CDO operator: ydrunvar
-Parameters:
-    nts: INTEGER - Number of timesteps
-    rm_c: STRING - Read method circular
+        Parameters:
+           nts: INTEGER - Number of timesteps
+           rm_c: STRING - Read method circular
         """
         operator = CdoOperator(command="ydrunvar",
                                n_input=1, 
@@ -7336,9 +7336,9 @@ Parameters:
     def ydrunvar1(self, nts = None, rm_c = None):
         r"""
         CDO operator: ydrunvar1
-Parameters:
-    nts: INTEGER - Number of timesteps
-    rm_c: STRING - Read method circular
+        Parameters:
+           nts: INTEGER - Number of timesteps
+           rm_c: STRING - Read method circular
         """
         operator = CdoOperator(command="ydrunvar1",
                                n_input=1, 
@@ -7350,11 +7350,11 @@ Parameters:
     def ydrunpctl(self, ifile2, ifile3, p = None, nts = None, rm_c = None, pm_r8 = None):
         r"""
         CDO operator: ydrunpctl
-Parameters:
-    p: FLOAT - Percentile number in \{0, ..., 100\}
-    nts: INTEGER - Number of timesteps
-    rm_c: STRING - Read method circular
-    pm_r8: STRING - Percentile method rtype8
+        Parameters:
+           p: FLOAT - Percentile number in \{0, ..., 100\}
+           nts: INTEGER - Number of timesteps
+           rm_c: STRING - Read method circular
+           pm_r8: STRING - Percentile method rtype8
         """
         operator = CdoOperator(command="ydrunpctl",
                                n_input=3, 
@@ -7410,8 +7410,8 @@ Parameters:
     def regres(self, equal = None):
         r"""
         CDO operator: regres
-Parameters:
-    equal: BOOL - Set to false for unequal distributed timesteps (default: true)
+        Parameters:
+           equal: BOOL - Set to false for unequal distributed timesteps (default: true)
         """
         operator = CdoOperator(command="regres",
                                n_input=1, 
@@ -7423,8 +7423,8 @@ Parameters:
     def detrend(self, equal = None):
         r"""
         CDO operator: detrend
-Parameters:
-    equal: BOOL - Set to false for unequal distributed timesteps (default: true)
+        Parameters:
+           equal: BOOL - Set to false for unequal distributed timesteps (default: true)
         """
         operator = CdoOperator(command="detrend",
                                n_input=1, 
@@ -7436,8 +7436,8 @@ Parameters:
     def trend(self, equal = None):
         r"""
         CDO operator: trend
-Parameters:
-    equal: BOOL - Set to false for unequal distributed timesteps (default: true)
+        Parameters:
+           equal: BOOL - Set to false for unequal distributed timesteps (default: true)
         """
         operator = CdoOperator(command="trend",
                                n_input=1, 
@@ -7449,8 +7449,8 @@ Parameters:
     def addtrend(self, ifile2, ifile3, equal = None):
         r"""
         CDO operator: addtrend
-Parameters:
-    equal: BOOL - Set to false for unequal distributed timesteps (default: true)
+        Parameters:
+           equal: BOOL - Set to false for unequal distributed timesteps (default: true)
         """
         operator = CdoOperator(command="addtrend",
                                n_input=3, 
@@ -7462,8 +7462,8 @@ Parameters:
     def subtrend(self, ifile2, ifile3, equal = None):
         r"""
         CDO operator: subtrend
-Parameters:
-    equal: BOOL - Set to false for unequal distributed timesteps (default: true)
+        Parameters:
+           equal: BOOL - Set to false for unequal distributed timesteps (default: true)
         """
         operator = CdoOperator(command="subtrend",
                                n_input=3, 
@@ -7475,8 +7475,8 @@ Parameters:
     def eof(self, neof = None):
         r"""
         CDO operator: eof
-Parameters:
-    neof: INTEGER - Number of eigen functions
+        Parameters:
+           neof: INTEGER - Number of eigen functions
         """
         operator = CdoOperator(command="eof",
                                n_input=1, 
@@ -7488,8 +7488,8 @@ Parameters:
     def eoftime(self, neof = None):
         r"""
         CDO operator: eoftime
-Parameters:
-    neof: INTEGER - Number of eigen functions
+        Parameters:
+           neof: INTEGER - Number of eigen functions
         """
         operator = CdoOperator(command="eoftime",
                                n_input=1, 
@@ -7501,8 +7501,8 @@ Parameters:
     def eofspatial(self, neof = None):
         r"""
         CDO operator: eofspatial
-Parameters:
-    neof: INTEGER - Number of eigen functions
+        Parameters:
+           neof: INTEGER - Number of eigen functions
         """
         operator = CdoOperator(command="eofspatial",
                                n_input=1, 
@@ -7514,8 +7514,8 @@ Parameters:
     def eof3d(self, neof = None):
         r"""
         CDO operator: eof3d
-Parameters:
-    neof: INTEGER - Number of eigen functions
+        Parameters:
+           neof: INTEGER - Number of eigen functions
         """
         operator = CdoOperator(command="eof3d",
                                n_input=1, 
@@ -7538,9 +7538,9 @@ Parameters:
     def remapbil(self, grid = None, map3d = None):
         r"""
         CDO operator: remapbil
-Parameters:
-    grid: STRING - Target grid description file or name
-    map3d: BOOL - Generate all mapfiles of the first 3D field
+        Parameters:
+           grid: STRING - Target grid description file or name
+           map3d: BOOL - Generate all mapfiles of the first 3D field
         """
         operator = CdoOperator(command="remapbil",
                                n_input=1, 
@@ -7552,9 +7552,9 @@ Parameters:
     def genbil(self, grid = None, map3d = None):
         r"""
         CDO operator: genbil
-Parameters:
-    grid: STRING - Target grid description file or name
-    map3d: BOOL - Generate all mapfiles of the first 3D field
+        Parameters:
+           grid: STRING - Target grid description file or name
+           map3d: BOOL - Generate all mapfiles of the first 3D field
         """
         operator = CdoOperator(command="genbil",
                                n_input=1, 
@@ -7566,9 +7566,9 @@ Parameters:
     def remapbic(self, grid = None, map3d = None):
         r"""
         CDO operator: remapbic
-Parameters:
-    grid: STRING - Target grid description file or name
-    map3d: BOOL - Generate all mapfiles of the first 3D field
+        Parameters:
+           grid: STRING - Target grid description file or name
+           map3d: BOOL - Generate all mapfiles of the first 3D field
         """
         operator = CdoOperator(command="remapbic",
                                n_input=1, 
@@ -7580,9 +7580,9 @@ Parameters:
     def genbic(self, grid = None, map3d = None):
         r"""
         CDO operator: genbic
-Parameters:
-    grid: STRING - Target grid description file or name
-    map3d: BOOL - Generate all mapfiles of the first 3D field
+        Parameters:
+           grid: STRING - Target grid description file or name
+           map3d: BOOL - Generate all mapfiles of the first 3D field
         """
         operator = CdoOperator(command="genbic",
                                n_input=1, 
@@ -7594,9 +7594,9 @@ Parameters:
     def remapnn(self, grid = None, map3d = None):
         r"""
         CDO operator: remapnn
-Parameters:
-    grid: STRING - Target grid description file or name
-    map3d: BOOL - Generate all mapfiles of the first 3D field
+        Parameters:
+           grid: STRING - Target grid description file or name
+           map3d: BOOL - Generate all mapfiles of the first 3D field
         """
         operator = CdoOperator(command="remapnn",
                                n_input=1, 
@@ -7608,9 +7608,9 @@ Parameters:
     def gennn(self, grid = None, map3d = None):
         r"""
         CDO operator: gennn
-Parameters:
-    grid: STRING - Target grid description file or name
-    map3d: BOOL - Generate all mapfiles of the first 3D field
+        Parameters:
+           grid: STRING - Target grid description file or name
+           map3d: BOOL - Generate all mapfiles of the first 3D field
         """
         operator = CdoOperator(command="gennn",
                                n_input=1, 
@@ -7622,10 +7622,10 @@ Parameters:
     def remapdis(self, grid = None, neighbors = None, map3d = None):
         r"""
         CDO operator: remapdis
-Parameters:
-    grid: STRING - Target grid description file or name
-    neighbors: INTEGER - Number of nearest neighbors \[default: 4\]
-    map3d: BOOL - Generate all mapfiles of the first 3D field
+        Parameters:
+           grid: STRING - Target grid description file or name
+           neighbors: INTEGER - Number of nearest neighbors \[default: 4\]
+           map3d: BOOL - Generate all mapfiles of the first 3D field
         """
         operator = CdoOperator(command="remapdis",
                                n_input=1, 
@@ -7637,10 +7637,10 @@ Parameters:
     def gendis(self, grid = None, neighbors = None, map3d = None):
         r"""
         CDO operator: gendis
-Parameters:
-    grid: STRING - Target grid description file or name
-    neighbors: INTEGER - Number of nearest neighbors \[default: 4\]
-    map3d: BOOL - Generate all mapfiles of the first 3D field
+        Parameters:
+           grid: STRING - Target grid description file or name
+           neighbors: INTEGER - Number of nearest neighbors \[default: 4\]
+           map3d: BOOL - Generate all mapfiles of the first 3D field
         """
         operator = CdoOperator(command="gendis",
                                n_input=1, 
@@ -7652,9 +7652,9 @@ Parameters:
     def remapcon(self, grid = None, map3d = None):
         r"""
         CDO operator: remapcon
-Parameters:
-    grid: STRING - Target grid description file or name
-    map3d: BOOL - Generate all mapfiles of the first 3D field
+        Parameters:
+           grid: STRING - Target grid description file or name
+           map3d: BOOL - Generate all mapfiles of the first 3D field
         """
         operator = CdoOperator(command="remapcon",
                                n_input=1, 
@@ -7666,9 +7666,9 @@ Parameters:
     def gencon(self, grid = None, map3d = None):
         r"""
         CDO operator: gencon
-Parameters:
-    grid: STRING - Target grid description file or name
-    map3d: BOOL - Generate all mapfiles of the first 3D field
+        Parameters:
+           grid: STRING - Target grid description file or name
+           map3d: BOOL - Generate all mapfiles of the first 3D field
         """
         operator = CdoOperator(command="gencon",
                                n_input=1, 
@@ -7680,8 +7680,8 @@ Parameters:
     def remaplaf(self, grid = None):
         r"""
         CDO operator: remaplaf
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="remaplaf",
                                n_input=1, 
@@ -7693,8 +7693,8 @@ Parameters:
     def genlaf(self, grid = None):
         r"""
         CDO operator: genlaf
-Parameters:
-    grid: STRING - Target grid description file or name
+        Parameters:
+           grid: STRING - Target grid description file or name
         """
         operator = CdoOperator(command="genlaf",
                                n_input=1, 
@@ -7706,9 +7706,9 @@ Parameters:
     def remap(self, grid = None, weights = None):
         r"""
         CDO operator: remap
-Parameters:
-    grid: STRING - Target grid description file or name
-    weights: STRING - Interpolation weights (SCRIP NetCDF file)
+        Parameters:
+           grid: STRING - Target grid description file or name
+           weights: STRING - Interpolation weights (SCRIP NetCDF file)
         """
         operator = CdoOperator(command="remap",
                                n_input=1, 
@@ -7720,9 +7720,9 @@ Parameters:
     def remapeta(self, vct = None, oro = None):
         r"""
         CDO operator: remapeta
-Parameters:
-    vct: STRING - File name of an ASCII dataset with the vertical coordinate table
-    oro: STRING - File name with the orography (surf. geopotential) of the target dataset (optional)
+        Parameters:
+           vct: STRING - File name of an ASCII dataset with the vertical coordinate table
+           oro: STRING - File name with the orography (surf. geopotential) of the target dataset (optional)
         """
         operator = CdoOperator(command="remapeta",
                                n_input=1, 
@@ -7734,9 +7734,9 @@ Parameters:
     def ml2pl(self, plevels = None, hlevels = None):
         r"""
         CDO operator: ml2pl
-Parameters:
-    plevels: FLOAT - Pressure levels in pascal
-    hlevels: FLOAT - Height levels in meter
+        Parameters:
+           plevels: FLOAT - Pressure levels in pascal
+           hlevels: FLOAT - Height levels in meter
         """
         operator = CdoOperator(command="ml2pl",
                                n_input=1, 
@@ -7748,9 +7748,9 @@ Parameters:
     def ml2hl(self, plevels = None, hlevels = None):
         r"""
         CDO operator: ml2hl
-Parameters:
-    plevels: FLOAT - Pressure levels in pascal
-    hlevels: FLOAT - Height levels in meter
+        Parameters:
+           plevels: FLOAT - Pressure levels in pascal
+           hlevels: FLOAT - Height levels in meter
         """
         operator = CdoOperator(command="ml2hl",
                                n_input=1, 
@@ -7762,8 +7762,8 @@ Parameters:
     def ap2pl(self, plevels = None):
         r"""
         CDO operator: ap2pl
-Parameters:
-    plevels: FLOAT - Comma-separated list of pressure levels in pascal
+        Parameters:
+           plevels: FLOAT - Comma-separated list of pressure levels in pascal
         """
         operator = CdoOperator(command="ap2pl",
                                n_input=1, 
@@ -7775,8 +7775,8 @@ Parameters:
     def gh2hl(self, hlevels = None):
         r"""
         CDO operator: gh2hl
-Parameters:
-    hlevels: FLOAT - Comma-separated list of height levels in meter
+        Parameters:
+           hlevels: FLOAT - Comma-separated list of height levels in meter
         """
         operator = CdoOperator(command="gh2hl",
                                n_input=1, 
@@ -7788,11 +7788,11 @@ Parameters:
     def intlevel(self, level = None, zdescription = None, zvarname = None, extrapolate = None):
         r"""
         CDO operator: intlevel
-Parameters:
-    level: FLOAT - Comma-separated list of target levels
-    zdescription: STRING - Path to a file containing a description of the Z-axis
-    zvarname: STRING - Use zvarname as the vertical 3D source coordinate instead of the 1D coordinate variable
-    extrapolate: BOOL - Fill target layers out of the source layer range with the nearest source layer
+        Parameters:
+           level: FLOAT - Comma-separated list of target levels
+           zdescription: STRING - Path to a file containing a description of the Z-axis
+           zvarname: STRING - Use zvarname as the vertical 3D source coordinate instead of the 1D coordinate variable
+           extrapolate: BOOL - Fill target layers out of the source layer range with the nearest source layer
         """
         operator = CdoOperator(command="intlevel",
                                n_input=1, 
@@ -7804,8 +7804,8 @@ Parameters:
     def intlevel3d(self, ifile2, tgtcoordinate = None):
         r"""
         CDO operator: intlevel3d
-Parameters:
-    tgtcoordinate: STRING - filename for 3D vertical target coordinates
+        Parameters:
+           tgtcoordinate: STRING - filename for 3D vertical target coordinates
         """
         operator = CdoOperator(command="intlevel3d",
                                n_input=2, 
@@ -7817,8 +7817,8 @@ Parameters:
     def intlevelx3d(self, ifile2, tgtcoordinate = None):
         r"""
         CDO operator: intlevelx3d
-Parameters:
-    tgtcoordinate: STRING - filename for 3D vertical target coordinates
+        Parameters:
+           tgtcoordinate: STRING - filename for 3D vertical target coordinates
         """
         operator = CdoOperator(command="intlevelx3d",
                                n_input=2, 
@@ -7830,11 +7830,11 @@ Parameters:
     def inttime(self, date = None, time = None, inc = None, n = None):
         r"""
         CDO operator: inttime
-Parameters:
-    date: STRING - Start date (format YYYY-MM-DD)
-    time: STRING - Start time (format hh:mm:ss)
-    inc: STRING - Optional increment (seconds, minutes, hours, days, months, years) \[default: 0hour\]
-    n: INTEGER - Number of timesteps from one timestep to the next
+        Parameters:
+           date: STRING - Start date (format YYYY-MM-DD)
+           time: STRING - Start time (format hh:mm:ss)
+           inc: STRING - Optional increment (seconds, minutes, hours, days, months, years) \[default: 0hour\]
+           n: INTEGER - Number of timesteps from one timestep to the next
         """
         operator = CdoOperator(command="inttime",
                                n_input=1, 
@@ -7846,11 +7846,11 @@ Parameters:
     def intntime(self, date = None, time = None, inc = None, n = None):
         r"""
         CDO operator: intntime
-Parameters:
-    date: STRING - Start date (format YYYY-MM-DD)
-    time: STRING - Start time (format hh:mm:ss)
-    inc: STRING - Optional increment (seconds, minutes, hours, days, months, years) \[default: 0hour\]
-    n: INTEGER - Number of timesteps from one timestep to the next
+        Parameters:
+           date: STRING - Start date (format YYYY-MM-DD)
+           time: STRING - Start time (format hh:mm:ss)
+           inc: STRING - Optional increment (seconds, minutes, hours, days, months, years) \[default: 0hour\]
+           n: INTEGER - Number of timesteps from one timestep to the next
         """
         operator = CdoOperator(command="intntime",
                                n_input=1, 
@@ -7862,8 +7862,8 @@ Parameters:
     def intyear(self, ifile2, years = None):
         r"""
         CDO operator: intyear
-Parameters:
-    years: INTEGER - Comma-separated list or first/last\[/inc\] range of years
+        Parameters:
+           years: INTEGER - Comma-separated list or first/last\[/inc\] range of years
         """
         operator = CdoOperator(command="intyear",
                                n_input=2, 
@@ -7875,9 +7875,9 @@ Parameters:
     def sp2gp(self, type = None, trunc = None):
         r"""
         CDO operator: sp2gp
-Parameters:
-    type: STRING - Type of the grid: quadratic, linear, cubic (default: type=quadratic)
-    trunc: STRING - Triangular truncation
+        Parameters:
+           type: STRING - Type of the grid: quadratic, linear, cubic (default: type=quadratic)
+           trunc: STRING - Triangular truncation
         """
         operator = CdoOperator(command="sp2gp",
                                n_input=1, 
@@ -7889,9 +7889,9 @@ Parameters:
     def gp2sp(self, type = None, trunc = None):
         r"""
         CDO operator: gp2sp
-Parameters:
-    type: STRING - Type of the grid: quadratic, linear, cubic (default: type=quadratic)
-    trunc: STRING - Triangular truncation
+        Parameters:
+           type: STRING - Type of the grid: quadratic, linear, cubic (default: type=quadratic)
+           trunc: STRING - Triangular truncation
         """
         operator = CdoOperator(command="gp2sp",
                                n_input=1, 
@@ -7903,8 +7903,8 @@ Parameters:
     def sp2sp(self, trunc = None):
         r"""
         CDO operator: sp2sp
-Parameters:
-    trunc: INTEGER - New spectral resolution
+        Parameters:
+           trunc: INTEGER - New spectral resolution
         """
         operator = CdoOperator(command="sp2sp",
                                n_input=1, 
@@ -7927,8 +7927,8 @@ Parameters:
     def dv2uv(self, gridtype = None):
         r"""
         CDO operator: dv2uv
-Parameters:
-    gridtype: STRING - Type of the grid: quadratic, linear, cubic (default: quadratic)
+        Parameters:
+           gridtype: STRING - Type of the grid: quadratic, linear, cubic (default: quadratic)
         """
         operator = CdoOperator(command="dv2uv",
                                n_input=1, 
@@ -7940,8 +7940,8 @@ Parameters:
     def uv2dv(self, gridtype = None):
         r"""
         CDO operator: uv2dv
-Parameters:
-    gridtype: STRING - Type of the grid: quadratic, linear, cubic (default: quadratic)
+        Parameters:
+           gridtype: STRING - Type of the grid: quadratic, linear, cubic (default: quadratic)
         """
         operator = CdoOperator(command="uv2dv",
                                n_input=1, 
@@ -7953,8 +7953,8 @@ Parameters:
     def fourier(self, epsilon = None):
         r"""
         CDO operator: fourier
-Parameters:
-    epsilon: INTEGER - -1: forward transformation; 1: backward transformation
+        Parameters:
+           epsilon: INTEGER - -1: forward transformation; 1: backward transformation
         """
         operator = CdoOperator(command="fourier",
                                n_input=1, 
@@ -7999,9 +7999,9 @@ Parameters:
     def input(self, grid = None, zaxis = None):
         r"""
         CDO operator: input
-Parameters:
-    grid: STRING - Grid description file or name
-    zaxis: STRING - Z-axis description file
+        Parameters:
+           grid: STRING - Grid description file or name
+           zaxis: STRING - Z-axis description file
         """
         operator = CdoOperator(command="input",
                                n_input=0, 
@@ -8013,9 +8013,9 @@ Parameters:
     def inputsrv(self, grid = None, zaxis = None):
         r"""
         CDO operator: inputsrv
-Parameters:
-    grid: STRING - Grid description file or name
-    zaxis: STRING - Z-axis description file
+        Parameters:
+           grid: STRING - Grid description file or name
+           zaxis: STRING - Z-axis description file
         """
         operator = CdoOperator(command="inputsrv",
                                n_input=0, 
@@ -8027,9 +8027,9 @@ Parameters:
     def inputext(self, grid = None, zaxis = None):
         r"""
         CDO operator: inputext
-Parameters:
-    grid: STRING - Grid description file or name
-    zaxis: STRING - Z-axis description file
+        Parameters:
+           grid: STRING - Grid description file or name
+           zaxis: STRING - Z-axis description file
         """
         operator = CdoOperator(command="inputext",
                                n_input=0, 
@@ -8041,9 +8041,9 @@ Parameters:
     def output(self, format = None, nelem = None):
         r"""
         CDO operator: output
-Parameters:
-    format: STRING - C-style format for one element (e.g. %13.6g)
-    nelem: INTEGER - Number of elements for each row (default: nelem = 1)
+        Parameters:
+           format: STRING - C-style format for one element (e.g. %13.6g)
+           nelem: INTEGER - Number of elements for each row (default: nelem = 1)
         """
         operator = CdoOperator(command="output",
                                n_input=inf, 
@@ -8055,9 +8055,9 @@ Parameters:
     def outputf(self, format = None, nelem = None):
         r"""
         CDO operator: outputf
-Parameters:
-    format: STRING - C-style format for one element (e.g. %13.6g)
-    nelem: INTEGER - Number of elements for each row (default: nelem = 1)
+        Parameters:
+           format: STRING - C-style format for one element (e.g. %13.6g)
+           nelem: INTEGER - Number of elements for each row (default: nelem = 1)
         """
         operator = CdoOperator(command="outputf",
                                n_input=inf, 
@@ -8069,9 +8069,9 @@ Parameters:
     def outputint(self, format = None, nelem = None):
         r"""
         CDO operator: outputint
-Parameters:
-    format: STRING - C-style format for one element (e.g. %13.6g)
-    nelem: INTEGER - Number of elements for each row (default: nelem = 1)
+        Parameters:
+           format: STRING - C-style format for one element (e.g. %13.6g)
+           nelem: INTEGER - Number of elements for each row (default: nelem = 1)
         """
         operator = CdoOperator(command="outputint",
                                n_input=inf, 
@@ -8083,9 +8083,9 @@ Parameters:
     def outputsrv(self, format = None, nelem = None):
         r"""
         CDO operator: outputsrv
-Parameters:
-    format: STRING - C-style format for one element (e.g. %13.6g)
-    nelem: INTEGER - Number of elements for each row (default: nelem = 1)
+        Parameters:
+           format: STRING - C-style format for one element (e.g. %13.6g)
+           nelem: INTEGER - Number of elements for each row (default: nelem = 1)
         """
         operator = CdoOperator(command="outputsrv",
                                n_input=inf, 
@@ -8097,9 +8097,9 @@ Parameters:
     def outputext(self, format = None, nelem = None):
         r"""
         CDO operator: outputext
-Parameters:
-    format: STRING - C-style format for one element (e.g. %13.6g)
-    nelem: INTEGER - Number of elements for each row (default: nelem = 1)
+        Parameters:
+           format: STRING - C-style format for one element (e.g. %13.6g)
+           nelem: INTEGER - Number of elements for each row (default: nelem = 1)
         """
         operator = CdoOperator(command="outputext",
                                n_input=inf, 
@@ -8111,8 +8111,8 @@ Parameters:
     def outputtab(self, parameter = None):
         r"""
         CDO operator: outputtab
-Parameters:
-    parameter: STRING - Comma-separated list of keynames, one for each column of the table
+        Parameters:
+           parameter: STRING - Comma-separated list of keynames, one for each column of the table
         """
         operator = CdoOperator(command="outputtab",
                                n_input=inf, 
@@ -8146,8 +8146,8 @@ Parameters:
     def gradsdes(self, mapversion = None):
         r"""
         CDO operator: gradsdes
-Parameters:
-    mapversion: INTEGER - Format version of the GrADS map file for GRIB1 datasets. Use 1 for a machinespecific version 1 GrADS map file, 2 for a machine independent version 2 GrADS map fileand 4 to support GRIB files >2GB.A version 2 map file can be used only with GrADS version 1.8 or newer.A version 4 map file can be used only with GrADS version 2.0 or newer.The default is 4 for files >2GB, otherwise 2.
+        Parameters:
+           mapversion: INTEGER - Format version of the GrADS map file for GRIB1 datasets. Use 1 for a machinespecific version 1 GrADS map file, 2 for a machine independent version 2 GrADS map fileand 4 to support GRIB files >2GB.A version 2 map file can be used only with GrADS version 1.8 or newer.A version 4 map file can be used only with GrADS version 2.0 or newer.The default is 4 for files >2GB, otherwise 2.
         """
         operator = CdoOperator(command="gradsdes",
                                n_input=1, 
@@ -8159,8 +8159,8 @@ Parameters:
     def after(self, vct = None):
         r"""
         CDO operator: after
-Parameters:
-    vct: STRING - File with VCT in ASCII format
+        Parameters:
+           vct: STRING - File with VCT in ASCII format
         """
         operator = CdoOperator(command="after",
                                n_input=inf, 
@@ -8172,9 +8172,9 @@ Parameters:
     def bandpass(self, fmin = None, fmax = None):
         r"""
         CDO operator: bandpass
-Parameters:
-    fmin: FLOAT	Minimum - frequency per year that passes the filter.
-    fmax: FLOAT	Maximum - frequency per year that passes the filter.
+        Parameters:
+           fmin: FLOAT	Minimum - frequency per year that passes the filter.
+           fmax: FLOAT	Maximum - frequency per year that passes the filter.
         """
         operator = CdoOperator(command="bandpass",
                                n_input=1, 
@@ -8186,9 +8186,9 @@ Parameters:
     def lowpass(self, fmin = None, fmax = None):
         r"""
         CDO operator: lowpass
-Parameters:
-    fmin: FLOAT	Minimum - frequency per year that passes the filter.
-    fmax: FLOAT	Maximum - frequency per year that passes the filter.
+        Parameters:
+           fmin: FLOAT	Minimum - frequency per year that passes the filter.
+           fmax: FLOAT	Maximum - frequency per year that passes the filter.
         """
         operator = CdoOperator(command="lowpass",
                                n_input=1, 
@@ -8200,9 +8200,9 @@ Parameters:
     def highpass(self, fmin = None, fmax = None):
         r"""
         CDO operator: highpass
-Parameters:
-    fmin: FLOAT	Minimum - frequency per year that passes the filter.
-    fmax: FLOAT	Maximum - frequency per year that passes the filter.
+        Parameters:
+           fmin: FLOAT	Minimum - frequency per year that passes the filter.
+           fmax: FLOAT	Maximum - frequency per year that passes the filter.
         """
         operator = CdoOperator(command="highpass",
                                n_input=1, 
@@ -8214,8 +8214,8 @@ Parameters:
     def gridarea(self, radius = None):
         r"""
         CDO operator: gridarea
-Parameters:
-    radius: FLOAT - Planet radius in meter
+        Parameters:
+           radius: FLOAT - Planet radius in meter
         """
         operator = CdoOperator(command="gridarea",
                                n_input=1, 
@@ -8227,8 +8227,8 @@ Parameters:
     def gridweights(self, radius = None):
         r"""
         CDO operator: gridweights
-Parameters:
-    radius: FLOAT - Planet radius in meter
+        Parameters:
+           radius: FLOAT - Planet radius in meter
         """
         operator = CdoOperator(command="gridweights",
                                n_input=1, 
@@ -8240,13 +8240,13 @@ Parameters:
     def smooth(self, nsmooth = None, radius = None, maxpoints = None, weighted = None, weight0 = None, weightR = None):
         r"""
         CDO operator: smooth
-Parameters:
-    nsmooth: INTEGER - Number of times to smooth, default nsmooth=1
-    radius: STRING - Search radius, default radius=1deg (units: deg, rad, km, m)
-    maxpoints: INTEGER - Maximum number of points, default maxpoints=<gridsize>
-    weighted: STRING - Weighting method, default weighted=linear
-    weight0: FLOAT - Weight at distance 0, default weight0=0.25
-    weightR: FLOAT - Weight at the search radius, default weightR=0.25
+        Parameters:
+           nsmooth: INTEGER - Number of times to smooth, default nsmooth=1
+           radius: STRING - Search radius, default radius=1deg (units: deg, rad, km, m)
+           maxpoints: INTEGER - Maximum number of points, default maxpoints=<gridsize>
+           weighted: STRING - Weighting method, default weighted=linear
+           weight0: FLOAT - Weight at distance 0, default weight0=0.25
+           weightR: FLOAT - Weight at the search radius, default weightR=0.25
         """
         operator = CdoOperator(command="smooth",
                                n_input=1, 
@@ -8258,13 +8258,13 @@ Parameters:
     def smooth9(self, nsmooth = None, radius = None, maxpoints = None, weighted = None, weight0 = None, weightR = None):
         r"""
         CDO operator: smooth9
-Parameters:
-    nsmooth: INTEGER - Number of times to smooth, default nsmooth=1
-    radius: STRING - Search radius, default radius=1deg (units: deg, rad, km, m)
-    maxpoints: INTEGER - Maximum number of points, default maxpoints=<gridsize>
-    weighted: STRING - Weighting method, default weighted=linear
-    weight0: FLOAT - Weight at distance 0, default weight0=0.25
-    weightR: FLOAT - Weight at the search radius, default weightR=0.25
+        Parameters:
+           nsmooth: INTEGER - Number of times to smooth, default nsmooth=1
+           radius: STRING - Search radius, default radius=1deg (units: deg, rad, km, m)
+           maxpoints: INTEGER - Maximum number of points, default maxpoints=<gridsize>
+           weighted: STRING - Weighting method, default weighted=linear
+           weight0: FLOAT - Weight at distance 0, default weight0=0.25
+           weightR: FLOAT - Weight at the search radius, default weightR=0.25
         """
         operator = CdoOperator(command="smooth9",
                                n_input=1, 
@@ -8287,13 +8287,13 @@ Parameters:
     def setvals(self, oldval = None, newval = None, rmin = None, rmax = None, c = None, c2 = None):
         r"""
         CDO operator: setvals
-Parameters:
-    oldval: FLOAT - Pairs of old and new values
-    newval: FLOAT - Pairs of old and new values
-    rmin: FLOAT - Lower bound
-    rmax: FLOAT - Upper bound
-    c: FLOAT - New value - inside range
-    c2: FLOAT - New value - outside range
+        Parameters:
+           oldval: FLOAT - Pairs of old and new values
+           newval: FLOAT - Pairs of old and new values
+           rmin: FLOAT - Lower bound
+           rmax: FLOAT - Upper bound
+           c: FLOAT - New value - inside range
+           c2: FLOAT - New value - outside range
         """
         operator = CdoOperator(command="setvals",
                                n_input=1, 
@@ -8305,13 +8305,13 @@ Parameters:
     def setrtoc(self, oldval = None, newval = None, rmin = None, rmax = None, c = None, c2 = None):
         r"""
         CDO operator: setrtoc
-Parameters:
-    oldval: FLOAT - Pairs of old and new values
-    newval: FLOAT - Pairs of old and new values
-    rmin: FLOAT - Lower bound
-    rmax: FLOAT - Upper bound
-    c: FLOAT - New value - inside range
-    c2: FLOAT - New value - outside range
+        Parameters:
+           oldval: FLOAT - Pairs of old and new values
+           newval: FLOAT - Pairs of old and new values
+           rmin: FLOAT - Lower bound
+           rmax: FLOAT - Upper bound
+           c: FLOAT - New value - inside range
+           c2: FLOAT - New value - outside range
         """
         operator = CdoOperator(command="setrtoc",
                                n_input=1, 
@@ -8323,13 +8323,13 @@ Parameters:
     def setrtoc2(self, oldval = None, newval = None, rmin = None, rmax = None, c = None, c2 = None):
         r"""
         CDO operator: setrtoc2
-Parameters:
-    oldval: FLOAT - Pairs of old and new values
-    newval: FLOAT - Pairs of old and new values
-    rmin: FLOAT - Lower bound
-    rmax: FLOAT - Upper bound
-    c: FLOAT - New value - inside range
-    c2: FLOAT - New value - outside range
+        Parameters:
+           oldval: FLOAT - Pairs of old and new values
+           newval: FLOAT - Pairs of old and new values
+           rmin: FLOAT - Lower bound
+           rmax: FLOAT - Upper bound
+           c: FLOAT - New value - inside range
+           c2: FLOAT - New value - outside range
         """
         operator = CdoOperator(command="setrtoc2",
                                n_input=1, 
@@ -8341,9 +8341,9 @@ Parameters:
     def gridcellindex(self, lon = None, lat = None):
         r"""
         CDO operator: gridcellindex
-Parameters:
-    lon: INTEGER - Longitude of the grid cell in degree
-    lat: INTEGER - Latitude of the grid cell in degree
+        Parameters:
+           lon: INTEGER - Longitude of the grid cell in degree
+           lat: INTEGER - Latitude of the grid cell in degree
         """
         operator = CdoOperator(command="gridcellindex",
                                n_input=1, 
@@ -8355,14 +8355,14 @@ Parameters:
     def const(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None):
         r"""
         CDO operator: const
-Parameters:
-    const: FLOAT - Constant
-    seed: INTEGER - The seed for a new sequence of pseudo-random numbers \[default: 1\]
-    grid: STRING - Target grid description file or name
-    start: FLOAT - Start value of the loop
-    end: FLOAT - End value of the loop
-    inc: FLOAT - Increment of the loop \[default: 1\]
-    levels: FLOAT - Target levels in metre above surface
+        Parameters:
+           const: FLOAT - Constant
+           seed: INTEGER - The seed for a new sequence of pseudo-random numbers \[default: 1\]
+           grid: STRING - Target grid description file or name
+           start: FLOAT - Start value of the loop
+           end: FLOAT - End value of the loop
+           inc: FLOAT - Increment of the loop \[default: 1\]
+           levels: FLOAT - Target levels in metre above surface
         """
         operator = CdoOperator(command="const",
                                n_input=0, 
@@ -8374,14 +8374,14 @@ Parameters:
     def random(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None):
         r"""
         CDO operator: random
-Parameters:
-    const: FLOAT - Constant
-    seed: INTEGER - The seed for a new sequence of pseudo-random numbers \[default: 1\]
-    grid: STRING - Target grid description file or name
-    start: FLOAT - Start value of the loop
-    end: FLOAT - End value of the loop
-    inc: FLOAT - Increment of the loop \[default: 1\]
-    levels: FLOAT - Target levels in metre above surface
+        Parameters:
+           const: FLOAT - Constant
+           seed: INTEGER - The seed for a new sequence of pseudo-random numbers \[default: 1\]
+           grid: STRING - Target grid description file or name
+           start: FLOAT - Start value of the loop
+           end: FLOAT - End value of the loop
+           inc: FLOAT - Increment of the loop \[default: 1\]
+           levels: FLOAT - Target levels in metre above surface
         """
         operator = CdoOperator(command="random",
                                n_input=0, 
@@ -8393,14 +8393,14 @@ Parameters:
     def topo(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None):
         r"""
         CDO operator: topo
-Parameters:
-    const: FLOAT - Constant
-    seed: INTEGER - The seed for a new sequence of pseudo-random numbers \[default: 1\]
-    grid: STRING - Target grid description file or name
-    start: FLOAT - Start value of the loop
-    end: FLOAT - End value of the loop
-    inc: FLOAT - Increment of the loop \[default: 1\]
-    levels: FLOAT - Target levels in metre above surface
+        Parameters:
+           const: FLOAT - Constant
+           seed: INTEGER - The seed for a new sequence of pseudo-random numbers \[default: 1\]
+           grid: STRING - Target grid description file or name
+           start: FLOAT - Start value of the loop
+           end: FLOAT - End value of the loop
+           inc: FLOAT - Increment of the loop \[default: 1\]
+           levels: FLOAT - Target levels in metre above surface
         """
         operator = CdoOperator(command="topo",
                                n_input=0, 
@@ -8412,14 +8412,14 @@ Parameters:
     def seq(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None):
         r"""
         CDO operator: seq
-Parameters:
-    const: FLOAT - Constant
-    seed: INTEGER - The seed for a new sequence of pseudo-random numbers \[default: 1\]
-    grid: STRING - Target grid description file or name
-    start: FLOAT - Start value of the loop
-    end: FLOAT - End value of the loop
-    inc: FLOAT - Increment of the loop \[default: 1\]
-    levels: FLOAT - Target levels in metre above surface
+        Parameters:
+           const: FLOAT - Constant
+           seed: INTEGER - The seed for a new sequence of pseudo-random numbers \[default: 1\]
+           grid: STRING - Target grid description file or name
+           start: FLOAT - Start value of the loop
+           end: FLOAT - End value of the loop
+           inc: FLOAT - Increment of the loop \[default: 1\]
+           levels: FLOAT - Target levels in metre above surface
         """
         operator = CdoOperator(command="seq",
                                n_input=0, 
@@ -8431,14 +8431,14 @@ Parameters:
     def stdatm(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None):
         r"""
         CDO operator: stdatm
-Parameters:
-    const: FLOAT - Constant
-    seed: INTEGER - The seed for a new sequence of pseudo-random numbers \[default: 1\]
-    grid: STRING - Target grid description file or name
-    start: FLOAT - Start value of the loop
-    end: FLOAT - End value of the loop
-    inc: FLOAT - Increment of the loop \[default: 1\]
-    levels: FLOAT - Target levels in metre above surface
+        Parameters:
+           const: FLOAT - Constant
+           seed: INTEGER - The seed for a new sequence of pseudo-random numbers \[default: 1\]
+           grid: STRING - Target grid description file or name
+           start: FLOAT - Start value of the loop
+           end: FLOAT - End value of the loop
+           inc: FLOAT - Increment of the loop \[default: 1\]
+           levels: FLOAT - Target levels in metre above surface
         """
         operator = CdoOperator(command="stdatm",
                                n_input=0, 
@@ -8461,9 +8461,9 @@ Parameters:
     def rotuvb(self, u = None, v = None):
         r"""
         CDO operator: rotuvb
-Parameters:
-    u: STRING - Pairs of zonal and meridional velocity components (use variable names or code numbers)
-    v: STRING - Pairs of zonal and meridional velocity components (use variable names or code numbers)
+        Parameters:
+           u: STRING - Pairs of zonal and meridional velocity components (use variable names or code numbers)
+           v: STRING - Pairs of zonal and meridional velocity components (use variable names or code numbers)
         """
         operator = CdoOperator(command="rotuvb",
                                n_input=1, 
@@ -8563,8 +8563,8 @@ Parameters:
     def adisit(self, pressure = None):
         r"""
         CDO operator: adisit
-Parameters:
-    pressure: FLOAT - Pressure in bar (constant value assigned to all levels)
+        Parameters:
+           pressure: FLOAT - Pressure in bar (constant value assigned to all levels)
         """
         operator = CdoOperator(command="adisit",
                                n_input=1, 
@@ -8576,8 +8576,8 @@ Parameters:
     def adipot(self, pressure = None):
         r"""
         CDO operator: adipot
-Parameters:
-    pressure: FLOAT - Pressure in bar (constant value assigned to all levels)
+        Parameters:
+           pressure: FLOAT - Pressure in bar (constant value assigned to all levels)
         """
         operator = CdoOperator(command="adipot",
                                n_input=1, 
@@ -8589,8 +8589,8 @@ Parameters:
     def rhopot(self, pressure = None):
         r"""
         CDO operator: rhopot
-Parameters:
-    pressure: FLOAT - Pressure in bar (constant value assigned to all levels)
+        Parameters:
+           pressure: FLOAT - Pressure in bar (constant value assigned to all levels)
         """
         operator = CdoOperator(command="rhopot",
                                n_input=1, 
@@ -8602,8 +8602,8 @@ Parameters:
     def histcount(self, bounds = None):
         r"""
         CDO operator: histcount
-Parameters:
-    bounds: FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)
+        Parameters:
+           bounds: FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)
         """
         operator = CdoOperator(command="histcount",
                                n_input=1, 
@@ -8615,8 +8615,8 @@ Parameters:
     def histsum(self, bounds = None):
         r"""
         CDO operator: histsum
-Parameters:
-    bounds: FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)
+        Parameters:
+           bounds: FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)
         """
         operator = CdoOperator(command="histsum",
                                n_input=1, 
@@ -8628,8 +8628,8 @@ Parameters:
     def histmean(self, bounds = None):
         r"""
         CDO operator: histmean
-Parameters:
-    bounds: FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)
+        Parameters:
+           bounds: FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)
         """
         operator = CdoOperator(command="histmean",
                                n_input=1, 
@@ -8641,8 +8641,8 @@ Parameters:
     def histfreq(self, bounds = None):
         r"""
         CDO operator: histfreq
-Parameters:
-    bounds: FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)
+        Parameters:
+           bounds: FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)
         """
         operator = CdoOperator(command="histfreq",
                                n_input=1, 
@@ -8654,12 +8654,12 @@ Parameters:
     def sethalo(self, east = None, west = None, south = None, north = None, value = None):
         r"""
         CDO operator: sethalo
-Parameters:
-    east: INTEGER - East halo
-    west: INTEGER - West halo
-    south: INTEGER - South halo
-    north: INTEGER - North halo
-    value: FLOAT - Fill value (default is the missing value)
+        Parameters:
+           east: INTEGER - East halo
+           west: INTEGER - West halo
+           south: INTEGER - South halo
+           north: INTEGER - North halo
+           value: FLOAT - Fill value (default is the missing value)
         """
         operator = CdoOperator(command="sethalo",
                                n_input=1, 
@@ -8693,8 +8693,8 @@ Parameters:
     def strwin(self, v = None):
         r"""
         CDO operator: strwin
-Parameters:
-    v: FLOAT - Horizontal wind speed threshold (m/s, default v = 10.5 m/s)
+        Parameters:
+           v: FLOAT - Horizontal wind speed threshold (m/s, default v = 10.5 m/s)
         """
         operator = CdoOperator(command="strwin",
                                n_input=1, 
@@ -8739,9 +8739,9 @@ Parameters:
     def cmorlite(self, table = None, convert = None):
         r"""
         CDO operator: cmorlite
-Parameters:
-    table: STRING - Name of the CMOR table as specified from PCMDI
-    convert: STRING - Converts the units if necessary
+        Parameters:
+           table: STRING - Name of the CMOR table as specified from PCMDI
+           convert: STRING - Converts the units if necessary
         """
         operator = CdoOperator(command="cmorlite",
                                n_input=1, 
@@ -8764,10 +8764,10 @@ Parameters:
     def hpdegrade(self, nside = None, order = None, power = None):
         r"""
         CDO operator: hpdegrade
-Parameters:
-    nside: INTEGER - The nside of the target healpix, must be a power of two \[default: same as input\].
-    order: STRING - Pixel ordering of the target healpix ('nested' or 'ring').
-    power: FLOAT - If non-zero, divide the result by (nside\[in\]/nside\[out\])**power. power=-2 keeps the sum of the map invariant.
+        Parameters:
+           nside: INTEGER - The nside of the target healpix, must be a power of two \[default: same as input\].
+           order: STRING - Pixel ordering of the target healpix ('nested' or 'ring').
+           power: FLOAT - If non-zero, divide the result by (nside\[in\]/nside\[out\])**power. power=-2 keeps the sum of the map invariant.
         """
         operator = CdoOperator(command="hpdegrade",
                                n_input=1, 
@@ -8779,10 +8779,10 @@ Parameters:
     def hpupgrade(self, nside = None, order = None, power = None):
         r"""
         CDO operator: hpupgrade
-Parameters:
-    nside: INTEGER - The nside of the target healpix, must be a power of two \[default: same as input\].
-    order: STRING - Pixel ordering of the target healpix ('nested' or 'ring').
-    power: FLOAT - If non-zero, divide the result by (nside\[in\]/nside\[out\])**power. power=-2 keeps the sum of the map invariant.
+        Parameters:
+           nside: INTEGER - The nside of the target healpix, must be a power of two \[default: same as input\].
+           order: STRING - Pixel ordering of the target healpix ('nested' or 'ring').
+           power: FLOAT - If non-zero, divide the result by (nside\[in\]/nside\[out\])**power. power=-2 keeps the sum of the map invariant.
         """
         operator = CdoOperator(command="hpupgrade",
                                n_input=1, 
@@ -8794,11 +8794,11 @@ Parameters:
     def uv2vr_cfd(self, u = None, v = None, boundOpt = None, outMode = None):
         r"""
         CDO operator: uv2vr_cfd
-Parameters:
-    u: STRING - Name of variable u (default: u)
-    v: STRING - Name of variable v (default: v)
-    boundOpt: INTEGER - Boundary condition option (0-3) (default: 0/1 for cyclic grids)
-    outMode: STRING - Output mode new/append (default: new)
+        Parameters:
+           u: STRING - Name of variable u (default: u)
+           v: STRING - Name of variable v (default: v)
+           boundOpt: INTEGER - Boundary condition option (0-3) (default: 0/1 for cyclic grids)
+           outMode: STRING - Output mode new/append (default: new)
         """
         operator = CdoOperator(command="uv2vr_cfd",
                                n_input=1, 
@@ -8810,11 +8810,11 @@ Parameters:
     def uv2dv_cfd(self, u = None, v = None, boundOpt = None, outMode = None):
         r"""
         CDO operator: uv2dv_cfd
-Parameters:
-    u: STRING - Name of variable u (default: u)
-    v: STRING - Name of variable v (default: v)
-    boundOpt: INTEGER - Boundary condition option (0-3) (default: 0/1 for cyclic grids)
-    outMode: STRING - Output mode new/append (default: new)
+        Parameters:
+           u: STRING - Name of variable u (default: u)
+           v: STRING - Name of variable v (default: v)
+           boundOpt: INTEGER - Boundary condition option (0-3) (default: 0/1 for cyclic grids)
+           outMode: STRING - Output mode new/append (default: new)
         """
         operator = CdoOperator(command="uv2dv_cfd",
                                n_input=1, 
@@ -8826,8 +8826,8 @@ Parameters:
     def contour(self, parameter = None):
         r"""
         CDO operator: contour
-Parameters:
-    parameter: STRING - Comma-separated list of plot parameters
+        Parameters:
+           parameter: STRING - Comma-separated list of plot parameters
         """
         operator = CdoOperator(command="contour",
                                n_input=1, 
@@ -8839,8 +8839,8 @@ Parameters:
     def shaded(self, parameter = None):
         r"""
         CDO operator: shaded
-Parameters:
-    parameter: STRING - Comma-separated list of plot parameters
+        Parameters:
+           parameter: STRING - Comma-separated list of plot parameters
         """
         operator = CdoOperator(command="shaded",
                                n_input=1, 
@@ -8852,8 +8852,8 @@ Parameters:
     def grfill(self, parameter = None):
         r"""
         CDO operator: grfill
-Parameters:
-    parameter: STRING - Comma-separated list of plot parameters
+        Parameters:
+           parameter: STRING - Comma-separated list of plot parameters
         """
         operator = CdoOperator(command="grfill",
                                n_input=1, 
@@ -8865,8 +8865,8 @@ Parameters:
     def vector(self, parameter = None):
         r"""
         CDO operator: vector
-Parameters:
-    parameter: STRING - Comma-separated list of plot parameters
+        Parameters:
+           parameter: STRING - Comma-separated list of plot parameters
         """
         operator = CdoOperator(command="vector",
                                n_input=1, 
@@ -8878,8 +8878,8 @@ Parameters:
     def graph(self, parameter = None):
         r"""
         CDO operator: graph
-Parameters:
-    parameter: STRING - Comma-separated list of plot parameters
+        Parameters:
+           parameter: STRING - Comma-separated list of plot parameters
         """
         operator = CdoOperator(command="graph",
                                n_input=inf, 
@@ -8891,10 +8891,10 @@ Parameters:
     def eca_cdd(self, R = None, N = None, freq = None):
         r"""
         CDO operator: eca_cdd
-Parameters:
-    R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
-    N: INTEGER - Minimum number of days exceeded (default: N = 5)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
+           N: INTEGER - Minimum number of days exceeded (default: N = 5)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="eca_cdd",
                                n_input=1, 
@@ -8906,10 +8906,10 @@ Parameters:
     def etccdi_cdd(self, R = None, N = None, freq = None):
         r"""
         CDO operator: etccdi_cdd
-Parameters:
-    R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
-    N: INTEGER - Minimum number of days exceeded (default: N = 5)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
+           N: INTEGER - Minimum number of days exceeded (default: N = 5)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="etccdi_cdd",
                                n_input=1, 
@@ -8921,8 +8921,8 @@ Parameters:
     def eca_cfd(self, N = None):
         r"""
         CDO operator: eca_cfd
-Parameters:
-    N: INTEGER - Minimum number of days exceeded (default: N = 5)
+        Parameters:
+           N: INTEGER - Minimum number of days exceeded (default: N = 5)
         """
         operator = CdoOperator(command="eca_cfd",
                                n_input=1, 
@@ -8934,9 +8934,9 @@ Parameters:
     def eca_csu(self, T = None, N = None):
         r"""
         CDO operator: eca_csu
-Parameters:
-    T: FLOAT - Temperature threshold (unit: °C; default: T = 25°C)
-    N: INTEGER - Minimum number of days exceeded (default: N = 5)
+        Parameters:
+           T: FLOAT - Temperature threshold (unit: °C; default: T = 25°C)
+           N: INTEGER - Minimum number of days exceeded (default: N = 5)
         """
         operator = CdoOperator(command="eca_csu",
                                n_input=1, 
@@ -8948,10 +8948,10 @@ Parameters:
     def eca_cwd(self, R = None, N = None, freq = None):
         r"""
         CDO operator: eca_cwd
-Parameters:
-    R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
-    N: INTEGER - Minimum number of days exceeded (default: N = 5)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
+           N: INTEGER - Minimum number of days exceeded (default: N = 5)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="eca_cwd",
                                n_input=1, 
@@ -8963,10 +8963,10 @@ Parameters:
     def etccdi_cwd(self, R = None, N = None, freq = None):
         r"""
         CDO operator: etccdi_cwd
-Parameters:
-    R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
-    N: INTEGER - Minimum number of days exceeded (default: N = 5)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
+           N: INTEGER - Minimum number of days exceeded (default: N = 5)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="etccdi_cwd",
                                n_input=1, 
@@ -8978,9 +8978,9 @@ Parameters:
     def eca_cwdi(self, ifile2, nday = None, T = None):
         r"""
         CDO operator: eca_cwdi
-Parameters:
-    nday: INTEGER - Number of consecutive days (default: nday = 6)
-    T: FLOAT - Temperature offset (unit: °C; default: T = 5°C)
+        Parameters:
+           nday: INTEGER - Number of consecutive days (default: nday = 6)
+           T: FLOAT - Temperature offset (unit: °C; default: T = 5°C)
         """
         operator = CdoOperator(command="eca_cwdi",
                                n_input=2, 
@@ -8992,9 +8992,9 @@ Parameters:
     def eca_cwfi(self, ifile2, nday = None, freq = None):
         r"""
         CDO operator: eca_cwfi
-Parameters:
-    nday: INTEGER - Number of consecutive days (default: nday = 6)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           nday: INTEGER - Number of consecutive days (default: nday = 6)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="eca_cwfi",
                                n_input=2, 
@@ -9006,9 +9006,9 @@ Parameters:
     def etccdi_csdi(self, ifile2, nday = None, freq = None):
         r"""
         CDO operator: etccdi_csdi
-Parameters:
-    nday: INTEGER - Number of consecutive days (default: nday = 6)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           nday: INTEGER - Number of consecutive days (default: nday = 6)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="etccdi_csdi",
                                n_input=2, 
@@ -9031,8 +9031,8 @@ Parameters:
     def eca_fd(self, freq = None):
         r"""
         CDO operator: eca_fd
-Parameters:
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="eca_fd",
                                n_input=1, 
@@ -9044,8 +9044,8 @@ Parameters:
     def etccdi_fd(self, freq = None):
         r"""
         CDO operator: etccdi_fd
-Parameters:
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="etccdi_fd",
                                n_input=1, 
@@ -9057,10 +9057,10 @@ Parameters:
     def eca_gsl(self, ifile2, nday = None, T = None, fland = None):
         r"""
         CDO operator: eca_gsl
-Parameters:
-    nday: INTEGER - Number of consecutive days (default: nday = 6)
-    T: FLOAT - Temperature threshold (unit: °C; default: T = 5°C)
-    fland: FLOAT - Land fraction threshold (default: fland = 0.5)
+        Parameters:
+           nday: INTEGER - Number of consecutive days (default: nday = 6)
+           T: FLOAT - Temperature threshold (unit: °C; default: T = 5°C)
+           fland: FLOAT - Land fraction threshold (default: fland = 0.5)
         """
         operator = CdoOperator(command="eca_gsl",
                                n_input=2, 
@@ -9072,9 +9072,9 @@ Parameters:
     def eca_hd(self, T1 = None, T2 = None):
         r"""
         CDO operator: eca_hd
-Parameters:
-    T1: FLOAT - Temperature limit (unit: °C; default: T1 = 17°C)
-    T2: FLOAT - Temperature limit (unit: °C; default: T2 = T1)
+        Parameters:
+           T1: FLOAT - Temperature limit (unit: °C; default: T1 = 17°C)
+           T2: FLOAT - Temperature limit (unit: °C; default: T2 = T1)
         """
         operator = CdoOperator(command="eca_hd",
                                n_input=1, 
@@ -9086,9 +9086,9 @@ Parameters:
     def eca_hwdi(self, ifile2, nday = None, T = None):
         r"""
         CDO operator: eca_hwdi
-Parameters:
-    nday: INTEGER - Number of consecutive days (default: nday = 6)
-    T: FLOAT - Temperature offset (unit: °C; default: T = 5°C)
+        Parameters:
+           nday: INTEGER - Number of consecutive days (default: nday = 6)
+           T: FLOAT - Temperature offset (unit: °C; default: T = 5°C)
         """
         operator = CdoOperator(command="eca_hwdi",
                                n_input=2, 
@@ -9100,9 +9100,9 @@ Parameters:
     def eca_hwfi(self, ifile2, nday = None, freq = None):
         r"""
         CDO operator: eca_hwfi
-Parameters:
-    nday: INTEGER - Number of consecutive days (default: nday = 6)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           nday: INTEGER - Number of consecutive days (default: nday = 6)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="eca_hwfi",
                                n_input=2, 
@@ -9114,9 +9114,9 @@ Parameters:
     def etccdi_wsdi(self, ifile2, nday = None, freq = None):
         r"""
         CDO operator: etccdi_wsdi
-Parameters:
-    nday: INTEGER - Number of consecutive days (default: nday = 6)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           nday: INTEGER - Number of consecutive days (default: nday = 6)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="etccdi_wsdi",
                                n_input=2, 
@@ -9128,8 +9128,8 @@ Parameters:
     def eca_id(self, freq = None):
         r"""
         CDO operator: eca_id
-Parameters:
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="eca_id",
                                n_input=1, 
@@ -9141,8 +9141,8 @@ Parameters:
     def etccdi_id(self, freq = None):
         r"""
         CDO operator: etccdi_id
-Parameters:
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="etccdi_id",
                                n_input=1, 
@@ -9242,9 +9242,9 @@ Parameters:
     def eca_pd(self, x = None, freq = None):
         r"""
         CDO operator: eca_pd
-Parameters:
-    x: FLOAT - Daily precipitation amount threshold in \[mm\]
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           x: FLOAT - Daily precipitation amount threshold in \[mm\]
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="eca_pd",
                                n_input=1, 
@@ -9256,9 +9256,9 @@ Parameters:
     def eca_r10mm(self, x = None, freq = None):
         r"""
         CDO operator: eca_r10mm
-Parameters:
-    x: FLOAT - Daily precipitation amount threshold in \[mm\]
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           x: FLOAT - Daily precipitation amount threshold in \[mm\]
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="eca_r10mm",
                                n_input=1, 
@@ -9270,9 +9270,9 @@ Parameters:
     def eca_r20mm(self, x = None, freq = None):
         r"""
         CDO operator: eca_r20mm
-Parameters:
-    x: FLOAT - Daily precipitation amount threshold in \[mm\]
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           x: FLOAT - Daily precipitation amount threshold in \[mm\]
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="eca_r20mm",
                                n_input=1, 
@@ -9284,9 +9284,9 @@ Parameters:
     def etccdi_r1mm(self, x = None, freq = None):
         r"""
         CDO operator: etccdi_r1mm
-Parameters:
-    x: FLOAT - Daily precipitation amount threshold in \[mm\]
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           x: FLOAT - Daily precipitation amount threshold in \[mm\]
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="etccdi_r1mm",
                                n_input=1, 
@@ -9298,8 +9298,8 @@ Parameters:
     def eca_rr1(self, R = None):
         r"""
         CDO operator: eca_rr1
-Parameters:
-    R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
+        Parameters:
+           R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
         """
         operator = CdoOperator(command="eca_rr1",
                                n_input=1, 
@@ -9311,8 +9311,8 @@ Parameters:
     def eca_rx1day(self, freq = None):
         r"""
         CDO operator: eca_rx1day
-Parameters:
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="eca_rx1day",
                                n_input=1, 
@@ -9324,8 +9324,8 @@ Parameters:
     def etccdi_rx1day(self, freq = None):
         r"""
         CDO operator: etccdi_rx1day
-Parameters:
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="etccdi_rx1day",
                                n_input=1, 
@@ -9337,9 +9337,9 @@ Parameters:
     def eca_rx5day(self, x = None, freq = None):
         r"""
         CDO operator: eca_rx5day
-Parameters:
-    x: FLOAT - Precipitation threshold (unit: mm; default: x = 50 mm)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           x: FLOAT - Precipitation threshold (unit: mm; default: x = 50 mm)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="eca_rx5day",
                                n_input=1, 
@@ -9351,9 +9351,9 @@ Parameters:
     def etccdi_rx5day(self, x = None, freq = None):
         r"""
         CDO operator: etccdi_rx5day
-Parameters:
-    x: FLOAT - Precipitation threshold (unit: mm; default: x = 50 mm)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           x: FLOAT - Precipitation threshold (unit: mm; default: x = 50 mm)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="etccdi_rx5day",
                                n_input=1, 
@@ -9365,8 +9365,8 @@ Parameters:
     def eca_sdii(self, R = None):
         r"""
         CDO operator: eca_sdii
-Parameters:
-    R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
+        Parameters:
+           R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
         """
         operator = CdoOperator(command="eca_sdii",
                                n_input=1, 
@@ -9378,9 +9378,9 @@ Parameters:
     def eca_su(self, T = None, freq = None):
         r"""
         CDO operator: eca_su
-Parameters:
-    T: FLOAT - Temperature threshold (unit: °C; default: T = 25°C)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           T: FLOAT - Temperature threshold (unit: °C; default: T = 25°C)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="eca_su",
                                n_input=1, 
@@ -9392,9 +9392,9 @@ Parameters:
     def etccdi_su(self, T = None, freq = None):
         r"""
         CDO operator: etccdi_su
-Parameters:
-    T: FLOAT - Temperature threshold (unit: °C; default: T = 25°C)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           T: FLOAT - Temperature threshold (unit: °C; default: T = 25°C)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="etccdi_su",
                                n_input=1, 
@@ -9450,9 +9450,9 @@ Parameters:
     def eca_tr(self, T = None, freq = None):
         r"""
         CDO operator: eca_tr
-Parameters:
-    T: FLOAT - Temperature threshold (unit: °C; default: T = 20°C)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           T: FLOAT - Temperature threshold (unit: °C; default: T = 20°C)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="eca_tr",
                                n_input=1, 
@@ -9464,9 +9464,9 @@ Parameters:
     def etccdi_tr(self, T = None, freq = None):
         r"""
         CDO operator: etccdi_tr
-Parameters:
-    T: FLOAT - Temperature threshold (unit: °C; default: T = 20°C)
-    freq: STRING - Output frequency (year, month)
+        Parameters:
+           T: FLOAT - Temperature threshold (unit: °C; default: T = 20°C)
+           freq: STRING - Output frequency (year, month)
         """
         operator = CdoOperator(command="etccdi_tr",
                                n_input=1, 

@@ -9,7 +9,7 @@ def inf_hook(obj):
             obj[k] = float("inf")
     return obj
 
-with open('build/operators.json', 'r') as file:
+with open('build-pycdo/operators.json', 'r') as file:
     OPERATORS = json.load(file, object_hook=inf_hook)
 
 OPERATORS = list(OPERATORS.values())
@@ -30,9 +30,9 @@ def make_arguments(op):
 def make_docstring(op):
     if not op["params"]:
         return f"CDO operator: {op['command']}"
-    lines = [f"CDO operator: {op['command']}", "Parameters:"]
+    lines = [f"CDO operator: {op['command']}", "        Parameters:"]
     for k, v in op["params"]["optional"].items():
-        lines.append(f"    {k}: {v}")
+        lines.append(f"           {k}: {v}")
     return "\n".join(lines)
 
 
