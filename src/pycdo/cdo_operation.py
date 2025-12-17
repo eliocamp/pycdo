@@ -1,8 +1,6 @@
 import os
-import importlib
 from .cdo_options import cdo_options, combine_options
 from .cdo_operator import CdoOperator
-from inspect import getmembers, isfunction
 
 import tempfile
 import subprocess
