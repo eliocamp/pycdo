@@ -9,7 +9,7 @@ def inf_hook(obj):
             obj[k] = float("inf")
     return obj
 
-with open('operators.json', 'r') as file:
+with open('build/operators.json', 'r') as file:
     OPERATORS = json.load(file, object_hook=inf_hook)
 
 OPERATORS = list(OPERATORS.values())
@@ -83,7 +83,7 @@ for op in OPERATORS:
 
 
 
-operation_file = "pycdo/cdo_operation.py"
+operation_file = "src/pycdo/cdo_operation.py"
 marker = "## <<start operators>>"
 
 with open(operation_file, "r") as f:
