@@ -4,6 +4,8 @@ from .cdo_operator import CdoOperator
 
 import tempfile
 import subprocess
+import shlex
+
 
 inf=float("inf")
 
@@ -70,15 +72,10 @@ class CdoOperation:
     def _new_op(self, operator, inputs, params={}):
         prev_output = self.operator.n_output + len(inputs)
         
-        this_input = operator.n_input
+        operators_compatible = operator.n_input == inf or operator.n_input == prev_output    
 
-        zero_input = this_input == 0 
-        unequal_values = this_input != prev_output and this_input != float("inf") 
-
-        operation_incompatible = zero_input or unequal_values
-
-        if operation_incompatible: 
-            raise ValueError(f"Chaining error: {operator.command} expects {this_input} but {self.operator.command} outputs {prev_output} files.")
+        if not operators_compatible: 
+            raise ValueError(f"Chaining error: {operator.command} expects {operator.n_input} but {self.operator.command} outputs {prev_output} files.")
 
         inputs = [self] + inputs
         return CdoOperation(inputs, operator, params)
