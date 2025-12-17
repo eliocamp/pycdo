@@ -1,21 +1,33 @@
-# pycdo
+# Welcome to pycdo
 
-[![PyPI - Version](https://img.shields.io/pypi/v/pycdo.svg)](https://pypi.org/project/pycdo)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pycdo.svg)](https://pypi.org/project/pycdo)
+|        |        |
+|--------|--------|
+| Package | [![Latest PyPI Version](https://img.shields.io/pypi/v/pycdo.svg)](https://pypi.org/project/pycdo/) [![Supported Python Versions](https://img.shields.io/pypi/pyversions/pycdo.svg)](https://pypi.org/project/pycdo/)  |
+| Meta   | [![Code of Conduct](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md) |
 
------
+*TODO: the above badges that indicate python version and package version will only work if your package is on PyPI.
+If you don't plan to publish to PyPI, you can remove them.*
 
-## Table of Contents
+pycdo is a project that (describe what it does here).
 
-- [Installation](#installation)
-- [License](#license)
+## Get started
 
-## Installation
+You can install this package into your preferred Python environment using pip:
 
-```console
-pip install pycdo
+```bash
+$ pip install pycdo
 ```
 
-## License
+TODO: Add a brief example of how to use the package to this section
 
-`pycdo` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+To use pycdo in your code:
+
+```python
+>>> import pycdo
+>>> pycdo.hello_world()
+```
+
+## Copyright
+
+- Copyright © 2025 Elio Campitelli.
+- Free software distributed under the [MIT License](./LICENSE).
