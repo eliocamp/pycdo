@@ -1,29 +1,34 @@
 import os
 import importlib
-from .cdo_options import cdo_options
+from .cdo_options import cdo_options, combine_options
 from .cdo_operator import CdoOperator
 from inspect import getmembers, isfunction
 
 import tempfile
 import subprocess
 
+inf=float("inf")
+
 def cdo(input) -> "CdoOperation":
-    return CdoOperation(input=input)
+    return CdoOperation.noop(ifile=input)
 
 class CdoOperation:
-    def __init__(self, input=None, operator = None, params = None) -> "CdoOperation":        
-        if operator is None: 
-            operator = CdoOperator(command="noop", n_input=0, n_output=self._get_n_output(input), params=[])
-    
-        self.operator = operator
-        if input is None:
-            self.input = []
-        elif isinstance(input, list):
-            self.input = input
+    @staticmethod
+    def noop(ifile):
+        if (isinstance(ifile, list)):
+            n_input = len(ifile)
+            input = ifile
         else:
-            self.input = [input]
+            n_input = 1
+            input = [ifile]
 
-        self.params = params or {}
+        noop_operator = CdoOperator(command = "", n_input = n_input, n_output = n_input, params = [])
+        return CdoOperation(input = input, operator = noop_operator, params = {})
+    
+    def __init__(self, input, operator: "CdoOperator", params: dict = {}):
+        self.operator = operator
+        self.params = params
+        self.input = input
         
     @staticmethod
     def _get_n_output(input): 
@@ -61,14 +66,10 @@ class CdoOperation:
         Only the top-level operation should be prefixed with 'cdo'.
         """
 
-        if self.operator.command == "noop":
-            # Just return the input file(s)
-            return " ".join(self.input)
-
         cmd = []
         if top_level:
             cmd.append("cdo")
-            options = _combine_options(cdo_options.get(), options, replace=options_replace)
+            options = combine_options(cdo_options.get(), options, replace=options_replace)
             options_str = " ".join(options)
             cmd.append(options_str)
 
@@ -110,35 +111,13 @@ class CdoOperation:
     def __repr__(self):
         return("CDO operation.\n"+ self.build() + " {output}")
 
-from . import operators as OPERATORS
+## <<start operators>>
+    @staticmethod
+    def sellonlatbox(lon1, lon2):
+        operator = CdoOperator(command="sellonlatbox",
+                        n_input=1, 
+                        n_output=1, 
+                        params=["lon1", "lon2"])
+        return CdoOperation(input = [], operator = operator, params = {"lon1": lon1, "lon2": lon2})
 
-for attr in dir(OPERATORS):
-    func = getattr(OPERATORS, attr)
-    if callable(func):
-        setattr(CdoOperation, attr, func)
 
-
-def _combine_options(global_options=None, user_options=None, replace=False):
-    """
-    Combine or replace global and user options.
-    - If replace=True: use user_options only.
-    - If replace=False: combine global_options and user_options.
-    """
-
-    def to_list(opts):
-        if opts is None or opts == "":
-            return []
-        if isinstance(opts, list):
-            return opts
-        if isinstance(opts, str):
-            return [opts]
-        raise TypeError("Options must be a string or a list of strings.")
-
-    if replace:
-        return to_list(user_options)
-
-    if user_options is None:
-        return to_list(global_options)
-    
-    # Combine both (as list or string)
-    return to_list(global_options) + to_list(user_options)
