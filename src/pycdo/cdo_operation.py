@@ -59,19 +59,6 @@ class CdoOperation:
         self.params = params
         self.input = input
         
-    @staticmethod
-    def _get_n_output(input): 
-        if input is None: 
-            return 0
-        if isinstance(input, CdoOperation): 
-            return input.operator.n_output
-
-        if isinstance(input, str): 
-            return 1       
-
-        if isinstance(input, list): 
-            return float("inf")
-
     def _new_op(self, operator, inputs, params={}):
         prev_output = self.operator.n_output + len(inputs)
         
