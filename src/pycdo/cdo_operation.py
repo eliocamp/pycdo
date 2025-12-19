@@ -233,6 +233,7 @@ class CdoOperation:
         return("CDO operation.\n"+ self._build() + placeholder)
 
 ## <<start operators>>
+## nocov start
 
     def info(self):
         r"""
@@ -9547,3 +9548,4 @@ class CdoOperation:
                                params=[])
                                
         return self._new_op(operator, [ifile2], {})
+## nocov end

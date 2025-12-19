@@ -95,7 +95,7 @@ with open(operation_file, "r") as f:
 
 
 
-code = "".join(lines) + "".join(all_ops)
+code = "".join(lines) + "## nocov start\n" + "".join(all_ops) + "## nocov end"
 
 
 with open(operation_file, "w") as f: 
