@@ -50,7 +50,8 @@ def test_file_deleted_on_garbage_collection():
     # Create EphemeralFile and delete it
     ef = EphemeralFile(path)
     del ef
-
+    gc.collect()
+    
     # File should be deleted
     assert not Path(path).exists()
 
@@ -61,6 +62,7 @@ def test_temp_directory_deleted_when_empty():
     # Create EphemeralFile and delete it
     ef = EphemeralFile(path)
     del ef
+    gc.collect()
 
     assert not Path(temp_dir).exists()
 
@@ -73,6 +75,7 @@ def test_temp_directory_not_deleted_if_not_empty():
     # Delete first EphemeralFile
     ef1 = EphemeralFile(path1)
     del ef1
+    gc.collect()
     
     # Directory should still exist because path2 is still there
     assert not Path(path1).exists()
@@ -92,6 +95,7 @@ def test_nonexistent_file_not_error():
     os.remove(path)
     # Should not raise an error
     del ef
+    gc.collect()
  
     assert not Path(path).exists()
     assert not Path(temp_dir).exists()
@@ -107,12 +111,14 @@ def test_ephemeral_file_usable_with_open():
         f.write("test data")
     
     # f holds a reference to ef it needs to be deleted
-    del f   
+    del f
+    gc.collect()   
 
     assert Path(path).exists()
 
     # Cleanup
     del ef
+    gc.collect()
     
     
     assert not Path(path).exists()
@@ -127,6 +133,7 @@ def test_list_ephemeral_files():
     f = efs[0]
 
     del efs
+    gc.collect()
 
     assert Path(paths[0]).exists()
     assert not Path(paths[1]).exists()
