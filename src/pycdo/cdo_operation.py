@@ -59,10 +59,11 @@ class CdoOperation:
         self.params = params
         self.input = input
         
-    def _new_op(self, operator, inputs, params={}):
+    def _new_op(self, operator: "CdoOperator", inputs: list = [], params: dict = {}):
         prev_output = self.operator.n_output + len(inputs)
         
-        operators_compatible = operator.n_input == inf or operator.n_input == prev_output    
+        operators_compatible = operator.n_input == inf or operator.n_input == prev_output
+        
 
         if not operators_compatible: 
             raise ValueError(f"Chaining error: {operator.command} expects {operator.n_input} but {self.operator.command} outputs {prev_output} files.")
@@ -94,7 +95,7 @@ class CdoOperation:
         hash_str = "|".join(hash_input)
         return hashlib.md5(hash_str.encode()).hexdigest()
 
-    def _build(self, top_level=True, options=None, options_replace=False):
+    def _build(self, top_level=True, options=None, options_replace: bool = False):
         cmd = []
         if top_level:
             cmd.append("cdo")
@@ -141,7 +142,7 @@ class CdoOperation:
         # for cleaner output
         return " ".join(cmd).replace("  ", " ").rstrip()
 
-    def execute(self, output=None, options=None, options_replace=False) -> str:
+    def execute(self, output=None, options=None, options_replace=False):
         """
         Execute a CdoOperation
 
