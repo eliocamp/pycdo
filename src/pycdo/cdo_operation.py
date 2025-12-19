@@ -233,97 +233,96 @@ class CdoOperation:
         return("CDO operation.\n"+ self._build() + placeholder)
 
 ## <<start operators>>
-## nocov start
 
-    def info(self):
+    def info(self): # pragma: no cover
         r"""
         CDO operator: info
         """
         operator = CdoOperator(command="info",
                                n_input=inf, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def infon(self):
+    def infon(self): # pragma: no cover
         r"""
         CDO operator: infon
         """
         operator = CdoOperator(command="infon",
                                n_input=inf, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def cinfo(self):
+    def cinfo(self): # pragma: no cover
         r"""
         CDO operator: cinfo
         """
         operator = CdoOperator(command="cinfo",
                                n_input=inf, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def map(self):
+    def map(self): # pragma: no cover
         r"""
         CDO operator: map
         """
         operator = CdoOperator(command="map",
                                n_input=inf, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def sinfo(self):
+    def sinfo(self): # pragma: no cover
         r"""
         CDO operator: sinfo
         """
         operator = CdoOperator(command="sinfo",
                                n_input=inf, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def sinfon(self):
+    def sinfon(self): # pragma: no cover
         r"""
         CDO operator: sinfon
         """
         operator = CdoOperator(command="sinfon",
                                n_input=inf, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def xsinfo(self):
+    def xsinfo(self): # pragma: no cover
         r"""
         CDO operator: xsinfo
         """
         operator = CdoOperator(command="xsinfo",
                                n_input=inf, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def xsinfop(self):
+    def xsinfop(self): # pragma: no cover
         r"""
         CDO operator: xsinfop
         """
         operator = CdoOperator(command="xsinfop",
                                n_input=inf, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def diff(self, ifile2, maxcount = None, abslim = None, rellim = None, names = None):
+    def diff(self, ifile2, maxcount = None, abslim = None, rellim = None, names = None): # pragma: no cover
         r"""
         CDO operator: diff
         Parameters:
@@ -335,11 +334,11 @@ class CdoOperation:
         operator = CdoOperator(command="diff",
                                n_input=2, 
                                n_output=0, 
-                               params=['maxcount', 'abslim', 'rellim', 'names'])
+                               params=['maxcount', 'abslim', 'rellim', 'names']) 
                                
         return self._new_op(operator, [ifile2], {"maxcount": maxcount, "abslim": abslim, "rellim": rellim, "names": names})
 
-    def diffn(self, ifile2, maxcount = None, abslim = None, rellim = None, names = None):
+    def diffn(self, ifile2, maxcount = None, abslim = None, rellim = None, names = None): # pragma: no cover
         r"""
         CDO operator: diffn
         Parameters:
@@ -351,231 +350,231 @@ class CdoOperation:
         operator = CdoOperator(command="diffn",
                                n_input=2, 
                                n_output=0, 
-                               params=['maxcount', 'abslim', 'rellim', 'names'])
+                               params=['maxcount', 'abslim', 'rellim', 'names']) 
                                
         return self._new_op(operator, [ifile2], {"maxcount": maxcount, "abslim": abslim, "rellim": rellim, "names": names})
 
-    def npar(self):
+    def npar(self): # pragma: no cover
         r"""
         CDO operator: npar
         """
         operator = CdoOperator(command="npar",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def nlevel(self):
+    def nlevel(self): # pragma: no cover
         r"""
         CDO operator: nlevel
         """
         operator = CdoOperator(command="nlevel",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def nyear(self):
+    def nyear(self): # pragma: no cover
         r"""
         CDO operator: nyear
         """
         operator = CdoOperator(command="nyear",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def nmon(self):
+    def nmon(self): # pragma: no cover
         r"""
         CDO operator: nmon
         """
         operator = CdoOperator(command="nmon",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ndate(self):
+    def ndate(self): # pragma: no cover
         r"""
         CDO operator: ndate
         """
         operator = CdoOperator(command="ndate",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ntime(self):
+    def ntime(self): # pragma: no cover
         r"""
         CDO operator: ntime
         """
         operator = CdoOperator(command="ntime",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ngridpoints(self):
+    def ngridpoints(self): # pragma: no cover
         r"""
         CDO operator: ngridpoints
         """
         operator = CdoOperator(command="ngridpoints",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ngrids(self):
+    def ngrids(self): # pragma: no cover
         r"""
         CDO operator: ngrids
         """
         operator = CdoOperator(command="ngrids",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def showformat(self):
+    def showformat(self): # pragma: no cover
         r"""
         CDO operator: showformat
         """
         operator = CdoOperator(command="showformat",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def showcode(self):
+    def showcode(self): # pragma: no cover
         r"""
         CDO operator: showcode
         """
         operator = CdoOperator(command="showcode",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def showname(self):
+    def showname(self): # pragma: no cover
         r"""
         CDO operator: showname
         """
         operator = CdoOperator(command="showname",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def showstdname(self):
+    def showstdname(self): # pragma: no cover
         r"""
         CDO operator: showstdname
         """
         operator = CdoOperator(command="showstdname",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def showlevel(self):
+    def showlevel(self): # pragma: no cover
         r"""
         CDO operator: showlevel
         """
         operator = CdoOperator(command="showlevel",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def showltype(self):
+    def showltype(self): # pragma: no cover
         r"""
         CDO operator: showltype
         """
         operator = CdoOperator(command="showltype",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def showyear(self):
+    def showyear(self): # pragma: no cover
         r"""
         CDO operator: showyear
         """
         operator = CdoOperator(command="showyear",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def showmon(self):
+    def showmon(self): # pragma: no cover
         r"""
         CDO operator: showmon
         """
         operator = CdoOperator(command="showmon",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def showdate(self):
+    def showdate(self): # pragma: no cover
         r"""
         CDO operator: showdate
         """
         operator = CdoOperator(command="showdate",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def showtime(self):
+    def showtime(self): # pragma: no cover
         r"""
         CDO operator: showtime
         """
         operator = CdoOperator(command="showtime",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def showtimestamp(self):
+    def showtimestamp(self): # pragma: no cover
         r"""
         CDO operator: showtimestamp
         """
         operator = CdoOperator(command="showtimestamp",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def showfilter(self):
+    def showfilter(self): # pragma: no cover
         r"""
         CDO operator: showfilter
         """
         operator = CdoOperator(command="showfilter",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def showattribute(self, attributes = None):
+    def showattribute(self, attributes = None): # pragma: no cover
         r"""
         CDO operator: showattribute
         Parameters:
@@ -584,99 +583,99 @@ class CdoOperation:
         operator = CdoOperator(command="showattribute",
                                n_input=1, 
                                n_output=0, 
-                               params=['attributes'])
+                               params=['attributes']) 
                                
         return self._new_op(operator, [], {"attributes": attributes})
 
-    def partab(self):
+    def partab(self): # pragma: no cover
         r"""
         CDO operator: partab
         """
         operator = CdoOperator(command="partab",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def codetab(self):
+    def codetab(self): # pragma: no cover
         r"""
         CDO operator: codetab
         """
         operator = CdoOperator(command="codetab",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def griddes(self):
+    def griddes(self): # pragma: no cover
         r"""
         CDO operator: griddes
         """
         operator = CdoOperator(command="griddes",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def zaxisdes(self):
+    def zaxisdes(self): # pragma: no cover
         r"""
         CDO operator: zaxisdes
         """
         operator = CdoOperator(command="zaxisdes",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def vct(self):
+    def vct(self): # pragma: no cover
         r"""
         CDO operator: vct
         """
         operator = CdoOperator(command="vct",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def copy(self):
+    def copy(self): # pragma: no cover
         r"""
         CDO operator: copy
         """
         operator = CdoOperator(command="copy",
                                n_input=inf, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def clone(self):
+    def clone(self): # pragma: no cover
         r"""
         CDO operator: clone
         """
         operator = CdoOperator(command="clone",
                                n_input=inf, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def cat(self):
+    def cat(self): # pragma: no cover
         r"""
         CDO operator: cat
         """
         operator = CdoOperator(command="cat",
                                n_input=inf, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def tee(self, outfile2 = None):
+    def tee(self, outfile2 = None): # pragma: no cover
         r"""
         CDO operator: tee
         Parameters:
@@ -685,11 +684,11 @@ class CdoOperation:
         operator = CdoOperator(command="tee",
                                n_input=1, 
                                n_output=1, 
-                               params=['outfile2'])
+                               params=['outfile2']) 
                                
         return self._new_op(operator, [], {"outfile2": outfile2})
 
-    def pack(self, printparam = None, filename = None):
+    def pack(self, printparam = None, filename = None): # pragma: no cover
         r"""
         CDO operator: pack
         Parameters:
@@ -699,22 +698,22 @@ class CdoOperation:
         operator = CdoOperator(command="pack",
                                n_input=1, 
                                n_output=1, 
-                               params=['printparam', 'filename'])
+                               params=['printparam', 'filename']) 
                                
         return self._new_op(operator, [], {"printparam": printparam, "filename": filename})
 
-    def unpack(self):
+    def unpack(self): # pragma: no cover
         r"""
         CDO operator: unpack
         """
         operator = CdoOperator(command="unpack",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def setfilter(self, filename = None):
+    def setfilter(self, filename = None): # pragma: no cover
         r"""
         CDO operator: setfilter
         Parameters:
@@ -723,11 +722,11 @@ class CdoOperation:
         operator = CdoOperator(command="setfilter",
                                n_input=1, 
                                n_output=1, 
-                               params=['filename'])
+                               params=['filename']) 
                                
         return self._new_op(operator, [], {"filename": filename})
 
-    def bitrounding(self, inflevel = None, addbits = None, minbits = None, maxbits = None, numsteps = None, numbits = None, printbits = None, filename = None):
+    def bitrounding(self, inflevel = None, addbits = None, minbits = None, maxbits = None, numsteps = None, numbits = None, printbits = None, filename = None): # pragma: no cover
         r"""
         CDO operator: bitrounding
         Parameters:
@@ -743,22 +742,22 @@ class CdoOperation:
         operator = CdoOperator(command="bitrounding",
                                n_input=1, 
                                n_output=1, 
-                               params=['inflevel', 'addbits', 'minbits', 'maxbits', 'numsteps', 'numbits', 'printbits', 'filename'])
+                               params=['inflevel', 'addbits', 'minbits', 'maxbits', 'numsteps', 'numbits', 'printbits', 'filename']) 
                                
         return self._new_op(operator, [], {"inflevel": inflevel, "addbits": addbits, "minbits": minbits, "maxbits": maxbits, "numsteps": numsteps, "numbits": numbits, "printbits": printbits, "filename": filename})
 
-    def replace(self, ifile2):
+    def replace(self, ifile2): # pragma: no cover
         r"""
         CDO operator: replace
         """
         operator = CdoOperator(command="replace",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def duplicate(self, ndup = None):
+    def duplicate(self, ndup = None): # pragma: no cover
         r"""
         CDO operator: duplicate
         Parameters:
@@ -767,22 +766,22 @@ class CdoOperation:
         operator = CdoOperator(command="duplicate",
                                n_input=1, 
                                n_output=1, 
-                               params=['ndup'])
+                               params=['ndup']) 
                                
         return self._new_op(operator, [], {"ndup": ndup})
 
-    def mergegrid(self, ifile2):
+    def mergegrid(self, ifile2): # pragma: no cover
         r"""
         CDO operator: mergegrid
         """
         operator = CdoOperator(command="mergegrid",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def merge(self, skip_same_time = None, names = None):
+    def merge(self, skip_same_time = None, names = None): # pragma: no cover
         r"""
         CDO operator: merge
         Parameters:
@@ -792,11 +791,11 @@ class CdoOperation:
         operator = CdoOperator(command="merge",
                                n_input=inf, 
                                n_output=1, 
-                               params=['skip_same_time', 'names'])
+                               params=['skip_same_time', 'names']) 
                                
         return self._new_op(operator, [], {"skip_same_time": skip_same_time, "names": names})
 
-    def mergetime(self, skip_same_time = None, names = None):
+    def mergetime(self, skip_same_time = None, names = None): # pragma: no cover
         r"""
         CDO operator: mergetime
         Parameters:
@@ -806,11 +805,11 @@ class CdoOperation:
         operator = CdoOperator(command="mergetime",
                                n_input=inf, 
                                n_output=1, 
-                               params=['skip_same_time', 'names'])
+                               params=['skip_same_time', 'names']) 
                                
         return self._new_op(operator, [], {"skip_same_time": skip_same_time, "names": names})
 
-    def splitcode(self, swap = None, uuid = None):
+    def splitcode(self, swap = None, uuid = None): # pragma: no cover
         r"""
         CDO operator: splitcode
         Parameters:
@@ -820,11 +819,11 @@ class CdoOperation:
         operator = CdoOperator(command="splitcode",
                                n_input=1, 
                                n_output=inf, 
-                               params=['swap', 'uuid'])
+                               params=['swap', 'uuid']) 
                                
         return self._new_op(operator, [], {"swap": swap, "uuid": uuid})
 
-    def splitparam(self, swap = None, uuid = None):
+    def splitparam(self, swap = None, uuid = None): # pragma: no cover
         r"""
         CDO operator: splitparam
         Parameters:
@@ -834,11 +833,11 @@ class CdoOperation:
         operator = CdoOperator(command="splitparam",
                                n_input=1, 
                                n_output=inf, 
-                               params=['swap', 'uuid'])
+                               params=['swap', 'uuid']) 
                                
         return self._new_op(operator, [], {"swap": swap, "uuid": uuid})
 
-    def splitname(self, swap = None, uuid = None):
+    def splitname(self, swap = None, uuid = None): # pragma: no cover
         r"""
         CDO operator: splitname
         Parameters:
@@ -848,11 +847,11 @@ class CdoOperation:
         operator = CdoOperator(command="splitname",
                                n_input=1, 
                                n_output=inf, 
-                               params=['swap', 'uuid'])
+                               params=['swap', 'uuid']) 
                                
         return self._new_op(operator, [], {"swap": swap, "uuid": uuid})
 
-    def splitlevel(self, swap = None, uuid = None):
+    def splitlevel(self, swap = None, uuid = None): # pragma: no cover
         r"""
         CDO operator: splitlevel
         Parameters:
@@ -862,11 +861,11 @@ class CdoOperation:
         operator = CdoOperator(command="splitlevel",
                                n_input=1, 
                                n_output=inf, 
-                               params=['swap', 'uuid'])
+                               params=['swap', 'uuid']) 
                                
         return self._new_op(operator, [], {"swap": swap, "uuid": uuid})
 
-    def splitgrid(self, swap = None, uuid = None):
+    def splitgrid(self, swap = None, uuid = None): # pragma: no cover
         r"""
         CDO operator: splitgrid
         Parameters:
@@ -876,11 +875,11 @@ class CdoOperation:
         operator = CdoOperator(command="splitgrid",
                                n_input=1, 
                                n_output=inf, 
-                               params=['swap', 'uuid'])
+                               params=['swap', 'uuid']) 
                                
         return self._new_op(operator, [], {"swap": swap, "uuid": uuid})
 
-    def splitzaxis(self, swap = None, uuid = None):
+    def splitzaxis(self, swap = None, uuid = None): # pragma: no cover
         r"""
         CDO operator: splitzaxis
         Parameters:
@@ -890,11 +889,11 @@ class CdoOperation:
         operator = CdoOperator(command="splitzaxis",
                                n_input=1, 
                                n_output=inf, 
-                               params=['swap', 'uuid'])
+                               params=['swap', 'uuid']) 
                                
         return self._new_op(operator, [], {"swap": swap, "uuid": uuid})
 
-    def splittabnum(self, swap = None, uuid = None):
+    def splittabnum(self, swap = None, uuid = None): # pragma: no cover
         r"""
         CDO operator: splittabnum
         Parameters:
@@ -904,11 +903,11 @@ class CdoOperation:
         operator = CdoOperator(command="splittabnum",
                                n_input=1, 
                                n_output=inf, 
-                               params=['swap', 'uuid'])
+                               params=['swap', 'uuid']) 
                                
         return self._new_op(operator, [], {"swap": swap, "uuid": uuid})
 
-    def splithour(self, format = None):
+    def splithour(self, format = None): # pragma: no cover
         r"""
         CDO operator: splithour
         Parameters:
@@ -917,11 +916,11 @@ class CdoOperation:
         operator = CdoOperator(command="splithour",
                                n_input=1, 
                                n_output=inf, 
-                               params=['format'])
+                               params=['format']) 
                                
         return self._new_op(operator, [], {"format": format})
 
-    def splitday(self, format = None):
+    def splitday(self, format = None): # pragma: no cover
         r"""
         CDO operator: splitday
         Parameters:
@@ -930,11 +929,11 @@ class CdoOperation:
         operator = CdoOperator(command="splitday",
                                n_input=1, 
                                n_output=inf, 
-                               params=['format'])
+                               params=['format']) 
                                
         return self._new_op(operator, [], {"format": format})
 
-    def splitseas(self, format = None):
+    def splitseas(self, format = None): # pragma: no cover
         r"""
         CDO operator: splitseas
         Parameters:
@@ -943,11 +942,11 @@ class CdoOperation:
         operator = CdoOperator(command="splitseas",
                                n_input=1, 
                                n_output=inf, 
-                               params=['format'])
+                               params=['format']) 
                                
         return self._new_op(operator, [], {"format": format})
 
-    def splityear(self, format = None):
+    def splityear(self, format = None): # pragma: no cover
         r"""
         CDO operator: splityear
         Parameters:
@@ -956,11 +955,11 @@ class CdoOperation:
         operator = CdoOperator(command="splityear",
                                n_input=1, 
                                n_output=inf, 
-                               params=['format'])
+                               params=['format']) 
                                
         return self._new_op(operator, [], {"format": format})
 
-    def splityearmon(self, format = None):
+    def splityearmon(self, format = None): # pragma: no cover
         r"""
         CDO operator: splityearmon
         Parameters:
@@ -969,11 +968,11 @@ class CdoOperation:
         operator = CdoOperator(command="splityearmon",
                                n_input=1, 
                                n_output=inf, 
-                               params=['format'])
+                               params=['format']) 
                                
         return self._new_op(operator, [], {"format": format})
 
-    def splitmon(self, format = None):
+    def splitmon(self, format = None): # pragma: no cover
         r"""
         CDO operator: splitmon
         Parameters:
@@ -982,11 +981,11 @@ class CdoOperation:
         operator = CdoOperator(command="splitmon",
                                n_input=1, 
                                n_output=inf, 
-                               params=['format'])
+                               params=['format']) 
                                
         return self._new_op(operator, [], {"format": format})
 
-    def splitsel(self, nsets = None, noffset = None, nskip = None):
+    def splitsel(self, nsets = None, noffset = None, nskip = None): # pragma: no cover
         r"""
         CDO operator: splitsel
         Parameters:
@@ -997,22 +996,22 @@ class CdoOperation:
         operator = CdoOperator(command="splitsel",
                                n_input=1, 
                                n_output=inf, 
-                               params=['nsets', 'noffset', 'nskip'])
+                               params=['nsets', 'noffset', 'nskip']) 
                                
         return self._new_op(operator, [], {"nsets": nsets, "noffset": noffset, "nskip": nskip})
 
-    def splitdate(self):
+    def splitdate(self): # pragma: no cover
         r"""
         CDO operator: splitdate
         """
         operator = CdoOperator(command="splitdate",
                                n_input=1, 
                                n_output=inf, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def distgrid(self, nx = None, ny = None):
+    def distgrid(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: distgrid
         Parameters:
@@ -1022,11 +1021,11 @@ class CdoOperation:
         operator = CdoOperator(command="distgrid",
                                n_input=1, 
                                n_output=inf, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def collgrid(self, nx = None, names = None):
+    def collgrid(self, nx = None, names = None): # pragma: no cover
         r"""
         CDO operator: collgrid
         Parameters:
@@ -1036,11 +1035,11 @@ class CdoOperation:
         operator = CdoOperator(command="collgrid",
                                n_input=inf, 
                                n_output=1, 
-                               params=['nx', 'names'])
+                               params=['nx', 'names']) 
                                
         return self._new_op(operator, [], {"nx": nx, "names": names})
 
-    def select(self, name = None, param = None, code = None, level = None, levrange = None, levidx = None, zaxisname = None, zaxisnum = None, ltype = None, gridname = None, gridnum = None, steptype = None, date = None, startdate = None, enddate = None, minute = None, hour = None, day = None, month = None, season = None, year = None, dom = None, timestep = None, timestep_of_year = None, timestepmask = None):
+    def select(self, name = None, param = None, code = None, level = None, levrange = None, levidx = None, zaxisname = None, zaxisnum = None, ltype = None, gridname = None, gridnum = None, steptype = None, date = None, startdate = None, enddate = None, minute = None, hour = None, day = None, month = None, season = None, year = None, dom = None, timestep = None, timestep_of_year = None, timestepmask = None): # pragma: no cover
         r"""
         CDO operator: select
         Parameters:
@@ -1073,11 +1072,11 @@ class CdoOperation:
         operator = CdoOperator(command="select",
                                n_input=inf, 
                                n_output=1, 
-                               params=['name', 'param', 'code', 'level', 'levrange', 'levidx', 'zaxisname', 'zaxisnum', 'ltype', 'gridname', 'gridnum', 'steptype', 'date', 'startdate', 'enddate', 'minute', 'hour', 'day', 'month', 'season', 'year', 'dom', 'timestep', 'timestep_of_year', 'timestepmask'])
+                               params=['name', 'param', 'code', 'level', 'levrange', 'levidx', 'zaxisname', 'zaxisnum', 'ltype', 'gridname', 'gridnum', 'steptype', 'date', 'startdate', 'enddate', 'minute', 'hour', 'day', 'month', 'season', 'year', 'dom', 'timestep', 'timestep_of_year', 'timestepmask']) 
                                
         return self._new_op(operator, [], {"name": name, "param": param, "code": code, "level": level, "levrange": levrange, "levidx": levidx, "zaxisname": zaxisname, "zaxisnum": zaxisnum, "ltype": ltype, "gridname": gridname, "gridnum": gridnum, "steptype": steptype, "date": date, "startdate": startdate, "enddate": enddate, "minute": minute, "hour": hour, "day": day, "month": month, "season": season, "year": year, "dom": dom, "timestep": timestep, "timestep_of_year": timestep_of_year, "timestepmask": timestepmask})
 
-    def delete(self, name = None, param = None, code = None, level = None, levrange = None, levidx = None, zaxisname = None, zaxisnum = None, ltype = None, gridname = None, gridnum = None, steptype = None, date = None, startdate = None, enddate = None, minute = None, hour = None, day = None, month = None, season = None, year = None, dom = None, timestep = None, timestep_of_year = None, timestepmask = None):
+    def delete(self, name = None, param = None, code = None, level = None, levrange = None, levidx = None, zaxisname = None, zaxisnum = None, ltype = None, gridname = None, gridnum = None, steptype = None, date = None, startdate = None, enddate = None, minute = None, hour = None, day = None, month = None, season = None, year = None, dom = None, timestep = None, timestep_of_year = None, timestepmask = None): # pragma: no cover
         r"""
         CDO operator: delete
         Parameters:
@@ -1110,44 +1109,44 @@ class CdoOperation:
         operator = CdoOperator(command="delete",
                                n_input=inf, 
                                n_output=1, 
-                               params=['name', 'param', 'code', 'level', 'levrange', 'levidx', 'zaxisname', 'zaxisnum', 'ltype', 'gridname', 'gridnum', 'steptype', 'date', 'startdate', 'enddate', 'minute', 'hour', 'day', 'month', 'season', 'year', 'dom', 'timestep', 'timestep_of_year', 'timestepmask'])
+                               params=['name', 'param', 'code', 'level', 'levrange', 'levidx', 'zaxisname', 'zaxisnum', 'ltype', 'gridname', 'gridnum', 'steptype', 'date', 'startdate', 'enddate', 'minute', 'hour', 'day', 'month', 'season', 'year', 'dom', 'timestep', 'timestep_of_year', 'timestepmask']) 
                                
         return self._new_op(operator, [], {"name": name, "param": param, "code": code, "level": level, "levrange": levrange, "levidx": levidx, "zaxisname": zaxisname, "zaxisnum": zaxisnum, "ltype": ltype, "gridname": gridname, "gridnum": gridnum, "steptype": steptype, "date": date, "startdate": startdate, "enddate": enddate, "minute": minute, "hour": hour, "day": day, "month": month, "season": season, "year": year, "dom": dom, "timestep": timestep, "timestep_of_year": timestep_of_year, "timestepmask": timestepmask})
 
-    def selmulti(self):
+    def selmulti(self): # pragma: no cover
         r"""
         CDO operator: selmulti
         """
         operator = CdoOperator(command="selmulti",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def delmulti(self):
+    def delmulti(self): # pragma: no cover
         r"""
         CDO operator: delmulti
         """
         operator = CdoOperator(command="delmulti",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def changemulti(self):
+    def changemulti(self): # pragma: no cover
         r"""
         CDO operator: changemulti
         """
         operator = CdoOperator(command="changemulti",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def selparam(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def selparam(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: selparam
         Parameters:
@@ -1166,11 +1165,11 @@ class CdoOperation:
         operator = CdoOperator(command="selparam",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def delparam(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def delparam(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: delparam
         Parameters:
@@ -1189,11 +1188,11 @@ class CdoOperation:
         operator = CdoOperator(command="delparam",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def selcode(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def selcode(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: selcode
         Parameters:
@@ -1212,11 +1211,11 @@ class CdoOperation:
         operator = CdoOperator(command="selcode",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def delcode(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def delcode(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: delcode
         Parameters:
@@ -1235,11 +1234,11 @@ class CdoOperation:
         operator = CdoOperator(command="delcode",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def selname(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def selname(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: selname
         Parameters:
@@ -1258,11 +1257,11 @@ class CdoOperation:
         operator = CdoOperator(command="selname",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def delname(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def delname(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: delname
         Parameters:
@@ -1281,11 +1280,11 @@ class CdoOperation:
         operator = CdoOperator(command="delname",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def selstdname(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def selstdname(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: selstdname
         Parameters:
@@ -1304,11 +1303,11 @@ class CdoOperation:
         operator = CdoOperator(command="selstdname",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def sellevel(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def sellevel(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: sellevel
         Parameters:
@@ -1327,11 +1326,11 @@ class CdoOperation:
         operator = CdoOperator(command="sellevel",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def sellevidx(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def sellevidx(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: sellevidx
         Parameters:
@@ -1350,11 +1349,11 @@ class CdoOperation:
         operator = CdoOperator(command="sellevidx",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def selgrid(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def selgrid(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: selgrid
         Parameters:
@@ -1373,11 +1372,11 @@ class CdoOperation:
         operator = CdoOperator(command="selgrid",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def selzaxis(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def selzaxis(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: selzaxis
         Parameters:
@@ -1396,11 +1395,11 @@ class CdoOperation:
         operator = CdoOperator(command="selzaxis",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def selzaxisname(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def selzaxisname(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: selzaxisname
         Parameters:
@@ -1419,11 +1418,11 @@ class CdoOperation:
         operator = CdoOperator(command="selzaxisname",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def selltype(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def selltype(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: selltype
         Parameters:
@@ -1442,11 +1441,11 @@ class CdoOperation:
         operator = CdoOperator(command="selltype",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def seltabnum(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None):
+    def seltabnum(self, parameter = None, codes = None, names = None, stdnames = None, levels = None, levidx = None, ltypes = None, grids = None, zaxes = None, zaxisnames = None, tabnums = None): # pragma: no cover
         r"""
         CDO operator: seltabnum
         Parameters:
@@ -1465,11 +1464,11 @@ class CdoOperation:
         operator = CdoOperator(command="seltabnum",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums'])
+                               params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
                                
         return self._new_op(operator, [], {"parameter": parameter, "codes": codes, "names": names, "stdnames": stdnames, "levels": levels, "levidx": levidx, "ltypes": ltypes, "grids": grids, "zaxes": zaxes, "zaxisnames": zaxisnames, "tabnums": tabnums})
 
-    def seltimestep(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
+    def seltimestep(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None): # pragma: no cover
         r"""
         CDO operator: seltimestep
         Parameters:
@@ -1488,11 +1487,11 @@ class CdoOperation:
         operator = CdoOperator(command="seltimestep",
                                n_input=1, 
                                n_output=1, 
-                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2'])
+                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
                                
         return self._new_op(operator, [], {"timesteps": timesteps, "times": times, "hours": hours, "days": days, "months": months, "years": years, "seasons": seasons, "startdate": startdate, "enddate": enddate, "nts1": nts1, "nts2": nts2})
 
-    def seltime(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
+    def seltime(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None): # pragma: no cover
         r"""
         CDO operator: seltime
         Parameters:
@@ -1511,11 +1510,11 @@ class CdoOperation:
         operator = CdoOperator(command="seltime",
                                n_input=1, 
                                n_output=1, 
-                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2'])
+                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
                                
         return self._new_op(operator, [], {"timesteps": timesteps, "times": times, "hours": hours, "days": days, "months": months, "years": years, "seasons": seasons, "startdate": startdate, "enddate": enddate, "nts1": nts1, "nts2": nts2})
 
-    def selhour(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
+    def selhour(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None): # pragma: no cover
         r"""
         CDO operator: selhour
         Parameters:
@@ -1534,11 +1533,11 @@ class CdoOperation:
         operator = CdoOperator(command="selhour",
                                n_input=1, 
                                n_output=1, 
-                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2'])
+                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
                                
         return self._new_op(operator, [], {"timesteps": timesteps, "times": times, "hours": hours, "days": days, "months": months, "years": years, "seasons": seasons, "startdate": startdate, "enddate": enddate, "nts1": nts1, "nts2": nts2})
 
-    def selday(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
+    def selday(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None): # pragma: no cover
         r"""
         CDO operator: selday
         Parameters:
@@ -1557,11 +1556,11 @@ class CdoOperation:
         operator = CdoOperator(command="selday",
                                n_input=1, 
                                n_output=1, 
-                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2'])
+                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
                                
         return self._new_op(operator, [], {"timesteps": timesteps, "times": times, "hours": hours, "days": days, "months": months, "years": years, "seasons": seasons, "startdate": startdate, "enddate": enddate, "nts1": nts1, "nts2": nts2})
 
-    def selmonth(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
+    def selmonth(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None): # pragma: no cover
         r"""
         CDO operator: selmonth
         Parameters:
@@ -1580,11 +1579,11 @@ class CdoOperation:
         operator = CdoOperator(command="selmonth",
                                n_input=1, 
                                n_output=1, 
-                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2'])
+                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
                                
         return self._new_op(operator, [], {"timesteps": timesteps, "times": times, "hours": hours, "days": days, "months": months, "years": years, "seasons": seasons, "startdate": startdate, "enddate": enddate, "nts1": nts1, "nts2": nts2})
 
-    def selyear(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
+    def selyear(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None): # pragma: no cover
         r"""
         CDO operator: selyear
         Parameters:
@@ -1603,11 +1602,11 @@ class CdoOperation:
         operator = CdoOperator(command="selyear",
                                n_input=1, 
                                n_output=1, 
-                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2'])
+                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
                                
         return self._new_op(operator, [], {"timesteps": timesteps, "times": times, "hours": hours, "days": days, "months": months, "years": years, "seasons": seasons, "startdate": startdate, "enddate": enddate, "nts1": nts1, "nts2": nts2})
 
-    def selseason(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
+    def selseason(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None): # pragma: no cover
         r"""
         CDO operator: selseason
         Parameters:
@@ -1626,11 +1625,11 @@ class CdoOperation:
         operator = CdoOperator(command="selseason",
                                n_input=1, 
                                n_output=1, 
-                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2'])
+                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
                                
         return self._new_op(operator, [], {"timesteps": timesteps, "times": times, "hours": hours, "days": days, "months": months, "years": years, "seasons": seasons, "startdate": startdate, "enddate": enddate, "nts1": nts1, "nts2": nts2})
 
-    def seldate(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
+    def seldate(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None): # pragma: no cover
         r"""
         CDO operator: seldate
         Parameters:
@@ -1649,11 +1648,11 @@ class CdoOperation:
         operator = CdoOperator(command="seldate",
                                n_input=1, 
                                n_output=1, 
-                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2'])
+                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
                                
         return self._new_op(operator, [], {"timesteps": timesteps, "times": times, "hours": hours, "days": days, "months": months, "years": years, "seasons": seasons, "startdate": startdate, "enddate": enddate, "nts1": nts1, "nts2": nts2})
 
-    def selsmon(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None):
+    def selsmon(self, timesteps = None, times = None, hours = None, days = None, months = None, years = None, seasons = None, startdate = None, enddate = None, nts1 = None, nts2 = None): # pragma: no cover
         r"""
         CDO operator: selsmon
         Parameters:
@@ -1672,11 +1671,11 @@ class CdoOperation:
         operator = CdoOperator(command="selsmon",
                                n_input=1, 
                                n_output=1, 
-                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2'])
+                               params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
                                
         return self._new_op(operator, [], {"timesteps": timesteps, "times": times, "hours": hours, "days": days, "months": months, "years": years, "seasons": seasons, "startdate": startdate, "enddate": enddate, "nts1": nts1, "nts2": nts2})
 
-    def sellonlatbox(self, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None):
+    def sellonlatbox(self, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None): # pragma: no cover
         r"""
         CDO operator: sellonlatbox
         Parameters:
@@ -1692,11 +1691,11 @@ class CdoOperation:
         operator = CdoOperator(command="sellonlatbox",
                                n_input=1, 
                                n_output=1, 
-                               params=['lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2'])
+                               params=['lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2']) 
                                
         return self._new_op(operator, [], {"lon1": lon1, "lon2": lon2, "lat1": lat1, "lat2": lat2, "idx1": idx1, "idx2": idx2, "idy1": idy1, "idy2": idy2})
 
-    def selindexbox(self, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None):
+    def selindexbox(self, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None): # pragma: no cover
         r"""
         CDO operator: selindexbox
         Parameters:
@@ -1712,11 +1711,11 @@ class CdoOperation:
         operator = CdoOperator(command="selindexbox",
                                n_input=1, 
                                n_output=1, 
-                               params=['lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2'])
+                               params=['lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2']) 
                                
         return self._new_op(operator, [], {"lon1": lon1, "lon2": lon2, "lat1": lat1, "lat2": lat2, "idx1": idx1, "idx2": idx2, "idy1": idy1, "idy2": idy2})
 
-    def selregion(self, regions = None, lon = None, lat = None, radius = None):
+    def selregion(self, regions = None, lon = None, lat = None, radius = None): # pragma: no cover
         r"""
         CDO operator: selregion
         Parameters:
@@ -1728,11 +1727,11 @@ class CdoOperation:
         operator = CdoOperator(command="selregion",
                                n_input=1, 
                                n_output=1, 
-                               params=['regions', 'lon', 'lat', 'radius'])
+                               params=['regions', 'lon', 'lat', 'radius']) 
                                
         return self._new_op(operator, [], {"regions": regions, "lon": lon, "lat": lat, "radius": radius})
 
-    def selcircle(self, regions = None, lon = None, lat = None, radius = None):
+    def selcircle(self, regions = None, lon = None, lat = None, radius = None): # pragma: no cover
         r"""
         CDO operator: selcircle
         Parameters:
@@ -1744,11 +1743,11 @@ class CdoOperation:
         operator = CdoOperator(command="selcircle",
                                n_input=1, 
                                n_output=1, 
-                               params=['regions', 'lon', 'lat', 'radius'])
+                               params=['regions', 'lon', 'lat', 'radius']) 
                                
         return self._new_op(operator, [], {"regions": regions, "lon": lon, "lat": lat, "radius": radius})
 
-    def selgridcell(self, indices = None):
+    def selgridcell(self, indices = None): # pragma: no cover
         r"""
         CDO operator: selgridcell
         Parameters:
@@ -1757,11 +1756,11 @@ class CdoOperation:
         operator = CdoOperator(command="selgridcell",
                                n_input=1, 
                                n_output=1, 
-                               params=['indices'])
+                               params=['indices']) 
                                
         return self._new_op(operator, [], {"indices": indices})
 
-    def delgridcell(self, indices = None):
+    def delgridcell(self, indices = None): # pragma: no cover
         r"""
         CDO operator: delgridcell
         Parameters:
@@ -1770,11 +1769,11 @@ class CdoOperation:
         operator = CdoOperator(command="delgridcell",
                                n_input=1, 
                                n_output=1, 
-                               params=['indices'])
+                               params=['indices']) 
                                
         return self._new_op(operator, [], {"indices": indices})
 
-    def samplegrid(self, factor = None):
+    def samplegrid(self, factor = None): # pragma: no cover
         r"""
         CDO operator: samplegrid
         Parameters:
@@ -1783,33 +1782,33 @@ class CdoOperation:
         operator = CdoOperator(command="samplegrid",
                                n_input=1, 
                                n_output=1, 
-                               params=['factor'])
+                               params=['factor']) 
                                
         return self._new_op(operator, [], {"factor": factor})
 
-    def selyearidx(self, ifile2):
+    def selyearidx(self, ifile2): # pragma: no cover
         r"""
         CDO operator: selyearidx
         """
         operator = CdoOperator(command="selyearidx",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def seltimeidx(self, ifile2):
+    def seltimeidx(self, ifile2): # pragma: no cover
         r"""
         CDO operator: seltimeidx
         """
         operator = CdoOperator(command="seltimeidx",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def bottomvalue(self, isovalue = None):
+    def bottomvalue(self, isovalue = None): # pragma: no cover
         r"""
         CDO operator: bottomvalue
         Parameters:
@@ -1818,11 +1817,11 @@ class CdoOperation:
         operator = CdoOperator(command="bottomvalue",
                                n_input=1, 
                                n_output=1, 
-                               params=['isovalue'])
+                               params=['isovalue']) 
                                
         return self._new_op(operator, [], {"isovalue": isovalue})
 
-    def topvalue(self, isovalue = None):
+    def topvalue(self, isovalue = None): # pragma: no cover
         r"""
         CDO operator: topvalue
         Parameters:
@@ -1831,11 +1830,11 @@ class CdoOperation:
         operator = CdoOperator(command="topvalue",
                                n_input=1, 
                                n_output=1, 
-                               params=['isovalue'])
+                               params=['isovalue']) 
                                
         return self._new_op(operator, [], {"isovalue": isovalue})
 
-    def isosurface(self, isovalue = None):
+    def isosurface(self, isovalue = None): # pragma: no cover
         r"""
         CDO operator: isosurface
         Parameters:
@@ -1844,44 +1843,44 @@ class CdoOperation:
         operator = CdoOperator(command="isosurface",
                                n_input=1, 
                                n_output=1, 
-                               params=['isovalue'])
+                               params=['isovalue']) 
                                
         return self._new_op(operator, [], {"isovalue": isovalue})
 
-    def ifthen(self, ifile2):
+    def ifthen(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ifthen
         """
         operator = CdoOperator(command="ifthen",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ifnotthen(self, ifile2):
+    def ifnotthen(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ifnotthen
         """
         operator = CdoOperator(command="ifnotthen",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ifthenelse(self, ifile2, ifile3):
+    def ifthenelse(self, ifile2, ifile3): # pragma: no cover
         r"""
         CDO operator: ifthenelse
         """
         operator = CdoOperator(command="ifthenelse",
                                n_input=3, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2, ifile3], {})
 
-    def ifthenc(self, c = None):
+    def ifthenc(self, c = None): # pragma: no cover
         r"""
         CDO operator: ifthenc
         Parameters:
@@ -1890,11 +1889,11 @@ class CdoOperation:
         operator = CdoOperator(command="ifthenc",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def ifnotthenc(self, c = None):
+    def ifnotthenc(self, c = None): # pragma: no cover
         r"""
         CDO operator: ifnotthenc
         Parameters:
@@ -1903,11 +1902,11 @@ class CdoOperation:
         operator = CdoOperator(command="ifnotthenc",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def reducegrid(self, mask = None, limitCoordsOutput = None):
+    def reducegrid(self, mask = None, limitCoordsOutput = None): # pragma: no cover
         r"""
         CDO operator: reducegrid
         Parameters:
@@ -1917,77 +1916,77 @@ class CdoOperation:
         operator = CdoOperator(command="reducegrid",
                                n_input=1, 
                                n_output=1, 
-                               params=['mask', 'limitCoordsOutput'])
+                               params=['mask', 'limitCoordsOutput']) 
                                
         return self._new_op(operator, [], {"mask": mask, "limitCoordsOutput": limitCoordsOutput})
 
-    def eq(self, ifile2):
+    def eq(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eq
         """
         operator = CdoOperator(command="eq",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ne(self, ifile2):
+    def ne(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ne
         """
         operator = CdoOperator(command="ne",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def le(self, ifile2):
+    def le(self, ifile2): # pragma: no cover
         r"""
         CDO operator: le
         """
         operator = CdoOperator(command="le",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def lt(self, ifile2):
+    def lt(self, ifile2): # pragma: no cover
         r"""
         CDO operator: lt
         """
         operator = CdoOperator(command="lt",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ge(self, ifile2):
+    def ge(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ge
         """
         operator = CdoOperator(command="ge",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def gt(self, ifile2):
+    def gt(self, ifile2): # pragma: no cover
         r"""
         CDO operator: gt
         """
         operator = CdoOperator(command="gt",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eqc(self, c = None):
+    def eqc(self, c = None): # pragma: no cover
         r"""
         CDO operator: eqc
         Parameters:
@@ -1996,11 +1995,11 @@ class CdoOperation:
         operator = CdoOperator(command="eqc",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def nec(self, c = None):
+    def nec(self, c = None): # pragma: no cover
         r"""
         CDO operator: nec
         Parameters:
@@ -2009,11 +2008,11 @@ class CdoOperation:
         operator = CdoOperator(command="nec",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def lec(self, c = None):
+    def lec(self, c = None): # pragma: no cover
         r"""
         CDO operator: lec
         Parameters:
@@ -2022,11 +2021,11 @@ class CdoOperation:
         operator = CdoOperator(command="lec",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def ltc(self, c = None):
+    def ltc(self, c = None): # pragma: no cover
         r"""
         CDO operator: ltc
         Parameters:
@@ -2035,11 +2034,11 @@ class CdoOperation:
         operator = CdoOperator(command="ltc",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def gec(self, c = None):
+    def gec(self, c = None): # pragma: no cover
         r"""
         CDO operator: gec
         Parameters:
@@ -2048,11 +2047,11 @@ class CdoOperation:
         operator = CdoOperator(command="gec",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def gtc(self, c = None):
+    def gtc(self, c = None): # pragma: no cover
         r"""
         CDO operator: gtc
         Parameters:
@@ -2061,77 +2060,77 @@ class CdoOperation:
         operator = CdoOperator(command="gtc",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def ymoneq(self, ifile2):
+    def ymoneq(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ymoneq
         """
         operator = CdoOperator(command="ymoneq",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ymonne(self, ifile2):
+    def ymonne(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ymonne
         """
         operator = CdoOperator(command="ymonne",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ymonle(self, ifile2):
+    def ymonle(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ymonle
         """
         operator = CdoOperator(command="ymonle",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ymonlt(self, ifile2):
+    def ymonlt(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ymonlt
         """
         operator = CdoOperator(command="ymonlt",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ymonge(self, ifile2):
+    def ymonge(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ymonge
         """
         operator = CdoOperator(command="ymonge",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ymongt(self, ifile2):
+    def ymongt(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ymongt
         """
         operator = CdoOperator(command="ymongt",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def setattribute(self, attributes = None):
+    def setattribute(self, attributes = None): # pragma: no cover
         r"""
         CDO operator: setattribute
         Parameters:
@@ -2140,11 +2139,11 @@ class CdoOperation:
         operator = CdoOperator(command="setattribute",
                                n_input=1, 
                                n_output=1, 
-                               params=['attributes'])
+                               params=['attributes']) 
                                
         return self._new_op(operator, [], {"attributes": attributes})
 
-    def delattribute(self, attributes = None):
+    def delattribute(self, attributes = None): # pragma: no cover
         r"""
         CDO operator: delattribute
         Parameters:
@@ -2153,11 +2152,11 @@ class CdoOperation:
         operator = CdoOperator(command="delattribute",
                                n_input=1, 
                                n_output=1, 
-                               params=['attributes'])
+                               params=['attributes']) 
                                
         return self._new_op(operator, [], {"attributes": attributes})
 
-    def setpartabp(self, table = None, convert = None):
+    def setpartabp(self, table = None, convert = None): # pragma: no cover
         r"""
         CDO operator: setpartabp
         Parameters:
@@ -2167,11 +2166,11 @@ class CdoOperation:
         operator = CdoOperator(command="setpartabp",
                                n_input=1, 
                                n_output=1, 
-                               params=['table', 'convert'])
+                               params=['table', 'convert']) 
                                
         return self._new_op(operator, [], {"table": table, "convert": convert})
 
-    def setpartabn(self, table = None, convert = None):
+    def setpartabn(self, table = None, convert = None): # pragma: no cover
         r"""
         CDO operator: setpartabn
         Parameters:
@@ -2181,11 +2180,11 @@ class CdoOperation:
         operator = CdoOperator(command="setpartabn",
                                n_input=1, 
                                n_output=1, 
-                               params=['table', 'convert'])
+                               params=['table', 'convert']) 
                                
         return self._new_op(operator, [], {"table": table, "convert": convert})
 
-    def setcodetab(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
+    def setcodetab(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None): # pragma: no cover
         r"""
         CDO operator: setcodetab
         Parameters:
@@ -2200,11 +2199,11 @@ class CdoOperation:
         operator = CdoOperator(command="setcodetab",
                                n_input=1, 
                                n_output=1, 
-                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps'])
+                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
                                
         return self._new_op(operator, [], {"table": table, "code": code, "param": param, "name": name, "level": level, "ltype": ltype, "maxsteps": maxsteps})
 
-    def setcode(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
+    def setcode(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None): # pragma: no cover
         r"""
         CDO operator: setcode
         Parameters:
@@ -2219,11 +2218,11 @@ class CdoOperation:
         operator = CdoOperator(command="setcode",
                                n_input=1, 
                                n_output=1, 
-                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps'])
+                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
                                
         return self._new_op(operator, [], {"table": table, "code": code, "param": param, "name": name, "level": level, "ltype": ltype, "maxsteps": maxsteps})
 
-    def setparam(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
+    def setparam(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None): # pragma: no cover
         r"""
         CDO operator: setparam
         Parameters:
@@ -2238,11 +2237,11 @@ class CdoOperation:
         operator = CdoOperator(command="setparam",
                                n_input=1, 
                                n_output=1, 
-                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps'])
+                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
                                
         return self._new_op(operator, [], {"table": table, "code": code, "param": param, "name": name, "level": level, "ltype": ltype, "maxsteps": maxsteps})
 
-    def setname(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
+    def setname(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None): # pragma: no cover
         r"""
         CDO operator: setname
         Parameters:
@@ -2257,11 +2256,11 @@ class CdoOperation:
         operator = CdoOperator(command="setname",
                                n_input=1, 
                                n_output=1, 
-                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps'])
+                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
                                
         return self._new_op(operator, [], {"table": table, "code": code, "param": param, "name": name, "level": level, "ltype": ltype, "maxsteps": maxsteps})
 
-    def setunit(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
+    def setunit(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None): # pragma: no cover
         r"""
         CDO operator: setunit
         Parameters:
@@ -2276,11 +2275,11 @@ class CdoOperation:
         operator = CdoOperator(command="setunit",
                                n_input=1, 
                                n_output=1, 
-                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps'])
+                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
                                
         return self._new_op(operator, [], {"table": table, "code": code, "param": param, "name": name, "level": level, "ltype": ltype, "maxsteps": maxsteps})
 
-    def setlevel(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
+    def setlevel(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None): # pragma: no cover
         r"""
         CDO operator: setlevel
         Parameters:
@@ -2295,11 +2294,11 @@ class CdoOperation:
         operator = CdoOperator(command="setlevel",
                                n_input=1, 
                                n_output=1, 
-                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps'])
+                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
                                
         return self._new_op(operator, [], {"table": table, "code": code, "param": param, "name": name, "level": level, "ltype": ltype, "maxsteps": maxsteps})
 
-    def setltype(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
+    def setltype(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None): # pragma: no cover
         r"""
         CDO operator: setltype
         Parameters:
@@ -2314,11 +2313,11 @@ class CdoOperation:
         operator = CdoOperator(command="setltype",
                                n_input=1, 
                                n_output=1, 
-                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps'])
+                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
                                
         return self._new_op(operator, [], {"table": table, "code": code, "param": param, "name": name, "level": level, "ltype": ltype, "maxsteps": maxsteps})
 
-    def setmaxsteps(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None):
+    def setmaxsteps(self, table = None, code = None, param = None, name = None, level = None, ltype = None, maxsteps = None): # pragma: no cover
         r"""
         CDO operator: setmaxsteps
         Parameters:
@@ -2333,11 +2332,11 @@ class CdoOperation:
         operator = CdoOperator(command="setmaxsteps",
                                n_input=1, 
                                n_output=1, 
-                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps'])
+                               params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
                                
         return self._new_op(operator, [], {"table": table, "code": code, "param": param, "name": name, "level": level, "ltype": ltype, "maxsteps": maxsteps})
 
-    def setdate(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
+    def setdate(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None): # pragma: no cover
         r"""
         CDO operator: setdate
         Parameters:
@@ -2355,11 +2354,11 @@ class CdoOperation:
         operator = CdoOperator(command="setdate",
                                n_input=1, 
                                n_output=1, 
-                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue'])
+                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
                                
         return self._new_op(operator, [], {"day": day, "month": month, "year": year, "units": units, "date": date, "time": time, "inc": inc, "frequency": frequency, "calendar": calendar, "shiftValue": shiftValue})
 
-    def settime(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
+    def settime(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None): # pragma: no cover
         r"""
         CDO operator: settime
         Parameters:
@@ -2377,11 +2376,11 @@ class CdoOperation:
         operator = CdoOperator(command="settime",
                                n_input=1, 
                                n_output=1, 
-                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue'])
+                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
                                
         return self._new_op(operator, [], {"day": day, "month": month, "year": year, "units": units, "date": date, "time": time, "inc": inc, "frequency": frequency, "calendar": calendar, "shiftValue": shiftValue})
 
-    def setday(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
+    def setday(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None): # pragma: no cover
         r"""
         CDO operator: setday
         Parameters:
@@ -2399,11 +2398,11 @@ class CdoOperation:
         operator = CdoOperator(command="setday",
                                n_input=1, 
                                n_output=1, 
-                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue'])
+                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
                                
         return self._new_op(operator, [], {"day": day, "month": month, "year": year, "units": units, "date": date, "time": time, "inc": inc, "frequency": frequency, "calendar": calendar, "shiftValue": shiftValue})
 
-    def setmon(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
+    def setmon(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None): # pragma: no cover
         r"""
         CDO operator: setmon
         Parameters:
@@ -2421,11 +2420,11 @@ class CdoOperation:
         operator = CdoOperator(command="setmon",
                                n_input=1, 
                                n_output=1, 
-                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue'])
+                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
                                
         return self._new_op(operator, [], {"day": day, "month": month, "year": year, "units": units, "date": date, "time": time, "inc": inc, "frequency": frequency, "calendar": calendar, "shiftValue": shiftValue})
 
-    def setyear(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
+    def setyear(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None): # pragma: no cover
         r"""
         CDO operator: setyear
         Parameters:
@@ -2443,11 +2442,11 @@ class CdoOperation:
         operator = CdoOperator(command="setyear",
                                n_input=1, 
                                n_output=1, 
-                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue'])
+                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
                                
         return self._new_op(operator, [], {"day": day, "month": month, "year": year, "units": units, "date": date, "time": time, "inc": inc, "frequency": frequency, "calendar": calendar, "shiftValue": shiftValue})
 
-    def settunits(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
+    def settunits(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None): # pragma: no cover
         r"""
         CDO operator: settunits
         Parameters:
@@ -2465,11 +2464,11 @@ class CdoOperation:
         operator = CdoOperator(command="settunits",
                                n_input=1, 
                                n_output=1, 
-                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue'])
+                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
                                
         return self._new_op(operator, [], {"day": day, "month": month, "year": year, "units": units, "date": date, "time": time, "inc": inc, "frequency": frequency, "calendar": calendar, "shiftValue": shiftValue})
 
-    def settaxis(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
+    def settaxis(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None): # pragma: no cover
         r"""
         CDO operator: settaxis
         Parameters:
@@ -2487,11 +2486,11 @@ class CdoOperation:
         operator = CdoOperator(command="settaxis",
                                n_input=1, 
                                n_output=1, 
-                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue'])
+                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
                                
         return self._new_op(operator, [], {"day": day, "month": month, "year": year, "units": units, "date": date, "time": time, "inc": inc, "frequency": frequency, "calendar": calendar, "shiftValue": shiftValue})
 
-    def settbounds(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
+    def settbounds(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None): # pragma: no cover
         r"""
         CDO operator: settbounds
         Parameters:
@@ -2509,11 +2508,11 @@ class CdoOperation:
         operator = CdoOperator(command="settbounds",
                                n_input=1, 
                                n_output=1, 
-                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue'])
+                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
                                
         return self._new_op(operator, [], {"day": day, "month": month, "year": year, "units": units, "date": date, "time": time, "inc": inc, "frequency": frequency, "calendar": calendar, "shiftValue": shiftValue})
 
-    def setreftime(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
+    def setreftime(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None): # pragma: no cover
         r"""
         CDO operator: setreftime
         Parameters:
@@ -2531,11 +2530,11 @@ class CdoOperation:
         operator = CdoOperator(command="setreftime",
                                n_input=1, 
                                n_output=1, 
-                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue'])
+                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
                                
         return self._new_op(operator, [], {"day": day, "month": month, "year": year, "units": units, "date": date, "time": time, "inc": inc, "frequency": frequency, "calendar": calendar, "shiftValue": shiftValue})
 
-    def setcalendar(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
+    def setcalendar(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None): # pragma: no cover
         r"""
         CDO operator: setcalendar
         Parameters:
@@ -2553,11 +2552,11 @@ class CdoOperation:
         operator = CdoOperator(command="setcalendar",
                                n_input=1, 
                                n_output=1, 
-                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue'])
+                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
                                
         return self._new_op(operator, [], {"day": day, "month": month, "year": year, "units": units, "date": date, "time": time, "inc": inc, "frequency": frequency, "calendar": calendar, "shiftValue": shiftValue})
 
-    def shifttime(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None):
+    def shifttime(self, day = None, month = None, year = None, units = None, date = None, time = None, inc = None, frequency = None, calendar = None, shiftValue = None): # pragma: no cover
         r"""
         CDO operator: shifttime
         Parameters:
@@ -2575,11 +2574,11 @@ class CdoOperation:
         operator = CdoOperator(command="shifttime",
                                n_input=1, 
                                n_output=1, 
-                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue'])
+                               params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
                                
         return self._new_op(operator, [], {"day": day, "month": month, "year": year, "units": units, "date": date, "time": time, "inc": inc, "frequency": frequency, "calendar": calendar, "shiftValue": shiftValue})
 
-    def chcode(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
+    def chcode(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None): # pragma: no cover
         r"""
         CDO operator: chcode
         Parameters:
@@ -2597,11 +2596,11 @@ class CdoOperation:
         operator = CdoOperator(command="chcode",
                                n_input=1, 
                                n_output=1, 
-                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev'])
+                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
                                
         return self._new_op(operator, [], {"code": code, "oldcode": oldcode, "newcode": newcode, "oldparam": oldparam, "newparam": newparam, "name": name, "oldname": oldname, "newname": newname, "oldlev": oldlev, "newlev": newlev})
 
-    def chparam(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
+    def chparam(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None): # pragma: no cover
         r"""
         CDO operator: chparam
         Parameters:
@@ -2619,11 +2618,11 @@ class CdoOperation:
         operator = CdoOperator(command="chparam",
                                n_input=1, 
                                n_output=1, 
-                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev'])
+                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
                                
         return self._new_op(operator, [], {"code": code, "oldcode": oldcode, "newcode": newcode, "oldparam": oldparam, "newparam": newparam, "name": name, "oldname": oldname, "newname": newname, "oldlev": oldlev, "newlev": newlev})
 
-    def chname(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
+    def chname(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None): # pragma: no cover
         r"""
         CDO operator: chname
         Parameters:
@@ -2641,11 +2640,11 @@ class CdoOperation:
         operator = CdoOperator(command="chname",
                                n_input=1, 
                                n_output=1, 
-                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev'])
+                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
                                
         return self._new_op(operator, [], {"code": code, "oldcode": oldcode, "newcode": newcode, "oldparam": oldparam, "newparam": newparam, "name": name, "oldname": oldname, "newname": newname, "oldlev": oldlev, "newlev": newlev})
 
-    def chunit(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
+    def chunit(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None): # pragma: no cover
         r"""
         CDO operator: chunit
         Parameters:
@@ -2663,11 +2662,11 @@ class CdoOperation:
         operator = CdoOperator(command="chunit",
                                n_input=1, 
                                n_output=1, 
-                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev'])
+                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
                                
         return self._new_op(operator, [], {"code": code, "oldcode": oldcode, "newcode": newcode, "oldparam": oldparam, "newparam": newparam, "name": name, "oldname": oldname, "newname": newname, "oldlev": oldlev, "newlev": newlev})
 
-    def chlevel(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
+    def chlevel(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None): # pragma: no cover
         r"""
         CDO operator: chlevel
         Parameters:
@@ -2685,11 +2684,11 @@ class CdoOperation:
         operator = CdoOperator(command="chlevel",
                                n_input=1, 
                                n_output=1, 
-                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev'])
+                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
                                
         return self._new_op(operator, [], {"code": code, "oldcode": oldcode, "newcode": newcode, "oldparam": oldparam, "newparam": newparam, "name": name, "oldname": oldname, "newname": newname, "oldlev": oldlev, "newlev": newlev})
 
-    def chlevelc(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
+    def chlevelc(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None): # pragma: no cover
         r"""
         CDO operator: chlevelc
         Parameters:
@@ -2707,11 +2706,11 @@ class CdoOperation:
         operator = CdoOperator(command="chlevelc",
                                n_input=1, 
                                n_output=1, 
-                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev'])
+                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
                                
         return self._new_op(operator, [], {"code": code, "oldcode": oldcode, "newcode": newcode, "oldparam": oldparam, "newparam": newparam, "name": name, "oldname": oldname, "newname": newname, "oldlev": oldlev, "newlev": newlev})
 
-    def chlevelv(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None):
+    def chlevelv(self, code = None, oldcode = None, newcode = None, oldparam = None, newparam = None, name = None, oldname = None, newname = None, oldlev = None, newlev = None): # pragma: no cover
         r"""
         CDO operator: chlevelv
         Parameters:
@@ -2729,11 +2728,11 @@ class CdoOperation:
         operator = CdoOperator(command="chlevelv",
                                n_input=1, 
                                n_output=1, 
-                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev'])
+                               params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
                                
         return self._new_op(operator, [], {"code": code, "oldcode": oldcode, "newcode": newcode, "oldparam": oldparam, "newparam": newparam, "name": name, "oldname": oldname, "newname": newname, "oldlev": oldlev, "newlev": newlev})
 
-    def setgrid(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None):
+    def setgrid(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None): # pragma: no cover
         r"""
         CDO operator: setgrid
         Parameters:
@@ -2746,11 +2745,11 @@ class CdoOperation:
         operator = CdoOperator(command="setgrid",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams'])
+                               params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams']) 
                                
         return self._new_op(operator, [], {"grid": grid, "gridtype": gridtype, "gridarea": gridarea, "gridmask": gridmask, "projparams": projparams})
 
-    def setgridtype(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None):
+    def setgridtype(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None): # pragma: no cover
         r"""
         CDO operator: setgridtype
         Parameters:
@@ -2763,11 +2762,11 @@ class CdoOperation:
         operator = CdoOperator(command="setgridtype",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams'])
+                               params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams']) 
                                
         return self._new_op(operator, [], {"grid": grid, "gridtype": gridtype, "gridarea": gridarea, "gridmask": gridmask, "projparams": projparams})
 
-    def setgridarea(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None):
+    def setgridarea(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None): # pragma: no cover
         r"""
         CDO operator: setgridarea
         Parameters:
@@ -2780,11 +2779,11 @@ class CdoOperation:
         operator = CdoOperator(command="setgridarea",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams'])
+                               params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams']) 
                                
         return self._new_op(operator, [], {"grid": grid, "gridtype": gridtype, "gridarea": gridarea, "gridmask": gridmask, "projparams": projparams})
 
-    def setgridmask(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None):
+    def setgridmask(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None): # pragma: no cover
         r"""
         CDO operator: setgridmask
         Parameters:
@@ -2797,11 +2796,11 @@ class CdoOperation:
         operator = CdoOperator(command="setgridmask",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams'])
+                               params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams']) 
                                
         return self._new_op(operator, [], {"grid": grid, "gridtype": gridtype, "gridarea": gridarea, "gridmask": gridmask, "projparams": projparams})
 
-    def setprojparams(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None):
+    def setprojparams(self, grid = None, gridtype = None, gridarea = None, gridmask = None, projparams = None): # pragma: no cover
         r"""
         CDO operator: setprojparams
         Parameters:
@@ -2814,11 +2813,11 @@ class CdoOperation:
         operator = CdoOperator(command="setprojparams",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams'])
+                               params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams']) 
                                
         return self._new_op(operator, [], {"grid": grid, "gridtype": gridtype, "gridarea": gridarea, "gridmask": gridmask, "projparams": projparams})
 
-    def setzaxis(self, zaxis = None, zbot = None, ztop = None):
+    def setzaxis(self, zaxis = None, zbot = None, ztop = None): # pragma: no cover
         r"""
         CDO operator: setzaxis
         Parameters:
@@ -2829,11 +2828,11 @@ class CdoOperation:
         operator = CdoOperator(command="setzaxis",
                                n_input=1, 
                                n_output=1, 
-                               params=['zaxis', 'zbot', 'ztop'])
+                               params=['zaxis', 'zbot', 'ztop']) 
                                
         return self._new_op(operator, [], {"zaxis": zaxis, "zbot": zbot, "ztop": ztop})
 
-    def genlevelbounds(self, zaxis = None, zbot = None, ztop = None):
+    def genlevelbounds(self, zaxis = None, zbot = None, ztop = None): # pragma: no cover
         r"""
         CDO operator: genlevelbounds
         Parameters:
@@ -2844,33 +2843,33 @@ class CdoOperation:
         operator = CdoOperator(command="genlevelbounds",
                                n_input=1, 
                                n_output=1, 
-                               params=['zaxis', 'zbot', 'ztop'])
+                               params=['zaxis', 'zbot', 'ztop']) 
                                
         return self._new_op(operator, [], {"zaxis": zaxis, "zbot": zbot, "ztop": ztop})
 
-    def invertlat(self):
+    def invertlat(self): # pragma: no cover
         r"""
         CDO operator: invertlat
         """
         operator = CdoOperator(command="invertlat",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def invertlev(self):
+    def invertlev(self): # pragma: no cover
         r"""
         CDO operator: invertlev
         """
         operator = CdoOperator(command="invertlev",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def shiftx(self, nshift = None, cyclic = None, coord = None):
+    def shiftx(self, nshift = None, cyclic = None, coord = None): # pragma: no cover
         r"""
         CDO operator: shiftx
         Parameters:
@@ -2881,11 +2880,11 @@ class CdoOperation:
         operator = CdoOperator(command="shiftx",
                                n_input=1, 
                                n_output=1, 
-                               params=['nshift', 'cyclic', 'coord'])
+                               params=['nshift', 'cyclic', 'coord']) 
                                
         return self._new_op(operator, [], {"nshift": nshift, "cyclic": cyclic, "coord": coord})
 
-    def shifty(self, nshift = None, cyclic = None, coord = None):
+    def shifty(self, nshift = None, cyclic = None, coord = None): # pragma: no cover
         r"""
         CDO operator: shifty
         Parameters:
@@ -2896,11 +2895,11 @@ class CdoOperation:
         operator = CdoOperator(command="shifty",
                                n_input=1, 
                                n_output=1, 
-                               params=['nshift', 'cyclic', 'coord'])
+                               params=['nshift', 'cyclic', 'coord']) 
                                
         return self._new_op(operator, [], {"nshift": nshift, "cyclic": cyclic, "coord": coord})
 
-    def maskregion(self, regions = None):
+    def maskregion(self, regions = None): # pragma: no cover
         r"""
         CDO operator: maskregion
         Parameters:
@@ -2909,11 +2908,11 @@ class CdoOperation:
         operator = CdoOperator(command="maskregion",
                                n_input=1, 
                                n_output=1, 
-                               params=['regions'])
+                               params=['regions']) 
                                
         return self._new_op(operator, [], {"regions": regions})
 
-    def masklonlatbox(self, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None):
+    def masklonlatbox(self, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None): # pragma: no cover
         r"""
         CDO operator: masklonlatbox
         Parameters:
@@ -2929,11 +2928,11 @@ class CdoOperation:
         operator = CdoOperator(command="masklonlatbox",
                                n_input=1, 
                                n_output=1, 
-                               params=['lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2'])
+                               params=['lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2']) 
                                
         return self._new_op(operator, [], {"lon1": lon1, "lon2": lon2, "lat1": lat1, "lat2": lat2, "idx1": idx1, "idx2": idx2, "idy1": idy1, "idy2": idy2})
 
-    def maskindexbox(self, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None):
+    def maskindexbox(self, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None): # pragma: no cover
         r"""
         CDO operator: maskindexbox
         Parameters:
@@ -2949,11 +2948,11 @@ class CdoOperation:
         operator = CdoOperator(command="maskindexbox",
                                n_input=1, 
                                n_output=1, 
-                               params=['lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2'])
+                               params=['lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2']) 
                                
         return self._new_op(operator, [], {"lon1": lon1, "lon2": lon2, "lat1": lat1, "lat2": lat2, "idx1": idx1, "idx2": idx2, "idy1": idy1, "idy2": idy2})
 
-    def setclonlatbox(self, c = None, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None):
+    def setclonlatbox(self, c = None, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None): # pragma: no cover
         r"""
         CDO operator: setclonlatbox
         Parameters:
@@ -2970,11 +2969,11 @@ class CdoOperation:
         operator = CdoOperator(command="setclonlatbox",
                                n_input=1, 
                                n_output=1, 
-                               params=['c', 'lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2'])
+                               params=['c', 'lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2']) 
                                
         return self._new_op(operator, [], {"c": c, "lon1": lon1, "lon2": lon2, "lat1": lat1, "lat2": lat2, "idx1": idx1, "idx2": idx2, "idy1": idy1, "idy2": idy2})
 
-    def setcindexbox(self, c = None, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None):
+    def setcindexbox(self, c = None, lon1 = None, lon2 = None, lat1 = None, lat2 = None, idx1 = None, idx2 = None, idy1 = None, idy2 = None): # pragma: no cover
         r"""
         CDO operator: setcindexbox
         Parameters:
@@ -2991,11 +2990,11 @@ class CdoOperation:
         operator = CdoOperator(command="setcindexbox",
                                n_input=1, 
                                n_output=1, 
-                               params=['c', 'lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2'])
+                               params=['c', 'lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2']) 
                                
         return self._new_op(operator, [], {"c": c, "lon1": lon1, "lon2": lon2, "lat1": lat1, "lat2": lat2, "idx1": idx1, "idx2": idx2, "idy1": idy1, "idy2": idy2})
 
-    def enlarge(self, grid = None):
+    def enlarge(self, grid = None): # pragma: no cover
         r"""
         CDO operator: enlarge
         Parameters:
@@ -3004,11 +3003,11 @@ class CdoOperation:
         operator = CdoOperator(command="enlarge",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def setmissval(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
+    def setmissval(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None): # pragma: no cover
         r"""
         CDO operator: setmissval
         Parameters:
@@ -3021,11 +3020,11 @@ class CdoOperation:
         operator = CdoOperator(command="setmissval",
                                n_input=1, 
                                n_output=1, 
-                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax'])
+                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
                                
         return self._new_op(operator, [], {"neighbors": neighbors, "newmiss": newmiss, "c": c, "rmin": rmin, "rmax": rmax})
 
-    def setctomiss(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
+    def setctomiss(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None): # pragma: no cover
         r"""
         CDO operator: setctomiss
         Parameters:
@@ -3038,11 +3037,11 @@ class CdoOperation:
         operator = CdoOperator(command="setctomiss",
                                n_input=1, 
                                n_output=1, 
-                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax'])
+                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
                                
         return self._new_op(operator, [], {"neighbors": neighbors, "newmiss": newmiss, "c": c, "rmin": rmin, "rmax": rmax})
 
-    def setmisstoc(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
+    def setmisstoc(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None): # pragma: no cover
         r"""
         CDO operator: setmisstoc
         Parameters:
@@ -3055,11 +3054,11 @@ class CdoOperation:
         operator = CdoOperator(command="setmisstoc",
                                n_input=1, 
                                n_output=1, 
-                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax'])
+                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
                                
         return self._new_op(operator, [], {"neighbors": neighbors, "newmiss": newmiss, "c": c, "rmin": rmin, "rmax": rmax})
 
-    def setrtomiss(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
+    def setrtomiss(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None): # pragma: no cover
         r"""
         CDO operator: setrtomiss
         Parameters:
@@ -3072,11 +3071,11 @@ class CdoOperation:
         operator = CdoOperator(command="setrtomiss",
                                n_input=1, 
                                n_output=1, 
-                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax'])
+                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
                                
         return self._new_op(operator, [], {"neighbors": neighbors, "newmiss": newmiss, "c": c, "rmin": rmin, "rmax": rmax})
 
-    def setvrange(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
+    def setvrange(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None): # pragma: no cover
         r"""
         CDO operator: setvrange
         Parameters:
@@ -3089,11 +3088,11 @@ class CdoOperation:
         operator = CdoOperator(command="setvrange",
                                n_input=1, 
                                n_output=1, 
-                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax'])
+                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
                                
         return self._new_op(operator, [], {"neighbors": neighbors, "newmiss": newmiss, "c": c, "rmin": rmin, "rmax": rmax})
 
-    def setmisstonn(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
+    def setmisstonn(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None): # pragma: no cover
         r"""
         CDO operator: setmisstonn
         Parameters:
@@ -3106,11 +3105,11 @@ class CdoOperation:
         operator = CdoOperator(command="setmisstonn",
                                n_input=1, 
                                n_output=1, 
-                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax'])
+                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
                                
         return self._new_op(operator, [], {"neighbors": neighbors, "newmiss": newmiss, "c": c, "rmin": rmin, "rmax": rmax})
 
-    def setmisstodis(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None):
+    def setmisstodis(self, neighbors = None, newmiss = None, c = None, rmin = None, rmax = None): # pragma: no cover
         r"""
         CDO operator: setmisstodis
         Parameters:
@@ -3123,11 +3122,11 @@ class CdoOperation:
         operator = CdoOperator(command="setmisstodis",
                                n_input=1, 
                                n_output=1, 
-                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax'])
+                               params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
                                
         return self._new_op(operator, [], {"neighbors": neighbors, "newmiss": newmiss, "c": c, "rmin": rmin, "rmax": rmax})
 
-    def vertfillmiss(self, method = None, limit = None, max_gaps = None):
+    def vertfillmiss(self, method = None, limit = None, max_gaps = None): # pragma: no cover
         r"""
         CDO operator: vertfillmiss
         Parameters:
@@ -3138,11 +3137,11 @@ class CdoOperation:
         operator = CdoOperator(command="vertfillmiss",
                                n_input=1, 
                                n_output=1, 
-                               params=['method', 'limit', 'max_gaps'])
+                               params=['method', 'limit', 'max_gaps']) 
                                
         return self._new_op(operator, [], {"method": method, "limit": limit, "max_gaps": max_gaps})
 
-    def timfillmiss(self, method = None, limit = None, max_gaps = None):
+    def timfillmiss(self, method = None, limit = None, max_gaps = None): # pragma: no cover
         r"""
         CDO operator: timfillmiss
         Parameters:
@@ -3153,11 +3152,11 @@ class CdoOperation:
         operator = CdoOperator(command="timfillmiss",
                                n_input=1, 
                                n_output=1, 
-                               params=['method', 'limit', 'max_gaps'])
+                               params=['method', 'limit', 'max_gaps']) 
                                
         return self._new_op(operator, [], {"method": method, "limit": limit, "max_gaps": max_gaps})
 
-    def setgridcell(self, value = None, cell = None, mask = None):
+    def setgridcell(self, value = None, cell = None, mask = None): # pragma: no cover
         r"""
         CDO operator: setgridcell
         Parameters:
@@ -3168,11 +3167,11 @@ class CdoOperation:
         operator = CdoOperator(command="setgridcell",
                                n_input=1, 
                                n_output=1, 
-                               params=['value', 'cell', 'mask'])
+                               params=['value', 'cell', 'mask']) 
                                
         return self._new_op(operator, [], {"value": value, "cell": cell, "mask": mask})
 
-    def expr(self, instr = None, filename = None):
+    def expr(self, instr = None, filename = None): # pragma: no cover
         r"""
         CDO operator: expr
         Parameters:
@@ -3182,11 +3181,11 @@ class CdoOperation:
         operator = CdoOperator(command="expr",
                                n_input=1, 
                                n_output=1, 
-                               params=['instr', 'filename'])
+                               params=['instr', 'filename']) 
                                
         return self._new_op(operator, [], {"instr": instr, "filename": filename})
 
-    def exprf(self, instr = None, filename = None):
+    def exprf(self, instr = None, filename = None): # pragma: no cover
         r"""
         CDO operator: exprf
         Parameters:
@@ -3196,11 +3195,11 @@ class CdoOperation:
         operator = CdoOperator(command="exprf",
                                n_input=1, 
                                n_output=1, 
-                               params=['instr', 'filename'])
+                               params=['instr', 'filename']) 
                                
         return self._new_op(operator, [], {"instr": instr, "filename": filename})
 
-    def aexpr(self, instr = None, filename = None):
+    def aexpr(self, instr = None, filename = None): # pragma: no cover
         r"""
         CDO operator: aexpr
         Parameters:
@@ -3210,11 +3209,11 @@ class CdoOperation:
         operator = CdoOperator(command="aexpr",
                                n_input=1, 
                                n_output=1, 
-                               params=['instr', 'filename'])
+                               params=['instr', 'filename']) 
                                
         return self._new_op(operator, [], {"instr": instr, "filename": filename})
 
-    def aexprf(self, instr = None, filename = None):
+    def aexprf(self, instr = None, filename = None): # pragma: no cover
         r"""
         CDO operator: aexprf
         Parameters:
@@ -3224,198 +3223,198 @@ class CdoOperation:
         operator = CdoOperator(command="aexprf",
                                n_input=1, 
                                n_output=1, 
-                               params=['instr', 'filename'])
+                               params=['instr', 'filename']) 
                                
         return self._new_op(operator, [], {"instr": instr, "filename": filename})
 
-    def abs(self):
+    def abs(self): # pragma: no cover
         r"""
         CDO operator: abs
         """
         operator = CdoOperator(command="abs",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def int(self):
+    def int(self): # pragma: no cover
         r"""
         CDO operator: int
         """
         operator = CdoOperator(command="int",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def nint(self):
+    def nint(self): # pragma: no cover
         r"""
         CDO operator: nint
         """
         operator = CdoOperator(command="nint",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def pow(self):
+    def pow(self): # pragma: no cover
         r"""
         CDO operator: pow
         """
         operator = CdoOperator(command="pow",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def sqr(self):
+    def sqr(self): # pragma: no cover
         r"""
         CDO operator: sqr
         """
         operator = CdoOperator(command="sqr",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def sqrt(self):
+    def sqrt(self): # pragma: no cover
         r"""
         CDO operator: sqrt
         """
         operator = CdoOperator(command="sqrt",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def exp(self):
+    def exp(self): # pragma: no cover
         r"""
         CDO operator: exp
         """
         operator = CdoOperator(command="exp",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ln(self):
+    def ln(self): # pragma: no cover
         r"""
         CDO operator: ln
         """
         operator = CdoOperator(command="ln",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def log10(self):
+    def log10(self): # pragma: no cover
         r"""
         CDO operator: log10
         """
         operator = CdoOperator(command="log10",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def sin(self):
+    def sin(self): # pragma: no cover
         r"""
         CDO operator: sin
         """
         operator = CdoOperator(command="sin",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def cos(self):
+    def cos(self): # pragma: no cover
         r"""
         CDO operator: cos
         """
         operator = CdoOperator(command="cos",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def tan(self):
+    def tan(self): # pragma: no cover
         r"""
         CDO operator: tan
         """
         operator = CdoOperator(command="tan",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def asin(self):
+    def asin(self): # pragma: no cover
         r"""
         CDO operator: asin
         """
         operator = CdoOperator(command="asin",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def acos(self):
+    def acos(self): # pragma: no cover
         r"""
         CDO operator: acos
         """
         operator = CdoOperator(command="acos",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def atan(self):
+    def atan(self): # pragma: no cover
         r"""
         CDO operator: atan
         """
         operator = CdoOperator(command="atan",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def reci(self):
+    def reci(self): # pragma: no cover
         r"""
         CDO operator: reci
         """
         operator = CdoOperator(command="reci",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def negate(self):
+    def negate(self): # pragma: no cover
         r"""
         CDO operator: not
         """
         operator = CdoOperator(command="not",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def addc(self, c = None):
+    def addc(self, c = None): # pragma: no cover
         r"""
         CDO operator: addc
         Parameters:
@@ -3424,11 +3423,11 @@ class CdoOperation:
         operator = CdoOperator(command="addc",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def subc(self, c = None):
+    def subc(self, c = None): # pragma: no cover
         r"""
         CDO operator: subc
         Parameters:
@@ -3437,11 +3436,11 @@ class CdoOperation:
         operator = CdoOperator(command="subc",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def mulc(self, c = None):
+    def mulc(self, c = None): # pragma: no cover
         r"""
         CDO operator: mulc
         Parameters:
@@ -3450,11 +3449,11 @@ class CdoOperation:
         operator = CdoOperator(command="mulc",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def divc(self, c = None):
+    def divc(self, c = None): # pragma: no cover
         r"""
         CDO operator: divc
         Parameters:
@@ -3463,11 +3462,11 @@ class CdoOperation:
         operator = CdoOperator(command="divc",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def minc(self, c = None):
+    def minc(self, c = None): # pragma: no cover
         r"""
         CDO operator: minc
         Parameters:
@@ -3476,11 +3475,11 @@ class CdoOperation:
         operator = CdoOperator(command="minc",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def maxc(self, c = None):
+    def maxc(self, c = None): # pragma: no cover
         r"""
         CDO operator: maxc
         Parameters:
@@ -3489,605 +3488,605 @@ class CdoOperation:
         operator = CdoOperator(command="maxc",
                                n_input=1, 
                                n_output=1, 
-                               params=['c'])
+                               params=['c']) 
                                
         return self._new_op(operator, [], {"c": c})
 
-    def add(self, ifile2):
+    def add(self, ifile2): # pragma: no cover
         r"""
         CDO operator: add
         """
         operator = CdoOperator(command="add",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def sub(self, ifile2):
+    def sub(self, ifile2): # pragma: no cover
         r"""
         CDO operator: sub
         """
         operator = CdoOperator(command="sub",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def mul(self, ifile2):
+    def mul(self, ifile2): # pragma: no cover
         r"""
         CDO operator: mul
         """
         operator = CdoOperator(command="mul",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def div(self, ifile2):
+    def div(self, ifile2): # pragma: no cover
         r"""
         CDO operator: div
         """
         operator = CdoOperator(command="div",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def min(self, ifile2):
+    def min(self, ifile2): # pragma: no cover
         r"""
         CDO operator: min
         """
         operator = CdoOperator(command="min",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def max(self, ifile2):
+    def max(self, ifile2): # pragma: no cover
         r"""
         CDO operator: max
         """
         operator = CdoOperator(command="max",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def atan2(self, ifile2):
+    def atan2(self, ifile2): # pragma: no cover
         r"""
         CDO operator: atan2
         """
         operator = CdoOperator(command="atan2",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def dayadd(self, ifile2):
+    def dayadd(self, ifile2): # pragma: no cover
         r"""
         CDO operator: dayadd
         """
         operator = CdoOperator(command="dayadd",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def daysub(self, ifile2):
+    def daysub(self, ifile2): # pragma: no cover
         r"""
         CDO operator: daysub
         """
         operator = CdoOperator(command="daysub",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def daymul(self, ifile2):
+    def daymul(self, ifile2): # pragma: no cover
         r"""
         CDO operator: daymul
         """
         operator = CdoOperator(command="daymul",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def daydiv(self, ifile2):
+    def daydiv(self, ifile2): # pragma: no cover
         r"""
         CDO operator: daydiv
         """
         operator = CdoOperator(command="daydiv",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def monadd(self, ifile2):
+    def monadd(self, ifile2): # pragma: no cover
         r"""
         CDO operator: monadd
         """
         operator = CdoOperator(command="monadd",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def monsub(self, ifile2):
+    def monsub(self, ifile2): # pragma: no cover
         r"""
         CDO operator: monsub
         """
         operator = CdoOperator(command="monsub",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def monmul(self, ifile2):
+    def monmul(self, ifile2): # pragma: no cover
         r"""
         CDO operator: monmul
         """
         operator = CdoOperator(command="monmul",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def mondiv(self, ifile2):
+    def mondiv(self, ifile2): # pragma: no cover
         r"""
         CDO operator: mondiv
         """
         operator = CdoOperator(command="mondiv",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def yearadd(self, ifile2):
+    def yearadd(self, ifile2): # pragma: no cover
         r"""
         CDO operator: yearadd
         """
         operator = CdoOperator(command="yearadd",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def yearsub(self, ifile2):
+    def yearsub(self, ifile2): # pragma: no cover
         r"""
         CDO operator: yearsub
         """
         operator = CdoOperator(command="yearsub",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def yearmul(self, ifile2):
+    def yearmul(self, ifile2): # pragma: no cover
         r"""
         CDO operator: yearmul
         """
         operator = CdoOperator(command="yearmul",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def yeardiv(self, ifile2):
+    def yeardiv(self, ifile2): # pragma: no cover
         r"""
         CDO operator: yeardiv
         """
         operator = CdoOperator(command="yeardiv",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def yhouradd(self, ifile2):
+    def yhouradd(self, ifile2): # pragma: no cover
         r"""
         CDO operator: yhouradd
         """
         operator = CdoOperator(command="yhouradd",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def yhoursub(self, ifile2):
+    def yhoursub(self, ifile2): # pragma: no cover
         r"""
         CDO operator: yhoursub
         """
         operator = CdoOperator(command="yhoursub",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def yhourmul(self, ifile2):
+    def yhourmul(self, ifile2): # pragma: no cover
         r"""
         CDO operator: yhourmul
         """
         operator = CdoOperator(command="yhourmul",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def yhourdiv(self, ifile2):
+    def yhourdiv(self, ifile2): # pragma: no cover
         r"""
         CDO operator: yhourdiv
         """
         operator = CdoOperator(command="yhourdiv",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ydayadd(self, ifile2):
+    def ydayadd(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ydayadd
         """
         operator = CdoOperator(command="ydayadd",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ydaysub(self, ifile2):
+    def ydaysub(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ydaysub
         """
         operator = CdoOperator(command="ydaysub",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ydaymul(self, ifile2):
+    def ydaymul(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ydaymul
         """
         operator = CdoOperator(command="ydaymul",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ydaydiv(self, ifile2):
+    def ydaydiv(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ydaydiv
         """
         operator = CdoOperator(command="ydaydiv",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ymonadd(self, ifile2):
+    def ymonadd(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ymonadd
         """
         operator = CdoOperator(command="ymonadd",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ymonsub(self, ifile2):
+    def ymonsub(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ymonsub
         """
         operator = CdoOperator(command="ymonsub",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ymonmul(self, ifile2):
+    def ymonmul(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ymonmul
         """
         operator = CdoOperator(command="ymonmul",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def ymondiv(self, ifile2):
+    def ymondiv(self, ifile2): # pragma: no cover
         r"""
         CDO operator: ymondiv
         """
         operator = CdoOperator(command="ymondiv",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def yseasadd(self, ifile2):
+    def yseasadd(self, ifile2): # pragma: no cover
         r"""
         CDO operator: yseasadd
         """
         operator = CdoOperator(command="yseasadd",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def yseassub(self, ifile2):
+    def yseassub(self, ifile2): # pragma: no cover
         r"""
         CDO operator: yseassub
         """
         operator = CdoOperator(command="yseassub",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def yseasmul(self, ifile2):
+    def yseasmul(self, ifile2): # pragma: no cover
         r"""
         CDO operator: yseasmul
         """
         operator = CdoOperator(command="yseasmul",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def yseasdiv(self, ifile2):
+    def yseasdiv(self, ifile2): # pragma: no cover
         r"""
         CDO operator: yseasdiv
         """
         operator = CdoOperator(command="yseasdiv",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def muldpm(self):
+    def muldpm(self): # pragma: no cover
         r"""
         CDO operator: muldpm
         """
         operator = CdoOperator(command="muldpm",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def divdpm(self):
+    def divdpm(self): # pragma: no cover
         r"""
         CDO operator: divdpm
         """
         operator = CdoOperator(command="divdpm",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def muldpy(self):
+    def muldpy(self): # pragma: no cover
         r"""
         CDO operator: muldpy
         """
         operator = CdoOperator(command="muldpy",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def divdpy(self):
+    def divdpy(self): # pragma: no cover
         r"""
         CDO operator: divdpy
         """
         operator = CdoOperator(command="divdpy",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def mulcoslat(self):
+    def mulcoslat(self): # pragma: no cover
         r"""
         CDO operator: mulcoslat
         """
         operator = CdoOperator(command="mulcoslat",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def divcoslat(self):
+    def divcoslat(self): # pragma: no cover
         r"""
         CDO operator: divcoslat
         """
         operator = CdoOperator(command="divcoslat",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def timcumsum(self):
+    def timcumsum(self): # pragma: no cover
         r"""
         CDO operator: timcumsum
         """
         operator = CdoOperator(command="timcumsum",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def consecsum(self):
+    def consecsum(self): # pragma: no cover
         r"""
         CDO operator: consecsum
         """
         operator = CdoOperator(command="consecsum",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def consects(self):
+    def consects(self): # pragma: no cover
         r"""
         CDO operator: consects
         """
         operator = CdoOperator(command="consects",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def varsmin(self):
+    def varsmin(self): # pragma: no cover
         r"""
         CDO operator: varsmin
         """
         operator = CdoOperator(command="varsmin",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def varsmax(self):
+    def varsmax(self): # pragma: no cover
         r"""
         CDO operator: varsmax
         """
         operator = CdoOperator(command="varsmax",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def varsrange(self):
+    def varsrange(self): # pragma: no cover
         r"""
         CDO operator: varsrange
         """
         operator = CdoOperator(command="varsrange",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def varssum(self):
+    def varssum(self): # pragma: no cover
         r"""
         CDO operator: varssum
         """
         operator = CdoOperator(command="varssum",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def varsmean(self):
+    def varsmean(self): # pragma: no cover
         r"""
         CDO operator: varsmean
         """
         operator = CdoOperator(command="varsmean",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def varsavg(self):
+    def varsavg(self): # pragma: no cover
         r"""
         CDO operator: varsavg
         """
         operator = CdoOperator(command="varsavg",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def varsstd(self):
+    def varsstd(self): # pragma: no cover
         r"""
         CDO operator: varsstd
         """
         operator = CdoOperator(command="varsstd",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def varsstd1(self):
+    def varsstd1(self): # pragma: no cover
         r"""
         CDO operator: varsstd1
         """
         operator = CdoOperator(command="varsstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def varsvar(self):
+    def varsvar(self): # pragma: no cover
         r"""
         CDO operator: varsvar
         """
         operator = CdoOperator(command="varsvar",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def varsvar1(self):
+    def varsvar1(self): # pragma: no cover
         r"""
         CDO operator: varsvar1
         """
         operator = CdoOperator(command="varsvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ensmin(self, p = None):
+    def ensmin(self, p = None): # pragma: no cover
         r"""
         CDO operator: ensmin
         Parameters:
@@ -4096,11 +4095,11 @@ class CdoOperation:
         operator = CdoOperator(command="ensmin",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def ensmax(self, p = None):
+    def ensmax(self, p = None): # pragma: no cover
         r"""
         CDO operator: ensmax
         Parameters:
@@ -4109,11 +4108,11 @@ class CdoOperation:
         operator = CdoOperator(command="ensmax",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def ensrange(self, p = None):
+    def ensrange(self, p = None): # pragma: no cover
         r"""
         CDO operator: ensrange
         Parameters:
@@ -4122,11 +4121,11 @@ class CdoOperation:
         operator = CdoOperator(command="ensrange",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def enssum(self, p = None):
+    def enssum(self, p = None): # pragma: no cover
         r"""
         CDO operator: enssum
         Parameters:
@@ -4135,11 +4134,11 @@ class CdoOperation:
         operator = CdoOperator(command="enssum",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def ensmean(self, p = None):
+    def ensmean(self, p = None): # pragma: no cover
         r"""
         CDO operator: ensmean
         Parameters:
@@ -4148,11 +4147,11 @@ class CdoOperation:
         operator = CdoOperator(command="ensmean",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def ensavg(self, p = None):
+    def ensavg(self, p = None): # pragma: no cover
         r"""
         CDO operator: ensavg
         Parameters:
@@ -4161,11 +4160,11 @@ class CdoOperation:
         operator = CdoOperator(command="ensavg",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def ensstd(self, p = None):
+    def ensstd(self, p = None): # pragma: no cover
         r"""
         CDO operator: ensstd
         Parameters:
@@ -4174,11 +4173,11 @@ class CdoOperation:
         operator = CdoOperator(command="ensstd",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def ensstd1(self, p = None):
+    def ensstd1(self, p = None): # pragma: no cover
         r"""
         CDO operator: ensstd1
         Parameters:
@@ -4187,11 +4186,11 @@ class CdoOperation:
         operator = CdoOperator(command="ensstd1",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def ensvar(self, p = None):
+    def ensvar(self, p = None): # pragma: no cover
         r"""
         CDO operator: ensvar
         Parameters:
@@ -4200,11 +4199,11 @@ class CdoOperation:
         operator = CdoOperator(command="ensvar",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def ensvar1(self, p = None):
+    def ensvar1(self, p = None): # pragma: no cover
         r"""
         CDO operator: ensvar1
         Parameters:
@@ -4213,11 +4212,11 @@ class CdoOperation:
         operator = CdoOperator(command="ensvar1",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def ensskew(self, p = None):
+    def ensskew(self, p = None): # pragma: no cover
         r"""
         CDO operator: ensskew
         Parameters:
@@ -4226,11 +4225,11 @@ class CdoOperation:
         operator = CdoOperator(command="ensskew",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def enskurt(self, p = None):
+    def enskurt(self, p = None): # pragma: no cover
         r"""
         CDO operator: enskurt
         Parameters:
@@ -4239,11 +4238,11 @@ class CdoOperation:
         operator = CdoOperator(command="enskurt",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def ensmedian(self, p = None):
+    def ensmedian(self, p = None): # pragma: no cover
         r"""
         CDO operator: ensmedian
         Parameters:
@@ -4252,11 +4251,11 @@ class CdoOperation:
         operator = CdoOperator(command="ensmedian",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def enspctl(self, p = None):
+    def enspctl(self, p = None): # pragma: no cover
         r"""
         CDO operator: enspctl
         Parameters:
@@ -4265,66 +4264,66 @@ class CdoOperation:
         operator = CdoOperator(command="enspctl",
                                n_input=inf, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def ensrkhistspace(self):
+    def ensrkhistspace(self): # pragma: no cover
         r"""
         CDO operator: ensrkhistspace
         """
         operator = CdoOperator(command="ensrkhistspace",
                                n_input=inf, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ensrkhisttime(self):
+    def ensrkhisttime(self): # pragma: no cover
         r"""
         CDO operator: ensrkhisttime
         """
         operator = CdoOperator(command="ensrkhisttime",
                                n_input=inf, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ensroc(self):
+    def ensroc(self): # pragma: no cover
         r"""
         CDO operator: ensroc
         """
         operator = CdoOperator(command="ensroc",
                                n_input=inf, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def enscrps(self):
+    def enscrps(self): # pragma: no cover
         r"""
         CDO operator: enscrps
         """
         operator = CdoOperator(command="enscrps",
                                n_input=inf, 
                                n_output=inf, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ensbrs(self):
+    def ensbrs(self): # pragma: no cover
         r"""
         CDO operator: ensbrs
         """
         operator = CdoOperator(command="ensbrs",
                                n_input=inf, 
                                n_output=inf, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def fldmin(self, weights = None, p = None):
+    def fldmin(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldmin
         Parameters:
@@ -4334,11 +4333,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldmin",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldmax(self, weights = None, p = None):
+    def fldmax(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldmax
         Parameters:
@@ -4348,11 +4347,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldmax",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldrange(self, weights = None, p = None):
+    def fldrange(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldrange
         Parameters:
@@ -4362,11 +4361,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldrange",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldsum(self, weights = None, p = None):
+    def fldsum(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldsum
         Parameters:
@@ -4376,11 +4375,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldsum",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldint(self, weights = None, p = None):
+    def fldint(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldint
         Parameters:
@@ -4390,11 +4389,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldint",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldmean(self, weights = None, p = None):
+    def fldmean(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldmean
         Parameters:
@@ -4404,11 +4403,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldmean",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldavg(self, weights = None, p = None):
+    def fldavg(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldavg
         Parameters:
@@ -4418,11 +4417,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldavg",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldstd(self, weights = None, p = None):
+    def fldstd(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldstd
         Parameters:
@@ -4432,11 +4431,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldstd",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldstd1(self, weights = None, p = None):
+    def fldstd1(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldstd1
         Parameters:
@@ -4446,11 +4445,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldvar(self, weights = None, p = None):
+    def fldvar(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldvar
         Parameters:
@@ -4460,11 +4459,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldvar",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldvar1(self, weights = None, p = None):
+    def fldvar1(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldvar1
         Parameters:
@@ -4474,11 +4473,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldskew(self, weights = None, p = None):
+    def fldskew(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldskew
         Parameters:
@@ -4488,11 +4487,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldskew",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldkurt(self, weights = None, p = None):
+    def fldkurt(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldkurt
         Parameters:
@@ -4502,11 +4501,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldkurt",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldmedian(self, weights = None, p = None):
+    def fldmedian(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldmedian
         Parameters:
@@ -4516,11 +4515,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldmedian",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldcount(self, weights = None, p = None):
+    def fldcount(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldcount
         Parameters:
@@ -4530,11 +4529,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldcount",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def fldpctl(self, weights = None, p = None):
+    def fldpctl(self, weights = None, p = None): # pragma: no cover
         r"""
         CDO operator: fldpctl
         Parameters:
@@ -4544,11 +4543,11 @@ class CdoOperation:
         operator = CdoOperator(command="fldpctl",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights', 'p'])
+                               params=['weights', 'p']) 
                                
         return self._new_op(operator, [], {"weights": weights, "p": p})
 
-    def zonmin(self, p = None, zonaldes = None):
+    def zonmin(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonmin
         Parameters:
@@ -4558,11 +4557,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonmin",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def zonmax(self, p = None, zonaldes = None):
+    def zonmax(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonmax
         Parameters:
@@ -4572,11 +4571,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonmax",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def zonrange(self, p = None, zonaldes = None):
+    def zonrange(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonrange
         Parameters:
@@ -4586,11 +4585,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonrange",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def zonsum(self, p = None, zonaldes = None):
+    def zonsum(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonsum
         Parameters:
@@ -4600,11 +4599,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonsum",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def zonmean(self, p = None, zonaldes = None):
+    def zonmean(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonmean
         Parameters:
@@ -4614,11 +4613,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonmean",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def zonavg(self, p = None, zonaldes = None):
+    def zonavg(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonavg
         Parameters:
@@ -4628,11 +4627,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonavg",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def zonstd(self, p = None, zonaldes = None):
+    def zonstd(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonstd
         Parameters:
@@ -4642,11 +4641,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonstd",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def zonstd1(self, p = None, zonaldes = None):
+    def zonstd1(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonstd1
         Parameters:
@@ -4656,11 +4655,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def zonvar(self, p = None, zonaldes = None):
+    def zonvar(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonvar
         Parameters:
@@ -4670,11 +4669,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonvar",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def zonvar1(self, p = None, zonaldes = None):
+    def zonvar1(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonvar1
         Parameters:
@@ -4684,11 +4683,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def zonskew(self, p = None, zonaldes = None):
+    def zonskew(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonskew
         Parameters:
@@ -4698,11 +4697,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonskew",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def zonkurt(self, p = None, zonaldes = None):
+    def zonkurt(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonkurt
         Parameters:
@@ -4712,11 +4711,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonkurt",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def zonmedian(self, p = None, zonaldes = None):
+    def zonmedian(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonmedian
         Parameters:
@@ -4726,11 +4725,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonmedian",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def zonpctl(self, p = None, zonaldes = None):
+    def zonpctl(self, p = None, zonaldes = None): # pragma: no cover
         r"""
         CDO operator: zonpctl
         Parameters:
@@ -4740,11 +4739,11 @@ class CdoOperation:
         operator = CdoOperator(command="zonpctl",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'zonaldes'])
+                               params=['p', 'zonaldes']) 
                                
         return self._new_op(operator, [], {"p": p, "zonaldes": zonaldes})
 
-    def mermin(self, p = None):
+    def mermin(self, p = None): # pragma: no cover
         r"""
         CDO operator: mermin
         Parameters:
@@ -4753,11 +4752,11 @@ class CdoOperation:
         operator = CdoOperator(command="mermin",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def mermax(self, p = None):
+    def mermax(self, p = None): # pragma: no cover
         r"""
         CDO operator: mermax
         Parameters:
@@ -4766,11 +4765,11 @@ class CdoOperation:
         operator = CdoOperator(command="mermax",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def merrange(self, p = None):
+    def merrange(self, p = None): # pragma: no cover
         r"""
         CDO operator: merrange
         Parameters:
@@ -4779,11 +4778,11 @@ class CdoOperation:
         operator = CdoOperator(command="merrange",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def mersum(self, p = None):
+    def mersum(self, p = None): # pragma: no cover
         r"""
         CDO operator: mersum
         Parameters:
@@ -4792,11 +4791,11 @@ class CdoOperation:
         operator = CdoOperator(command="mersum",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def mermean(self, p = None):
+    def mermean(self, p = None): # pragma: no cover
         r"""
         CDO operator: mermean
         Parameters:
@@ -4805,11 +4804,11 @@ class CdoOperation:
         operator = CdoOperator(command="mermean",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def meravg(self, p = None):
+    def meravg(self, p = None): # pragma: no cover
         r"""
         CDO operator: meravg
         Parameters:
@@ -4818,11 +4817,11 @@ class CdoOperation:
         operator = CdoOperator(command="meravg",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def merstd(self, p = None):
+    def merstd(self, p = None): # pragma: no cover
         r"""
         CDO operator: merstd
         Parameters:
@@ -4831,11 +4830,11 @@ class CdoOperation:
         operator = CdoOperator(command="merstd",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def merstd1(self, p = None):
+    def merstd1(self, p = None): # pragma: no cover
         r"""
         CDO operator: merstd1
         Parameters:
@@ -4844,11 +4843,11 @@ class CdoOperation:
         operator = CdoOperator(command="merstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def mervar(self, p = None):
+    def mervar(self, p = None): # pragma: no cover
         r"""
         CDO operator: mervar
         Parameters:
@@ -4857,11 +4856,11 @@ class CdoOperation:
         operator = CdoOperator(command="mervar",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def mervar1(self, p = None):
+    def mervar1(self, p = None): # pragma: no cover
         r"""
         CDO operator: mervar1
         Parameters:
@@ -4870,11 +4869,11 @@ class CdoOperation:
         operator = CdoOperator(command="mervar1",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def merskew(self, p = None):
+    def merskew(self, p = None): # pragma: no cover
         r"""
         CDO operator: merskew
         Parameters:
@@ -4883,11 +4882,11 @@ class CdoOperation:
         operator = CdoOperator(command="merskew",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def merkurt(self, p = None):
+    def merkurt(self, p = None): # pragma: no cover
         r"""
         CDO operator: merkurt
         Parameters:
@@ -4896,11 +4895,11 @@ class CdoOperation:
         operator = CdoOperator(command="merkurt",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def mermedian(self, p = None):
+    def mermedian(self, p = None): # pragma: no cover
         r"""
         CDO operator: mermedian
         Parameters:
@@ -4909,11 +4908,11 @@ class CdoOperation:
         operator = CdoOperator(command="mermedian",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def merpctl(self, p = None):
+    def merpctl(self, p = None): # pragma: no cover
         r"""
         CDO operator: merpctl
         Parameters:
@@ -4922,11 +4921,11 @@ class CdoOperation:
         operator = CdoOperator(command="merpctl",
                                n_input=1, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [], {"p": p})
 
-    def gridboxmin(self, nx = None, ny = None):
+    def gridboxmin(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: gridboxmin
         Parameters:
@@ -4936,11 +4935,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridboxmin",
                                n_input=1, 
                                n_output=1, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def gridboxmax(self, nx = None, ny = None):
+    def gridboxmax(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: gridboxmax
         Parameters:
@@ -4950,11 +4949,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridboxmax",
                                n_input=1, 
                                n_output=1, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def gridboxrange(self, nx = None, ny = None):
+    def gridboxrange(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: gridboxrange
         Parameters:
@@ -4964,11 +4963,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridboxrange",
                                n_input=1, 
                                n_output=1, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def gridboxsum(self, nx = None, ny = None):
+    def gridboxsum(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: gridboxsum
         Parameters:
@@ -4978,11 +4977,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridboxsum",
                                n_input=1, 
                                n_output=1, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def gridboxmean(self, nx = None, ny = None):
+    def gridboxmean(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: gridboxmean
         Parameters:
@@ -4992,11 +4991,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridboxmean",
                                n_input=1, 
                                n_output=1, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def gridboxavg(self, nx = None, ny = None):
+    def gridboxavg(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: gridboxavg
         Parameters:
@@ -5006,11 +5005,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridboxavg",
                                n_input=1, 
                                n_output=1, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def gridboxstd(self, nx = None, ny = None):
+    def gridboxstd(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: gridboxstd
         Parameters:
@@ -5020,11 +5019,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridboxstd",
                                n_input=1, 
                                n_output=1, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def gridboxstd1(self, nx = None, ny = None):
+    def gridboxstd1(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: gridboxstd1
         Parameters:
@@ -5034,11 +5033,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridboxstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def gridboxvar(self, nx = None, ny = None):
+    def gridboxvar(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: gridboxvar
         Parameters:
@@ -5048,11 +5047,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridboxvar",
                                n_input=1, 
                                n_output=1, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def gridboxvar1(self, nx = None, ny = None):
+    def gridboxvar1(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: gridboxvar1
         Parameters:
@@ -5062,11 +5061,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridboxvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def gridboxskew(self, nx = None, ny = None):
+    def gridboxskew(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: gridboxskew
         Parameters:
@@ -5076,11 +5075,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridboxskew",
                                n_input=1, 
                                n_output=1, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def gridboxkurt(self, nx = None, ny = None):
+    def gridboxkurt(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: gridboxkurt
         Parameters:
@@ -5090,11 +5089,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridboxkurt",
                                n_input=1, 
                                n_output=1, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def gridboxmedian(self, nx = None, ny = None):
+    def gridboxmedian(self, nx = None, ny = None): # pragma: no cover
         r"""
         CDO operator: gridboxmedian
         Parameters:
@@ -5104,11 +5103,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridboxmedian",
                                n_input=1, 
                                n_output=1, 
-                               params=['nx', 'ny'])
+                               params=['nx', 'ny']) 
                                
         return self._new_op(operator, [], {"nx": nx, "ny": ny})
 
-    def remapmin(self, grid = None):
+    def remapmin(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remapmin
         Parameters:
@@ -5117,11 +5116,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapmin",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def remapmax(self, grid = None):
+    def remapmax(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remapmax
         Parameters:
@@ -5130,11 +5129,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapmax",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def remaprange(self, grid = None):
+    def remaprange(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remaprange
         Parameters:
@@ -5143,11 +5142,11 @@ class CdoOperation:
         operator = CdoOperator(command="remaprange",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def remapsum(self, grid = None):
+    def remapsum(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remapsum
         Parameters:
@@ -5156,11 +5155,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapsum",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def remapmean(self, grid = None):
+    def remapmean(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remapmean
         Parameters:
@@ -5169,11 +5168,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapmean",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def remapavg(self, grid = None):
+    def remapavg(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remapavg
         Parameters:
@@ -5182,11 +5181,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapavg",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def remapstd(self, grid = None):
+    def remapstd(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remapstd
         Parameters:
@@ -5195,11 +5194,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapstd",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def remapstd1(self, grid = None):
+    def remapstd1(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remapstd1
         Parameters:
@@ -5208,11 +5207,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def remapvar(self, grid = None):
+    def remapvar(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remapvar
         Parameters:
@@ -5221,11 +5220,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapvar",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def remapvar1(self, grid = None):
+    def remapvar1(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remapvar1
         Parameters:
@@ -5234,11 +5233,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def remapskew(self, grid = None):
+    def remapskew(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remapskew
         Parameters:
@@ -5247,11 +5246,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapskew",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def remapkurt(self, grid = None):
+    def remapkurt(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remapkurt
         Parameters:
@@ -5260,11 +5259,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapkurt",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def remapmedian(self, grid = None):
+    def remapmedian(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remapmedian
         Parameters:
@@ -5273,11 +5272,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapmedian",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def vertmin(self, weights = None):
+    def vertmin(self, weights = None): # pragma: no cover
         r"""
         CDO operator: vertmin
         Parameters:
@@ -5286,11 +5285,11 @@ class CdoOperation:
         operator = CdoOperator(command="vertmin",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights'])
+                               params=['weights']) 
                                
         return self._new_op(operator, [], {"weights": weights})
 
-    def vertmax(self, weights = None):
+    def vertmax(self, weights = None): # pragma: no cover
         r"""
         CDO operator: vertmax
         Parameters:
@@ -5299,11 +5298,11 @@ class CdoOperation:
         operator = CdoOperator(command="vertmax",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights'])
+                               params=['weights']) 
                                
         return self._new_op(operator, [], {"weights": weights})
 
-    def vertrange(self, weights = None):
+    def vertrange(self, weights = None): # pragma: no cover
         r"""
         CDO operator: vertrange
         Parameters:
@@ -5312,11 +5311,11 @@ class CdoOperation:
         operator = CdoOperator(command="vertrange",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights'])
+                               params=['weights']) 
                                
         return self._new_op(operator, [], {"weights": weights})
 
-    def vertsum(self, weights = None):
+    def vertsum(self, weights = None): # pragma: no cover
         r"""
         CDO operator: vertsum
         Parameters:
@@ -5325,11 +5324,11 @@ class CdoOperation:
         operator = CdoOperator(command="vertsum",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights'])
+                               params=['weights']) 
                                
         return self._new_op(operator, [], {"weights": weights})
 
-    def vertmean(self, weights = None):
+    def vertmean(self, weights = None): # pragma: no cover
         r"""
         CDO operator: vertmean
         Parameters:
@@ -5338,11 +5337,11 @@ class CdoOperation:
         operator = CdoOperator(command="vertmean",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights'])
+                               params=['weights']) 
                                
         return self._new_op(operator, [], {"weights": weights})
 
-    def vertavg(self, weights = None):
+    def vertavg(self, weights = None): # pragma: no cover
         r"""
         CDO operator: vertavg
         Parameters:
@@ -5351,11 +5350,11 @@ class CdoOperation:
         operator = CdoOperator(command="vertavg",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights'])
+                               params=['weights']) 
                                
         return self._new_op(operator, [], {"weights": weights})
 
-    def vertstd(self, weights = None):
+    def vertstd(self, weights = None): # pragma: no cover
         r"""
         CDO operator: vertstd
         Parameters:
@@ -5364,11 +5363,11 @@ class CdoOperation:
         operator = CdoOperator(command="vertstd",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights'])
+                               params=['weights']) 
                                
         return self._new_op(operator, [], {"weights": weights})
 
-    def vertstd1(self, weights = None):
+    def vertstd1(self, weights = None): # pragma: no cover
         r"""
         CDO operator: vertstd1
         Parameters:
@@ -5377,11 +5376,11 @@ class CdoOperation:
         operator = CdoOperator(command="vertstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights'])
+                               params=['weights']) 
                                
         return self._new_op(operator, [], {"weights": weights})
 
-    def vertvar(self, weights = None):
+    def vertvar(self, weights = None): # pragma: no cover
         r"""
         CDO operator: vertvar
         Parameters:
@@ -5390,11 +5389,11 @@ class CdoOperation:
         operator = CdoOperator(command="vertvar",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights'])
+                               params=['weights']) 
                                
         return self._new_op(operator, [], {"weights": weights})
 
-    def vertvar1(self, weights = None):
+    def vertvar1(self, weights = None): # pragma: no cover
         r"""
         CDO operator: vertvar1
         Parameters:
@@ -5403,11 +5402,11 @@ class CdoOperation:
         operator = CdoOperator(command="vertvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=['weights'])
+                               params=['weights']) 
                                
         return self._new_op(operator, [], {"weights": weights})
 
-    def timselmin(self, nsets = None, noffset = None, nskip = None):
+    def timselmin(self, nsets = None, noffset = None, nskip = None): # pragma: no cover
         r"""
         CDO operator: timselmin
         Parameters:
@@ -5418,11 +5417,11 @@ class CdoOperation:
         operator = CdoOperator(command="timselmin",
                                n_input=1, 
                                n_output=1, 
-                               params=['nsets', 'noffset', 'nskip'])
+                               params=['nsets', 'noffset', 'nskip']) 
                                
         return self._new_op(operator, [], {"nsets": nsets, "noffset": noffset, "nskip": nskip})
 
-    def timselmax(self, nsets = None, noffset = None, nskip = None):
+    def timselmax(self, nsets = None, noffset = None, nskip = None): # pragma: no cover
         r"""
         CDO operator: timselmax
         Parameters:
@@ -5433,11 +5432,11 @@ class CdoOperation:
         operator = CdoOperator(command="timselmax",
                                n_input=1, 
                                n_output=1, 
-                               params=['nsets', 'noffset', 'nskip'])
+                               params=['nsets', 'noffset', 'nskip']) 
                                
         return self._new_op(operator, [], {"nsets": nsets, "noffset": noffset, "nskip": nskip})
 
-    def timselrange(self, nsets = None, noffset = None, nskip = None):
+    def timselrange(self, nsets = None, noffset = None, nskip = None): # pragma: no cover
         r"""
         CDO operator: timselrange
         Parameters:
@@ -5448,11 +5447,11 @@ class CdoOperation:
         operator = CdoOperator(command="timselrange",
                                n_input=1, 
                                n_output=1, 
-                               params=['nsets', 'noffset', 'nskip'])
+                               params=['nsets', 'noffset', 'nskip']) 
                                
         return self._new_op(operator, [], {"nsets": nsets, "noffset": noffset, "nskip": nskip})
 
-    def timselsum(self, nsets = None, noffset = None, nskip = None):
+    def timselsum(self, nsets = None, noffset = None, nskip = None): # pragma: no cover
         r"""
         CDO operator: timselsum
         Parameters:
@@ -5463,11 +5462,11 @@ class CdoOperation:
         operator = CdoOperator(command="timselsum",
                                n_input=1, 
                                n_output=1, 
-                               params=['nsets', 'noffset', 'nskip'])
+                               params=['nsets', 'noffset', 'nskip']) 
                                
         return self._new_op(operator, [], {"nsets": nsets, "noffset": noffset, "nskip": nskip})
 
-    def timselmean(self, nsets = None, noffset = None, nskip = None):
+    def timselmean(self, nsets = None, noffset = None, nskip = None): # pragma: no cover
         r"""
         CDO operator: timselmean
         Parameters:
@@ -5478,11 +5477,11 @@ class CdoOperation:
         operator = CdoOperator(command="timselmean",
                                n_input=1, 
                                n_output=1, 
-                               params=['nsets', 'noffset', 'nskip'])
+                               params=['nsets', 'noffset', 'nskip']) 
                                
         return self._new_op(operator, [], {"nsets": nsets, "noffset": noffset, "nskip": nskip})
 
-    def timselavg(self, nsets = None, noffset = None, nskip = None):
+    def timselavg(self, nsets = None, noffset = None, nskip = None): # pragma: no cover
         r"""
         CDO operator: timselavg
         Parameters:
@@ -5493,11 +5492,11 @@ class CdoOperation:
         operator = CdoOperator(command="timselavg",
                                n_input=1, 
                                n_output=1, 
-                               params=['nsets', 'noffset', 'nskip'])
+                               params=['nsets', 'noffset', 'nskip']) 
                                
         return self._new_op(operator, [], {"nsets": nsets, "noffset": noffset, "nskip": nskip})
 
-    def timselstd(self, nsets = None, noffset = None, nskip = None):
+    def timselstd(self, nsets = None, noffset = None, nskip = None): # pragma: no cover
         r"""
         CDO operator: timselstd
         Parameters:
@@ -5508,11 +5507,11 @@ class CdoOperation:
         operator = CdoOperator(command="timselstd",
                                n_input=1, 
                                n_output=1, 
-                               params=['nsets', 'noffset', 'nskip'])
+                               params=['nsets', 'noffset', 'nskip']) 
                                
         return self._new_op(operator, [], {"nsets": nsets, "noffset": noffset, "nskip": nskip})
 
-    def timselstd1(self, nsets = None, noffset = None, nskip = None):
+    def timselstd1(self, nsets = None, noffset = None, nskip = None): # pragma: no cover
         r"""
         CDO operator: timselstd1
         Parameters:
@@ -5523,11 +5522,11 @@ class CdoOperation:
         operator = CdoOperator(command="timselstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=['nsets', 'noffset', 'nskip'])
+                               params=['nsets', 'noffset', 'nskip']) 
                                
         return self._new_op(operator, [], {"nsets": nsets, "noffset": noffset, "nskip": nskip})
 
-    def timselvar(self, nsets = None, noffset = None, nskip = None):
+    def timselvar(self, nsets = None, noffset = None, nskip = None): # pragma: no cover
         r"""
         CDO operator: timselvar
         Parameters:
@@ -5538,11 +5537,11 @@ class CdoOperation:
         operator = CdoOperator(command="timselvar",
                                n_input=1, 
                                n_output=1, 
-                               params=['nsets', 'noffset', 'nskip'])
+                               params=['nsets', 'noffset', 'nskip']) 
                                
         return self._new_op(operator, [], {"nsets": nsets, "noffset": noffset, "nskip": nskip})
 
-    def timselvar1(self, nsets = None, noffset = None, nskip = None):
+    def timselvar1(self, nsets = None, noffset = None, nskip = None): # pragma: no cover
         r"""
         CDO operator: timselvar1
         Parameters:
@@ -5553,11 +5552,11 @@ class CdoOperation:
         operator = CdoOperator(command="timselvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=['nsets', 'noffset', 'nskip'])
+                               params=['nsets', 'noffset', 'nskip']) 
                                
         return self._new_op(operator, [], {"nsets": nsets, "noffset": noffset, "nskip": nskip})
 
-    def timselpctl(self, ifile2, ifile3, p = None, nsets = None, noffset = None, nskip = None):
+    def timselpctl(self, ifile2, ifile3, p = None, nsets = None, noffset = None, nskip = None): # pragma: no cover
         r"""
         CDO operator: timselpctl
         Parameters:
@@ -5569,11 +5568,11 @@ class CdoOperation:
         operator = CdoOperator(command="timselpctl",
                                n_input=3, 
                                n_output=1, 
-                               params=['p', 'nsets', 'noffset', 'nskip'])
+                               params=['p', 'nsets', 'noffset', 'nskip']) 
                                
         return self._new_op(operator, [ifile2, ifile3], {"p": p, "nsets": nsets, "noffset": noffset, "nskip": nskip})
 
-    def runmin(self, nts = None):
+    def runmin(self, nts = None): # pragma: no cover
         r"""
         CDO operator: runmin
         Parameters:
@@ -5582,11 +5581,11 @@ class CdoOperation:
         operator = CdoOperator(command="runmin",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts'])
+                               params=['nts']) 
                                
         return self._new_op(operator, [], {"nts": nts})
 
-    def runmax(self, nts = None):
+    def runmax(self, nts = None): # pragma: no cover
         r"""
         CDO operator: runmax
         Parameters:
@@ -5595,11 +5594,11 @@ class CdoOperation:
         operator = CdoOperator(command="runmax",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts'])
+                               params=['nts']) 
                                
         return self._new_op(operator, [], {"nts": nts})
 
-    def runrange(self, nts = None):
+    def runrange(self, nts = None): # pragma: no cover
         r"""
         CDO operator: runrange
         Parameters:
@@ -5608,11 +5607,11 @@ class CdoOperation:
         operator = CdoOperator(command="runrange",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts'])
+                               params=['nts']) 
                                
         return self._new_op(operator, [], {"nts": nts})
 
-    def runsum(self, nts = None):
+    def runsum(self, nts = None): # pragma: no cover
         r"""
         CDO operator: runsum
         Parameters:
@@ -5621,11 +5620,11 @@ class CdoOperation:
         operator = CdoOperator(command="runsum",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts'])
+                               params=['nts']) 
                                
         return self._new_op(operator, [], {"nts": nts})
 
-    def runmean(self, nts = None):
+    def runmean(self, nts = None): # pragma: no cover
         r"""
         CDO operator: runmean
         Parameters:
@@ -5634,11 +5633,11 @@ class CdoOperation:
         operator = CdoOperator(command="runmean",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts'])
+                               params=['nts']) 
                                
         return self._new_op(operator, [], {"nts": nts})
 
-    def runavg(self, nts = None):
+    def runavg(self, nts = None): # pragma: no cover
         r"""
         CDO operator: runavg
         Parameters:
@@ -5647,11 +5646,11 @@ class CdoOperation:
         operator = CdoOperator(command="runavg",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts'])
+                               params=['nts']) 
                                
         return self._new_op(operator, [], {"nts": nts})
 
-    def runstd(self, nts = None):
+    def runstd(self, nts = None): # pragma: no cover
         r"""
         CDO operator: runstd
         Parameters:
@@ -5660,11 +5659,11 @@ class CdoOperation:
         operator = CdoOperator(command="runstd",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts'])
+                               params=['nts']) 
                                
         return self._new_op(operator, [], {"nts": nts})
 
-    def runstd1(self, nts = None):
+    def runstd1(self, nts = None): # pragma: no cover
         r"""
         CDO operator: runstd1
         Parameters:
@@ -5673,11 +5672,11 @@ class CdoOperation:
         operator = CdoOperator(command="runstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts'])
+                               params=['nts']) 
                                
         return self._new_op(operator, [], {"nts": nts})
 
-    def runvar(self, nts = None):
+    def runvar(self, nts = None): # pragma: no cover
         r"""
         CDO operator: runvar
         Parameters:
@@ -5686,11 +5685,11 @@ class CdoOperation:
         operator = CdoOperator(command="runvar",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts'])
+                               params=['nts']) 
                                
         return self._new_op(operator, [], {"nts": nts})
 
-    def runvar1(self, nts = None):
+    def runvar1(self, nts = None): # pragma: no cover
         r"""
         CDO operator: runvar1
         Parameters:
@@ -5699,11 +5698,11 @@ class CdoOperation:
         operator = CdoOperator(command="runvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts'])
+                               params=['nts']) 
                                
         return self._new_op(operator, [], {"nts": nts})
 
-    def runpctl(self, p = None, nts = None):
+    def runpctl(self, p = None, nts = None): # pragma: no cover
         r"""
         CDO operator: runpctl
         Parameters:
@@ -5713,143 +5712,143 @@ class CdoOperation:
         operator = CdoOperator(command="runpctl",
                                n_input=1, 
                                n_output=1, 
-                               params=['p', 'nts'])
+                               params=['p', 'nts']) 
                                
         return self._new_op(operator, [], {"p": p, "nts": nts})
 
-    def timmin(self):
+    def timmin(self): # pragma: no cover
         r"""
         CDO operator: timmin
         """
         operator = CdoOperator(command="timmin",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def timmax(self):
+    def timmax(self): # pragma: no cover
         r"""
         CDO operator: timmax
         """
         operator = CdoOperator(command="timmax",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def timminidx(self):
+    def timminidx(self): # pragma: no cover
         r"""
         CDO operator: timminidx
         """
         operator = CdoOperator(command="timminidx",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def timmaxidx(self):
+    def timmaxidx(self): # pragma: no cover
         r"""
         CDO operator: timmaxidx
         """
         operator = CdoOperator(command="timmaxidx",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def timrange(self):
+    def timrange(self): # pragma: no cover
         r"""
         CDO operator: timrange
         """
         operator = CdoOperator(command="timrange",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def timsum(self):
+    def timsum(self): # pragma: no cover
         r"""
         CDO operator: timsum
         """
         operator = CdoOperator(command="timsum",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def timmean(self):
+    def timmean(self): # pragma: no cover
         r"""
         CDO operator: timmean
         """
         operator = CdoOperator(command="timmean",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def timavg(self):
+    def timavg(self): # pragma: no cover
         r"""
         CDO operator: timavg
         """
         operator = CdoOperator(command="timavg",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def timstd(self):
+    def timstd(self): # pragma: no cover
         r"""
         CDO operator: timstd
         """
         operator = CdoOperator(command="timstd",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def timstd1(self):
+    def timstd1(self): # pragma: no cover
         r"""
         CDO operator: timstd1
         """
         operator = CdoOperator(command="timstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def timvar(self):
+    def timvar(self): # pragma: no cover
         r"""
         CDO operator: timvar
         """
         operator = CdoOperator(command="timvar",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def timvar1(self):
+    def timvar1(self): # pragma: no cover
         r"""
         CDO operator: timvar1
         """
         operator = CdoOperator(command="timvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def timpctl(self, ifile2, ifile3, p = None):
+    def timpctl(self, ifile2, ifile3, p = None): # pragma: no cover
         r"""
         CDO operator: timpctl
         Parameters:
@@ -5858,121 +5857,121 @@ class CdoOperation:
         operator = CdoOperator(command="timpctl",
                                n_input=3, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [ifile2, ifile3], {"p": p})
 
-    def hourmin(self):
+    def hourmin(self): # pragma: no cover
         r"""
         CDO operator: hourmin
         """
         operator = CdoOperator(command="hourmin",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def hourmax(self):
+    def hourmax(self): # pragma: no cover
         r"""
         CDO operator: hourmax
         """
         operator = CdoOperator(command="hourmax",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def hourrange(self):
+    def hourrange(self): # pragma: no cover
         r"""
         CDO operator: hourrange
         """
         operator = CdoOperator(command="hourrange",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def hoursum(self):
+    def hoursum(self): # pragma: no cover
         r"""
         CDO operator: hoursum
         """
         operator = CdoOperator(command="hoursum",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def hourmean(self):
+    def hourmean(self): # pragma: no cover
         r"""
         CDO operator: hourmean
         """
         operator = CdoOperator(command="hourmean",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def houravg(self):
+    def houravg(self): # pragma: no cover
         r"""
         CDO operator: houravg
         """
         operator = CdoOperator(command="houravg",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def hourstd(self):
+    def hourstd(self): # pragma: no cover
         r"""
         CDO operator: hourstd
         """
         operator = CdoOperator(command="hourstd",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def hourstd1(self):
+    def hourstd1(self): # pragma: no cover
         r"""
         CDO operator: hourstd1
         """
         operator = CdoOperator(command="hourstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def hourvar(self):
+    def hourvar(self): # pragma: no cover
         r"""
         CDO operator: hourvar
         """
         operator = CdoOperator(command="hourvar",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def hourvar1(self):
+    def hourvar1(self): # pragma: no cover
         r"""
         CDO operator: hourvar1
         """
         operator = CdoOperator(command="hourvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def hourpctl(self, ifile2, ifile3, p = None):
+    def hourpctl(self, ifile2, ifile3, p = None): # pragma: no cover
         r"""
         CDO operator: hourpctl
         Parameters:
@@ -5981,11 +5980,11 @@ class CdoOperation:
         operator = CdoOperator(command="hourpctl",
                                n_input=3, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [ifile2, ifile3], {"p": p})
 
-    def daymin(self, complete_only = None):
+    def daymin(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: daymin
         Parameters:
@@ -5994,11 +5993,11 @@ class CdoOperation:
         operator = CdoOperator(command="daymin",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def daymax(self, complete_only = None):
+    def daymax(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: daymax
         Parameters:
@@ -6007,11 +6006,11 @@ class CdoOperation:
         operator = CdoOperator(command="daymax",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def dayrange(self, complete_only = None):
+    def dayrange(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: dayrange
         Parameters:
@@ -6020,11 +6019,11 @@ class CdoOperation:
         operator = CdoOperator(command="dayrange",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def daysum(self, complete_only = None):
+    def daysum(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: daysum
         Parameters:
@@ -6033,11 +6032,11 @@ class CdoOperation:
         operator = CdoOperator(command="daysum",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def daymean(self, complete_only = None):
+    def daymean(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: daymean
         Parameters:
@@ -6046,11 +6045,11 @@ class CdoOperation:
         operator = CdoOperator(command="daymean",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def dayavg(self, complete_only = None):
+    def dayavg(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: dayavg
         Parameters:
@@ -6059,11 +6058,11 @@ class CdoOperation:
         operator = CdoOperator(command="dayavg",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def daystd(self, complete_only = None):
+    def daystd(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: daystd
         Parameters:
@@ -6072,11 +6071,11 @@ class CdoOperation:
         operator = CdoOperator(command="daystd",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def daystd1(self, complete_only = None):
+    def daystd1(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: daystd1
         Parameters:
@@ -6085,11 +6084,11 @@ class CdoOperation:
         operator = CdoOperator(command="daystd1",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def dayvar(self, complete_only = None):
+    def dayvar(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: dayvar
         Parameters:
@@ -6098,11 +6097,11 @@ class CdoOperation:
         operator = CdoOperator(command="dayvar",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def dayvar1(self, complete_only = None):
+    def dayvar1(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: dayvar1
         Parameters:
@@ -6111,11 +6110,11 @@ class CdoOperation:
         operator = CdoOperator(command="dayvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def daypctl(self, ifile2, ifile3, p = None):
+    def daypctl(self, ifile2, ifile3, p = None): # pragma: no cover
         r"""
         CDO operator: daypctl
         Parameters:
@@ -6124,11 +6123,11 @@ class CdoOperation:
         operator = CdoOperator(command="daypctl",
                                n_input=3, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [ifile2, ifile3], {"p": p})
 
-    def monmin(self, complete_only = None):
+    def monmin(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: monmin
         Parameters:
@@ -6137,11 +6136,11 @@ class CdoOperation:
         operator = CdoOperator(command="monmin",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def monmax(self, complete_only = None):
+    def monmax(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: monmax
         Parameters:
@@ -6150,11 +6149,11 @@ class CdoOperation:
         operator = CdoOperator(command="monmax",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def monrange(self, complete_only = None):
+    def monrange(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: monrange
         Parameters:
@@ -6163,11 +6162,11 @@ class CdoOperation:
         operator = CdoOperator(command="monrange",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def monsum(self, complete_only = None):
+    def monsum(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: monsum
         Parameters:
@@ -6176,11 +6175,11 @@ class CdoOperation:
         operator = CdoOperator(command="monsum",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def monmean(self, complete_only = None):
+    def monmean(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: monmean
         Parameters:
@@ -6189,11 +6188,11 @@ class CdoOperation:
         operator = CdoOperator(command="monmean",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def monavg(self, complete_only = None):
+    def monavg(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: monavg
         Parameters:
@@ -6202,11 +6201,11 @@ class CdoOperation:
         operator = CdoOperator(command="monavg",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def monstd(self, complete_only = None):
+    def monstd(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: monstd
         Parameters:
@@ -6215,11 +6214,11 @@ class CdoOperation:
         operator = CdoOperator(command="monstd",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def monstd1(self, complete_only = None):
+    def monstd1(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: monstd1
         Parameters:
@@ -6228,11 +6227,11 @@ class CdoOperation:
         operator = CdoOperator(command="monstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def monvar(self, complete_only = None):
+    def monvar(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: monvar
         Parameters:
@@ -6241,11 +6240,11 @@ class CdoOperation:
         operator = CdoOperator(command="monvar",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def monvar1(self, complete_only = None):
+    def monvar1(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: monvar1
         Parameters:
@@ -6254,11 +6253,11 @@ class CdoOperation:
         operator = CdoOperator(command="monvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def monpctl(self, ifile2, ifile3, p = None):
+    def monpctl(self, ifile2, ifile3, p = None): # pragma: no cover
         r"""
         CDO operator: monpctl
         Parameters:
@@ -6267,22 +6266,22 @@ class CdoOperation:
         operator = CdoOperator(command="monpctl",
                                n_input=3, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [ifile2, ifile3], {"p": p})
 
-    def yearmonmean(self):
+    def yearmonmean(self): # pragma: no cover
         r"""
         CDO operator: yearmonmean
         """
         operator = CdoOperator(command="yearmonmean",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yearmin(self, complete_only = None):
+    def yearmin(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: yearmin
         Parameters:
@@ -6291,11 +6290,11 @@ class CdoOperation:
         operator = CdoOperator(command="yearmin",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def yearmax(self, complete_only = None):
+    def yearmax(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: yearmax
         Parameters:
@@ -6304,11 +6303,11 @@ class CdoOperation:
         operator = CdoOperator(command="yearmax",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def yearminidx(self, complete_only = None):
+    def yearminidx(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: yearminidx
         Parameters:
@@ -6317,11 +6316,11 @@ class CdoOperation:
         operator = CdoOperator(command="yearminidx",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def yearmaxidx(self, complete_only = None):
+    def yearmaxidx(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: yearmaxidx
         Parameters:
@@ -6330,11 +6329,11 @@ class CdoOperation:
         operator = CdoOperator(command="yearmaxidx",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def yearrange(self, complete_only = None):
+    def yearrange(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: yearrange
         Parameters:
@@ -6343,11 +6342,11 @@ class CdoOperation:
         operator = CdoOperator(command="yearrange",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def yearsum(self, complete_only = None):
+    def yearsum(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: yearsum
         Parameters:
@@ -6356,11 +6355,11 @@ class CdoOperation:
         operator = CdoOperator(command="yearsum",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def yearmean(self, complete_only = None):
+    def yearmean(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: yearmean
         Parameters:
@@ -6369,11 +6368,11 @@ class CdoOperation:
         operator = CdoOperator(command="yearmean",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def yearavg(self, complete_only = None):
+    def yearavg(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: yearavg
         Parameters:
@@ -6382,11 +6381,11 @@ class CdoOperation:
         operator = CdoOperator(command="yearavg",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def yearstd(self, complete_only = None):
+    def yearstd(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: yearstd
         Parameters:
@@ -6395,11 +6394,11 @@ class CdoOperation:
         operator = CdoOperator(command="yearstd",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def yearstd1(self, complete_only = None):
+    def yearstd1(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: yearstd1
         Parameters:
@@ -6408,11 +6407,11 @@ class CdoOperation:
         operator = CdoOperator(command="yearstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def yearvar(self, complete_only = None):
+    def yearvar(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: yearvar
         Parameters:
@@ -6421,11 +6420,11 @@ class CdoOperation:
         operator = CdoOperator(command="yearvar",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def yearvar1(self, complete_only = None):
+    def yearvar1(self, complete_only = None): # pragma: no cover
         r"""
         CDO operator: yearvar1
         Parameters:
@@ -6434,11 +6433,11 @@ class CdoOperation:
         operator = CdoOperator(command="yearvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=['complete_only'])
+                               params=['complete_only']) 
                                
         return self._new_op(operator, [], {"complete_only": complete_only})
 
-    def yearpctl(self, ifile2, ifile3, p = None):
+    def yearpctl(self, ifile2, ifile3, p = None): # pragma: no cover
         r"""
         CDO operator: yearpctl
         Parameters:
@@ -6447,121 +6446,121 @@ class CdoOperation:
         operator = CdoOperator(command="yearpctl",
                                n_input=3, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [ifile2, ifile3], {"p": p})
 
-    def seasmin(self):
+    def seasmin(self): # pragma: no cover
         r"""
         CDO operator: seasmin
         """
         operator = CdoOperator(command="seasmin",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def seasmax(self):
+    def seasmax(self): # pragma: no cover
         r"""
         CDO operator: seasmax
         """
         operator = CdoOperator(command="seasmax",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def seasrange(self):
+    def seasrange(self): # pragma: no cover
         r"""
         CDO operator: seasrange
         """
         operator = CdoOperator(command="seasrange",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def seassum(self):
+    def seassum(self): # pragma: no cover
         r"""
         CDO operator: seassum
         """
         operator = CdoOperator(command="seassum",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def seasmean(self):
+    def seasmean(self): # pragma: no cover
         r"""
         CDO operator: seasmean
         """
         operator = CdoOperator(command="seasmean",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def seasavg(self):
+    def seasavg(self): # pragma: no cover
         r"""
         CDO operator: seasavg
         """
         operator = CdoOperator(command="seasavg",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def seasstd(self):
+    def seasstd(self): # pragma: no cover
         r"""
         CDO operator: seasstd
         """
         operator = CdoOperator(command="seasstd",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def seasstd1(self):
+    def seasstd1(self): # pragma: no cover
         r"""
         CDO operator: seasstd1
         """
         operator = CdoOperator(command="seasstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def seasvar(self):
+    def seasvar(self): # pragma: no cover
         r"""
         CDO operator: seasvar
         """
         operator = CdoOperator(command="seasvar",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def seasvar1(self):
+    def seasvar1(self): # pragma: no cover
         r"""
         CDO operator: seasvar1
         """
         operator = CdoOperator(command="seasvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def seaspctl(self, ifile2, ifile3, p = None):
+    def seaspctl(self, ifile2, ifile3, p = None): # pragma: no cover
         r"""
         CDO operator: seaspctl
         Parameters:
@@ -6570,451 +6569,451 @@ class CdoOperation:
         operator = CdoOperator(command="seaspctl",
                                n_input=3, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [ifile2, ifile3], {"p": p})
 
-    def yhourmin(self):
+    def yhourmin(self): # pragma: no cover
         r"""
         CDO operator: yhourmin
         """
         operator = CdoOperator(command="yhourmin",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yhourmax(self):
+    def yhourmax(self): # pragma: no cover
         r"""
         CDO operator: yhourmax
         """
         operator = CdoOperator(command="yhourmax",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yhourrange(self):
+    def yhourrange(self): # pragma: no cover
         r"""
         CDO operator: yhourrange
         """
         operator = CdoOperator(command="yhourrange",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yhoursum(self):
+    def yhoursum(self): # pragma: no cover
         r"""
         CDO operator: yhoursum
         """
         operator = CdoOperator(command="yhoursum",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yhourmean(self):
+    def yhourmean(self): # pragma: no cover
         r"""
         CDO operator: yhourmean
         """
         operator = CdoOperator(command="yhourmean",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yhouravg(self):
+    def yhouravg(self): # pragma: no cover
         r"""
         CDO operator: yhouravg
         """
         operator = CdoOperator(command="yhouravg",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yhourstd(self):
+    def yhourstd(self): # pragma: no cover
         r"""
         CDO operator: yhourstd
         """
         operator = CdoOperator(command="yhourstd",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yhourstd1(self):
+    def yhourstd1(self): # pragma: no cover
         r"""
         CDO operator: yhourstd1
         """
         operator = CdoOperator(command="yhourstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yhourvar(self):
+    def yhourvar(self): # pragma: no cover
         r"""
         CDO operator: yhourvar
         """
         operator = CdoOperator(command="yhourvar",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yhourvar1(self):
+    def yhourvar1(self): # pragma: no cover
         r"""
         CDO operator: yhourvar1
         """
         operator = CdoOperator(command="yhourvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dhourmin(self):
+    def dhourmin(self): # pragma: no cover
         r"""
         CDO operator: dhourmin
         """
         operator = CdoOperator(command="dhourmin",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dhourmax(self):
+    def dhourmax(self): # pragma: no cover
         r"""
         CDO operator: dhourmax
         """
         operator = CdoOperator(command="dhourmax",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dhourrange(self):
+    def dhourrange(self): # pragma: no cover
         r"""
         CDO operator: dhourrange
         """
         operator = CdoOperator(command="dhourrange",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dhoursum(self):
+    def dhoursum(self): # pragma: no cover
         r"""
         CDO operator: dhoursum
         """
         operator = CdoOperator(command="dhoursum",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dhourmean(self):
+    def dhourmean(self): # pragma: no cover
         r"""
         CDO operator: dhourmean
         """
         operator = CdoOperator(command="dhourmean",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dhouravg(self):
+    def dhouravg(self): # pragma: no cover
         r"""
         CDO operator: dhouravg
         """
         operator = CdoOperator(command="dhouravg",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dhourstd(self):
+    def dhourstd(self): # pragma: no cover
         r"""
         CDO operator: dhourstd
         """
         operator = CdoOperator(command="dhourstd",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dhourstd1(self):
+    def dhourstd1(self): # pragma: no cover
         r"""
         CDO operator: dhourstd1
         """
         operator = CdoOperator(command="dhourstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dhourvar(self):
+    def dhourvar(self): # pragma: no cover
         r"""
         CDO operator: dhourvar
         """
         operator = CdoOperator(command="dhourvar",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dhourvar1(self):
+    def dhourvar1(self): # pragma: no cover
         r"""
         CDO operator: dhourvar1
         """
         operator = CdoOperator(command="dhourvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dminutemin(self):
+    def dminutemin(self): # pragma: no cover
         r"""
         CDO operator: dminutemin
         """
         operator = CdoOperator(command="dminutemin",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dminutemax(self):
+    def dminutemax(self): # pragma: no cover
         r"""
         CDO operator: dminutemax
         """
         operator = CdoOperator(command="dminutemax",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dminuterange(self):
+    def dminuterange(self): # pragma: no cover
         r"""
         CDO operator: dminuterange
         """
         operator = CdoOperator(command="dminuterange",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dminutesum(self):
+    def dminutesum(self): # pragma: no cover
         r"""
         CDO operator: dminutesum
         """
         operator = CdoOperator(command="dminutesum",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dminutemean(self):
+    def dminutemean(self): # pragma: no cover
         r"""
         CDO operator: dminutemean
         """
         operator = CdoOperator(command="dminutemean",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dminuteavg(self):
+    def dminuteavg(self): # pragma: no cover
         r"""
         CDO operator: dminuteavg
         """
         operator = CdoOperator(command="dminuteavg",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dminutestd(self):
+    def dminutestd(self): # pragma: no cover
         r"""
         CDO operator: dminutestd
         """
         operator = CdoOperator(command="dminutestd",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dminutestd1(self):
+    def dminutestd1(self): # pragma: no cover
         r"""
         CDO operator: dminutestd1
         """
         operator = CdoOperator(command="dminutestd1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dminutevar(self):
+    def dminutevar(self): # pragma: no cover
         r"""
         CDO operator: dminutevar
         """
         operator = CdoOperator(command="dminutevar",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dminutevar1(self):
+    def dminutevar1(self): # pragma: no cover
         r"""
         CDO operator: dminutevar1
         """
         operator = CdoOperator(command="dminutevar1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ydaymin(self):
+    def ydaymin(self): # pragma: no cover
         r"""
         CDO operator: ydaymin
         """
         operator = CdoOperator(command="ydaymin",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ydaymax(self):
+    def ydaymax(self): # pragma: no cover
         r"""
         CDO operator: ydaymax
         """
         operator = CdoOperator(command="ydaymax",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ydayrange(self):
+    def ydayrange(self): # pragma: no cover
         r"""
         CDO operator: ydayrange
         """
         operator = CdoOperator(command="ydayrange",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ydaysum(self):
+    def ydaysum(self): # pragma: no cover
         r"""
         CDO operator: ydaysum
         """
         operator = CdoOperator(command="ydaysum",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ydaymean(self):
+    def ydaymean(self): # pragma: no cover
         r"""
         CDO operator: ydaymean
         """
         operator = CdoOperator(command="ydaymean",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ydayavg(self):
+    def ydayavg(self): # pragma: no cover
         r"""
         CDO operator: ydayavg
         """
         operator = CdoOperator(command="ydayavg",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ydaystd(self):
+    def ydaystd(self): # pragma: no cover
         r"""
         CDO operator: ydaystd
         """
         operator = CdoOperator(command="ydaystd",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ydaystd1(self):
+    def ydaystd1(self): # pragma: no cover
         r"""
         CDO operator: ydaystd1
         """
         operator = CdoOperator(command="ydaystd1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ydayvar(self):
+    def ydayvar(self): # pragma: no cover
         r"""
         CDO operator: ydayvar
         """
         operator = CdoOperator(command="ydayvar",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ydayvar1(self):
+    def ydayvar1(self): # pragma: no cover
         r"""
         CDO operator: ydayvar1
         """
         operator = CdoOperator(command="ydayvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ydaypctl(self, ifile2, ifile3, p = None):
+    def ydaypctl(self, ifile2, ifile3, p = None): # pragma: no cover
         r"""
         CDO operator: ydaypctl
         Parameters:
@@ -7023,121 +7022,121 @@ class CdoOperation:
         operator = CdoOperator(command="ydaypctl",
                                n_input=3, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [ifile2, ifile3], {"p": p})
 
-    def ymonmin(self):
+    def ymonmin(self): # pragma: no cover
         r"""
         CDO operator: ymonmin
         """
         operator = CdoOperator(command="ymonmin",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ymonmax(self):
+    def ymonmax(self): # pragma: no cover
         r"""
         CDO operator: ymonmax
         """
         operator = CdoOperator(command="ymonmax",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ymonrange(self):
+    def ymonrange(self): # pragma: no cover
         r"""
         CDO operator: ymonrange
         """
         operator = CdoOperator(command="ymonrange",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ymonsum(self):
+    def ymonsum(self): # pragma: no cover
         r"""
         CDO operator: ymonsum
         """
         operator = CdoOperator(command="ymonsum",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ymonmean(self):
+    def ymonmean(self): # pragma: no cover
         r"""
         CDO operator: ymonmean
         """
         operator = CdoOperator(command="ymonmean",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ymonavg(self):
+    def ymonavg(self): # pragma: no cover
         r"""
         CDO operator: ymonavg
         """
         operator = CdoOperator(command="ymonavg",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ymonstd(self):
+    def ymonstd(self): # pragma: no cover
         r"""
         CDO operator: ymonstd
         """
         operator = CdoOperator(command="ymonstd",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ymonstd1(self):
+    def ymonstd1(self): # pragma: no cover
         r"""
         CDO operator: ymonstd1
         """
         operator = CdoOperator(command="ymonstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ymonvar(self):
+    def ymonvar(self): # pragma: no cover
         r"""
         CDO operator: ymonvar
         """
         operator = CdoOperator(command="ymonvar",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ymonvar1(self):
+    def ymonvar1(self): # pragma: no cover
         r"""
         CDO operator: ymonvar1
         """
         operator = CdoOperator(command="ymonvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def ymonpctl(self, ifile2, ifile3, p = None):
+    def ymonpctl(self, ifile2, ifile3, p = None): # pragma: no cover
         r"""
         CDO operator: ymonpctl
         Parameters:
@@ -7146,121 +7145,121 @@ class CdoOperation:
         operator = CdoOperator(command="ymonpctl",
                                n_input=3, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [ifile2, ifile3], {"p": p})
 
-    def yseasmin(self):
+    def yseasmin(self): # pragma: no cover
         r"""
         CDO operator: yseasmin
         """
         operator = CdoOperator(command="yseasmin",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yseasmax(self):
+    def yseasmax(self): # pragma: no cover
         r"""
         CDO operator: yseasmax
         """
         operator = CdoOperator(command="yseasmax",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yseasrange(self):
+    def yseasrange(self): # pragma: no cover
         r"""
         CDO operator: yseasrange
         """
         operator = CdoOperator(command="yseasrange",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yseassum(self):
+    def yseassum(self): # pragma: no cover
         r"""
         CDO operator: yseassum
         """
         operator = CdoOperator(command="yseassum",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yseasmean(self):
+    def yseasmean(self): # pragma: no cover
         r"""
         CDO operator: yseasmean
         """
         operator = CdoOperator(command="yseasmean",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yseasavg(self):
+    def yseasavg(self): # pragma: no cover
         r"""
         CDO operator: yseasavg
         """
         operator = CdoOperator(command="yseasavg",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yseasstd(self):
+    def yseasstd(self): # pragma: no cover
         r"""
         CDO operator: yseasstd
         """
         operator = CdoOperator(command="yseasstd",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yseasstd1(self):
+    def yseasstd1(self): # pragma: no cover
         r"""
         CDO operator: yseasstd1
         """
         operator = CdoOperator(command="yseasstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yseasvar(self):
+    def yseasvar(self): # pragma: no cover
         r"""
         CDO operator: yseasvar
         """
         operator = CdoOperator(command="yseasvar",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yseasvar1(self):
+    def yseasvar1(self): # pragma: no cover
         r"""
         CDO operator: yseasvar1
         """
         operator = CdoOperator(command="yseasvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def yseaspctl(self, ifile2, ifile3, p = None):
+    def yseaspctl(self, ifile2, ifile3, p = None): # pragma: no cover
         r"""
         CDO operator: yseaspctl
         Parameters:
@@ -7269,11 +7268,11 @@ class CdoOperation:
         operator = CdoOperator(command="yseaspctl",
                                n_input=3, 
                                n_output=1, 
-                               params=['p'])
+                               params=['p']) 
                                
         return self._new_op(operator, [ifile2, ifile3], {"p": p})
 
-    def ydrunmin(self, nts = None, rm_c = None):
+    def ydrunmin(self, nts = None, rm_c = None): # pragma: no cover
         r"""
         CDO operator: ydrunmin
         Parameters:
@@ -7283,11 +7282,11 @@ class CdoOperation:
         operator = CdoOperator(command="ydrunmin",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts', 'rm_c'])
+                               params=['nts', 'rm_c']) 
                                
         return self._new_op(operator, [], {"nts": nts, "rm_c": rm_c})
 
-    def ydrunmax(self, nts = None, rm_c = None):
+    def ydrunmax(self, nts = None, rm_c = None): # pragma: no cover
         r"""
         CDO operator: ydrunmax
         Parameters:
@@ -7297,11 +7296,11 @@ class CdoOperation:
         operator = CdoOperator(command="ydrunmax",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts', 'rm_c'])
+                               params=['nts', 'rm_c']) 
                                
         return self._new_op(operator, [], {"nts": nts, "rm_c": rm_c})
 
-    def ydrunsum(self, nts = None, rm_c = None):
+    def ydrunsum(self, nts = None, rm_c = None): # pragma: no cover
         r"""
         CDO operator: ydrunsum
         Parameters:
@@ -7311,11 +7310,11 @@ class CdoOperation:
         operator = CdoOperator(command="ydrunsum",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts', 'rm_c'])
+                               params=['nts', 'rm_c']) 
                                
         return self._new_op(operator, [], {"nts": nts, "rm_c": rm_c})
 
-    def ydrunmean(self, nts = None, rm_c = None):
+    def ydrunmean(self, nts = None, rm_c = None): # pragma: no cover
         r"""
         CDO operator: ydrunmean
         Parameters:
@@ -7325,11 +7324,11 @@ class CdoOperation:
         operator = CdoOperator(command="ydrunmean",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts', 'rm_c'])
+                               params=['nts', 'rm_c']) 
                                
         return self._new_op(operator, [], {"nts": nts, "rm_c": rm_c})
 
-    def ydrunavg(self, nts = None, rm_c = None):
+    def ydrunavg(self, nts = None, rm_c = None): # pragma: no cover
         r"""
         CDO operator: ydrunavg
         Parameters:
@@ -7339,11 +7338,11 @@ class CdoOperation:
         operator = CdoOperator(command="ydrunavg",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts', 'rm_c'])
+                               params=['nts', 'rm_c']) 
                                
         return self._new_op(operator, [], {"nts": nts, "rm_c": rm_c})
 
-    def ydrunstd(self, nts = None, rm_c = None):
+    def ydrunstd(self, nts = None, rm_c = None): # pragma: no cover
         r"""
         CDO operator: ydrunstd
         Parameters:
@@ -7353,11 +7352,11 @@ class CdoOperation:
         operator = CdoOperator(command="ydrunstd",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts', 'rm_c'])
+                               params=['nts', 'rm_c']) 
                                
         return self._new_op(operator, [], {"nts": nts, "rm_c": rm_c})
 
-    def ydrunstd1(self, nts = None, rm_c = None):
+    def ydrunstd1(self, nts = None, rm_c = None): # pragma: no cover
         r"""
         CDO operator: ydrunstd1
         Parameters:
@@ -7367,11 +7366,11 @@ class CdoOperation:
         operator = CdoOperator(command="ydrunstd1",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts', 'rm_c'])
+                               params=['nts', 'rm_c']) 
                                
         return self._new_op(operator, [], {"nts": nts, "rm_c": rm_c})
 
-    def ydrunvar(self, nts = None, rm_c = None):
+    def ydrunvar(self, nts = None, rm_c = None): # pragma: no cover
         r"""
         CDO operator: ydrunvar
         Parameters:
@@ -7381,11 +7380,11 @@ class CdoOperation:
         operator = CdoOperator(command="ydrunvar",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts', 'rm_c'])
+                               params=['nts', 'rm_c']) 
                                
         return self._new_op(operator, [], {"nts": nts, "rm_c": rm_c})
 
-    def ydrunvar1(self, nts = None, rm_c = None):
+    def ydrunvar1(self, nts = None, rm_c = None): # pragma: no cover
         r"""
         CDO operator: ydrunvar1
         Parameters:
@@ -7395,11 +7394,11 @@ class CdoOperation:
         operator = CdoOperator(command="ydrunvar1",
                                n_input=1, 
                                n_output=1, 
-                               params=['nts', 'rm_c'])
+                               params=['nts', 'rm_c']) 
                                
         return self._new_op(operator, [], {"nts": nts, "rm_c": rm_c})
 
-    def ydrunpctl(self, ifile2, ifile3, p = None, nts = None, rm_c = None, pm_r8 = None):
+    def ydrunpctl(self, ifile2, ifile3, p = None, nts = None, rm_c = None, pm_r8 = None): # pragma: no cover
         r"""
         CDO operator: ydrunpctl
         Parameters:
@@ -7411,55 +7410,55 @@ class CdoOperation:
         operator = CdoOperator(command="ydrunpctl",
                                n_input=3, 
                                n_output=1, 
-                               params=['p', 'nts', 'rm_c', 'pm_r8'])
+                               params=['p', 'nts', 'rm_c', 'pm_r8']) 
                                
         return self._new_op(operator, [ifile2, ifile3], {"p": p, "nts": nts, "rm_c": rm_c, "pm_r8": pm_r8})
 
-    def fldcor(self, ifile2):
+    def fldcor(self, ifile2): # pragma: no cover
         r"""
         CDO operator: fldcor
         """
         operator = CdoOperator(command="fldcor",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def timcor(self, ifile2):
+    def timcor(self, ifile2): # pragma: no cover
         r"""
         CDO operator: timcor
         """
         operator = CdoOperator(command="timcor",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def fldcovar(self, ifile2):
+    def fldcovar(self, ifile2): # pragma: no cover
         r"""
         CDO operator: fldcovar
         """
         operator = CdoOperator(command="fldcovar",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def timcovar(self, ifile2):
+    def timcovar(self, ifile2): # pragma: no cover
         r"""
         CDO operator: timcovar
         """
         operator = CdoOperator(command="timcovar",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def regres(self, equal = None):
+    def regres(self, equal = None): # pragma: no cover
         r"""
         CDO operator: regres
         Parameters:
@@ -7468,11 +7467,11 @@ class CdoOperation:
         operator = CdoOperator(command="regres",
                                n_input=1, 
                                n_output=1, 
-                               params=['equal'])
+                               params=['equal']) 
                                
         return self._new_op(operator, [], {"equal": equal})
 
-    def detrend(self, equal = None):
+    def detrend(self, equal = None): # pragma: no cover
         r"""
         CDO operator: detrend
         Parameters:
@@ -7481,11 +7480,11 @@ class CdoOperation:
         operator = CdoOperator(command="detrend",
                                n_input=1, 
                                n_output=1, 
-                               params=['equal'])
+                               params=['equal']) 
                                
         return self._new_op(operator, [], {"equal": equal})
 
-    def trend(self, equal = None):
+    def trend(self, equal = None): # pragma: no cover
         r"""
         CDO operator: trend
         Parameters:
@@ -7494,11 +7493,11 @@ class CdoOperation:
         operator = CdoOperator(command="trend",
                                n_input=1, 
                                n_output=2, 
-                               params=['equal'])
+                               params=['equal']) 
                                
         return self._new_op(operator, [], {"equal": equal})
 
-    def addtrend(self, ifile2, ifile3, equal = None):
+    def addtrend(self, ifile2, ifile3, equal = None): # pragma: no cover
         r"""
         CDO operator: addtrend
         Parameters:
@@ -7507,11 +7506,11 @@ class CdoOperation:
         operator = CdoOperator(command="addtrend",
                                n_input=3, 
                                n_output=1, 
-                               params=['equal'])
+                               params=['equal']) 
                                
         return self._new_op(operator, [ifile2, ifile3], {"equal": equal})
 
-    def subtrend(self, ifile2, ifile3, equal = None):
+    def subtrend(self, ifile2, ifile3, equal = None): # pragma: no cover
         r"""
         CDO operator: subtrend
         Parameters:
@@ -7520,11 +7519,11 @@ class CdoOperation:
         operator = CdoOperator(command="subtrend",
                                n_input=3, 
                                n_output=1, 
-                               params=['equal'])
+                               params=['equal']) 
                                
         return self._new_op(operator, [ifile2, ifile3], {"equal": equal})
 
-    def eof(self, neof = None):
+    def eof(self, neof = None): # pragma: no cover
         r"""
         CDO operator: eof
         Parameters:
@@ -7533,11 +7532,11 @@ class CdoOperation:
         operator = CdoOperator(command="eof",
                                n_input=1, 
                                n_output=2, 
-                               params=['neof'])
+                               params=['neof']) 
                                
         return self._new_op(operator, [], {"neof": neof})
 
-    def eoftime(self, neof = None):
+    def eoftime(self, neof = None): # pragma: no cover
         r"""
         CDO operator: eoftime
         Parameters:
@@ -7546,11 +7545,11 @@ class CdoOperation:
         operator = CdoOperator(command="eoftime",
                                n_input=1, 
                                n_output=2, 
-                               params=['neof'])
+                               params=['neof']) 
                                
         return self._new_op(operator, [], {"neof": neof})
 
-    def eofspatial(self, neof = None):
+    def eofspatial(self, neof = None): # pragma: no cover
         r"""
         CDO operator: eofspatial
         Parameters:
@@ -7559,11 +7558,11 @@ class CdoOperation:
         operator = CdoOperator(command="eofspatial",
                                n_input=1, 
                                n_output=2, 
-                               params=['neof'])
+                               params=['neof']) 
                                
         return self._new_op(operator, [], {"neof": neof})
 
-    def eof3d(self, neof = None):
+    def eof3d(self, neof = None): # pragma: no cover
         r"""
         CDO operator: eof3d
         Parameters:
@@ -7572,22 +7571,22 @@ class CdoOperation:
         operator = CdoOperator(command="eof3d",
                                n_input=1, 
                                n_output=2, 
-                               params=['neof'])
+                               params=['neof']) 
                                
         return self._new_op(operator, [], {"neof": neof})
 
-    def eofcoeff(self, ifile2):
+    def eofcoeff(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eofcoeff
         """
         operator = CdoOperator(command="eofcoeff",
                                n_input=2, 
                                n_output=inf, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def remapbil(self, grid = None, map3d = None):
+    def remapbil(self, grid = None, map3d = None): # pragma: no cover
         r"""
         CDO operator: remapbil
         Parameters:
@@ -7597,11 +7596,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapbil",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'map3d'])
+                               params=['grid', 'map3d']) 
                                
         return self._new_op(operator, [], {"grid": grid, "map3d": map3d})
 
-    def genbil(self, grid = None, map3d = None):
+    def genbil(self, grid = None, map3d = None): # pragma: no cover
         r"""
         CDO operator: genbil
         Parameters:
@@ -7611,11 +7610,11 @@ class CdoOperation:
         operator = CdoOperator(command="genbil",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'map3d'])
+                               params=['grid', 'map3d']) 
                                
         return self._new_op(operator, [], {"grid": grid, "map3d": map3d})
 
-    def remapbic(self, grid = None, map3d = None):
+    def remapbic(self, grid = None, map3d = None): # pragma: no cover
         r"""
         CDO operator: remapbic
         Parameters:
@@ -7625,11 +7624,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapbic",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'map3d'])
+                               params=['grid', 'map3d']) 
                                
         return self._new_op(operator, [], {"grid": grid, "map3d": map3d})
 
-    def genbic(self, grid = None, map3d = None):
+    def genbic(self, grid = None, map3d = None): # pragma: no cover
         r"""
         CDO operator: genbic
         Parameters:
@@ -7639,11 +7638,11 @@ class CdoOperation:
         operator = CdoOperator(command="genbic",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'map3d'])
+                               params=['grid', 'map3d']) 
                                
         return self._new_op(operator, [], {"grid": grid, "map3d": map3d})
 
-    def remapnn(self, grid = None, map3d = None):
+    def remapnn(self, grid = None, map3d = None): # pragma: no cover
         r"""
         CDO operator: remapnn
         Parameters:
@@ -7653,11 +7652,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapnn",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'map3d'])
+                               params=['grid', 'map3d']) 
                                
         return self._new_op(operator, [], {"grid": grid, "map3d": map3d})
 
-    def gennn(self, grid = None, map3d = None):
+    def gennn(self, grid = None, map3d = None): # pragma: no cover
         r"""
         CDO operator: gennn
         Parameters:
@@ -7667,11 +7666,11 @@ class CdoOperation:
         operator = CdoOperator(command="gennn",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'map3d'])
+                               params=['grid', 'map3d']) 
                                
         return self._new_op(operator, [], {"grid": grid, "map3d": map3d})
 
-    def remapdis(self, grid = None, neighbors = None, map3d = None):
+    def remapdis(self, grid = None, neighbors = None, map3d = None): # pragma: no cover
         r"""
         CDO operator: remapdis
         Parameters:
@@ -7682,11 +7681,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapdis",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'neighbors', 'map3d'])
+                               params=['grid', 'neighbors', 'map3d']) 
                                
         return self._new_op(operator, [], {"grid": grid, "neighbors": neighbors, "map3d": map3d})
 
-    def gendis(self, grid = None, neighbors = None, map3d = None):
+    def gendis(self, grid = None, neighbors = None, map3d = None): # pragma: no cover
         r"""
         CDO operator: gendis
         Parameters:
@@ -7697,11 +7696,11 @@ class CdoOperation:
         operator = CdoOperator(command="gendis",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'neighbors', 'map3d'])
+                               params=['grid', 'neighbors', 'map3d']) 
                                
         return self._new_op(operator, [], {"grid": grid, "neighbors": neighbors, "map3d": map3d})
 
-    def remapcon(self, grid = None, map3d = None):
+    def remapcon(self, grid = None, map3d = None): # pragma: no cover
         r"""
         CDO operator: remapcon
         Parameters:
@@ -7711,11 +7710,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapcon",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'map3d'])
+                               params=['grid', 'map3d']) 
                                
         return self._new_op(operator, [], {"grid": grid, "map3d": map3d})
 
-    def gencon(self, grid = None, map3d = None):
+    def gencon(self, grid = None, map3d = None): # pragma: no cover
         r"""
         CDO operator: gencon
         Parameters:
@@ -7725,11 +7724,11 @@ class CdoOperation:
         operator = CdoOperator(command="gencon",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'map3d'])
+                               params=['grid', 'map3d']) 
                                
         return self._new_op(operator, [], {"grid": grid, "map3d": map3d})
 
-    def remaplaf(self, grid = None):
+    def remaplaf(self, grid = None): # pragma: no cover
         r"""
         CDO operator: remaplaf
         Parameters:
@@ -7738,11 +7737,11 @@ class CdoOperation:
         operator = CdoOperator(command="remaplaf",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def genlaf(self, grid = None):
+    def genlaf(self, grid = None): # pragma: no cover
         r"""
         CDO operator: genlaf
         Parameters:
@@ -7751,11 +7750,11 @@ class CdoOperation:
         operator = CdoOperator(command="genlaf",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid'])
+                               params=['grid']) 
                                
         return self._new_op(operator, [], {"grid": grid})
 
-    def remap(self, grid = None, weights = None):
+    def remap(self, grid = None, weights = None): # pragma: no cover
         r"""
         CDO operator: remap
         Parameters:
@@ -7765,11 +7764,11 @@ class CdoOperation:
         operator = CdoOperator(command="remap",
                                n_input=1, 
                                n_output=1, 
-                               params=['grid', 'weights'])
+                               params=['grid', 'weights']) 
                                
         return self._new_op(operator, [], {"grid": grid, "weights": weights})
 
-    def remapeta(self, vct = None, oro = None):
+    def remapeta(self, vct = None, oro = None): # pragma: no cover
         r"""
         CDO operator: remapeta
         Parameters:
@@ -7779,11 +7778,11 @@ class CdoOperation:
         operator = CdoOperator(command="remapeta",
                                n_input=1, 
                                n_output=1, 
-                               params=['vct', 'oro'])
+                               params=['vct', 'oro']) 
                                
         return self._new_op(operator, [], {"vct": vct, "oro": oro})
 
-    def ml2pl(self, plevels = None, hlevels = None):
+    def ml2pl(self, plevels = None, hlevels = None): # pragma: no cover
         r"""
         CDO operator: ml2pl
         Parameters:
@@ -7793,11 +7792,11 @@ class CdoOperation:
         operator = CdoOperator(command="ml2pl",
                                n_input=1, 
                                n_output=1, 
-                               params=['plevels', 'hlevels'])
+                               params=['plevels', 'hlevels']) 
                                
         return self._new_op(operator, [], {"plevels": plevels, "hlevels": hlevels})
 
-    def ml2hl(self, plevels = None, hlevels = None):
+    def ml2hl(self, plevels = None, hlevels = None): # pragma: no cover
         r"""
         CDO operator: ml2hl
         Parameters:
@@ -7807,11 +7806,11 @@ class CdoOperation:
         operator = CdoOperator(command="ml2hl",
                                n_input=1, 
                                n_output=1, 
-                               params=['plevels', 'hlevels'])
+                               params=['plevels', 'hlevels']) 
                                
         return self._new_op(operator, [], {"plevels": plevels, "hlevels": hlevels})
 
-    def ap2pl(self, plevels = None):
+    def ap2pl(self, plevels = None): # pragma: no cover
         r"""
         CDO operator: ap2pl
         Parameters:
@@ -7820,11 +7819,11 @@ class CdoOperation:
         operator = CdoOperator(command="ap2pl",
                                n_input=1, 
                                n_output=1, 
-                               params=['plevels'])
+                               params=['plevels']) 
                                
         return self._new_op(operator, [], {"plevels": plevels})
 
-    def gh2hl(self, hlevels = None):
+    def gh2hl(self, hlevels = None): # pragma: no cover
         r"""
         CDO operator: gh2hl
         Parameters:
@@ -7833,11 +7832,11 @@ class CdoOperation:
         operator = CdoOperator(command="gh2hl",
                                n_input=1, 
                                n_output=1, 
-                               params=['hlevels'])
+                               params=['hlevels']) 
                                
         return self._new_op(operator, [], {"hlevels": hlevels})
 
-    def intlevel(self, level = None, zdescription = None, zvarname = None, extrapolate = None):
+    def intlevel(self, level = None, zdescription = None, zvarname = None, extrapolate = None): # pragma: no cover
         r"""
         CDO operator: intlevel
         Parameters:
@@ -7849,11 +7848,11 @@ class CdoOperation:
         operator = CdoOperator(command="intlevel",
                                n_input=1, 
                                n_output=1, 
-                               params=['level', 'zdescription', 'zvarname', 'extrapolate'])
+                               params=['level', 'zdescription', 'zvarname', 'extrapolate']) 
                                
         return self._new_op(operator, [], {"level": level, "zdescription": zdescription, "zvarname": zvarname, "extrapolate": extrapolate})
 
-    def intlevel3d(self, ifile2, tgtcoordinate = None):
+    def intlevel3d(self, ifile2, tgtcoordinate = None): # pragma: no cover
         r"""
         CDO operator: intlevel3d
         Parameters:
@@ -7862,11 +7861,11 @@ class CdoOperation:
         operator = CdoOperator(command="intlevel3d",
                                n_input=2, 
                                n_output=1, 
-                               params=['tgtcoordinate'])
+                               params=['tgtcoordinate']) 
                                
         return self._new_op(operator, [ifile2], {"tgtcoordinate": tgtcoordinate})
 
-    def intlevelx3d(self, ifile2, tgtcoordinate = None):
+    def intlevelx3d(self, ifile2, tgtcoordinate = None): # pragma: no cover
         r"""
         CDO operator: intlevelx3d
         Parameters:
@@ -7875,11 +7874,11 @@ class CdoOperation:
         operator = CdoOperator(command="intlevelx3d",
                                n_input=2, 
                                n_output=1, 
-                               params=['tgtcoordinate'])
+                               params=['tgtcoordinate']) 
                                
         return self._new_op(operator, [ifile2], {"tgtcoordinate": tgtcoordinate})
 
-    def inttime(self, date = None, time = None, inc = None, n = None):
+    def inttime(self, date = None, time = None, inc = None, n = None): # pragma: no cover
         r"""
         CDO operator: inttime
         Parameters:
@@ -7891,11 +7890,11 @@ class CdoOperation:
         operator = CdoOperator(command="inttime",
                                n_input=1, 
                                n_output=1, 
-                               params=['date', 'time', 'inc', 'n'])
+                               params=['date', 'time', 'inc', 'n']) 
                                
         return self._new_op(operator, [], {"date": date, "time": time, "inc": inc, "n": n})
 
-    def intntime(self, date = None, time = None, inc = None, n = None):
+    def intntime(self, date = None, time = None, inc = None, n = None): # pragma: no cover
         r"""
         CDO operator: intntime
         Parameters:
@@ -7907,11 +7906,11 @@ class CdoOperation:
         operator = CdoOperator(command="intntime",
                                n_input=1, 
                                n_output=1, 
-                               params=['date', 'time', 'inc', 'n'])
+                               params=['date', 'time', 'inc', 'n']) 
                                
         return self._new_op(operator, [], {"date": date, "time": time, "inc": inc, "n": n})
 
-    def intyear(self, ifile2, years = None):
+    def intyear(self, ifile2, years = None): # pragma: no cover
         r"""
         CDO operator: intyear
         Parameters:
@@ -7920,11 +7919,11 @@ class CdoOperation:
         operator = CdoOperator(command="intyear",
                                n_input=2, 
                                n_output=inf, 
-                               params=['years'])
+                               params=['years']) 
                                
         return self._new_op(operator, [ifile2], {"years": years})
 
-    def sp2gp(self, type = None, trunc = None):
+    def sp2gp(self, type = None, trunc = None): # pragma: no cover
         r"""
         CDO operator: sp2gp
         Parameters:
@@ -7934,11 +7933,11 @@ class CdoOperation:
         operator = CdoOperator(command="sp2gp",
                                n_input=1, 
                                n_output=1, 
-                               params=['type', 'trunc'])
+                               params=['type', 'trunc']) 
                                
         return self._new_op(operator, [], {"type": type, "trunc": trunc})
 
-    def gp2sp(self, type = None, trunc = None):
+    def gp2sp(self, type = None, trunc = None): # pragma: no cover
         r"""
         CDO operator: gp2sp
         Parameters:
@@ -7948,11 +7947,11 @@ class CdoOperation:
         operator = CdoOperator(command="gp2sp",
                                n_input=1, 
                                n_output=1, 
-                               params=['type', 'trunc'])
+                               params=['type', 'trunc']) 
                                
         return self._new_op(operator, [], {"type": type, "trunc": trunc})
 
-    def sp2sp(self, trunc = None):
+    def sp2sp(self, trunc = None): # pragma: no cover
         r"""
         CDO operator: sp2sp
         Parameters:
@@ -7961,22 +7960,22 @@ class CdoOperation:
         operator = CdoOperator(command="sp2sp",
                                n_input=1, 
                                n_output=1, 
-                               params=['trunc'])
+                               params=['trunc']) 
                                
         return self._new_op(operator, [], {"trunc": trunc})
 
-    def dv2ps(self):
+    def dv2ps(self): # pragma: no cover
         r"""
         CDO operator: dv2ps
         """
         operator = CdoOperator(command="dv2ps",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def dv2uv(self, gridtype = None):
+    def dv2uv(self, gridtype = None): # pragma: no cover
         r"""
         CDO operator: dv2uv
         Parameters:
@@ -7985,11 +7984,11 @@ class CdoOperation:
         operator = CdoOperator(command="dv2uv",
                                n_input=1, 
                                n_output=1, 
-                               params=['gridtype'])
+                               params=['gridtype']) 
                                
         return self._new_op(operator, [], {"gridtype": gridtype})
 
-    def uv2dv(self, gridtype = None):
+    def uv2dv(self, gridtype = None): # pragma: no cover
         r"""
         CDO operator: uv2dv
         Parameters:
@@ -7998,11 +7997,11 @@ class CdoOperation:
         operator = CdoOperator(command="uv2dv",
                                n_input=1, 
                                n_output=1, 
-                               params=['gridtype'])
+                               params=['gridtype']) 
                                
         return self._new_op(operator, [], {"gridtype": gridtype})
 
-    def fourier(self, epsilon = None):
+    def fourier(self, epsilon = None): # pragma: no cover
         r"""
         CDO operator: fourier
         Parameters:
@@ -8011,44 +8010,44 @@ class CdoOperation:
         operator = CdoOperator(command="fourier",
                                n_input=1, 
                                n_output=1, 
-                               params=['epsilon'])
+                               params=['epsilon']) 
                                
         return self._new_op(operator, [], {"epsilon": epsilon})
 
-    def import_binary(self):
+    def import_binary(self): # pragma: no cover
         r"""
         CDO operator: import_binary
         """
         operator = CdoOperator(command="import_binary",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def import_cmsaf(self):
+    def import_cmsaf(self): # pragma: no cover
         r"""
         CDO operator: import_cmsaf
         """
         operator = CdoOperator(command="import_cmsaf",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def import_amsr(self):
+    def import_amsr(self): # pragma: no cover
         r"""
         CDO operator: import_amsr
         """
         operator = CdoOperator(command="import_amsr",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def input(self, grid = None, zaxis = None):
+    def input(self, grid = None, zaxis = None): # pragma: no cover
         r"""
         CDO operator: input
         Parameters:
@@ -8058,11 +8057,11 @@ class CdoOperation:
         operator = CdoOperator(command="input",
                                n_input=0, 
                                n_output=1, 
-                               params=['grid', 'zaxis'])
+                               params=['grid', 'zaxis']) 
                                
         return self._new_op(operator, [], {"grid": grid, "zaxis": zaxis})
 
-    def inputsrv(self, grid = None, zaxis = None):
+    def inputsrv(self, grid = None, zaxis = None): # pragma: no cover
         r"""
         CDO operator: inputsrv
         Parameters:
@@ -8072,11 +8071,11 @@ class CdoOperation:
         operator = CdoOperator(command="inputsrv",
                                n_input=0, 
                                n_output=1, 
-                               params=['grid', 'zaxis'])
+                               params=['grid', 'zaxis']) 
                                
         return self._new_op(operator, [], {"grid": grid, "zaxis": zaxis})
 
-    def inputext(self, grid = None, zaxis = None):
+    def inputext(self, grid = None, zaxis = None): # pragma: no cover
         r"""
         CDO operator: inputext
         Parameters:
@@ -8086,11 +8085,11 @@ class CdoOperation:
         operator = CdoOperator(command="inputext",
                                n_input=0, 
                                n_output=1, 
-                               params=['grid', 'zaxis'])
+                               params=['grid', 'zaxis']) 
                                
         return self._new_op(operator, [], {"grid": grid, "zaxis": zaxis})
 
-    def output(self, format = None, nelem = None):
+    def output(self, format = None, nelem = None): # pragma: no cover
         r"""
         CDO operator: output
         Parameters:
@@ -8100,11 +8099,11 @@ class CdoOperation:
         operator = CdoOperator(command="output",
                                n_input=inf, 
                                n_output=0, 
-                               params=['format', 'nelem'])
+                               params=['format', 'nelem']) 
                                
         return self._new_op(operator, [], {"format": format, "nelem": nelem})
 
-    def outputf(self, format = None, nelem = None):
+    def outputf(self, format = None, nelem = None): # pragma: no cover
         r"""
         CDO operator: outputf
         Parameters:
@@ -8114,11 +8113,11 @@ class CdoOperation:
         operator = CdoOperator(command="outputf",
                                n_input=inf, 
                                n_output=0, 
-                               params=['format', 'nelem'])
+                               params=['format', 'nelem']) 
                                
         return self._new_op(operator, [], {"format": format, "nelem": nelem})
 
-    def outputint(self, format = None, nelem = None):
+    def outputint(self, format = None, nelem = None): # pragma: no cover
         r"""
         CDO operator: outputint
         Parameters:
@@ -8128,11 +8127,11 @@ class CdoOperation:
         operator = CdoOperator(command="outputint",
                                n_input=inf, 
                                n_output=0, 
-                               params=['format', 'nelem'])
+                               params=['format', 'nelem']) 
                                
         return self._new_op(operator, [], {"format": format, "nelem": nelem})
 
-    def outputsrv(self, format = None, nelem = None):
+    def outputsrv(self, format = None, nelem = None): # pragma: no cover
         r"""
         CDO operator: outputsrv
         Parameters:
@@ -8142,11 +8141,11 @@ class CdoOperation:
         operator = CdoOperator(command="outputsrv",
                                n_input=inf, 
                                n_output=0, 
-                               params=['format', 'nelem'])
+                               params=['format', 'nelem']) 
                                
         return self._new_op(operator, [], {"format": format, "nelem": nelem})
 
-    def outputext(self, format = None, nelem = None):
+    def outputext(self, format = None, nelem = None): # pragma: no cover
         r"""
         CDO operator: outputext
         Parameters:
@@ -8156,11 +8155,11 @@ class CdoOperation:
         operator = CdoOperator(command="outputext",
                                n_input=inf, 
                                n_output=0, 
-                               params=['format', 'nelem'])
+                               params=['format', 'nelem']) 
                                
         return self._new_op(operator, [], {"format": format, "nelem": nelem})
 
-    def outputtab(self, parameter = None):
+    def outputtab(self, parameter = None): # pragma: no cover
         r"""
         CDO operator: outputtab
         Parameters:
@@ -8169,33 +8168,33 @@ class CdoOperation:
         operator = CdoOperator(command="outputtab",
                                n_input=inf, 
                                n_output=0, 
-                               params=['parameter'])
+                               params=['parameter']) 
                                
         return self._new_op(operator, [], {"parameter": parameter})
 
-    def gmtxyz(self):
+    def gmtxyz(self): # pragma: no cover
         r"""
         CDO operator: gmtxyz
         """
         operator = CdoOperator(command="gmtxyz",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def gmtcells(self):
+    def gmtcells(self): # pragma: no cover
         r"""
         CDO operator: gmtcells
         """
         operator = CdoOperator(command="gmtcells",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def gradsdes(self, mapversion = None):
+    def gradsdes(self, mapversion = None): # pragma: no cover
         r"""
         CDO operator: gradsdes
         Parameters:
@@ -8204,11 +8203,11 @@ class CdoOperation:
         operator = CdoOperator(command="gradsdes",
                                n_input=1, 
                                n_output=0, 
-                               params=['mapversion'])
+                               params=['mapversion']) 
                                
         return self._new_op(operator, [], {"mapversion": mapversion})
 
-    def after(self, vct = None):
+    def after(self, vct = None): # pragma: no cover
         r"""
         CDO operator: after
         Parameters:
@@ -8217,11 +8216,11 @@ class CdoOperation:
         operator = CdoOperator(command="after",
                                n_input=inf, 
                                n_output=1, 
-                               params=['vct'])
+                               params=['vct']) 
                                
         return self._new_op(operator, [], {"vct": vct})
 
-    def bandpass(self, fmin = None, fmax = None):
+    def bandpass(self, fmin = None, fmax = None): # pragma: no cover
         r"""
         CDO operator: bandpass
         Parameters:
@@ -8231,11 +8230,11 @@ class CdoOperation:
         operator = CdoOperator(command="bandpass",
                                n_input=1, 
                                n_output=1, 
-                               params=['fmin', 'fmax'])
+                               params=['fmin', 'fmax']) 
                                
         return self._new_op(operator, [], {"fmin": fmin, "fmax": fmax})
 
-    def lowpass(self, fmin = None, fmax = None):
+    def lowpass(self, fmin = None, fmax = None): # pragma: no cover
         r"""
         CDO operator: lowpass
         Parameters:
@@ -8245,11 +8244,11 @@ class CdoOperation:
         operator = CdoOperator(command="lowpass",
                                n_input=1, 
                                n_output=1, 
-                               params=['fmin', 'fmax'])
+                               params=['fmin', 'fmax']) 
                                
         return self._new_op(operator, [], {"fmin": fmin, "fmax": fmax})
 
-    def highpass(self, fmin = None, fmax = None):
+    def highpass(self, fmin = None, fmax = None): # pragma: no cover
         r"""
         CDO operator: highpass
         Parameters:
@@ -8259,11 +8258,11 @@ class CdoOperation:
         operator = CdoOperator(command="highpass",
                                n_input=1, 
                                n_output=1, 
-                               params=['fmin', 'fmax'])
+                               params=['fmin', 'fmax']) 
                                
         return self._new_op(operator, [], {"fmin": fmin, "fmax": fmax})
 
-    def gridarea(self, radius = None):
+    def gridarea(self, radius = None): # pragma: no cover
         r"""
         CDO operator: gridarea
         Parameters:
@@ -8272,11 +8271,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridarea",
                                n_input=1, 
                                n_output=1, 
-                               params=['radius'])
+                               params=['radius']) 
                                
         return self._new_op(operator, [], {"radius": radius})
 
-    def gridweights(self, radius = None):
+    def gridweights(self, radius = None): # pragma: no cover
         r"""
         CDO operator: gridweights
         Parameters:
@@ -8285,11 +8284,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridweights",
                                n_input=1, 
                                n_output=1, 
-                               params=['radius'])
+                               params=['radius']) 
                                
         return self._new_op(operator, [], {"radius": radius})
 
-    def smooth(self, nsmooth = None, radius = None, maxpoints = None, weighted = None, weight0 = None, weightR = None):
+    def smooth(self, nsmooth = None, radius = None, maxpoints = None, weighted = None, weight0 = None, weightR = None): # pragma: no cover
         r"""
         CDO operator: smooth
         Parameters:
@@ -8303,11 +8302,11 @@ class CdoOperation:
         operator = CdoOperator(command="smooth",
                                n_input=1, 
                                n_output=1, 
-                               params=['nsmooth', 'radius', 'maxpoints', 'weighted', 'weight0', 'weightR'])
+                               params=['nsmooth', 'radius', 'maxpoints', 'weighted', 'weight0', 'weightR']) 
                                
         return self._new_op(operator, [], {"nsmooth": nsmooth, "radius": radius, "maxpoints": maxpoints, "weighted": weighted, "weight0": weight0, "weightR": weightR})
 
-    def smooth9(self, nsmooth = None, radius = None, maxpoints = None, weighted = None, weight0 = None, weightR = None):
+    def smooth9(self, nsmooth = None, radius = None, maxpoints = None, weighted = None, weight0 = None, weightR = None): # pragma: no cover
         r"""
         CDO operator: smooth9
         Parameters:
@@ -8321,22 +8320,22 @@ class CdoOperation:
         operator = CdoOperator(command="smooth9",
                                n_input=1, 
                                n_output=1, 
-                               params=['nsmooth', 'radius', 'maxpoints', 'weighted', 'weight0', 'weightR'])
+                               params=['nsmooth', 'radius', 'maxpoints', 'weighted', 'weight0', 'weightR']) 
                                
         return self._new_op(operator, [], {"nsmooth": nsmooth, "radius": radius, "maxpoints": maxpoints, "weighted": weighted, "weight0": weight0, "weightR": weightR})
 
-    def deltat(self):
+    def deltat(self): # pragma: no cover
         r"""
         CDO operator: deltat
         """
         operator = CdoOperator(command="deltat",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def setvals(self, oldval = None, newval = None, rmin = None, rmax = None, c = None, c2 = None):
+    def setvals(self, oldval = None, newval = None, rmin = None, rmax = None, c = None, c2 = None): # pragma: no cover
         r"""
         CDO operator: setvals
         Parameters:
@@ -8350,11 +8349,11 @@ class CdoOperation:
         operator = CdoOperator(command="setvals",
                                n_input=1, 
                                n_output=1, 
-                               params=['oldval', 'newval', 'rmin', 'rmax', 'c', 'c2'])
+                               params=['oldval', 'newval', 'rmin', 'rmax', 'c', 'c2']) 
                                
         return self._new_op(operator, [], {"oldval": oldval, "newval": newval, "rmin": rmin, "rmax": rmax, "c": c, "c2": c2})
 
-    def setrtoc(self, oldval = None, newval = None, rmin = None, rmax = None, c = None, c2 = None):
+    def setrtoc(self, oldval = None, newval = None, rmin = None, rmax = None, c = None, c2 = None): # pragma: no cover
         r"""
         CDO operator: setrtoc
         Parameters:
@@ -8368,11 +8367,11 @@ class CdoOperation:
         operator = CdoOperator(command="setrtoc",
                                n_input=1, 
                                n_output=1, 
-                               params=['oldval', 'newval', 'rmin', 'rmax', 'c', 'c2'])
+                               params=['oldval', 'newval', 'rmin', 'rmax', 'c', 'c2']) 
                                
         return self._new_op(operator, [], {"oldval": oldval, "newval": newval, "rmin": rmin, "rmax": rmax, "c": c, "c2": c2})
 
-    def setrtoc2(self, oldval = None, newval = None, rmin = None, rmax = None, c = None, c2 = None):
+    def setrtoc2(self, oldval = None, newval = None, rmin = None, rmax = None, c = None, c2 = None): # pragma: no cover
         r"""
         CDO operator: setrtoc2
         Parameters:
@@ -8386,11 +8385,11 @@ class CdoOperation:
         operator = CdoOperator(command="setrtoc2",
                                n_input=1, 
                                n_output=1, 
-                               params=['oldval', 'newval', 'rmin', 'rmax', 'c', 'c2'])
+                               params=['oldval', 'newval', 'rmin', 'rmax', 'c', 'c2']) 
                                
         return self._new_op(operator, [], {"oldval": oldval, "newval": newval, "rmin": rmin, "rmax": rmax, "c": c, "c2": c2})
 
-    def gridcellindex(self, lon = None, lat = None):
+    def gridcellindex(self, lon = None, lat = None): # pragma: no cover
         r"""
         CDO operator: gridcellindex
         Parameters:
@@ -8400,11 +8399,11 @@ class CdoOperation:
         operator = CdoOperator(command="gridcellindex",
                                n_input=1, 
                                n_output=0, 
-                               params=['lon', 'lat'])
+                               params=['lon', 'lat']) 
                                
         return self._new_op(operator, [], {"lon": lon, "lat": lat})
 
-    def const(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None):
+    def const(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None): # pragma: no cover
         r"""
         CDO operator: const
         Parameters:
@@ -8419,11 +8418,11 @@ class CdoOperation:
         operator = CdoOperator(command="const",
                                n_input=0, 
                                n_output=1, 
-                               params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels'])
+                               params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels']) 
                                
         return self._new_op(operator, [], {"const": const, "seed": seed, "grid": grid, "start": start, "end": end, "inc": inc, "levels": levels})
 
-    def random(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None):
+    def random(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None): # pragma: no cover
         r"""
         CDO operator: random
         Parameters:
@@ -8438,11 +8437,11 @@ class CdoOperation:
         operator = CdoOperator(command="random",
                                n_input=0, 
                                n_output=1, 
-                               params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels'])
+                               params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels']) 
                                
         return self._new_op(operator, [], {"const": const, "seed": seed, "grid": grid, "start": start, "end": end, "inc": inc, "levels": levels})
 
-    def topo(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None):
+    def topo(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None): # pragma: no cover
         r"""
         CDO operator: topo
         Parameters:
@@ -8457,11 +8456,11 @@ class CdoOperation:
         operator = CdoOperator(command="topo",
                                n_input=0, 
                                n_output=1, 
-                               params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels'])
+                               params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels']) 
                                
         return self._new_op(operator, [], {"const": const, "seed": seed, "grid": grid, "start": start, "end": end, "inc": inc, "levels": levels})
 
-    def seq(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None):
+    def seq(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None): # pragma: no cover
         r"""
         CDO operator: seq
         Parameters:
@@ -8476,11 +8475,11 @@ class CdoOperation:
         operator = CdoOperator(command="seq",
                                n_input=0, 
                                n_output=1, 
-                               params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels'])
+                               params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels']) 
                                
         return self._new_op(operator, [], {"const": const, "seed": seed, "grid": grid, "start": start, "end": end, "inc": inc, "levels": levels})
 
-    def stdatm(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None):
+    def stdatm(self, const = None, seed = None, grid = None, start = None, end = None, inc = None, levels = None): # pragma: no cover
         r"""
         CDO operator: stdatm
         Parameters:
@@ -8495,22 +8494,22 @@ class CdoOperation:
         operator = CdoOperator(command="stdatm",
                                n_input=0, 
                                n_output=1, 
-                               params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels'])
+                               params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels']) 
                                
         return self._new_op(operator, [], {"const": const, "seed": seed, "grid": grid, "start": start, "end": end, "inc": inc, "levels": levels})
 
-    def timsort(self):
+    def timsort(self): # pragma: no cover
         r"""
         CDO operator: timsort
         """
         operator = CdoOperator(command="timsort",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def rotuvb(self, u = None, v = None):
+    def rotuvb(self, u = None, v = None): # pragma: no cover
         r"""
         CDO operator: rotuvb
         Parameters:
@@ -8520,99 +8519,99 @@ class CdoOperation:
         operator = CdoOperator(command="rotuvb",
                                n_input=1, 
                                n_output=1, 
-                               params=['u', 'v'])
+                               params=['u', 'v']) 
                                
         return self._new_op(operator, [], {"u": u, "v": v})
 
-    def mrotuvb(self, ifile2):
+    def mrotuvb(self, ifile2): # pragma: no cover
         r"""
         CDO operator: mrotuvb
         """
         operator = CdoOperator(command="mrotuvb",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def mastrfu(self):
+    def mastrfu(self): # pragma: no cover
         r"""
         CDO operator: mastrfu
         """
         operator = CdoOperator(command="mastrfu",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def pressure_half(self):
+    def pressure_half(self): # pragma: no cover
         r"""
         CDO operator: pressure_half
         """
         operator = CdoOperator(command="pressure_half",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def pressure(self):
+    def pressure(self): # pragma: no cover
         r"""
         CDO operator: pressure
         """
         operator = CdoOperator(command="pressure",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def delta_pressure(self):
+    def delta_pressure(self): # pragma: no cover
         r"""
         CDO operator: delta_pressure
         """
         operator = CdoOperator(command="delta_pressure",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def sealevelpressure(self):
+    def sealevelpressure(self): # pragma: no cover
         r"""
         CDO operator: sealevelpressure
         """
         operator = CdoOperator(command="sealevelpressure",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def gheight(self):
+    def gheight(self): # pragma: no cover
         r"""
         CDO operator: gheight
         """
         operator = CdoOperator(command="gheight",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def gheight_half(self):
+    def gheight_half(self): # pragma: no cover
         r"""
         CDO operator: gheight_half
         """
         operator = CdoOperator(command="gheight_half",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def adisit(self, pressure = None):
+    def adisit(self, pressure = None): # pragma: no cover
         r"""
         CDO operator: adisit
         Parameters:
@@ -8621,11 +8620,11 @@ class CdoOperation:
         operator = CdoOperator(command="adisit",
                                n_input=1, 
                                n_output=1, 
-                               params=['pressure'])
+                               params=['pressure']) 
                                
         return self._new_op(operator, [], {"pressure": pressure})
 
-    def adipot(self, pressure = None):
+    def adipot(self, pressure = None): # pragma: no cover
         r"""
         CDO operator: adipot
         Parameters:
@@ -8634,11 +8633,11 @@ class CdoOperation:
         operator = CdoOperator(command="adipot",
                                n_input=1, 
                                n_output=1, 
-                               params=['pressure'])
+                               params=['pressure']) 
                                
         return self._new_op(operator, [], {"pressure": pressure})
 
-    def rhopot(self, pressure = None):
+    def rhopot(self, pressure = None): # pragma: no cover
         r"""
         CDO operator: rhopot
         Parameters:
@@ -8647,11 +8646,11 @@ class CdoOperation:
         operator = CdoOperator(command="rhopot",
                                n_input=1, 
                                n_output=1, 
-                               params=['pressure'])
+                               params=['pressure']) 
                                
         return self._new_op(operator, [], {"pressure": pressure})
 
-    def histcount(self, bounds = None):
+    def histcount(self, bounds = None): # pragma: no cover
         r"""
         CDO operator: histcount
         Parameters:
@@ -8660,11 +8659,11 @@ class CdoOperation:
         operator = CdoOperator(command="histcount",
                                n_input=1, 
                                n_output=1, 
-                               params=['bounds'])
+                               params=['bounds']) 
                                
         return self._new_op(operator, [], {"bounds": bounds})
 
-    def histsum(self, bounds = None):
+    def histsum(self, bounds = None): # pragma: no cover
         r"""
         CDO operator: histsum
         Parameters:
@@ -8673,11 +8672,11 @@ class CdoOperation:
         operator = CdoOperator(command="histsum",
                                n_input=1, 
                                n_output=1, 
-                               params=['bounds'])
+                               params=['bounds']) 
                                
         return self._new_op(operator, [], {"bounds": bounds})
 
-    def histmean(self, bounds = None):
+    def histmean(self, bounds = None): # pragma: no cover
         r"""
         CDO operator: histmean
         Parameters:
@@ -8686,11 +8685,11 @@ class CdoOperation:
         operator = CdoOperator(command="histmean",
                                n_input=1, 
                                n_output=1, 
-                               params=['bounds'])
+                               params=['bounds']) 
                                
         return self._new_op(operator, [], {"bounds": bounds})
 
-    def histfreq(self, bounds = None):
+    def histfreq(self, bounds = None): # pragma: no cover
         r"""
         CDO operator: histfreq
         Parameters:
@@ -8699,11 +8698,11 @@ class CdoOperation:
         operator = CdoOperator(command="histfreq",
                                n_input=1, 
                                n_output=1, 
-                               params=['bounds'])
+                               params=['bounds']) 
                                
         return self._new_op(operator, [], {"bounds": bounds})
 
-    def sethalo(self, east = None, west = None, south = None, north = None, value = None):
+    def sethalo(self, east = None, west = None, south = None, north = None, value = None): # pragma: no cover
         r"""
         CDO operator: sethalo
         Parameters:
@@ -8716,33 +8715,33 @@ class CdoOperation:
         operator = CdoOperator(command="sethalo",
                                n_input=1, 
                                n_output=1, 
-                               params=['east', 'west', 'south', 'north', 'value'])
+                               params=['east', 'west', 'south', 'north', 'value']) 
                                
         return self._new_op(operator, [], {"east": east, "west": west, "south": south, "north": north, "value": value})
 
-    def wct(self, ifile2):
+    def wct(self, ifile2): # pragma: no cover
         r"""
         CDO operator: wct
         """
         operator = CdoOperator(command="wct",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def fdns(self, ifile2):
+    def fdns(self, ifile2): # pragma: no cover
         r"""
         CDO operator: fdns
         """
         operator = CdoOperator(command="fdns",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def strwin(self, v = None):
+    def strwin(self, v = None): # pragma: no cover
         r"""
         CDO operator: strwin
         Parameters:
@@ -8751,44 +8750,44 @@ class CdoOperation:
         operator = CdoOperator(command="strwin",
                                n_input=1, 
                                n_output=1, 
-                               params=['v'])
+                               params=['v']) 
                                
         return self._new_op(operator, [], {"v": v})
 
-    def strbre(self):
+    def strbre(self): # pragma: no cover
         r"""
         CDO operator: strbre
         """
         operator = CdoOperator(command="strbre",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def strgal(self):
+    def strgal(self): # pragma: no cover
         r"""
         CDO operator: strgal
         """
         operator = CdoOperator(command="strgal",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def hurr(self):
+    def hurr(self): # pragma: no cover
         r"""
         CDO operator: hurr
         """
         operator = CdoOperator(command="hurr",
                                n_input=1, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def cmorlite(self, table = None, convert = None):
+    def cmorlite(self, table = None, convert = None): # pragma: no cover
         r"""
         CDO operator: cmorlite
         Parameters:
@@ -8798,22 +8797,22 @@ class CdoOperation:
         operator = CdoOperator(command="cmorlite",
                                n_input=1, 
                                n_output=1, 
-                               params=['table', 'convert'])
+                               params=['table', 'convert']) 
                                
         return self._new_op(operator, [], {"table": table, "convert": convert})
 
-    def verifygrid(self):
+    def verifygrid(self): # pragma: no cover
         r"""
         CDO operator: verifygrid
         """
         operator = CdoOperator(command="verifygrid",
                                n_input=1, 
                                n_output=0, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [], {})
 
-    def hpdegrade(self, nside = None, order = None, power = None):
+    def hpdegrade(self, nside = None, order = None, power = None): # pragma: no cover
         r"""
         CDO operator: hpdegrade
         Parameters:
@@ -8824,11 +8823,11 @@ class CdoOperation:
         operator = CdoOperator(command="hpdegrade",
                                n_input=1, 
                                n_output=1, 
-                               params=['nside', 'order', 'power'])
+                               params=['nside', 'order', 'power']) 
                                
         return self._new_op(operator, [], {"nside": nside, "order": order, "power": power})
 
-    def hpupgrade(self, nside = None, order = None, power = None):
+    def hpupgrade(self, nside = None, order = None, power = None): # pragma: no cover
         r"""
         CDO operator: hpupgrade
         Parameters:
@@ -8839,11 +8838,11 @@ class CdoOperation:
         operator = CdoOperator(command="hpupgrade",
                                n_input=1, 
                                n_output=1, 
-                               params=['nside', 'order', 'power'])
+                               params=['nside', 'order', 'power']) 
                                
         return self._new_op(operator, [], {"nside": nside, "order": order, "power": power})
 
-    def uv2vr_cfd(self, u = None, v = None, boundOpt = None, outMode = None):
+    def uv2vr_cfd(self, u = None, v = None, boundOpt = None, outMode = None): # pragma: no cover
         r"""
         CDO operator: uv2vr_cfd
         Parameters:
@@ -8855,11 +8854,11 @@ class CdoOperation:
         operator = CdoOperator(command="uv2vr_cfd",
                                n_input=1, 
                                n_output=1, 
-                               params=['u', 'v', 'boundOpt', 'outMode'])
+                               params=['u', 'v', 'boundOpt', 'outMode']) 
                                
         return self._new_op(operator, [], {"u": u, "v": v, "boundOpt": boundOpt, "outMode": outMode})
 
-    def uv2dv_cfd(self, u = None, v = None, boundOpt = None, outMode = None):
+    def uv2dv_cfd(self, u = None, v = None, boundOpt = None, outMode = None): # pragma: no cover
         r"""
         CDO operator: uv2dv_cfd
         Parameters:
@@ -8871,11 +8870,11 @@ class CdoOperation:
         operator = CdoOperator(command="uv2dv_cfd",
                                n_input=1, 
                                n_output=1, 
-                               params=['u', 'v', 'boundOpt', 'outMode'])
+                               params=['u', 'v', 'boundOpt', 'outMode']) 
                                
         return self._new_op(operator, [], {"u": u, "v": v, "boundOpt": boundOpt, "outMode": outMode})
 
-    def contour(self, parameter = None):
+    def contour(self, parameter = None): # pragma: no cover
         r"""
         CDO operator: contour
         Parameters:
@@ -8884,11 +8883,11 @@ class CdoOperation:
         operator = CdoOperator(command="contour",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter'])
+                               params=['parameter']) 
                                
         return self._new_op(operator, [], {"parameter": parameter})
 
-    def shaded(self, parameter = None):
+    def shaded(self, parameter = None): # pragma: no cover
         r"""
         CDO operator: shaded
         Parameters:
@@ -8897,11 +8896,11 @@ class CdoOperation:
         operator = CdoOperator(command="shaded",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter'])
+                               params=['parameter']) 
                                
         return self._new_op(operator, [], {"parameter": parameter})
 
-    def grfill(self, parameter = None):
+    def grfill(self, parameter = None): # pragma: no cover
         r"""
         CDO operator: grfill
         Parameters:
@@ -8910,11 +8909,11 @@ class CdoOperation:
         operator = CdoOperator(command="grfill",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter'])
+                               params=['parameter']) 
                                
         return self._new_op(operator, [], {"parameter": parameter})
 
-    def vector(self, parameter = None):
+    def vector(self, parameter = None): # pragma: no cover
         r"""
         CDO operator: vector
         Parameters:
@@ -8923,11 +8922,11 @@ class CdoOperation:
         operator = CdoOperator(command="vector",
                                n_input=1, 
                                n_output=1, 
-                               params=['parameter'])
+                               params=['parameter']) 
                                
         return self._new_op(operator, [], {"parameter": parameter})
 
-    def graph(self, parameter = None):
+    def graph(self, parameter = None): # pragma: no cover
         r"""
         CDO operator: graph
         Parameters:
@@ -8936,11 +8935,11 @@ class CdoOperation:
         operator = CdoOperator(command="graph",
                                n_input=inf, 
                                n_output=1, 
-                               params=['parameter'])
+                               params=['parameter']) 
                                
         return self._new_op(operator, [], {"parameter": parameter})
 
-    def eca_cdd(self, R = None, N = None, freq = None):
+    def eca_cdd(self, R = None, N = None, freq = None): # pragma: no cover
         r"""
         CDO operator: eca_cdd
         Parameters:
@@ -8951,11 +8950,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_cdd",
                                n_input=1, 
                                n_output=1, 
-                               params=['R', 'N', 'freq'])
+                               params=['R', 'N', 'freq']) 
                                
         return self._new_op(operator, [], {"R": R, "N": N, "freq": freq})
 
-    def etccdi_cdd(self, R = None, N = None, freq = None):
+    def etccdi_cdd(self, R = None, N = None, freq = None): # pragma: no cover
         r"""
         CDO operator: etccdi_cdd
         Parameters:
@@ -8966,11 +8965,11 @@ class CdoOperation:
         operator = CdoOperator(command="etccdi_cdd",
                                n_input=1, 
                                n_output=1, 
-                               params=['R', 'N', 'freq'])
+                               params=['R', 'N', 'freq']) 
                                
         return self._new_op(operator, [], {"R": R, "N": N, "freq": freq})
 
-    def eca_cfd(self, N = None):
+    def eca_cfd(self, N = None): # pragma: no cover
         r"""
         CDO operator: eca_cfd
         Parameters:
@@ -8979,11 +8978,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_cfd",
                                n_input=1, 
                                n_output=1, 
-                               params=['N'])
+                               params=['N']) 
                                
         return self._new_op(operator, [], {"N": N})
 
-    def eca_csu(self, T = None, N = None):
+    def eca_csu(self, T = None, N = None): # pragma: no cover
         r"""
         CDO operator: eca_csu
         Parameters:
@@ -8993,11 +8992,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_csu",
                                n_input=1, 
                                n_output=1, 
-                               params=['T', 'N'])
+                               params=['T', 'N']) 
                                
         return self._new_op(operator, [], {"T": T, "N": N})
 
-    def eca_cwd(self, R = None, N = None, freq = None):
+    def eca_cwd(self, R = None, N = None, freq = None): # pragma: no cover
         r"""
         CDO operator: eca_cwd
         Parameters:
@@ -9008,11 +9007,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_cwd",
                                n_input=1, 
                                n_output=1, 
-                               params=['R', 'N', 'freq'])
+                               params=['R', 'N', 'freq']) 
                                
         return self._new_op(operator, [], {"R": R, "N": N, "freq": freq})
 
-    def etccdi_cwd(self, R = None, N = None, freq = None):
+    def etccdi_cwd(self, R = None, N = None, freq = None): # pragma: no cover
         r"""
         CDO operator: etccdi_cwd
         Parameters:
@@ -9023,11 +9022,11 @@ class CdoOperation:
         operator = CdoOperator(command="etccdi_cwd",
                                n_input=1, 
                                n_output=1, 
-                               params=['R', 'N', 'freq'])
+                               params=['R', 'N', 'freq']) 
                                
         return self._new_op(operator, [], {"R": R, "N": N, "freq": freq})
 
-    def eca_cwdi(self, ifile2, nday = None, T = None):
+    def eca_cwdi(self, ifile2, nday = None, T = None): # pragma: no cover
         r"""
         CDO operator: eca_cwdi
         Parameters:
@@ -9037,11 +9036,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_cwdi",
                                n_input=2, 
                                n_output=1, 
-                               params=['nday', 'T'])
+                               params=['nday', 'T']) 
                                
         return self._new_op(operator, [ifile2], {"nday": nday, "T": T})
 
-    def eca_cwfi(self, ifile2, nday = None, freq = None):
+    def eca_cwfi(self, ifile2, nday = None, freq = None): # pragma: no cover
         r"""
         CDO operator: eca_cwfi
         Parameters:
@@ -9051,11 +9050,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_cwfi",
                                n_input=2, 
                                n_output=1, 
-                               params=['nday', 'freq'])
+                               params=['nday', 'freq']) 
                                
         return self._new_op(operator, [ifile2], {"nday": nday, "freq": freq})
 
-    def etccdi_csdi(self, ifile2, nday = None, freq = None):
+    def etccdi_csdi(self, ifile2, nday = None, freq = None): # pragma: no cover
         r"""
         CDO operator: etccdi_csdi
         Parameters:
@@ -9065,22 +9064,22 @@ class CdoOperation:
         operator = CdoOperator(command="etccdi_csdi",
                                n_input=2, 
                                n_output=1, 
-                               params=['nday', 'freq'])
+                               params=['nday', 'freq']) 
                                
         return self._new_op(operator, [ifile2], {"nday": nday, "freq": freq})
 
-    def eca_etr(self, ifile2):
+    def eca_etr(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_etr
         """
         operator = CdoOperator(command="eca_etr",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_fd(self, freq = None):
+    def eca_fd(self, freq = None): # pragma: no cover
         r"""
         CDO operator: eca_fd
         Parameters:
@@ -9089,11 +9088,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_fd",
                                n_input=1, 
                                n_output=1, 
-                               params=['freq'])
+                               params=['freq']) 
                                
         return self._new_op(operator, [], {"freq": freq})
 
-    def etccdi_fd(self, freq = None):
+    def etccdi_fd(self, freq = None): # pragma: no cover
         r"""
         CDO operator: etccdi_fd
         Parameters:
@@ -9102,11 +9101,11 @@ class CdoOperation:
         operator = CdoOperator(command="etccdi_fd",
                                n_input=1, 
                                n_output=1, 
-                               params=['freq'])
+                               params=['freq']) 
                                
         return self._new_op(operator, [], {"freq": freq})
 
-    def eca_gsl(self, ifile2, nday = None, T = None, fland = None):
+    def eca_gsl(self, ifile2, nday = None, T = None, fland = None): # pragma: no cover
         r"""
         CDO operator: eca_gsl
         Parameters:
@@ -9117,11 +9116,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_gsl",
                                n_input=2, 
                                n_output=1, 
-                               params=['nday', 'T', 'fland'])
+                               params=['nday', 'T', 'fland']) 
                                
         return self._new_op(operator, [ifile2], {"nday": nday, "T": T, "fland": fland})
 
-    def eca_hd(self, T1 = None, T2 = None):
+    def eca_hd(self, T1 = None, T2 = None): # pragma: no cover
         r"""
         CDO operator: eca_hd
         Parameters:
@@ -9131,11 +9130,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_hd",
                                n_input=1, 
                                n_output=1, 
-                               params=['T1', 'T2'])
+                               params=['T1', 'T2']) 
                                
         return self._new_op(operator, [], {"T1": T1, "T2": T2})
 
-    def eca_hwdi(self, ifile2, nday = None, T = None):
+    def eca_hwdi(self, ifile2, nday = None, T = None): # pragma: no cover
         r"""
         CDO operator: eca_hwdi
         Parameters:
@@ -9145,11 +9144,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_hwdi",
                                n_input=2, 
                                n_output=1, 
-                               params=['nday', 'T'])
+                               params=['nday', 'T']) 
                                
         return self._new_op(operator, [ifile2], {"nday": nday, "T": T})
 
-    def eca_hwfi(self, ifile2, nday = None, freq = None):
+    def eca_hwfi(self, ifile2, nday = None, freq = None): # pragma: no cover
         r"""
         CDO operator: eca_hwfi
         Parameters:
@@ -9159,11 +9158,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_hwfi",
                                n_input=2, 
                                n_output=1, 
-                               params=['nday', 'freq'])
+                               params=['nday', 'freq']) 
                                
         return self._new_op(operator, [ifile2], {"nday": nday, "freq": freq})
 
-    def etccdi_wsdi(self, ifile2, nday = None, freq = None):
+    def etccdi_wsdi(self, ifile2, nday = None, freq = None): # pragma: no cover
         r"""
         CDO operator: etccdi_wsdi
         Parameters:
@@ -9173,11 +9172,11 @@ class CdoOperation:
         operator = CdoOperator(command="etccdi_wsdi",
                                n_input=2, 
                                n_output=1, 
-                               params=['nday', 'freq'])
+                               params=['nday', 'freq']) 
                                
         return self._new_op(operator, [ifile2], {"nday": nday, "freq": freq})
 
-    def eca_id(self, freq = None):
+    def eca_id(self, freq = None): # pragma: no cover
         r"""
         CDO operator: eca_id
         Parameters:
@@ -9186,11 +9185,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_id",
                                n_input=1, 
                                n_output=1, 
-                               params=['freq'])
+                               params=['freq']) 
                                
         return self._new_op(operator, [], {"freq": freq})
 
-    def etccdi_id(self, freq = None):
+    def etccdi_id(self, freq = None): # pragma: no cover
         r"""
         CDO operator: etccdi_id
         Parameters:
@@ -9199,99 +9198,99 @@ class CdoOperation:
         operator = CdoOperator(command="etccdi_id",
                                n_input=1, 
                                n_output=1, 
-                               params=['freq'])
+                               params=['freq']) 
                                
         return self._new_op(operator, [], {"freq": freq})
 
-    def eca_r75p(self, ifile2):
+    def eca_r75p(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_r75p
         """
         operator = CdoOperator(command="eca_r75p",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_r75ptot(self, ifile2):
+    def eca_r75ptot(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_r75ptot
         """
         operator = CdoOperator(command="eca_r75ptot",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_r90p(self, ifile2):
+    def eca_r90p(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_r90p
         """
         operator = CdoOperator(command="eca_r90p",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_r90ptot(self, ifile2):
+    def eca_r90ptot(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_r90ptot
         """
         operator = CdoOperator(command="eca_r90ptot",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_r95p(self, ifile2):
+    def eca_r95p(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_r95p
         """
         operator = CdoOperator(command="eca_r95p",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_r95ptot(self, ifile2):
+    def eca_r95ptot(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_r95ptot
         """
         operator = CdoOperator(command="eca_r95ptot",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_r99p(self, ifile2):
+    def eca_r99p(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_r99p
         """
         operator = CdoOperator(command="eca_r99p",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_r99ptot(self, ifile2):
+    def eca_r99ptot(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_r99ptot
         """
         operator = CdoOperator(command="eca_r99ptot",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_pd(self, x = None, freq = None):
+    def eca_pd(self, x = None, freq = None): # pragma: no cover
         r"""
         CDO operator: eca_pd
         Parameters:
@@ -9301,11 +9300,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_pd",
                                n_input=1, 
                                n_output=1, 
-                               params=['x', 'freq'])
+                               params=['x', 'freq']) 
                                
         return self._new_op(operator, [], {"x": x, "freq": freq})
 
-    def eca_r10mm(self, x = None, freq = None):
+    def eca_r10mm(self, x = None, freq = None): # pragma: no cover
         r"""
         CDO operator: eca_r10mm
         Parameters:
@@ -9315,11 +9314,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_r10mm",
                                n_input=1, 
                                n_output=1, 
-                               params=['x', 'freq'])
+                               params=['x', 'freq']) 
                                
         return self._new_op(operator, [], {"x": x, "freq": freq})
 
-    def eca_r20mm(self, x = None, freq = None):
+    def eca_r20mm(self, x = None, freq = None): # pragma: no cover
         r"""
         CDO operator: eca_r20mm
         Parameters:
@@ -9329,11 +9328,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_r20mm",
                                n_input=1, 
                                n_output=1, 
-                               params=['x', 'freq'])
+                               params=['x', 'freq']) 
                                
         return self._new_op(operator, [], {"x": x, "freq": freq})
 
-    def etccdi_r1mm(self, x = None, freq = None):
+    def etccdi_r1mm(self, x = None, freq = None): # pragma: no cover
         r"""
         CDO operator: etccdi_r1mm
         Parameters:
@@ -9343,11 +9342,11 @@ class CdoOperation:
         operator = CdoOperator(command="etccdi_r1mm",
                                n_input=1, 
                                n_output=1, 
-                               params=['x', 'freq'])
+                               params=['x', 'freq']) 
                                
         return self._new_op(operator, [], {"x": x, "freq": freq})
 
-    def eca_rr1(self, R = None):
+    def eca_rr1(self, R = None): # pragma: no cover
         r"""
         CDO operator: eca_rr1
         Parameters:
@@ -9356,11 +9355,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_rr1",
                                n_input=1, 
                                n_output=1, 
-                               params=['R'])
+                               params=['R']) 
                                
         return self._new_op(operator, [], {"R": R})
 
-    def eca_rx1day(self, freq = None):
+    def eca_rx1day(self, freq = None): # pragma: no cover
         r"""
         CDO operator: eca_rx1day
         Parameters:
@@ -9369,11 +9368,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_rx1day",
                                n_input=1, 
                                n_output=1, 
-                               params=['freq'])
+                               params=['freq']) 
                                
         return self._new_op(operator, [], {"freq": freq})
 
-    def etccdi_rx1day(self, freq = None):
+    def etccdi_rx1day(self, freq = None): # pragma: no cover
         r"""
         CDO operator: etccdi_rx1day
         Parameters:
@@ -9382,11 +9381,11 @@ class CdoOperation:
         operator = CdoOperator(command="etccdi_rx1day",
                                n_input=1, 
                                n_output=1, 
-                               params=['freq'])
+                               params=['freq']) 
                                
         return self._new_op(operator, [], {"freq": freq})
 
-    def eca_rx5day(self, x = None, freq = None):
+    def eca_rx5day(self, x = None, freq = None): # pragma: no cover
         r"""
         CDO operator: eca_rx5day
         Parameters:
@@ -9396,11 +9395,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_rx5day",
                                n_input=1, 
                                n_output=1, 
-                               params=['x', 'freq'])
+                               params=['x', 'freq']) 
                                
         return self._new_op(operator, [], {"x": x, "freq": freq})
 
-    def etccdi_rx5day(self, x = None, freq = None):
+    def etccdi_rx5day(self, x = None, freq = None): # pragma: no cover
         r"""
         CDO operator: etccdi_rx5day
         Parameters:
@@ -9410,11 +9409,11 @@ class CdoOperation:
         operator = CdoOperator(command="etccdi_rx5day",
                                n_input=1, 
                                n_output=1, 
-                               params=['x', 'freq'])
+                               params=['x', 'freq']) 
                                
         return self._new_op(operator, [], {"x": x, "freq": freq})
 
-    def eca_sdii(self, R = None):
+    def eca_sdii(self, R = None): # pragma: no cover
         r"""
         CDO operator: eca_sdii
         Parameters:
@@ -9423,11 +9422,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_sdii",
                                n_input=1, 
                                n_output=1, 
-                               params=['R'])
+                               params=['R']) 
                                
         return self._new_op(operator, [], {"R": R})
 
-    def eca_su(self, T = None, freq = None):
+    def eca_su(self, T = None, freq = None): # pragma: no cover
         r"""
         CDO operator: eca_su
         Parameters:
@@ -9437,11 +9436,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_su",
                                n_input=1, 
                                n_output=1, 
-                               params=['T', 'freq'])
+                               params=['T', 'freq']) 
                                
         return self._new_op(operator, [], {"T": T, "freq": freq})
 
-    def etccdi_su(self, T = None, freq = None):
+    def etccdi_su(self, T = None, freq = None): # pragma: no cover
         r"""
         CDO operator: etccdi_su
         Parameters:
@@ -9451,55 +9450,55 @@ class CdoOperation:
         operator = CdoOperator(command="etccdi_su",
                                n_input=1, 
                                n_output=1, 
-                               params=['T', 'freq'])
+                               params=['T', 'freq']) 
                                
         return self._new_op(operator, [], {"T": T, "freq": freq})
 
-    def eca_tg10p(self, ifile2):
+    def eca_tg10p(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_tg10p
         """
         operator = CdoOperator(command="eca_tg10p",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_tg90p(self, ifile2):
+    def eca_tg90p(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_tg90p
         """
         operator = CdoOperator(command="eca_tg90p",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_tn10p(self, ifile2):
+    def eca_tn10p(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_tn10p
         """
         operator = CdoOperator(command="eca_tn10p",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_tn90p(self, ifile2):
+    def eca_tn90p(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_tn90p
         """
         operator = CdoOperator(command="eca_tn90p",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_tr(self, T = None, freq = None):
+    def eca_tr(self, T = None, freq = None): # pragma: no cover
         r"""
         CDO operator: eca_tr
         Parameters:
@@ -9509,11 +9508,11 @@ class CdoOperation:
         operator = CdoOperator(command="eca_tr",
                                n_input=1, 
                                n_output=1, 
-                               params=['T', 'freq'])
+                               params=['T', 'freq']) 
                                
         return self._new_op(operator, [], {"T": T, "freq": freq})
 
-    def etccdi_tr(self, T = None, freq = None):
+    def etccdi_tr(self, T = None, freq = None): # pragma: no cover
         r"""
         CDO operator: etccdi_tr
         Parameters:
@@ -9523,29 +9522,28 @@ class CdoOperation:
         operator = CdoOperator(command="etccdi_tr",
                                n_input=1, 
                                n_output=1, 
-                               params=['T', 'freq'])
+                               params=['T', 'freq']) 
                                
         return self._new_op(operator, [], {"T": T, "freq": freq})
 
-    def eca_tx10p(self, ifile2):
+    def eca_tx10p(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_tx10p
         """
         operator = CdoOperator(command="eca_tx10p",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
 
-    def eca_tx90p(self, ifile2):
+    def eca_tx90p(self, ifile2): # pragma: no cover
         r"""
         CDO operator: eca_tx90p
         """
         operator = CdoOperator(command="eca_tx90p",
                                n_input=2, 
                                n_output=1, 
-                               params=[])
+                               params=[]) 
                                
         return self._new_op(operator, [ifile2], {})
-## nocov end

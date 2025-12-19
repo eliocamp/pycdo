@@ -38,14 +38,14 @@ def make_docstring(op):
 
 
 TEMPLATE='''
-    def {fun_name}({signature}):
+    def {fun_name}({signature}): # pragma: no cover
         r"""
         {docstring}
         """
         operator = CdoOperator(command="{command}",
                                n_input={n_input}, 
                                n_output={n_output}, 
-                               params={params_list})
+                               params={params_list}) 
                                
         return self._new_op(operator, {files_list}, {params_dic})
 '''
@@ -95,7 +95,7 @@ with open(operation_file, "r") as f:
 
 
 
-code = "".join(lines) + "## nocov start\n" + "".join(all_ops) + "## nocov end"
+code = "".join(lines) + "".join(all_ops) 
 
 
 with open(operation_file, "w") as f: 
