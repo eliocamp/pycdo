@@ -69,8 +69,10 @@ def test_temp_directory_deleted_when_empty():
 def test_temp_directory_not_deleted_if_not_empty():
     """Temporary directory should not be deleted if it contains other files."""
     temp_dir = tempfile.mkdtemp()
-    _, path1 = tempfile.mkstemp(dir=temp_dir)
-    _, path2 = tempfile.mkstemp(dir=temp_dir)
+    fd, path1 = tempfile.mkstemp(dir=temp_dir)
+    os.close(fd)
+    fd, path2 = tempfile.mkstemp(dir=temp_dir)
+    os.close(fd)
     
     # Delete first EphemeralFile
     ef1 = EphemeralFile(path1)
