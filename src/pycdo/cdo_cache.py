@@ -64,8 +64,10 @@ class CdoCache:
 
 
     def forget(self):
+        restore = Path(self.path).exists
         if self.path is not None:
             shutil.rmtree(self.path)
+        if restore:
             os.makedirs(self.path) 
 
     def _hash_get(self, file):
