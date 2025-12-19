@@ -19,8 +19,8 @@ def make_file(content=None):
         (path, temp_dir) where path is the file path and temp_dir is the parent directory.
     """
     temp_dir = tempfile.mkdtemp()
-    _, path = tempfile.mkstemp(dir=temp_dir)
-    
+    fd, path = tempfile.mkstemp(dir=temp_dir)
+    os.close(fd)
     return path, temp_dir
 
 
