@@ -68,7 +68,7 @@ class CdoCache:
             shutil.rmtree(self.path)
             os.makedirs(self.path) 
 
-    def hash_get(self, file):
+    def _hash_get(self, file):
         dir = self.get()
         file = Path(dir) / (file + ".hash")
         with open(file) as f:
@@ -76,7 +76,7 @@ class CdoCache:
 
         return hash
     
-    def hash_store(self, file, hash):
+    def _hash_store(self, file, hash):
         hash_file = file + ".hash"
         with open(hash_file, "w") as f:
             f.write(hash)
