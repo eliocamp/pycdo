@@ -104,13 +104,18 @@ class CdoOperation:
 
         # Operator command and params
         if (self.operator.command == "noop"):
-            op_str = ""
+            op_str = [""]
         else:
-            op_str = f"-{self.operator.command}"
+            op_str = [f"-{self.operator.command}"]
 
         if self.params:
             param_values = [str(v) for k, v in self.params.items() if v is not None]
-            op_str += "," + ",".join(param_values)
+        else :
+            param_values = []
+
+        op_str.extend(param_values)
+        op_str = ",".join(op_str)
+        
         cmd.append(op_str)
 
         # Build input strings

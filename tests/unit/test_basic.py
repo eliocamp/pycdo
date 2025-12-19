@@ -36,6 +36,14 @@ def test_chaining():
     expect_command(cdo("file.nc").sellonlatbox(0, 360, -90, 0).ymonmean(), 
                    "cdo -ymonmean [ -sellonlatbox,0,360,-90,0 [ " + shlex.quote("file.nc") + " ] ]")
 
+def test_file_list():
+    """Support for list of files as input"""
+    expect_command(cdo(["file1", "file2"]).mergetime(), 
+                   "cdo -mergetime [ file1 file2 ]")
+
+    expect_command(cdo(["file1", "file2"]).mergetime(skip_same_time=True), 
+                   "cdo -mergetime,True [ file1 file2 ]")
+
 def test_options():
     cdo_options.set("-L")
     assert cdo_options.get() == "-L"
