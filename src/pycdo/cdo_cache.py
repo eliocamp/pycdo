@@ -1,6 +1,7 @@
 import shutil
 import os
 import tempfile
+from pathlib import Path
 
 class CdoCache:
     def __init__(self, path = None, enabled = False, old = None):
@@ -67,5 +68,23 @@ class CdoCache:
             shutil.rmtree(self.path)
             os.makedirs(self.path) 
 
+    def hash_get(self, file):
+        dir = self.get()
+        file = Path(dir) / (file + ".hash")
+        with open(file) as f:
+            hash = f.read_line()
+
+        return hash
+    
+    def hash_store(self, file, hash):
+        hash_file = file + ".hash"
+        with open(hash_file, "w") as f:
+            f.write(hash)
+
+
+
+
+
 # Global cache to use by the package
 cdo_cache = CdoCache()
+

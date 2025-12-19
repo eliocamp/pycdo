@@ -3,3 +3,4 @@
 # SPDX-License-Identifier: MIT
 from .cdo_operation import cdo
 from .cdo_options import cdo_options
+from .cdo_cache import cdo_cache

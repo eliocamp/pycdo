@@ -1,11 +1,13 @@
 import os
 from .cdo_options import cdo_options, combine_options
 from .cdo_operator import CdoOperator
+from .cdo_cache import cdo_cache
 from .ephemeral_file import EphemeralFile
 import tempfile
 import subprocess
 import shlex
-
+import hashlib
+from pathlib import Path
 
 inf=float("inf")
 
@@ -80,6 +82,30 @@ class CdoOperation:
         inputs = [self] + inputs
         return CdoOperation(inputs, operator, params)
 
+    def _hash(self):
+        """Generate a hash for cache key from command, input files, and CDO version"""
+        hash_input = []
+        
+        # Add the command
+        hash_input.append(self._build())
+        
+        # Add input file metadata
+        for inp in self.input:
+            if isinstance(inp, str) and os.path.isfile(inp):
+                stat = os.stat(inp)
+                hash_input.append(f"{inp}:{stat.st_size}:{stat.st_mtime}")
+            elif isinstance(inp, CdoOperation):
+                # Recursively hash nested operations
+                hash_input.append(inp._hash())
+        
+        # Add CDO version (you may need to query this)
+        # For now, placeholder:
+        hash_input.append("cdo_version_placeholder")
+        
+        # Create hash
+        hash_str = "|".join(hash_input)
+        return hashlib.md5(hash_str.encode()).hexdigest()
+
     def _build(self, top_level=True, options=None, options_replace=False):
         cmd = []
         if top_level:
@@ -149,17 +175,31 @@ class CdoOperation:
         if (self.operator.command == "noop"):
             return self.input
         
+        n_files = self.operator.n_output
+
+        # Protect against other thread chaning out cache. 
+        cdo_cache = cdo_cache._clone()
+
+        use_cache = cdo_cache.is_enabled() and n_files == 1
+        if use_cache:
+            hash_current = self._hash()
+            dir = cdo_cache.get()
+            if output is None:
+                output = Path(dir) / hash_current
+            hash_cache = cdo_cache.hash_get(output)
+            if (hash_cache == hash_current):
+                return output
+
         if output is None:
-            n_files = self.operator.n_output
             output = []
-            # Since we create a thread-safe directory with mkdtemp
-            # then we can get unique names with mktemp without worring 
-            # about other threads. We don't use mkstemp() because
-            # we dond't want to create the file; some cdo operators
-            # don't override files. 
-            dir = tempfile.mkdtemp()
             for _ in range(n_files):
-                file = tempfile.mktemp(dir = dir)
+                # mktemp is "not safe" because another process could use the file
+                # in between here and when we write to it. 
+                # But I can't use mkstemp() because that creates the file and some cdo
+                # operators need the file not to exist. 
+                # In reality, we start to write to the file almost immediatly, 
+                # so the risk is miniscule. 
+                file = tempfile.mktemp()
                 output.append(EphemeralFile(file))
                 
         if isinstance(output, list):
@@ -177,6 +217,10 @@ class CdoOperation:
         
         if isinstance(output, list) and len(output) == 1:
             output = output[0]
+        
+        if use_cache:
+            cdo_cache.hash_store(output, hash_current)
+
         return output
 
     def __repr__(self):
