@@ -1,7 +1,7 @@
 import os
 from .cdo_options import cdo_options, combine_options
 from .cdo_operator import CdoOperator
-
+from .ephemeral_file import EphemeralFile
 import tempfile
 import subprocess
 import shlex
@@ -130,7 +130,8 @@ class CdoOperation:
         ----------
         output : str or None
             The path to the output or output paths to save the result. If None, 
-            then a temporary file will be used. 
+            then a temporary file(s) will be used. If cache is turned off, the temporary file 
+            is deleted when all references to it are garbage collected. 
 
         options : str or None
             Optional options to use for this operation. 
@@ -151,11 +152,16 @@ class CdoOperation:
         if output is None:
             n_files = self.operator.n_output
             output = []
+            # Since we create a thread-safe directory with mkdtemp
+            # then we can get unique names with mktemp without worring 
+            # about other threads. We don't use mkstemp() because
+            # we dond't want to create the file; some cdo operators
+            # don't override files. 
+            dir = tempfile.mkdtemp()
             for _ in range(n_files):
-                fd, file = tempfile.mkstemp()
-                output.append(file)
-                os.close(fd) 
-        
+                file = tempfile.mktemp(dir = dir)
+                output.append(EphemeralFile(file))
+                
         if isinstance(output, list):
             output_str = " ".join(output)
         else:
