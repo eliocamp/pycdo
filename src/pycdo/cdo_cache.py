@@ -73,13 +73,17 @@ class CdoCache:
     def _hash_get(self, file):
         dir = self.get()
         file = Path(dir) / (file + ".hash")
-        with open(file) as f:
-            hash = f.read_line()
-
-        return hash
+        if Path(file).exists:
+            with open(file) as f:
+                return f.read_line()
+        else:
+            return ""
     
     def _hash_store(self, file, hash):
         hash_file = file + ".hash"
+        if not Path(os.path.dirname(hash_file)).exists:
+            os.mkdir(os.path.dirname(hash_file))
+
         with open(hash_file, "w") as f:
             f.write(hash)
 

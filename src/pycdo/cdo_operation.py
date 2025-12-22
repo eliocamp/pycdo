@@ -197,10 +197,16 @@ class CdoOperation:
                 file = tempfile.mktemp()
                 output.append(EphemeralFile(file))
                 
+        
         if isinstance(output, list):
             output_str = " ".join(output)
+            for out in output:
+                if not Path(os.path.dirname(out)).exists:
+                    os.mkdir(os.path.dirname(out))
         else:
             output_str = output
+            if not Path(os.path.dirname(out)).exists:
+                os.mkdir(os.path.dirname(out))
         
         cmd = f"{self._build(options = options, options_replace = options_replace)} {output_str}"
 
