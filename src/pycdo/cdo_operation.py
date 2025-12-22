@@ -5,6 +5,7 @@ import shlex
 import hashlib
 from pathlib import Path
 
+from . import debug
 from .cdo_options import cdo_options, combine_options
 from .cdo_operator import CdoOperator
 from .cdo_cache import cdo_cache
@@ -172,15 +173,15 @@ class CdoOperation:
         n_files = self.operator.n_output
 
         # Protect against other thread chaning out cache. 
-        cdo_cache = cdo_cache._clone()
+        cdo_cache_local = cdo_cache._clone()
 
-        use_cache = cdo_cache.is_enabled() and n_files == 1
+        use_cache = cdo_cache_local.is_enabled() and n_files == 1
         if use_cache:
             hash_current = self._hash()
-            dir = cdo_cache.get()
+            dir = cdo_cache_local.get()
             if output is None:
                 output = Path(dir) / hash_current
-            hash_cache = cdo_cache._hash_get(output)
+            hash_cache = cdo_cache_local._hash_get(output)
             if (hash_cache == hash_current):
                 return output
 
@@ -202,7 +203,16 @@ class CdoOperation:
             output_str = output
         
         cmd = f"{self._build(options = options, options_replace = options_replace)} {output_str}"
-        result = subprocess.run(cmd, shell = True, capture_output = True)
+
+        _DEBUG_SKIP_RUN = os.environ.get("_DEBUG_SKIP_RUN", "").lower() == "true"
+
+        if not _DEBUG_SKIP_RUN:
+            result = subprocess.run(cmd, shell = True, capture_output = True)
+        else:
+            if n_files == 0:
+                result = debug.MockResult(output = "Test Output")
+            else:
+                result = debug.MockResult(output = output)
 
         if result.returncode != 0:
             raise subprocess.CalledProcessError(result.returncode, cmd)
@@ -213,7 +223,7 @@ class CdoOperation:
             output = output[0]
         
         if use_cache:
-            cdo_cache._hash_store(output, hash_current)
+            cdo_cache_local._hash_store(output, hash_current)
 
         return output
 
