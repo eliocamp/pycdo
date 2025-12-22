@@ -76,7 +76,8 @@ class CdoCache:
         file = file + ".hash"
         if Path(file).is_file():
             with open(file) as f:
-                return f.read_line()
+                return f.readline()
+            
         else:
             return ""
     
