@@ -2,18 +2,15 @@ from pycdo import cdo, cdo_options
 import shlex
 from pycdo import debug
 
-debug.skip_run(skip = True)
-
-
 def expect_command(op, command):
     assert op._build() == command
 
+
 def test_simple():
     """Builds a simple command with one file input"""
-    expect_command(cdo("file.nc").ymonmean(), 
+    op = cdo("file.nc").ymonmean()
+    expect_command(op,
                    "cdo -ymonmean [ " + shlex.quote("file.nc") + " ]")
-    cdo("file.nc").ymonmean().execute()
-
 
 def test_two_files():
     """Builds a command with two inputs"""
