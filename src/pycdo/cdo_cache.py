@@ -70,7 +70,7 @@ class CdoCache:
         if restore:
             os.makedirs(self.path) 
 
-    def _hash_get(self, file):
+    def _hash_get(self, file: str):
         # File is the full path because the user 
         # might be saving the file outside the cache folder
         file = file + ".hash"
@@ -81,7 +81,7 @@ class CdoCache:
         else:
             return ""
     
-    def _hash_store(self, file, hash):
+    def _hash_store(self, file: str, hash: str):
         hash_file = file + ".hash"
         if not Path(os.path.dirname(hash_file)).exists:
             os.mkdir(os.path.dirname(hash_file))

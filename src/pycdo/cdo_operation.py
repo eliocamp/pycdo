@@ -180,7 +180,7 @@ class CdoOperation:
             hash_current = self._hash()
             dir = cdo_cache_local.get()
             if output is None:
-                output = Path(dir) / hash_current
+                output = str(Path(dir) / hash_current)
             hash_cache = cdo_cache_local._hash_get(output)
             if (hash_cache == hash_current):
                 return output
