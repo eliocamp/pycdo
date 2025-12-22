@@ -2,6 +2,13 @@ from pycdo import cdo, cdo_cache
 import os
 from pathlib import Path
 import tempfile
+import pytest
+import shutil
+
+pytestmark = pytest.mark.skipif(
+    shutil.which("cdo") is None,
+    reason="CDO is not installed"
+)
 
 def test_no_cache():
     test_file = str(Path(__file__).parent.parent / "data" / "test.nc")
