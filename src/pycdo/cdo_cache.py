@@ -71,8 +71,9 @@ class CdoCache:
             os.makedirs(self.path) 
 
     def _hash_get(self, file):
-        dir = self.get()
-        file = Path(dir) / (file + ".hash")
+        # File is the full path because the user 
+        # might be saving the file outside the cache folder
+        file = file + ".hash"
         if Path(file).exists:
             with open(file) as f:
                 return f.read_line()
