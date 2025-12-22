@@ -205,8 +205,8 @@ class CdoOperation:
                     os.mkdir(os.path.dirname(out))
         else:
             output_str = output
-            if not Path(os.path.dirname(out)).exists:
-                os.mkdir(os.path.dirname(out))
+            if not Path(os.path.dirname(output)).exists:
+                os.mkdir(os.path.dirname(output))
         
         cmd = f"{self._build(options = options, options_replace = options_replace)} {output_str}"
 
