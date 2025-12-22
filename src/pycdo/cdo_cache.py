@@ -74,7 +74,7 @@ class CdoCache:
         # File is the full path because the user 
         # might be saving the file outside the cache folder
         file = file + ".hash"
-        if Path(file).exists:
+        if Path(file).is_file():
             with open(file) as f:
                 return f.read_line()
         else:
