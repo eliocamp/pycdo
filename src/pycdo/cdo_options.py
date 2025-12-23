@@ -7,16 +7,16 @@ class CdoOptions:
     options : str 
         Options for CDO to use globally (e.g. "-L")
     
-        
-
+    
     Examples
     --------
-    from pycdo import cdo_options
-    # Use thread safe implementation
-    cdo_options$set("-L")
+    >>> from pycdo import cdo_options
+    
+    Use thread safe implementation
+    >>> cdo_options$set("-L")
 
-    # Remove all options
-    cdo_options$clear()
+    Remove all options
+    >>> cdo_options$clear()
     """
     def __init__(self):
         self._options = None
@@ -40,7 +40,7 @@ class CdoOptions:
 cdo_options = CdoOptions()
 
 
-def combine_options(global_options=None, user_options=None, replace=False):
+def _combine_options(global_options=None, user_options=None, replace=False):
     """
     Combine or replace global and user options.
     - If replace=True: use user_options only.

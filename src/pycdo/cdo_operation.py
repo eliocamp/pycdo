@@ -6,8 +6,8 @@ import hashlib
 from pathlib import Path
 
 from . import debug
-from .cdo_options import cdo_options, combine_options
-from .cdo_operator import CdoOperator
+from .cdo_options import cdo_options, _combine_options
+from .cdo_operator import _CdoOperator
 from .cdo_cache import cdo_cache
 from .ephemeral_file import EphemeralFile
 
@@ -31,10 +31,14 @@ def cdo(input = None) -> "CdoOperation":
     Examples
     --------
 
-    clim_sh_temperature = cdo("temperature.nc").\
-        sellonlatbox(0, 360, -90, 0).\
-        ymonmean().\
-        execute()
+    >>> from pycdo import cdo, geopotential
+    >>> 
+    >>> clim_sh = (
+    >>>    cdo(geopotential)
+    >>>    .sellonlatbox(0, 360, -90, 0)
+    >>>    .ymonmean()
+    >>>    .execute()
+    >>>)
     """
 
     return CdoOperation._start(ifile=input)
@@ -52,15 +56,15 @@ class CdoOperation:
             n_input = 1
             input = [ifile]
 
-        noop_operator = CdoOperator(command = "noop", n_input = n_input, n_output = n_input, params = [])
+        noop_operator = _CdoOperator(command = "noop", n_input = n_input, n_output = n_input, params = [])
         return CdoOperation(input = input, operator = noop_operator, params = {})
     
-    def __init__(self, input, operator: "CdoOperator", params: dict = {}):
+    def __init__(self, input, operator: "_CdoOperator", params: dict = {}):
         self.operator = operator
         self.params = params
         self.input = input
         
-    def _new_op(self, operator: "CdoOperator", inputs: list = [], params: dict = {}):
+    def _new_op(self, operator: "_CdoOperator", inputs: list = [], params: dict = {}):
         prev_output = self.operator.n_output + len(inputs)
         
         operators_compatible = operator.n_input == inf or operator.n_input == prev_output
@@ -100,7 +104,7 @@ class CdoOperation:
         cmd = []
         if top_level:
             cmd.append("cdo")
-            options = combine_options(cdo_options.get(), options, replace=options_replace)
+            options = _combine_options(cdo_options.get(), options, replace=options_replace)
             options_str = " ".join(options)
             cmd.append(options_str)
 
@@ -250,7 +254,7 @@ class CdoOperation:
         r"""
         CDO operator: info
         """
-        operator = CdoOperator(command="info",
+        operator = _CdoOperator(command="info",
                                n_input=inf, 
                                n_output=0, 
                                params=[]) 
@@ -261,7 +265,7 @@ class CdoOperation:
         r"""
         CDO operator: infon
         """
-        operator = CdoOperator(command="infon",
+        operator = _CdoOperator(command="infon",
                                n_input=inf, 
                                n_output=0, 
                                params=[]) 
@@ -272,7 +276,7 @@ class CdoOperation:
         r"""
         CDO operator: cinfo
         """
-        operator = CdoOperator(command="cinfo",
+        operator = _CdoOperator(command="cinfo",
                                n_input=inf, 
                                n_output=0, 
                                params=[]) 
@@ -283,7 +287,7 @@ class CdoOperation:
         r"""
         CDO operator: map
         """
-        operator = CdoOperator(command="map",
+        operator = _CdoOperator(command="map",
                                n_input=inf, 
                                n_output=0, 
                                params=[]) 
@@ -294,7 +298,7 @@ class CdoOperation:
         r"""
         CDO operator: sinfo
         """
-        operator = CdoOperator(command="sinfo",
+        operator = _CdoOperator(command="sinfo",
                                n_input=inf, 
                                n_output=0, 
                                params=[]) 
@@ -305,7 +309,7 @@ class CdoOperation:
         r"""
         CDO operator: sinfon
         """
-        operator = CdoOperator(command="sinfon",
+        operator = _CdoOperator(command="sinfon",
                                n_input=inf, 
                                n_output=0, 
                                params=[]) 
@@ -316,7 +320,7 @@ class CdoOperation:
         r"""
         CDO operator: xsinfo
         """
-        operator = CdoOperator(command="xsinfo",
+        operator = _CdoOperator(command="xsinfo",
                                n_input=inf, 
                                n_output=0, 
                                params=[]) 
@@ -327,7 +331,7 @@ class CdoOperation:
         r"""
         CDO operator: xsinfop
         """
-        operator = CdoOperator(command="xsinfop",
+        operator = _CdoOperator(command="xsinfop",
                                n_input=inf, 
                                n_output=0, 
                                params=[]) 
@@ -343,7 +347,7 @@ class CdoOperation:
            rellim: FLOAT - Limit of the maximum relative difference (default: 1)
            names: STRING - Consideration of the variable names of only one input file (left/right) or the intersection of both (intersect).
         """
-        operator = CdoOperator(command="diff",
+        operator = _CdoOperator(command="diff",
                                n_input=2, 
                                n_output=0, 
                                params=['maxcount', 'abslim', 'rellim', 'names']) 
@@ -359,7 +363,7 @@ class CdoOperation:
            rellim: FLOAT - Limit of the maximum relative difference (default: 1)
            names: STRING - Consideration of the variable names of only one input file (left/right) or the intersection of both (intersect).
         """
-        operator = CdoOperator(command="diffn",
+        operator = _CdoOperator(command="diffn",
                                n_input=2, 
                                n_output=0, 
                                params=['maxcount', 'abslim', 'rellim', 'names']) 
@@ -370,7 +374,7 @@ class CdoOperation:
         r"""
         CDO operator: npar
         """
-        operator = CdoOperator(command="npar",
+        operator = _CdoOperator(command="npar",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -381,7 +385,7 @@ class CdoOperation:
         r"""
         CDO operator: nlevel
         """
-        operator = CdoOperator(command="nlevel",
+        operator = _CdoOperator(command="nlevel",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -392,7 +396,7 @@ class CdoOperation:
         r"""
         CDO operator: nyear
         """
-        operator = CdoOperator(command="nyear",
+        operator = _CdoOperator(command="nyear",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -403,7 +407,7 @@ class CdoOperation:
         r"""
         CDO operator: nmon
         """
-        operator = CdoOperator(command="nmon",
+        operator = _CdoOperator(command="nmon",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -414,7 +418,7 @@ class CdoOperation:
         r"""
         CDO operator: ndate
         """
-        operator = CdoOperator(command="ndate",
+        operator = _CdoOperator(command="ndate",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -425,7 +429,7 @@ class CdoOperation:
         r"""
         CDO operator: ntime
         """
-        operator = CdoOperator(command="ntime",
+        operator = _CdoOperator(command="ntime",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -436,7 +440,7 @@ class CdoOperation:
         r"""
         CDO operator: ngridpoints
         """
-        operator = CdoOperator(command="ngridpoints",
+        operator = _CdoOperator(command="ngridpoints",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -447,7 +451,7 @@ class CdoOperation:
         r"""
         CDO operator: ngrids
         """
-        operator = CdoOperator(command="ngrids",
+        operator = _CdoOperator(command="ngrids",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -458,7 +462,7 @@ class CdoOperation:
         r"""
         CDO operator: showformat
         """
-        operator = CdoOperator(command="showformat",
+        operator = _CdoOperator(command="showformat",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -469,7 +473,7 @@ class CdoOperation:
         r"""
         CDO operator: showcode
         """
-        operator = CdoOperator(command="showcode",
+        operator = _CdoOperator(command="showcode",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -480,7 +484,7 @@ class CdoOperation:
         r"""
         CDO operator: showname
         """
-        operator = CdoOperator(command="showname",
+        operator = _CdoOperator(command="showname",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -491,7 +495,7 @@ class CdoOperation:
         r"""
         CDO operator: showstdname
         """
-        operator = CdoOperator(command="showstdname",
+        operator = _CdoOperator(command="showstdname",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -502,7 +506,7 @@ class CdoOperation:
         r"""
         CDO operator: showlevel
         """
-        operator = CdoOperator(command="showlevel",
+        operator = _CdoOperator(command="showlevel",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -513,7 +517,7 @@ class CdoOperation:
         r"""
         CDO operator: showltype
         """
-        operator = CdoOperator(command="showltype",
+        operator = _CdoOperator(command="showltype",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -524,7 +528,7 @@ class CdoOperation:
         r"""
         CDO operator: showyear
         """
-        operator = CdoOperator(command="showyear",
+        operator = _CdoOperator(command="showyear",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -535,7 +539,7 @@ class CdoOperation:
         r"""
         CDO operator: showmon
         """
-        operator = CdoOperator(command="showmon",
+        operator = _CdoOperator(command="showmon",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -546,7 +550,7 @@ class CdoOperation:
         r"""
         CDO operator: showdate
         """
-        operator = CdoOperator(command="showdate",
+        operator = _CdoOperator(command="showdate",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -557,7 +561,7 @@ class CdoOperation:
         r"""
         CDO operator: showtime
         """
-        operator = CdoOperator(command="showtime",
+        operator = _CdoOperator(command="showtime",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -568,7 +572,7 @@ class CdoOperation:
         r"""
         CDO operator: showtimestamp
         """
-        operator = CdoOperator(command="showtimestamp",
+        operator = _CdoOperator(command="showtimestamp",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -579,7 +583,7 @@ class CdoOperation:
         r"""
         CDO operator: showfilter
         """
-        operator = CdoOperator(command="showfilter",
+        operator = _CdoOperator(command="showfilter",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -592,7 +596,7 @@ class CdoOperation:
         Parameters:
            attributes: STRING - Comma-separated list of attributes.
         """
-        operator = CdoOperator(command="showattribute",
+        operator = _CdoOperator(command="showattribute",
                                n_input=1, 
                                n_output=0, 
                                params=['attributes']) 
@@ -603,7 +607,7 @@ class CdoOperation:
         r"""
         CDO operator: partab
         """
-        operator = CdoOperator(command="partab",
+        operator = _CdoOperator(command="partab",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -614,7 +618,7 @@ class CdoOperation:
         r"""
         CDO operator: codetab
         """
-        operator = CdoOperator(command="codetab",
+        operator = _CdoOperator(command="codetab",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -625,7 +629,7 @@ class CdoOperation:
         r"""
         CDO operator: griddes
         """
-        operator = CdoOperator(command="griddes",
+        operator = _CdoOperator(command="griddes",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -636,7 +640,7 @@ class CdoOperation:
         r"""
         CDO operator: zaxisdes
         """
-        operator = CdoOperator(command="zaxisdes",
+        operator = _CdoOperator(command="zaxisdes",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -647,7 +651,7 @@ class CdoOperation:
         r"""
         CDO operator: vct
         """
-        operator = CdoOperator(command="vct",
+        operator = _CdoOperator(command="vct",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -658,7 +662,7 @@ class CdoOperation:
         r"""
         CDO operator: copy
         """
-        operator = CdoOperator(command="copy",
+        operator = _CdoOperator(command="copy",
                                n_input=inf, 
                                n_output=1, 
                                params=[]) 
@@ -669,7 +673,7 @@ class CdoOperation:
         r"""
         CDO operator: clone
         """
-        operator = CdoOperator(command="clone",
+        operator = _CdoOperator(command="clone",
                                n_input=inf, 
                                n_output=1, 
                                params=[]) 
@@ -680,7 +684,7 @@ class CdoOperation:
         r"""
         CDO operator: cat
         """
-        operator = CdoOperator(command="cat",
+        operator = _CdoOperator(command="cat",
                                n_input=inf, 
                                n_output=1, 
                                params=[]) 
@@ -693,7 +697,7 @@ class CdoOperation:
         Parameters:
            outfile2: STRING - Destination filename for the copy of the input file
         """
-        operator = CdoOperator(command="tee",
+        operator = _CdoOperator(command="tee",
                                n_input=1, 
                                n_output=1, 
                                params=['outfile2']) 
@@ -707,7 +711,7 @@ class CdoOperation:
            printparam: BOOL - Print pack parameters to stdout for each variable
            filename: STRING - Read pack parameters from file for each variable\[format: name=<> add_offset=<> scale_factor=<>\]
         """
-        operator = CdoOperator(command="pack",
+        operator = _CdoOperator(command="pack",
                                n_input=1, 
                                n_output=1, 
                                params=['printparam', 'filename']) 
@@ -718,7 +722,7 @@ class CdoOperation:
         r"""
         CDO operator: unpack
         """
-        operator = CdoOperator(command="unpack",
+        operator = _CdoOperator(command="unpack",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -731,7 +735,7 @@ class CdoOperation:
         Parameters:
            filename: STRING - Read filter specification per variable from file \[format: varname=\"<filterspec>\"\]
         """
-        operator = CdoOperator(command="setfilter",
+        operator = _CdoOperator(command="setfilter",
                                n_input=1, 
                                n_output=1, 
                                params=['filename']) 
@@ -751,7 +755,7 @@ class CdoOperation:
            printbits: BOOL - Print max. numbits per variable of 1st timestep to stdout \[format: name=numbits\]
            filename: STRING - Read number of significant bits per variable from file \[format: name=numbits\]
         """
-        operator = CdoOperator(command="bitrounding",
+        operator = _CdoOperator(command="bitrounding",
                                n_input=1, 
                                n_output=1, 
                                params=['inflevel', 'addbits', 'minbits', 'maxbits', 'numsteps', 'numbits', 'printbits', 'filename']) 
@@ -762,7 +766,7 @@ class CdoOperation:
         r"""
         CDO operator: replace
         """
-        operator = CdoOperator(command="replace",
+        operator = _CdoOperator(command="replace",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -775,7 +779,7 @@ class CdoOperation:
         Parameters:
            ndup: INTEGER - Number of duplicates, default is 2.
         """
-        operator = CdoOperator(command="duplicate",
+        operator = _CdoOperator(command="duplicate",
                                n_input=1, 
                                n_output=1, 
                                params=['ndup']) 
@@ -786,7 +790,7 @@ class CdoOperation:
         r"""
         CDO operator: mergegrid
         """
-        operator = CdoOperator(command="mergegrid",
+        operator = _CdoOperator(command="mergegrid",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -800,7 +804,7 @@ class CdoOperation:
            skip_same_time: BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.
            names: STRING - Fill missing variable names with missing values (union) or use the intersection (intersect).
         """
-        operator = CdoOperator(command="merge",
+        operator = _CdoOperator(command="merge",
                                n_input=inf, 
                                n_output=1, 
                                params=['skip_same_time', 'names']) 
@@ -814,7 +818,7 @@ class CdoOperation:
            skip_same_time: BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.
            names: STRING - Fill missing variable names with missing values (union) or use the intersection (intersect).
         """
-        operator = CdoOperator(command="mergetime",
+        operator = _CdoOperator(command="mergetime",
                                n_input=inf, 
                                n_output=1, 
                                params=['skip_same_time', 'names']) 
@@ -828,7 +832,7 @@ class CdoOperation:
            swap: STRING - Swap the position of obase and xxx in the output filename
            uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
-        operator = CdoOperator(command="splitcode",
+        operator = _CdoOperator(command="splitcode",
                                n_input=1, 
                                n_output=inf, 
                                params=['swap', 'uuid']) 
@@ -842,7 +846,7 @@ class CdoOperation:
            swap: STRING - Swap the position of obase and xxx in the output filename
            uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
-        operator = CdoOperator(command="splitparam",
+        operator = _CdoOperator(command="splitparam",
                                n_input=1, 
                                n_output=inf, 
                                params=['swap', 'uuid']) 
@@ -856,7 +860,7 @@ class CdoOperation:
            swap: STRING - Swap the position of obase and xxx in the output filename
            uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
-        operator = CdoOperator(command="splitname",
+        operator = _CdoOperator(command="splitname",
                                n_input=1, 
                                n_output=inf, 
                                params=['swap', 'uuid']) 
@@ -870,7 +874,7 @@ class CdoOperation:
            swap: STRING - Swap the position of obase and xxx in the output filename
            uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
-        operator = CdoOperator(command="splitlevel",
+        operator = _CdoOperator(command="splitlevel",
                                n_input=1, 
                                n_output=inf, 
                                params=['swap', 'uuid']) 
@@ -884,7 +888,7 @@ class CdoOperation:
            swap: STRING - Swap the position of obase and xxx in the output filename
            uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
-        operator = CdoOperator(command="splitgrid",
+        operator = _CdoOperator(command="splitgrid",
                                n_input=1, 
                                n_output=inf, 
                                params=['swap', 'uuid']) 
@@ -898,7 +902,7 @@ class CdoOperation:
            swap: STRING - Swap the position of obase and xxx in the output filename
            uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
-        operator = CdoOperator(command="splitzaxis",
+        operator = _CdoOperator(command="splitzaxis",
                                n_input=1, 
                                n_output=inf, 
                                params=['swap', 'uuid']) 
@@ -912,7 +916,7 @@ class CdoOperation:
            swap: STRING - Swap the position of obase and xxx in the output filename
            uuid: STRING - Add a UUID as global attribute <attname> to each output file
         """
-        operator = CdoOperator(command="splittabnum",
+        operator = _CdoOperator(command="splittabnum",
                                n_input=1, 
                                n_output=inf, 
                                params=['swap', 'uuid']) 
@@ -925,7 +929,7 @@ class CdoOperation:
         Parameters:
            format: STRING - C-style format for strftime() (e.g. %B for the full month name)
         """
-        operator = CdoOperator(command="splithour",
+        operator = _CdoOperator(command="splithour",
                                n_input=1, 
                                n_output=inf, 
                                params=['format']) 
@@ -938,7 +942,7 @@ class CdoOperation:
         Parameters:
            format: STRING - C-style format for strftime() (e.g. %B for the full month name)
         """
-        operator = CdoOperator(command="splitday",
+        operator = _CdoOperator(command="splitday",
                                n_input=1, 
                                n_output=inf, 
                                params=['format']) 
@@ -951,7 +955,7 @@ class CdoOperation:
         Parameters:
            format: STRING - C-style format for strftime() (e.g. %B for the full month name)
         """
-        operator = CdoOperator(command="splitseas",
+        operator = _CdoOperator(command="splitseas",
                                n_input=1, 
                                n_output=inf, 
                                params=['format']) 
@@ -964,7 +968,7 @@ class CdoOperation:
         Parameters:
            format: STRING - C-style format for strftime() (e.g. %B for the full month name)
         """
-        operator = CdoOperator(command="splityear",
+        operator = _CdoOperator(command="splityear",
                                n_input=1, 
                                n_output=inf, 
                                params=['format']) 
@@ -977,7 +981,7 @@ class CdoOperation:
         Parameters:
            format: STRING - C-style format for strftime() (e.g. %B for the full month name)
         """
-        operator = CdoOperator(command="splityearmon",
+        operator = _CdoOperator(command="splityearmon",
                                n_input=1, 
                                n_output=inf, 
                                params=['format']) 
@@ -990,7 +994,7 @@ class CdoOperation:
         Parameters:
            format: STRING - C-style format for strftime() (e.g. %B for the full month name)
         """
-        operator = CdoOperator(command="splitmon",
+        operator = _CdoOperator(command="splitmon",
                                n_input=1, 
                                n_output=inf, 
                                params=['format']) 
@@ -1005,7 +1009,7 @@ class CdoOperation:
            noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
            nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
-        operator = CdoOperator(command="splitsel",
+        operator = _CdoOperator(command="splitsel",
                                n_input=1, 
                                n_output=inf, 
                                params=['nsets', 'noffset', 'nskip']) 
@@ -1016,7 +1020,7 @@ class CdoOperation:
         r"""
         CDO operator: splitdate
         """
-        operator = CdoOperator(command="splitdate",
+        operator = _CdoOperator(command="splitdate",
                                n_input=1, 
                                n_output=inf, 
                                params=[]) 
@@ -1030,7 +1034,7 @@ class CdoOperation:
            nx: INTEGER - Number of regions in x direction, or number of pieces for unstructured grids
            ny: INTEGER - Number of regions in y direction \[default: 1\]
         """
-        operator = CdoOperator(command="distgrid",
+        operator = _CdoOperator(command="distgrid",
                                n_input=1, 
                                n_output=inf, 
                                params=['nx', 'ny']) 
@@ -1044,7 +1048,7 @@ class CdoOperation:
            nx: INTEGER - Number of regions in x direction \[default: number of input files\]
            names: STRING - Comma-separated list of variable names \[default: all variables\]
         """
-        operator = CdoOperator(command="collgrid",
+        operator = _CdoOperator(command="collgrid",
                                n_input=inf, 
                                n_output=1, 
                                params=['nx', 'names']) 
@@ -1081,7 +1085,7 @@ class CdoOperation:
            timestep_of_year: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps of year.
            timestepmask: STRING - Read timesteps from a mask file.
         """
-        operator = CdoOperator(command="select",
+        operator = _CdoOperator(command="select",
                                n_input=inf, 
                                n_output=1, 
                                params=['name', 'param', 'code', 'level', 'levrange', 'levidx', 'zaxisname', 'zaxisnum', 'ltype', 'gridname', 'gridnum', 'steptype', 'date', 'startdate', 'enddate', 'minute', 'hour', 'day', 'month', 'season', 'year', 'dom', 'timestep', 'timestep_of_year', 'timestepmask']) 
@@ -1118,7 +1122,7 @@ class CdoOperation:
            timestep_of_year: INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps of year.
            timestepmask: STRING - Read timesteps from a mask file.
         """
-        operator = CdoOperator(command="delete",
+        operator = _CdoOperator(command="delete",
                                n_input=inf, 
                                n_output=1, 
                                params=['name', 'param', 'code', 'level', 'levrange', 'levidx', 'zaxisname', 'zaxisnum', 'ltype', 'gridname', 'gridnum', 'steptype', 'date', 'startdate', 'enddate', 'minute', 'hour', 'day', 'month', 'season', 'year', 'dom', 'timestep', 'timestep_of_year', 'timestepmask']) 
@@ -1129,7 +1133,7 @@ class CdoOperation:
         r"""
         CDO operator: selmulti
         """
-        operator = CdoOperator(command="selmulti",
+        operator = _CdoOperator(command="selmulti",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -1140,7 +1144,7 @@ class CdoOperation:
         r"""
         CDO operator: delmulti
         """
-        operator = CdoOperator(command="delmulti",
+        operator = _CdoOperator(command="delmulti",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -1151,7 +1155,7 @@ class CdoOperation:
         r"""
         CDO operator: changemulti
         """
-        operator = CdoOperator(command="changemulti",
+        operator = _CdoOperator(command="changemulti",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -1174,7 +1178,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="selparam",
+        operator = _CdoOperator(command="selparam",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1197,7 +1201,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="delparam",
+        operator = _CdoOperator(command="delparam",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1220,7 +1224,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="selcode",
+        operator = _CdoOperator(command="selcode",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1243,7 +1247,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="delcode",
+        operator = _CdoOperator(command="delcode",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1266,7 +1270,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="selname",
+        operator = _CdoOperator(command="selname",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1289,7 +1293,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="delname",
+        operator = _CdoOperator(command="delname",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1312,7 +1316,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="selstdname",
+        operator = _CdoOperator(command="selstdname",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1335,7 +1339,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="sellevel",
+        operator = _CdoOperator(command="sellevel",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1358,7 +1362,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="sellevidx",
+        operator = _CdoOperator(command="sellevidx",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1381,7 +1385,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="selgrid",
+        operator = _CdoOperator(command="selgrid",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1404,7 +1408,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="selzaxis",
+        operator = _CdoOperator(command="selzaxis",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1427,7 +1431,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="selzaxisname",
+        operator = _CdoOperator(command="selzaxisname",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1450,7 +1454,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="selltype",
+        operator = _CdoOperator(command="selltype",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1473,7 +1477,7 @@ class CdoOperation:
            zaxisnames: STRING - Comma-separated list of z-axis names.
            tabnums: INTEGER - Comma-separated list or range of parameter table numbers.
         """
-        operator = CdoOperator(command="seltabnum",
+        operator = _CdoOperator(command="seltabnum",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter', 'codes', 'names', 'stdnames', 'levels', 'levidx', 'ltypes', 'grids', 'zaxes', 'zaxisnames', 'tabnums']) 
@@ -1496,7 +1500,7 @@ class CdoOperation:
            nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
            nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
-        operator = CdoOperator(command="seltimestep",
+        operator = _CdoOperator(command="seltimestep",
                                n_input=1, 
                                n_output=1, 
                                params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
@@ -1519,7 +1523,7 @@ class CdoOperation:
            nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
            nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
-        operator = CdoOperator(command="seltime",
+        operator = _CdoOperator(command="seltime",
                                n_input=1, 
                                n_output=1, 
                                params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
@@ -1542,7 +1546,7 @@ class CdoOperation:
            nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
            nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
-        operator = CdoOperator(command="selhour",
+        operator = _CdoOperator(command="selhour",
                                n_input=1, 
                                n_output=1, 
                                params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
@@ -1565,7 +1569,7 @@ class CdoOperation:
            nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
            nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
-        operator = CdoOperator(command="selday",
+        operator = _CdoOperator(command="selday",
                                n_input=1, 
                                n_output=1, 
                                params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
@@ -1588,7 +1592,7 @@ class CdoOperation:
            nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
            nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
-        operator = CdoOperator(command="selmonth",
+        operator = _CdoOperator(command="selmonth",
                                n_input=1, 
                                n_output=1, 
                                params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
@@ -1611,7 +1615,7 @@ class CdoOperation:
            nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
            nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
-        operator = CdoOperator(command="selyear",
+        operator = _CdoOperator(command="selyear",
                                n_input=1, 
                                n_output=1, 
                                params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
@@ -1634,7 +1638,7 @@ class CdoOperation:
            nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
            nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
-        operator = CdoOperator(command="selseason",
+        operator = _CdoOperator(command="selseason",
                                n_input=1, 
                                n_output=1, 
                                params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
@@ -1657,7 +1661,7 @@ class CdoOperation:
            nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
            nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
-        operator = CdoOperator(command="seldate",
+        operator = _CdoOperator(command="seldate",
                                n_input=1, 
                                n_output=1, 
                                params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
@@ -1680,7 +1684,7 @@ class CdoOperation:
            nts1: INTEGER - Number of timesteps before the selected month \[default: 0\].
            nts2: INTEGER - Number of timesteps after the selected month \[default: nts1\].
         """
-        operator = CdoOperator(command="selsmon",
+        operator = _CdoOperator(command="selsmon",
                                n_input=1, 
                                n_output=1, 
                                params=['timesteps', 'times', 'hours', 'days', 'months', 'years', 'seasons', 'startdate', 'enddate', 'nts1', 'nts2']) 
@@ -1700,7 +1704,7 @@ class CdoOperation:
            idy1: INTEGER - Index of first latitude (1 - nlat)
            idy2: INTEGER - Index of last latitude (1 - nlat)
         """
-        operator = CdoOperator(command="sellonlatbox",
+        operator = _CdoOperator(command="sellonlatbox",
                                n_input=1, 
                                n_output=1, 
                                params=['lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2']) 
@@ -1720,7 +1724,7 @@ class CdoOperation:
            idy1: INTEGER - Index of first latitude (1 - nlat)
            idy2: INTEGER - Index of last latitude (1 - nlat)
         """
-        operator = CdoOperator(command="selindexbox",
+        operator = _CdoOperator(command="selindexbox",
                                n_input=1, 
                                n_output=1, 
                                params=['lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2']) 
@@ -1736,7 +1740,7 @@ class CdoOperation:
            lat: FLOAT - Latitude of the center of the circle in degrees, default lat=0.0
            radius: STRING - Radius of the circle, default radius=1deg (units: deg, rad, km, m)
         """
-        operator = CdoOperator(command="selregion",
+        operator = _CdoOperator(command="selregion",
                                n_input=1, 
                                n_output=1, 
                                params=['regions', 'lon', 'lat', 'radius']) 
@@ -1752,7 +1756,7 @@ class CdoOperation:
            lat: FLOAT - Latitude of the center of the circle in degrees, default lat=0.0
            radius: STRING - Radius of the circle, default radius=1deg (units: deg, rad, km, m)
         """
-        operator = CdoOperator(command="selcircle",
+        operator = _CdoOperator(command="selcircle",
                                n_input=1, 
                                n_output=1, 
                                params=['regions', 'lon', 'lat', 'radius']) 
@@ -1765,7 +1769,7 @@ class CdoOperation:
         Parameters:
            indices: INTEGER - Comma-separated list or first/last\[/inc\] range of indices
         """
-        operator = CdoOperator(command="selgridcell",
+        operator = _CdoOperator(command="selgridcell",
                                n_input=1, 
                                n_output=1, 
                                params=['indices']) 
@@ -1778,7 +1782,7 @@ class CdoOperation:
         Parameters:
            indices: INTEGER - Comma-separated list or first/last\[/inc\] range of indices
         """
-        operator = CdoOperator(command="delgridcell",
+        operator = _CdoOperator(command="delgridcell",
                                n_input=1, 
                                n_output=1, 
                                params=['indices']) 
@@ -1791,7 +1795,7 @@ class CdoOperation:
         Parameters:
            factor: INTEGER - Resample factor, typically 2, which will half the resolution
         """
-        operator = CdoOperator(command="samplegrid",
+        operator = _CdoOperator(command="samplegrid",
                                n_input=1, 
                                n_output=1, 
                                params=['factor']) 
@@ -1802,7 +1806,7 @@ class CdoOperation:
         r"""
         CDO operator: selyearidx
         """
-        operator = CdoOperator(command="selyearidx",
+        operator = _CdoOperator(command="selyearidx",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -1813,7 +1817,7 @@ class CdoOperation:
         r"""
         CDO operator: seltimeidx
         """
-        operator = CdoOperator(command="seltimeidx",
+        operator = _CdoOperator(command="seltimeidx",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -1826,7 +1830,7 @@ class CdoOperation:
         Parameters:
            isovalue: FLOAT - Isosurface value
         """
-        operator = CdoOperator(command="bottomvalue",
+        operator = _CdoOperator(command="bottomvalue",
                                n_input=1, 
                                n_output=1, 
                                params=['isovalue']) 
@@ -1839,7 +1843,7 @@ class CdoOperation:
         Parameters:
            isovalue: FLOAT - Isosurface value
         """
-        operator = CdoOperator(command="topvalue",
+        operator = _CdoOperator(command="topvalue",
                                n_input=1, 
                                n_output=1, 
                                params=['isovalue']) 
@@ -1852,7 +1856,7 @@ class CdoOperation:
         Parameters:
            isovalue: FLOAT - Isosurface value
         """
-        operator = CdoOperator(command="isosurface",
+        operator = _CdoOperator(command="isosurface",
                                n_input=1, 
                                n_output=1, 
                                params=['isovalue']) 
@@ -1863,7 +1867,7 @@ class CdoOperation:
         r"""
         CDO operator: ifthen
         """
-        operator = CdoOperator(command="ifthen",
+        operator = _CdoOperator(command="ifthen",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -1874,7 +1878,7 @@ class CdoOperation:
         r"""
         CDO operator: ifnotthen
         """
-        operator = CdoOperator(command="ifnotthen",
+        operator = _CdoOperator(command="ifnotthen",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -1885,7 +1889,7 @@ class CdoOperation:
         r"""
         CDO operator: ifthenelse
         """
-        operator = CdoOperator(command="ifthenelse",
+        operator = _CdoOperator(command="ifthenelse",
                                n_input=3, 
                                n_output=1, 
                                params=[]) 
@@ -1898,7 +1902,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="ifthenc",
+        operator = _CdoOperator(command="ifthenc",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -1911,7 +1915,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="ifnotthenc",
+        operator = _CdoOperator(command="ifnotthenc",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -1925,7 +1929,7 @@ class CdoOperation:
            mask: STRING - file which holds the mask field
            limitCoordsOutput: STRING - optional parameter to limit coordinates output: 'nobounds' disables coordinate bounds, 'nocoords' avoids all coordinate information
         """
-        operator = CdoOperator(command="reducegrid",
+        operator = _CdoOperator(command="reducegrid",
                                n_input=1, 
                                n_output=1, 
                                params=['mask', 'limitCoordsOutput']) 
@@ -1936,7 +1940,7 @@ class CdoOperation:
         r"""
         CDO operator: eq
         """
-        operator = CdoOperator(command="eq",
+        operator = _CdoOperator(command="eq",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -1947,7 +1951,7 @@ class CdoOperation:
         r"""
         CDO operator: ne
         """
-        operator = CdoOperator(command="ne",
+        operator = _CdoOperator(command="ne",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -1958,7 +1962,7 @@ class CdoOperation:
         r"""
         CDO operator: le
         """
-        operator = CdoOperator(command="le",
+        operator = _CdoOperator(command="le",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -1969,7 +1973,7 @@ class CdoOperation:
         r"""
         CDO operator: lt
         """
-        operator = CdoOperator(command="lt",
+        operator = _CdoOperator(command="lt",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -1980,7 +1984,7 @@ class CdoOperation:
         r"""
         CDO operator: ge
         """
-        operator = CdoOperator(command="ge",
+        operator = _CdoOperator(command="ge",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -1991,7 +1995,7 @@ class CdoOperation:
         r"""
         CDO operator: gt
         """
-        operator = CdoOperator(command="gt",
+        operator = _CdoOperator(command="gt",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -2004,7 +2008,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="eqc",
+        operator = _CdoOperator(command="eqc",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -2017,7 +2021,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="nec",
+        operator = _CdoOperator(command="nec",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -2030,7 +2034,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="lec",
+        operator = _CdoOperator(command="lec",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -2043,7 +2047,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="ltc",
+        operator = _CdoOperator(command="ltc",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -2056,7 +2060,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="gec",
+        operator = _CdoOperator(command="gec",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -2069,7 +2073,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="gtc",
+        operator = _CdoOperator(command="gtc",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -2080,7 +2084,7 @@ class CdoOperation:
         r"""
         CDO operator: ymoneq
         """
-        operator = CdoOperator(command="ymoneq",
+        operator = _CdoOperator(command="ymoneq",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -2091,7 +2095,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonne
         """
-        operator = CdoOperator(command="ymonne",
+        operator = _CdoOperator(command="ymonne",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -2102,7 +2106,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonle
         """
-        operator = CdoOperator(command="ymonle",
+        operator = _CdoOperator(command="ymonle",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -2113,7 +2117,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonlt
         """
-        operator = CdoOperator(command="ymonlt",
+        operator = _CdoOperator(command="ymonlt",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -2124,7 +2128,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonge
         """
-        operator = CdoOperator(command="ymonge",
+        operator = _CdoOperator(command="ymonge",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -2135,7 +2139,7 @@ class CdoOperation:
         r"""
         CDO operator: ymongt
         """
-        operator = CdoOperator(command="ymongt",
+        operator = _CdoOperator(command="ymongt",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -2148,7 +2152,7 @@ class CdoOperation:
         Parameters:
            attributes: STRING - Comma-separated list of attributes.
         """
-        operator = CdoOperator(command="setattribute",
+        operator = _CdoOperator(command="setattribute",
                                n_input=1, 
                                n_output=1, 
                                params=['attributes']) 
@@ -2161,7 +2165,7 @@ class CdoOperation:
         Parameters:
            attributes: STRING - Comma-separated list of attributes.
         """
-        operator = CdoOperator(command="delattribute",
+        operator = _CdoOperator(command="delattribute",
                                n_input=1, 
                                n_output=1, 
                                params=['attributes']) 
@@ -2175,7 +2179,7 @@ class CdoOperation:
            table: STRING - Parameter table file or name
            convert: STRING - Converts the units if necessary
         """
-        operator = CdoOperator(command="setpartabp",
+        operator = _CdoOperator(command="setpartabp",
                                n_input=1, 
                                n_output=1, 
                                params=['table', 'convert']) 
@@ -2189,7 +2193,7 @@ class CdoOperation:
            table: STRING - Parameter table file or name
            convert: STRING - Converts the units if necessary
         """
-        operator = CdoOperator(command="setpartabn",
+        operator = _CdoOperator(command="setpartabn",
                                n_input=1, 
                                n_output=1, 
                                params=['table', 'convert']) 
@@ -2208,7 +2212,7 @@ class CdoOperation:
            ltype: INTEGER - GRIB level type
            maxsteps: INTEGER - Maximum number of timesteps
         """
-        operator = CdoOperator(command="setcodetab",
+        operator = _CdoOperator(command="setcodetab",
                                n_input=1, 
                                n_output=1, 
                                params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
@@ -2227,7 +2231,7 @@ class CdoOperation:
            ltype: INTEGER - GRIB level type
            maxsteps: INTEGER - Maximum number of timesteps
         """
-        operator = CdoOperator(command="setcode",
+        operator = _CdoOperator(command="setcode",
                                n_input=1, 
                                n_output=1, 
                                params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
@@ -2246,7 +2250,7 @@ class CdoOperation:
            ltype: INTEGER - GRIB level type
            maxsteps: INTEGER - Maximum number of timesteps
         """
-        operator = CdoOperator(command="setparam",
+        operator = _CdoOperator(command="setparam",
                                n_input=1, 
                                n_output=1, 
                                params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
@@ -2265,7 +2269,7 @@ class CdoOperation:
            ltype: INTEGER - GRIB level type
            maxsteps: INTEGER - Maximum number of timesteps
         """
-        operator = CdoOperator(command="setname",
+        operator = _CdoOperator(command="setname",
                                n_input=1, 
                                n_output=1, 
                                params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
@@ -2284,7 +2288,7 @@ class CdoOperation:
            ltype: INTEGER - GRIB level type
            maxsteps: INTEGER - Maximum number of timesteps
         """
-        operator = CdoOperator(command="setunit",
+        operator = _CdoOperator(command="setunit",
                                n_input=1, 
                                n_output=1, 
                                params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
@@ -2303,7 +2307,7 @@ class CdoOperation:
            ltype: INTEGER - GRIB level type
            maxsteps: INTEGER - Maximum number of timesteps
         """
-        operator = CdoOperator(command="setlevel",
+        operator = _CdoOperator(command="setlevel",
                                n_input=1, 
                                n_output=1, 
                                params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
@@ -2322,7 +2326,7 @@ class CdoOperation:
            ltype: INTEGER - GRIB level type
            maxsteps: INTEGER - Maximum number of timesteps
         """
-        operator = CdoOperator(command="setltype",
+        operator = _CdoOperator(command="setltype",
                                n_input=1, 
                                n_output=1, 
                                params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
@@ -2341,7 +2345,7 @@ class CdoOperation:
            ltype: INTEGER - GRIB level type
            maxsteps: INTEGER - Maximum number of timesteps
         """
-        operator = CdoOperator(command="setmaxsteps",
+        operator = _CdoOperator(command="setmaxsteps",
                                n_input=1, 
                                n_output=1, 
                                params=['table', 'code', 'param', 'name', 'level', 'ltype', 'maxsteps']) 
@@ -2363,7 +2367,7 @@ class CdoOperation:
            calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
            shiftValue: STRING - Shift value (e.g. -3hour)
         """
-        operator = CdoOperator(command="setdate",
+        operator = _CdoOperator(command="setdate",
                                n_input=1, 
                                n_output=1, 
                                params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
@@ -2385,7 +2389,7 @@ class CdoOperation:
            calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
            shiftValue: STRING - Shift value (e.g. -3hour)
         """
-        operator = CdoOperator(command="settime",
+        operator = _CdoOperator(command="settime",
                                n_input=1, 
                                n_output=1, 
                                params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
@@ -2407,7 +2411,7 @@ class CdoOperation:
            calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
            shiftValue: STRING - Shift value (e.g. -3hour)
         """
-        operator = CdoOperator(command="setday",
+        operator = _CdoOperator(command="setday",
                                n_input=1, 
                                n_output=1, 
                                params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
@@ -2429,7 +2433,7 @@ class CdoOperation:
            calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
            shiftValue: STRING - Shift value (e.g. -3hour)
         """
-        operator = CdoOperator(command="setmon",
+        operator = _CdoOperator(command="setmon",
                                n_input=1, 
                                n_output=1, 
                                params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
@@ -2451,7 +2455,7 @@ class CdoOperation:
            calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
            shiftValue: STRING - Shift value (e.g. -3hour)
         """
-        operator = CdoOperator(command="setyear",
+        operator = _CdoOperator(command="setyear",
                                n_input=1, 
                                n_output=1, 
                                params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
@@ -2473,7 +2477,7 @@ class CdoOperation:
            calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
            shiftValue: STRING - Shift value (e.g. -3hour)
         """
-        operator = CdoOperator(command="settunits",
+        operator = _CdoOperator(command="settunits",
                                n_input=1, 
                                n_output=1, 
                                params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
@@ -2495,7 +2499,7 @@ class CdoOperation:
            calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
            shiftValue: STRING - Shift value (e.g. -3hour)
         """
-        operator = CdoOperator(command="settaxis",
+        operator = _CdoOperator(command="settaxis",
                                n_input=1, 
                                n_output=1, 
                                params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
@@ -2517,7 +2521,7 @@ class CdoOperation:
            calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
            shiftValue: STRING - Shift value (e.g. -3hour)
         """
-        operator = CdoOperator(command="settbounds",
+        operator = _CdoOperator(command="settbounds",
                                n_input=1, 
                                n_output=1, 
                                params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
@@ -2539,7 +2543,7 @@ class CdoOperation:
            calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
            shiftValue: STRING - Shift value (e.g. -3hour)
         """
-        operator = CdoOperator(command="setreftime",
+        operator = _CdoOperator(command="setreftime",
                                n_input=1, 
                                n_output=1, 
                                params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
@@ -2561,7 +2565,7 @@ class CdoOperation:
            calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
            shiftValue: STRING - Shift value (e.g. -3hour)
         """
-        operator = CdoOperator(command="setcalendar",
+        operator = _CdoOperator(command="setcalendar",
                                n_input=1, 
                                n_output=1, 
                                params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
@@ -2583,7 +2587,7 @@ class CdoOperation:
            calendar: STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
            shiftValue: STRING - Shift value (e.g. -3hour)
         """
-        operator = CdoOperator(command="shifttime",
+        operator = _CdoOperator(command="shifttime",
                                n_input=1, 
                                n_output=1, 
                                params=['day', 'month', 'year', 'units', 'date', 'time', 'inc', 'frequency', 'calendar', 'shiftValue']) 
@@ -2605,7 +2609,7 @@ class CdoOperation:
            oldlev: FLOAT - Old level
            newlev: FLOAT - New level
         """
-        operator = CdoOperator(command="chcode",
+        operator = _CdoOperator(command="chcode",
                                n_input=1, 
                                n_output=1, 
                                params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
@@ -2627,7 +2631,7 @@ class CdoOperation:
            oldlev: FLOAT - Old level
            newlev: FLOAT - New level
         """
-        operator = CdoOperator(command="chparam",
+        operator = _CdoOperator(command="chparam",
                                n_input=1, 
                                n_output=1, 
                                params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
@@ -2649,7 +2653,7 @@ class CdoOperation:
            oldlev: FLOAT - Old level
            newlev: FLOAT - New level
         """
-        operator = CdoOperator(command="chname",
+        operator = _CdoOperator(command="chname",
                                n_input=1, 
                                n_output=1, 
                                params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
@@ -2671,7 +2675,7 @@ class CdoOperation:
            oldlev: FLOAT - Old level
            newlev: FLOAT - New level
         """
-        operator = CdoOperator(command="chunit",
+        operator = _CdoOperator(command="chunit",
                                n_input=1, 
                                n_output=1, 
                                params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
@@ -2693,7 +2697,7 @@ class CdoOperation:
            oldlev: FLOAT - Old level
            newlev: FLOAT - New level
         """
-        operator = CdoOperator(command="chlevel",
+        operator = _CdoOperator(command="chlevel",
                                n_input=1, 
                                n_output=1, 
                                params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
@@ -2715,7 +2719,7 @@ class CdoOperation:
            oldlev: FLOAT - Old level
            newlev: FLOAT - New level
         """
-        operator = CdoOperator(command="chlevelc",
+        operator = _CdoOperator(command="chlevelc",
                                n_input=1, 
                                n_output=1, 
                                params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
@@ -2737,7 +2741,7 @@ class CdoOperation:
            oldlev: FLOAT - Old level
            newlev: FLOAT - New level
         """
-        operator = CdoOperator(command="chlevelv",
+        operator = _CdoOperator(command="chlevelv",
                                n_input=1, 
                                n_output=1, 
                                params=['code', 'oldcode', 'newcode', 'oldparam', 'newparam', 'name', 'oldname', 'newname', 'oldlev', 'newlev']) 
@@ -2754,7 +2758,7 @@ class CdoOperation:
            gridmask: STRING - Data file, the first field is used as grid mask
            projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
         """
-        operator = CdoOperator(command="setgrid",
+        operator = _CdoOperator(command="setgrid",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams']) 
@@ -2771,7 +2775,7 @@ class CdoOperation:
            gridmask: STRING - Data file, the first field is used as grid mask
            projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
         """
-        operator = CdoOperator(command="setgridtype",
+        operator = _CdoOperator(command="setgridtype",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams']) 
@@ -2788,7 +2792,7 @@ class CdoOperation:
            gridmask: STRING - Data file, the first field is used as grid mask
            projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
         """
-        operator = CdoOperator(command="setgridarea",
+        operator = _CdoOperator(command="setgridarea",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams']) 
@@ -2805,7 +2809,7 @@ class CdoOperation:
            gridmask: STRING - Data file, the first field is used as grid mask
            projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
         """
-        operator = CdoOperator(command="setgridmask",
+        operator = _CdoOperator(command="setgridmask",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams']) 
@@ -2822,7 +2826,7 @@ class CdoOperation:
            gridmask: STRING - Data file, the first field is used as grid mask
            projparams: STRING - Proj library parameter (e.g.:+init=EPSG:3413)
         """
-        operator = CdoOperator(command="setprojparams",
+        operator = _CdoOperator(command="setprojparams",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'gridtype', 'gridarea', 'gridmask', 'projparams']) 
@@ -2837,7 +2841,7 @@ class CdoOperation:
            zbot: FLOAT - Specifying the bottom of the vertical column. Must have the same units as z-axis.
            ztop: FLOAT - Specifying the top of the vertical column. Must have the same units as z-axis.
         """
-        operator = CdoOperator(command="setzaxis",
+        operator = _CdoOperator(command="setzaxis",
                                n_input=1, 
                                n_output=1, 
                                params=['zaxis', 'zbot', 'ztop']) 
@@ -2852,7 +2856,7 @@ class CdoOperation:
            zbot: FLOAT - Specifying the bottom of the vertical column. Must have the same units as z-axis.
            ztop: FLOAT - Specifying the top of the vertical column. Must have the same units as z-axis.
         """
-        operator = CdoOperator(command="genlevelbounds",
+        operator = _CdoOperator(command="genlevelbounds",
                                n_input=1, 
                                n_output=1, 
                                params=['zaxis', 'zbot', 'ztop']) 
@@ -2863,7 +2867,7 @@ class CdoOperation:
         r"""
         CDO operator: invertlat
         """
-        operator = CdoOperator(command="invertlat",
+        operator = _CdoOperator(command="invertlat",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -2874,7 +2878,7 @@ class CdoOperation:
         r"""
         CDO operator: invertlev
         """
-        operator = CdoOperator(command="invertlev",
+        operator = _CdoOperator(command="invertlev",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -2889,7 +2893,7 @@ class CdoOperation:
            cyclic: STRING - If set, cells are filled up cyclic (default: missing value)
            coord: STRING - If set, coordinates are also shifted
         """
-        operator = CdoOperator(command="shiftx",
+        operator = _CdoOperator(command="shiftx",
                                n_input=1, 
                                n_output=1, 
                                params=['nshift', 'cyclic', 'coord']) 
@@ -2904,7 +2908,7 @@ class CdoOperation:
            cyclic: STRING - If set, cells are filled up cyclic (default: missing value)
            coord: STRING - If set, coordinates are also shifted
         """
-        operator = CdoOperator(command="shifty",
+        operator = _CdoOperator(command="shifty",
                                n_input=1, 
                                n_output=1, 
                                params=['nshift', 'cyclic', 'coord']) 
@@ -2917,7 +2921,7 @@ class CdoOperation:
         Parameters:
            regions: STRING - Comma-separated list of ASCII formatted files with different regions
         """
-        operator = CdoOperator(command="maskregion",
+        operator = _CdoOperator(command="maskregion",
                                n_input=1, 
                                n_output=1, 
                                params=['regions']) 
@@ -2937,7 +2941,7 @@ class CdoOperation:
            idy1: INTEGER - Index of first latitude
            idy2: INTEGER - Index of last latitude
         """
-        operator = CdoOperator(command="masklonlatbox",
+        operator = _CdoOperator(command="masklonlatbox",
                                n_input=1, 
                                n_output=1, 
                                params=['lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2']) 
@@ -2957,7 +2961,7 @@ class CdoOperation:
            idy1: INTEGER - Index of first latitude
            idy2: INTEGER - Index of last latitude
         """
-        operator = CdoOperator(command="maskindexbox",
+        operator = _CdoOperator(command="maskindexbox",
                                n_input=1, 
                                n_output=1, 
                                params=['lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2']) 
@@ -2978,7 +2982,7 @@ class CdoOperation:
            idy1: INTEGER - Index of first latitude
            idy2: INTEGER - Index of last latitude
         """
-        operator = CdoOperator(command="setclonlatbox",
+        operator = _CdoOperator(command="setclonlatbox",
                                n_input=1, 
                                n_output=1, 
                                params=['c', 'lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2']) 
@@ -2999,7 +3003,7 @@ class CdoOperation:
            idy1: INTEGER - Index of first latitude
            idy2: INTEGER - Index of last latitude
         """
-        operator = CdoOperator(command="setcindexbox",
+        operator = _CdoOperator(command="setcindexbox",
                                n_input=1, 
                                n_output=1, 
                                params=['c', 'lon1', 'lon2', 'lat1', 'lat2', 'idx1', 'idx2', 'idy1', 'idy2']) 
@@ -3012,7 +3016,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="enlarge",
+        operator = _CdoOperator(command="enlarge",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -3029,7 +3033,7 @@ class CdoOperation:
            rmin: FLOAT - Lower bound
            rmax: FLOAT - Upper bound
         """
-        operator = CdoOperator(command="setmissval",
+        operator = _CdoOperator(command="setmissval",
                                n_input=1, 
                                n_output=1, 
                                params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
@@ -3046,7 +3050,7 @@ class CdoOperation:
            rmin: FLOAT - Lower bound
            rmax: FLOAT - Upper bound
         """
-        operator = CdoOperator(command="setctomiss",
+        operator = _CdoOperator(command="setctomiss",
                                n_input=1, 
                                n_output=1, 
                                params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
@@ -3063,7 +3067,7 @@ class CdoOperation:
            rmin: FLOAT - Lower bound
            rmax: FLOAT - Upper bound
         """
-        operator = CdoOperator(command="setmisstoc",
+        operator = _CdoOperator(command="setmisstoc",
                                n_input=1, 
                                n_output=1, 
                                params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
@@ -3080,7 +3084,7 @@ class CdoOperation:
            rmin: FLOAT - Lower bound
            rmax: FLOAT - Upper bound
         """
-        operator = CdoOperator(command="setrtomiss",
+        operator = _CdoOperator(command="setrtomiss",
                                n_input=1, 
                                n_output=1, 
                                params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
@@ -3097,7 +3101,7 @@ class CdoOperation:
            rmin: FLOAT - Lower bound
            rmax: FLOAT - Upper bound
         """
-        operator = CdoOperator(command="setvrange",
+        operator = _CdoOperator(command="setvrange",
                                n_input=1, 
                                n_output=1, 
                                params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
@@ -3114,7 +3118,7 @@ class CdoOperation:
            rmin: FLOAT - Lower bound
            rmax: FLOAT - Upper bound
         """
-        operator = CdoOperator(command="setmisstonn",
+        operator = _CdoOperator(command="setmisstonn",
                                n_input=1, 
                                n_output=1, 
                                params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
@@ -3131,7 +3135,7 @@ class CdoOperation:
            rmin: FLOAT - Lower bound
            rmax: FLOAT - Upper bound
         """
-        operator = CdoOperator(command="setmisstodis",
+        operator = _CdoOperator(command="setmisstodis",
                                n_input=1, 
                                n_output=1, 
                                params=['neighbors', 'newmiss', 'c', 'rmin', 'rmax']) 
@@ -3146,7 +3150,7 @@ class CdoOperation:
            limit: INTEGER - The maximum number of consecutive missing values to fill (default: all)
            max_gaps: INTEGER - The maximum number of gaps to fill (default: all)
         """
-        operator = CdoOperator(command="vertfillmiss",
+        operator = _CdoOperator(command="vertfillmiss",
                                n_input=1, 
                                n_output=1, 
                                params=['method', 'limit', 'max_gaps']) 
@@ -3161,7 +3165,7 @@ class CdoOperation:
            limit: INTEGER - The maximum number of consecutive missing values to fill (default: all)
            max_gaps: INTEGER - The maximum number of gaps to fill (default: all)
         """
-        operator = CdoOperator(command="timfillmiss",
+        operator = _CdoOperator(command="timfillmiss",
                                n_input=1, 
                                n_output=1, 
                                params=['method', 'limit', 'max_gaps']) 
@@ -3176,7 +3180,7 @@ class CdoOperation:
            cell: INTEGER - Comma-separated list of grid cell indices
            mask: STRING - Name of the data file which contains the mask
         """
-        operator = CdoOperator(command="setgridcell",
+        operator = _CdoOperator(command="setgridcell",
                                n_input=1, 
                                n_output=1, 
                                params=['value', 'cell', 'mask']) 
@@ -3190,7 +3194,7 @@ class CdoOperation:
            instr: STRING - Processing instructions (need to be 'quoted' in most cases)
            filename: STRING - File with processing instructions
         """
-        operator = CdoOperator(command="expr",
+        operator = _CdoOperator(command="expr",
                                n_input=1, 
                                n_output=1, 
                                params=['instr', 'filename']) 
@@ -3204,7 +3208,7 @@ class CdoOperation:
            instr: STRING - Processing instructions (need to be 'quoted' in most cases)
            filename: STRING - File with processing instructions
         """
-        operator = CdoOperator(command="exprf",
+        operator = _CdoOperator(command="exprf",
                                n_input=1, 
                                n_output=1, 
                                params=['instr', 'filename']) 
@@ -3218,7 +3222,7 @@ class CdoOperation:
            instr: STRING - Processing instructions (need to be 'quoted' in most cases)
            filename: STRING - File with processing instructions
         """
-        operator = CdoOperator(command="aexpr",
+        operator = _CdoOperator(command="aexpr",
                                n_input=1, 
                                n_output=1, 
                                params=['instr', 'filename']) 
@@ -3232,7 +3236,7 @@ class CdoOperation:
            instr: STRING - Processing instructions (need to be 'quoted' in most cases)
            filename: STRING - File with processing instructions
         """
-        operator = CdoOperator(command="aexprf",
+        operator = _CdoOperator(command="aexprf",
                                n_input=1, 
                                n_output=1, 
                                params=['instr', 'filename']) 
@@ -3243,7 +3247,7 @@ class CdoOperation:
         r"""
         CDO operator: abs
         """
-        operator = CdoOperator(command="abs",
+        operator = _CdoOperator(command="abs",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3254,7 +3258,7 @@ class CdoOperation:
         r"""
         CDO operator: int
         """
-        operator = CdoOperator(command="int",
+        operator = _CdoOperator(command="int",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3265,7 +3269,7 @@ class CdoOperation:
         r"""
         CDO operator: nint
         """
-        operator = CdoOperator(command="nint",
+        operator = _CdoOperator(command="nint",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3276,7 +3280,7 @@ class CdoOperation:
         r"""
         CDO operator: pow
         """
-        operator = CdoOperator(command="pow",
+        operator = _CdoOperator(command="pow",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3287,7 +3291,7 @@ class CdoOperation:
         r"""
         CDO operator: sqr
         """
-        operator = CdoOperator(command="sqr",
+        operator = _CdoOperator(command="sqr",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3298,7 +3302,7 @@ class CdoOperation:
         r"""
         CDO operator: sqrt
         """
-        operator = CdoOperator(command="sqrt",
+        operator = _CdoOperator(command="sqrt",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3309,7 +3313,7 @@ class CdoOperation:
         r"""
         CDO operator: exp
         """
-        operator = CdoOperator(command="exp",
+        operator = _CdoOperator(command="exp",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3320,7 +3324,7 @@ class CdoOperation:
         r"""
         CDO operator: ln
         """
-        operator = CdoOperator(command="ln",
+        operator = _CdoOperator(command="ln",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3331,7 +3335,7 @@ class CdoOperation:
         r"""
         CDO operator: log10
         """
-        operator = CdoOperator(command="log10",
+        operator = _CdoOperator(command="log10",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3342,7 +3346,7 @@ class CdoOperation:
         r"""
         CDO operator: sin
         """
-        operator = CdoOperator(command="sin",
+        operator = _CdoOperator(command="sin",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3353,7 +3357,7 @@ class CdoOperation:
         r"""
         CDO operator: cos
         """
-        operator = CdoOperator(command="cos",
+        operator = _CdoOperator(command="cos",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3364,7 +3368,7 @@ class CdoOperation:
         r"""
         CDO operator: tan
         """
-        operator = CdoOperator(command="tan",
+        operator = _CdoOperator(command="tan",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3375,7 +3379,7 @@ class CdoOperation:
         r"""
         CDO operator: asin
         """
-        operator = CdoOperator(command="asin",
+        operator = _CdoOperator(command="asin",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3386,7 +3390,7 @@ class CdoOperation:
         r"""
         CDO operator: acos
         """
-        operator = CdoOperator(command="acos",
+        operator = _CdoOperator(command="acos",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3397,7 +3401,7 @@ class CdoOperation:
         r"""
         CDO operator: atan
         """
-        operator = CdoOperator(command="atan",
+        operator = _CdoOperator(command="atan",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3408,7 +3412,7 @@ class CdoOperation:
         r"""
         CDO operator: reci
         """
-        operator = CdoOperator(command="reci",
+        operator = _CdoOperator(command="reci",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3419,7 +3423,7 @@ class CdoOperation:
         r"""
         CDO operator: not
         """
-        operator = CdoOperator(command="not",
+        operator = _CdoOperator(command="not",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3432,7 +3436,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="addc",
+        operator = _CdoOperator(command="addc",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -3445,7 +3449,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="subc",
+        operator = _CdoOperator(command="subc",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -3458,7 +3462,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="mulc",
+        operator = _CdoOperator(command="mulc",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -3471,7 +3475,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="divc",
+        operator = _CdoOperator(command="divc",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -3484,7 +3488,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="minc",
+        operator = _CdoOperator(command="minc",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -3497,7 +3501,7 @@ class CdoOperation:
         Parameters:
            c: FLOAT - Constant
         """
-        operator = CdoOperator(command="maxc",
+        operator = _CdoOperator(command="maxc",
                                n_input=1, 
                                n_output=1, 
                                params=['c']) 
@@ -3508,7 +3512,7 @@ class CdoOperation:
         r"""
         CDO operator: add
         """
-        operator = CdoOperator(command="add",
+        operator = _CdoOperator(command="add",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3519,7 +3523,7 @@ class CdoOperation:
         r"""
         CDO operator: sub
         """
-        operator = CdoOperator(command="sub",
+        operator = _CdoOperator(command="sub",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3530,7 +3534,7 @@ class CdoOperation:
         r"""
         CDO operator: mul
         """
-        operator = CdoOperator(command="mul",
+        operator = _CdoOperator(command="mul",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3541,7 +3545,7 @@ class CdoOperation:
         r"""
         CDO operator: div
         """
-        operator = CdoOperator(command="div",
+        operator = _CdoOperator(command="div",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3552,7 +3556,7 @@ class CdoOperation:
         r"""
         CDO operator: min
         """
-        operator = CdoOperator(command="min",
+        operator = _CdoOperator(command="min",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3563,7 +3567,7 @@ class CdoOperation:
         r"""
         CDO operator: max
         """
-        operator = CdoOperator(command="max",
+        operator = _CdoOperator(command="max",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3574,7 +3578,7 @@ class CdoOperation:
         r"""
         CDO operator: atan2
         """
-        operator = CdoOperator(command="atan2",
+        operator = _CdoOperator(command="atan2",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3585,7 +3589,7 @@ class CdoOperation:
         r"""
         CDO operator: dayadd
         """
-        operator = CdoOperator(command="dayadd",
+        operator = _CdoOperator(command="dayadd",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3596,7 +3600,7 @@ class CdoOperation:
         r"""
         CDO operator: daysub
         """
-        operator = CdoOperator(command="daysub",
+        operator = _CdoOperator(command="daysub",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3607,7 +3611,7 @@ class CdoOperation:
         r"""
         CDO operator: daymul
         """
-        operator = CdoOperator(command="daymul",
+        operator = _CdoOperator(command="daymul",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3618,7 +3622,7 @@ class CdoOperation:
         r"""
         CDO operator: daydiv
         """
-        operator = CdoOperator(command="daydiv",
+        operator = _CdoOperator(command="daydiv",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3629,7 +3633,7 @@ class CdoOperation:
         r"""
         CDO operator: monadd
         """
-        operator = CdoOperator(command="monadd",
+        operator = _CdoOperator(command="monadd",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3640,7 +3644,7 @@ class CdoOperation:
         r"""
         CDO operator: monsub
         """
-        operator = CdoOperator(command="monsub",
+        operator = _CdoOperator(command="monsub",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3651,7 +3655,7 @@ class CdoOperation:
         r"""
         CDO operator: monmul
         """
-        operator = CdoOperator(command="monmul",
+        operator = _CdoOperator(command="monmul",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3662,7 +3666,7 @@ class CdoOperation:
         r"""
         CDO operator: mondiv
         """
-        operator = CdoOperator(command="mondiv",
+        operator = _CdoOperator(command="mondiv",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3673,7 +3677,7 @@ class CdoOperation:
         r"""
         CDO operator: yearadd
         """
-        operator = CdoOperator(command="yearadd",
+        operator = _CdoOperator(command="yearadd",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3684,7 +3688,7 @@ class CdoOperation:
         r"""
         CDO operator: yearsub
         """
-        operator = CdoOperator(command="yearsub",
+        operator = _CdoOperator(command="yearsub",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3695,7 +3699,7 @@ class CdoOperation:
         r"""
         CDO operator: yearmul
         """
-        operator = CdoOperator(command="yearmul",
+        operator = _CdoOperator(command="yearmul",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3706,7 +3710,7 @@ class CdoOperation:
         r"""
         CDO operator: yeardiv
         """
-        operator = CdoOperator(command="yeardiv",
+        operator = _CdoOperator(command="yeardiv",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3717,7 +3721,7 @@ class CdoOperation:
         r"""
         CDO operator: yhouradd
         """
-        operator = CdoOperator(command="yhouradd",
+        operator = _CdoOperator(command="yhouradd",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3728,7 +3732,7 @@ class CdoOperation:
         r"""
         CDO operator: yhoursub
         """
-        operator = CdoOperator(command="yhoursub",
+        operator = _CdoOperator(command="yhoursub",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3739,7 +3743,7 @@ class CdoOperation:
         r"""
         CDO operator: yhourmul
         """
-        operator = CdoOperator(command="yhourmul",
+        operator = _CdoOperator(command="yhourmul",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3750,7 +3754,7 @@ class CdoOperation:
         r"""
         CDO operator: yhourdiv
         """
-        operator = CdoOperator(command="yhourdiv",
+        operator = _CdoOperator(command="yhourdiv",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3761,7 +3765,7 @@ class CdoOperation:
         r"""
         CDO operator: ydayadd
         """
-        operator = CdoOperator(command="ydayadd",
+        operator = _CdoOperator(command="ydayadd",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3772,7 +3776,7 @@ class CdoOperation:
         r"""
         CDO operator: ydaysub
         """
-        operator = CdoOperator(command="ydaysub",
+        operator = _CdoOperator(command="ydaysub",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3783,7 +3787,7 @@ class CdoOperation:
         r"""
         CDO operator: ydaymul
         """
-        operator = CdoOperator(command="ydaymul",
+        operator = _CdoOperator(command="ydaymul",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3794,7 +3798,7 @@ class CdoOperation:
         r"""
         CDO operator: ydaydiv
         """
-        operator = CdoOperator(command="ydaydiv",
+        operator = _CdoOperator(command="ydaydiv",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3805,7 +3809,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonadd
         """
-        operator = CdoOperator(command="ymonadd",
+        operator = _CdoOperator(command="ymonadd",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3816,7 +3820,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonsub
         """
-        operator = CdoOperator(command="ymonsub",
+        operator = _CdoOperator(command="ymonsub",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3827,7 +3831,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonmul
         """
-        operator = CdoOperator(command="ymonmul",
+        operator = _CdoOperator(command="ymonmul",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3838,7 +3842,7 @@ class CdoOperation:
         r"""
         CDO operator: ymondiv
         """
-        operator = CdoOperator(command="ymondiv",
+        operator = _CdoOperator(command="ymondiv",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3849,7 +3853,7 @@ class CdoOperation:
         r"""
         CDO operator: yseasadd
         """
-        operator = CdoOperator(command="yseasadd",
+        operator = _CdoOperator(command="yseasadd",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3860,7 +3864,7 @@ class CdoOperation:
         r"""
         CDO operator: yseassub
         """
-        operator = CdoOperator(command="yseassub",
+        operator = _CdoOperator(command="yseassub",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3871,7 +3875,7 @@ class CdoOperation:
         r"""
         CDO operator: yseasmul
         """
-        operator = CdoOperator(command="yseasmul",
+        operator = _CdoOperator(command="yseasmul",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3882,7 +3886,7 @@ class CdoOperation:
         r"""
         CDO operator: yseasdiv
         """
-        operator = CdoOperator(command="yseasdiv",
+        operator = _CdoOperator(command="yseasdiv",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -3893,7 +3897,7 @@ class CdoOperation:
         r"""
         CDO operator: muldpm
         """
-        operator = CdoOperator(command="muldpm",
+        operator = _CdoOperator(command="muldpm",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3904,7 +3908,7 @@ class CdoOperation:
         r"""
         CDO operator: divdpm
         """
-        operator = CdoOperator(command="divdpm",
+        operator = _CdoOperator(command="divdpm",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3915,7 +3919,7 @@ class CdoOperation:
         r"""
         CDO operator: muldpy
         """
-        operator = CdoOperator(command="muldpy",
+        operator = _CdoOperator(command="muldpy",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3926,7 +3930,7 @@ class CdoOperation:
         r"""
         CDO operator: divdpy
         """
-        operator = CdoOperator(command="divdpy",
+        operator = _CdoOperator(command="divdpy",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3937,7 +3941,7 @@ class CdoOperation:
         r"""
         CDO operator: mulcoslat
         """
-        operator = CdoOperator(command="mulcoslat",
+        operator = _CdoOperator(command="mulcoslat",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3948,7 +3952,7 @@ class CdoOperation:
         r"""
         CDO operator: divcoslat
         """
-        operator = CdoOperator(command="divcoslat",
+        operator = _CdoOperator(command="divcoslat",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3959,7 +3963,7 @@ class CdoOperation:
         r"""
         CDO operator: timcumsum
         """
-        operator = CdoOperator(command="timcumsum",
+        operator = _CdoOperator(command="timcumsum",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3970,7 +3974,7 @@ class CdoOperation:
         r"""
         CDO operator: consecsum
         """
-        operator = CdoOperator(command="consecsum",
+        operator = _CdoOperator(command="consecsum",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3981,7 +3985,7 @@ class CdoOperation:
         r"""
         CDO operator: consects
         """
-        operator = CdoOperator(command="consects",
+        operator = _CdoOperator(command="consects",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -3992,7 +3996,7 @@ class CdoOperation:
         r"""
         CDO operator: varsmin
         """
-        operator = CdoOperator(command="varsmin",
+        operator = _CdoOperator(command="varsmin",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -4003,7 +4007,7 @@ class CdoOperation:
         r"""
         CDO operator: varsmax
         """
-        operator = CdoOperator(command="varsmax",
+        operator = _CdoOperator(command="varsmax",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -4014,7 +4018,7 @@ class CdoOperation:
         r"""
         CDO operator: varsrange
         """
-        operator = CdoOperator(command="varsrange",
+        operator = _CdoOperator(command="varsrange",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -4025,7 +4029,7 @@ class CdoOperation:
         r"""
         CDO operator: varssum
         """
-        operator = CdoOperator(command="varssum",
+        operator = _CdoOperator(command="varssum",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -4036,7 +4040,7 @@ class CdoOperation:
         r"""
         CDO operator: varsmean
         """
-        operator = CdoOperator(command="varsmean",
+        operator = _CdoOperator(command="varsmean",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -4047,7 +4051,7 @@ class CdoOperation:
         r"""
         CDO operator: varsavg
         """
-        operator = CdoOperator(command="varsavg",
+        operator = _CdoOperator(command="varsavg",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -4058,7 +4062,7 @@ class CdoOperation:
         r"""
         CDO operator: varsstd
         """
-        operator = CdoOperator(command="varsstd",
+        operator = _CdoOperator(command="varsstd",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -4069,7 +4073,7 @@ class CdoOperation:
         r"""
         CDO operator: varsstd1
         """
-        operator = CdoOperator(command="varsstd1",
+        operator = _CdoOperator(command="varsstd1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -4080,7 +4084,7 @@ class CdoOperation:
         r"""
         CDO operator: varsvar
         """
-        operator = CdoOperator(command="varsvar",
+        operator = _CdoOperator(command="varsvar",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -4091,7 +4095,7 @@ class CdoOperation:
         r"""
         CDO operator: varsvar1
         """
-        operator = CdoOperator(command="varsvar1",
+        operator = _CdoOperator(command="varsvar1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -4104,7 +4108,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="ensmin",
+        operator = _CdoOperator(command="ensmin",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4117,7 +4121,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="ensmax",
+        operator = _CdoOperator(command="ensmax",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4130,7 +4134,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="ensrange",
+        operator = _CdoOperator(command="ensrange",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4143,7 +4147,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="enssum",
+        operator = _CdoOperator(command="enssum",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4156,7 +4160,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="ensmean",
+        operator = _CdoOperator(command="ensmean",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4169,7 +4173,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="ensavg",
+        operator = _CdoOperator(command="ensavg",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4182,7 +4186,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="ensstd",
+        operator = _CdoOperator(command="ensstd",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4195,7 +4199,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="ensstd1",
+        operator = _CdoOperator(command="ensstd1",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4208,7 +4212,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="ensvar",
+        operator = _CdoOperator(command="ensvar",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4221,7 +4225,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="ensvar1",
+        operator = _CdoOperator(command="ensvar1",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4234,7 +4238,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="ensskew",
+        operator = _CdoOperator(command="ensskew",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4247,7 +4251,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="enskurt",
+        operator = _CdoOperator(command="enskurt",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4260,7 +4264,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="ensmedian",
+        operator = _CdoOperator(command="ensmedian",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4273,7 +4277,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="enspctl",
+        operator = _CdoOperator(command="enspctl",
                                n_input=inf, 
                                n_output=1, 
                                params=['p']) 
@@ -4284,7 +4288,7 @@ class CdoOperation:
         r"""
         CDO operator: ensrkhistspace
         """
-        operator = CdoOperator(command="ensrkhistspace",
+        operator = _CdoOperator(command="ensrkhistspace",
                                n_input=inf, 
                                n_output=1, 
                                params=[]) 
@@ -4295,7 +4299,7 @@ class CdoOperation:
         r"""
         CDO operator: ensrkhisttime
         """
-        operator = CdoOperator(command="ensrkhisttime",
+        operator = _CdoOperator(command="ensrkhisttime",
                                n_input=inf, 
                                n_output=1, 
                                params=[]) 
@@ -4306,7 +4310,7 @@ class CdoOperation:
         r"""
         CDO operator: ensroc
         """
-        operator = CdoOperator(command="ensroc",
+        operator = _CdoOperator(command="ensroc",
                                n_input=inf, 
                                n_output=1, 
                                params=[]) 
@@ -4317,7 +4321,7 @@ class CdoOperation:
         r"""
         CDO operator: enscrps
         """
-        operator = CdoOperator(command="enscrps",
+        operator = _CdoOperator(command="enscrps",
                                n_input=inf, 
                                n_output=inf, 
                                params=[]) 
@@ -4328,7 +4332,7 @@ class CdoOperation:
         r"""
         CDO operator: ensbrs
         """
-        operator = CdoOperator(command="ensbrs",
+        operator = _CdoOperator(command="ensbrs",
                                n_input=inf, 
                                n_output=inf, 
                                params=[]) 
@@ -4342,7 +4346,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldmin",
+        operator = _CdoOperator(command="fldmin",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4356,7 +4360,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldmax",
+        operator = _CdoOperator(command="fldmax",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4370,7 +4374,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldrange",
+        operator = _CdoOperator(command="fldrange",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4384,7 +4388,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldsum",
+        operator = _CdoOperator(command="fldsum",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4398,7 +4402,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldint",
+        operator = _CdoOperator(command="fldint",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4412,7 +4416,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldmean",
+        operator = _CdoOperator(command="fldmean",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4426,7 +4430,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldavg",
+        operator = _CdoOperator(command="fldavg",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4440,7 +4444,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldstd",
+        operator = _CdoOperator(command="fldstd",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4454,7 +4458,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldstd1",
+        operator = _CdoOperator(command="fldstd1",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4468,7 +4472,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldvar",
+        operator = _CdoOperator(command="fldvar",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4482,7 +4486,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldvar1",
+        operator = _CdoOperator(command="fldvar1",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4496,7 +4500,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldskew",
+        operator = _CdoOperator(command="fldskew",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4510,7 +4514,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldkurt",
+        operator = _CdoOperator(command="fldkurt",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4524,7 +4528,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldmedian",
+        operator = _CdoOperator(command="fldmedian",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4538,7 +4542,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldcount",
+        operator = _CdoOperator(command="fldcount",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4552,7 +4556,7 @@ class CdoOperation:
            weights: BOOL - weights=FALSE disables weighting by grid cell area \[default: weights=TRUE\]
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="fldpctl",
+        operator = _CdoOperator(command="fldpctl",
                                n_input=1, 
                                n_output=1, 
                                params=['weights', 'p']) 
@@ -4566,7 +4570,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonmin",
+        operator = _CdoOperator(command="zonmin",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4580,7 +4584,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonmax",
+        operator = _CdoOperator(command="zonmax",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4594,7 +4598,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonrange",
+        operator = _CdoOperator(command="zonrange",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4608,7 +4612,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonsum",
+        operator = _CdoOperator(command="zonsum",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4622,7 +4626,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonmean",
+        operator = _CdoOperator(command="zonmean",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4636,7 +4640,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonavg",
+        operator = _CdoOperator(command="zonavg",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4650,7 +4654,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonstd",
+        operator = _CdoOperator(command="zonstd",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4664,7 +4668,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonstd1",
+        operator = _CdoOperator(command="zonstd1",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4678,7 +4682,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonvar",
+        operator = _CdoOperator(command="zonvar",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4692,7 +4696,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonvar1",
+        operator = _CdoOperator(command="zonvar1",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4706,7 +4710,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonskew",
+        operator = _CdoOperator(command="zonskew",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4720,7 +4724,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonkurt",
+        operator = _CdoOperator(command="zonkurt",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4734,7 +4738,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonmedian",
+        operator = _CdoOperator(command="zonmedian",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4748,7 +4752,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            zonaldes: STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.
         """
-        operator = CdoOperator(command="zonpctl",
+        operator = _CdoOperator(command="zonpctl",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'zonaldes']) 
@@ -4761,7 +4765,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="mermin",
+        operator = _CdoOperator(command="mermin",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4774,7 +4778,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="mermax",
+        operator = _CdoOperator(command="mermax",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4787,7 +4791,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="merrange",
+        operator = _CdoOperator(command="merrange",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4800,7 +4804,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="mersum",
+        operator = _CdoOperator(command="mersum",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4813,7 +4817,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="mermean",
+        operator = _CdoOperator(command="mermean",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4826,7 +4830,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="meravg",
+        operator = _CdoOperator(command="meravg",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4839,7 +4843,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="merstd",
+        operator = _CdoOperator(command="merstd",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4852,7 +4856,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="merstd1",
+        operator = _CdoOperator(command="merstd1",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4865,7 +4869,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="mervar",
+        operator = _CdoOperator(command="mervar",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4878,7 +4882,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="mervar1",
+        operator = _CdoOperator(command="mervar1",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4891,7 +4895,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="merskew",
+        operator = _CdoOperator(command="merskew",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4904,7 +4908,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="merkurt",
+        operator = _CdoOperator(command="merkurt",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4917,7 +4921,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="mermedian",
+        operator = _CdoOperator(command="mermedian",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4930,7 +4934,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="merpctl",
+        operator = _CdoOperator(command="merpctl",
                                n_input=1, 
                                n_output=1, 
                                params=['p']) 
@@ -4944,7 +4948,7 @@ class CdoOperation:
            nx: INTEGER - Number of grid boxes in x direction
            ny: INTEGER - Number of grid boxes in y direction
         """
-        operator = CdoOperator(command="gridboxmin",
+        operator = _CdoOperator(command="gridboxmin",
                                n_input=1, 
                                n_output=1, 
                                params=['nx', 'ny']) 
@@ -4958,7 +4962,7 @@ class CdoOperation:
            nx: INTEGER - Number of grid boxes in x direction
            ny: INTEGER - Number of grid boxes in y direction
         """
-        operator = CdoOperator(command="gridboxmax",
+        operator = _CdoOperator(command="gridboxmax",
                                n_input=1, 
                                n_output=1, 
                                params=['nx', 'ny']) 
@@ -4972,7 +4976,7 @@ class CdoOperation:
            nx: INTEGER - Number of grid boxes in x direction
            ny: INTEGER - Number of grid boxes in y direction
         """
-        operator = CdoOperator(command="gridboxrange",
+        operator = _CdoOperator(command="gridboxrange",
                                n_input=1, 
                                n_output=1, 
                                params=['nx', 'ny']) 
@@ -4986,7 +4990,7 @@ class CdoOperation:
            nx: INTEGER - Number of grid boxes in x direction
            ny: INTEGER - Number of grid boxes in y direction
         """
-        operator = CdoOperator(command="gridboxsum",
+        operator = _CdoOperator(command="gridboxsum",
                                n_input=1, 
                                n_output=1, 
                                params=['nx', 'ny']) 
@@ -5000,7 +5004,7 @@ class CdoOperation:
            nx: INTEGER - Number of grid boxes in x direction
            ny: INTEGER - Number of grid boxes in y direction
         """
-        operator = CdoOperator(command="gridboxmean",
+        operator = _CdoOperator(command="gridboxmean",
                                n_input=1, 
                                n_output=1, 
                                params=['nx', 'ny']) 
@@ -5014,7 +5018,7 @@ class CdoOperation:
            nx: INTEGER - Number of grid boxes in x direction
            ny: INTEGER - Number of grid boxes in y direction
         """
-        operator = CdoOperator(command="gridboxavg",
+        operator = _CdoOperator(command="gridboxavg",
                                n_input=1, 
                                n_output=1, 
                                params=['nx', 'ny']) 
@@ -5028,7 +5032,7 @@ class CdoOperation:
            nx: INTEGER - Number of grid boxes in x direction
            ny: INTEGER - Number of grid boxes in y direction
         """
-        operator = CdoOperator(command="gridboxstd",
+        operator = _CdoOperator(command="gridboxstd",
                                n_input=1, 
                                n_output=1, 
                                params=['nx', 'ny']) 
@@ -5042,7 +5046,7 @@ class CdoOperation:
            nx: INTEGER - Number of grid boxes in x direction
            ny: INTEGER - Number of grid boxes in y direction
         """
-        operator = CdoOperator(command="gridboxstd1",
+        operator = _CdoOperator(command="gridboxstd1",
                                n_input=1, 
                                n_output=1, 
                                params=['nx', 'ny']) 
@@ -5056,7 +5060,7 @@ class CdoOperation:
            nx: INTEGER - Number of grid boxes in x direction
            ny: INTEGER - Number of grid boxes in y direction
         """
-        operator = CdoOperator(command="gridboxvar",
+        operator = _CdoOperator(command="gridboxvar",
                                n_input=1, 
                                n_output=1, 
                                params=['nx', 'ny']) 
@@ -5070,7 +5074,7 @@ class CdoOperation:
            nx: INTEGER - Number of grid boxes in x direction
            ny: INTEGER - Number of grid boxes in y direction
         """
-        operator = CdoOperator(command="gridboxvar1",
+        operator = _CdoOperator(command="gridboxvar1",
                                n_input=1, 
                                n_output=1, 
                                params=['nx', 'ny']) 
@@ -5084,7 +5088,7 @@ class CdoOperation:
            nx: INTEGER - Number of grid boxes in x direction
            ny: INTEGER - Number of grid boxes in y direction
         """
-        operator = CdoOperator(command="gridboxskew",
+        operator = _CdoOperator(command="gridboxskew",
                                n_input=1, 
                                n_output=1, 
                                params=['nx', 'ny']) 
@@ -5098,7 +5102,7 @@ class CdoOperation:
            nx: INTEGER - Number of grid boxes in x direction
            ny: INTEGER - Number of grid boxes in y direction
         """
-        operator = CdoOperator(command="gridboxkurt",
+        operator = _CdoOperator(command="gridboxkurt",
                                n_input=1, 
                                n_output=1, 
                                params=['nx', 'ny']) 
@@ -5112,7 +5116,7 @@ class CdoOperation:
            nx: INTEGER - Number of grid boxes in x direction
            ny: INTEGER - Number of grid boxes in y direction
         """
-        operator = CdoOperator(command="gridboxmedian",
+        operator = _CdoOperator(command="gridboxmedian",
                                n_input=1, 
                                n_output=1, 
                                params=['nx', 'ny']) 
@@ -5125,7 +5129,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remapmin",
+        operator = _CdoOperator(command="remapmin",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -5138,7 +5142,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remapmax",
+        operator = _CdoOperator(command="remapmax",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -5151,7 +5155,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remaprange",
+        operator = _CdoOperator(command="remaprange",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -5164,7 +5168,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remapsum",
+        operator = _CdoOperator(command="remapsum",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -5177,7 +5181,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remapmean",
+        operator = _CdoOperator(command="remapmean",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -5190,7 +5194,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remapavg",
+        operator = _CdoOperator(command="remapavg",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -5203,7 +5207,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remapstd",
+        operator = _CdoOperator(command="remapstd",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -5216,7 +5220,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remapstd1",
+        operator = _CdoOperator(command="remapstd1",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -5229,7 +5233,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remapvar",
+        operator = _CdoOperator(command="remapvar",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -5242,7 +5246,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remapvar1",
+        operator = _CdoOperator(command="remapvar1",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -5255,7 +5259,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remapskew",
+        operator = _CdoOperator(command="remapskew",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -5268,7 +5272,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remapkurt",
+        operator = _CdoOperator(command="remapkurt",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -5281,7 +5285,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remapmedian",
+        operator = _CdoOperator(command="remapmedian",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -5294,7 +5298,7 @@ class CdoOperation:
         Parameters:
            weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
-        operator = CdoOperator(command="vertmin",
+        operator = _CdoOperator(command="vertmin",
                                n_input=1, 
                                n_output=1, 
                                params=['weights']) 
@@ -5307,7 +5311,7 @@ class CdoOperation:
         Parameters:
            weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
-        operator = CdoOperator(command="vertmax",
+        operator = _CdoOperator(command="vertmax",
                                n_input=1, 
                                n_output=1, 
                                params=['weights']) 
@@ -5320,7 +5324,7 @@ class CdoOperation:
         Parameters:
            weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
-        operator = CdoOperator(command="vertrange",
+        operator = _CdoOperator(command="vertrange",
                                n_input=1, 
                                n_output=1, 
                                params=['weights']) 
@@ -5333,7 +5337,7 @@ class CdoOperation:
         Parameters:
            weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
-        operator = CdoOperator(command="vertsum",
+        operator = _CdoOperator(command="vertsum",
                                n_input=1, 
                                n_output=1, 
                                params=['weights']) 
@@ -5346,7 +5350,7 @@ class CdoOperation:
         Parameters:
            weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
-        operator = CdoOperator(command="vertmean",
+        operator = _CdoOperator(command="vertmean",
                                n_input=1, 
                                n_output=1, 
                                params=['weights']) 
@@ -5359,7 +5363,7 @@ class CdoOperation:
         Parameters:
            weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
-        operator = CdoOperator(command="vertavg",
+        operator = _CdoOperator(command="vertavg",
                                n_input=1, 
                                n_output=1, 
                                params=['weights']) 
@@ -5372,7 +5376,7 @@ class CdoOperation:
         Parameters:
            weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
-        operator = CdoOperator(command="vertstd",
+        operator = _CdoOperator(command="vertstd",
                                n_input=1, 
                                n_output=1, 
                                params=['weights']) 
@@ -5385,7 +5389,7 @@ class CdoOperation:
         Parameters:
            weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
-        operator = CdoOperator(command="vertstd1",
+        operator = _CdoOperator(command="vertstd1",
                                n_input=1, 
                                n_output=1, 
                                params=['weights']) 
@@ -5398,7 +5402,7 @@ class CdoOperation:
         Parameters:
            weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
-        operator = CdoOperator(command="vertvar",
+        operator = _CdoOperator(command="vertvar",
                                n_input=1, 
                                n_output=1, 
                                params=['weights']) 
@@ -5411,7 +5415,7 @@ class CdoOperation:
         Parameters:
            weights: BOOL - weights=FALSE disables weighting by layer thickness \[default: weights=TRUE\]
         """
-        operator = CdoOperator(command="vertvar1",
+        operator = _CdoOperator(command="vertvar1",
                                n_input=1, 
                                n_output=1, 
                                params=['weights']) 
@@ -5426,7 +5430,7 @@ class CdoOperation:
            noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
            nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
-        operator = CdoOperator(command="timselmin",
+        operator = _CdoOperator(command="timselmin",
                                n_input=1, 
                                n_output=1, 
                                params=['nsets', 'noffset', 'nskip']) 
@@ -5441,7 +5445,7 @@ class CdoOperation:
            noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
            nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
-        operator = CdoOperator(command="timselmax",
+        operator = _CdoOperator(command="timselmax",
                                n_input=1, 
                                n_output=1, 
                                params=['nsets', 'noffset', 'nskip']) 
@@ -5456,7 +5460,7 @@ class CdoOperation:
            noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
            nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
-        operator = CdoOperator(command="timselrange",
+        operator = _CdoOperator(command="timselrange",
                                n_input=1, 
                                n_output=1, 
                                params=['nsets', 'noffset', 'nskip']) 
@@ -5471,7 +5475,7 @@ class CdoOperation:
            noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
            nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
-        operator = CdoOperator(command="timselsum",
+        operator = _CdoOperator(command="timselsum",
                                n_input=1, 
                                n_output=1, 
                                params=['nsets', 'noffset', 'nskip']) 
@@ -5486,7 +5490,7 @@ class CdoOperation:
            noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
            nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
-        operator = CdoOperator(command="timselmean",
+        operator = _CdoOperator(command="timselmean",
                                n_input=1, 
                                n_output=1, 
                                params=['nsets', 'noffset', 'nskip']) 
@@ -5501,7 +5505,7 @@ class CdoOperation:
            noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
            nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
-        operator = CdoOperator(command="timselavg",
+        operator = _CdoOperator(command="timselavg",
                                n_input=1, 
                                n_output=1, 
                                params=['nsets', 'noffset', 'nskip']) 
@@ -5516,7 +5520,7 @@ class CdoOperation:
            noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
            nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
-        operator = CdoOperator(command="timselstd",
+        operator = _CdoOperator(command="timselstd",
                                n_input=1, 
                                n_output=1, 
                                params=['nsets', 'noffset', 'nskip']) 
@@ -5531,7 +5535,7 @@ class CdoOperation:
            noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
            nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
-        operator = CdoOperator(command="timselstd1",
+        operator = _CdoOperator(command="timselstd1",
                                n_input=1, 
                                n_output=1, 
                                params=['nsets', 'noffset', 'nskip']) 
@@ -5546,7 +5550,7 @@ class CdoOperation:
            noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
            nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
-        operator = CdoOperator(command="timselvar",
+        operator = _CdoOperator(command="timselvar",
                                n_input=1, 
                                n_output=1, 
                                params=['nsets', 'noffset', 'nskip']) 
@@ -5561,7 +5565,7 @@ class CdoOperation:
            noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
            nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
-        operator = CdoOperator(command="timselvar1",
+        operator = _CdoOperator(command="timselvar1",
                                n_input=1, 
                                n_output=1, 
                                params=['nsets', 'noffset', 'nskip']) 
@@ -5577,7 +5581,7 @@ class CdoOperation:
            noffset: INTEGER - Number of input timesteps skipped before the first timestep range (optional)
            nskip: INTEGER - Number of input timesteps skipped between timestep ranges (optional)
         """
-        operator = CdoOperator(command="timselpctl",
+        operator = _CdoOperator(command="timselpctl",
                                n_input=3, 
                                n_output=1, 
                                params=['p', 'nsets', 'noffset', 'nskip']) 
@@ -5590,7 +5594,7 @@ class CdoOperation:
         Parameters:
            nts: INTEGER - Number of timesteps
         """
-        operator = CdoOperator(command="runmin",
+        operator = _CdoOperator(command="runmin",
                                n_input=1, 
                                n_output=1, 
                                params=['nts']) 
@@ -5603,7 +5607,7 @@ class CdoOperation:
         Parameters:
            nts: INTEGER - Number of timesteps
         """
-        operator = CdoOperator(command="runmax",
+        operator = _CdoOperator(command="runmax",
                                n_input=1, 
                                n_output=1, 
                                params=['nts']) 
@@ -5616,7 +5620,7 @@ class CdoOperation:
         Parameters:
            nts: INTEGER - Number of timesteps
         """
-        operator = CdoOperator(command="runrange",
+        operator = _CdoOperator(command="runrange",
                                n_input=1, 
                                n_output=1, 
                                params=['nts']) 
@@ -5629,7 +5633,7 @@ class CdoOperation:
         Parameters:
            nts: INTEGER - Number of timesteps
         """
-        operator = CdoOperator(command="runsum",
+        operator = _CdoOperator(command="runsum",
                                n_input=1, 
                                n_output=1, 
                                params=['nts']) 
@@ -5642,7 +5646,7 @@ class CdoOperation:
         Parameters:
            nts: INTEGER - Number of timesteps
         """
-        operator = CdoOperator(command="runmean",
+        operator = _CdoOperator(command="runmean",
                                n_input=1, 
                                n_output=1, 
                                params=['nts']) 
@@ -5655,7 +5659,7 @@ class CdoOperation:
         Parameters:
            nts: INTEGER - Number of timesteps
         """
-        operator = CdoOperator(command="runavg",
+        operator = _CdoOperator(command="runavg",
                                n_input=1, 
                                n_output=1, 
                                params=['nts']) 
@@ -5668,7 +5672,7 @@ class CdoOperation:
         Parameters:
            nts: INTEGER - Number of timesteps
         """
-        operator = CdoOperator(command="runstd",
+        operator = _CdoOperator(command="runstd",
                                n_input=1, 
                                n_output=1, 
                                params=['nts']) 
@@ -5681,7 +5685,7 @@ class CdoOperation:
         Parameters:
            nts: INTEGER - Number of timesteps
         """
-        operator = CdoOperator(command="runstd1",
+        operator = _CdoOperator(command="runstd1",
                                n_input=1, 
                                n_output=1, 
                                params=['nts']) 
@@ -5694,7 +5698,7 @@ class CdoOperation:
         Parameters:
            nts: INTEGER - Number of timesteps
         """
-        operator = CdoOperator(command="runvar",
+        operator = _CdoOperator(command="runvar",
                                n_input=1, 
                                n_output=1, 
                                params=['nts']) 
@@ -5707,7 +5711,7 @@ class CdoOperation:
         Parameters:
            nts: INTEGER - Number of timesteps
         """
-        operator = CdoOperator(command="runvar1",
+        operator = _CdoOperator(command="runvar1",
                                n_input=1, 
                                n_output=1, 
                                params=['nts']) 
@@ -5721,7 +5725,7 @@ class CdoOperation:
            p: FLOAT - Percentile number in \{0, ..., 100\}
            nts: INTEGER - Number of timesteps
         """
-        operator = CdoOperator(command="runpctl",
+        operator = _CdoOperator(command="runpctl",
                                n_input=1, 
                                n_output=1, 
                                params=['p', 'nts']) 
@@ -5732,7 +5736,7 @@ class CdoOperation:
         r"""
         CDO operator: timmin
         """
-        operator = CdoOperator(command="timmin",
+        operator = _CdoOperator(command="timmin",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5743,7 +5747,7 @@ class CdoOperation:
         r"""
         CDO operator: timmax
         """
-        operator = CdoOperator(command="timmax",
+        operator = _CdoOperator(command="timmax",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5754,7 +5758,7 @@ class CdoOperation:
         r"""
         CDO operator: timminidx
         """
-        operator = CdoOperator(command="timminidx",
+        operator = _CdoOperator(command="timminidx",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5765,7 +5769,7 @@ class CdoOperation:
         r"""
         CDO operator: timmaxidx
         """
-        operator = CdoOperator(command="timmaxidx",
+        operator = _CdoOperator(command="timmaxidx",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5776,7 +5780,7 @@ class CdoOperation:
         r"""
         CDO operator: timrange
         """
-        operator = CdoOperator(command="timrange",
+        operator = _CdoOperator(command="timrange",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5787,7 +5791,7 @@ class CdoOperation:
         r"""
         CDO operator: timsum
         """
-        operator = CdoOperator(command="timsum",
+        operator = _CdoOperator(command="timsum",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5798,7 +5802,7 @@ class CdoOperation:
         r"""
         CDO operator: timmean
         """
-        operator = CdoOperator(command="timmean",
+        operator = _CdoOperator(command="timmean",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5809,7 +5813,7 @@ class CdoOperation:
         r"""
         CDO operator: timavg
         """
-        operator = CdoOperator(command="timavg",
+        operator = _CdoOperator(command="timavg",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5820,7 +5824,7 @@ class CdoOperation:
         r"""
         CDO operator: timstd
         """
-        operator = CdoOperator(command="timstd",
+        operator = _CdoOperator(command="timstd",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5831,7 +5835,7 @@ class CdoOperation:
         r"""
         CDO operator: timstd1
         """
-        operator = CdoOperator(command="timstd1",
+        operator = _CdoOperator(command="timstd1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5842,7 +5846,7 @@ class CdoOperation:
         r"""
         CDO operator: timvar
         """
-        operator = CdoOperator(command="timvar",
+        operator = _CdoOperator(command="timvar",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5853,7 +5857,7 @@ class CdoOperation:
         r"""
         CDO operator: timvar1
         """
-        operator = CdoOperator(command="timvar1",
+        operator = _CdoOperator(command="timvar1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5866,7 +5870,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="timpctl",
+        operator = _CdoOperator(command="timpctl",
                                n_input=3, 
                                n_output=1, 
                                params=['p']) 
@@ -5877,7 +5881,7 @@ class CdoOperation:
         r"""
         CDO operator: hourmin
         """
-        operator = CdoOperator(command="hourmin",
+        operator = _CdoOperator(command="hourmin",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5888,7 +5892,7 @@ class CdoOperation:
         r"""
         CDO operator: hourmax
         """
-        operator = CdoOperator(command="hourmax",
+        operator = _CdoOperator(command="hourmax",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5899,7 +5903,7 @@ class CdoOperation:
         r"""
         CDO operator: hourrange
         """
-        operator = CdoOperator(command="hourrange",
+        operator = _CdoOperator(command="hourrange",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5910,7 +5914,7 @@ class CdoOperation:
         r"""
         CDO operator: hoursum
         """
-        operator = CdoOperator(command="hoursum",
+        operator = _CdoOperator(command="hoursum",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5921,7 +5925,7 @@ class CdoOperation:
         r"""
         CDO operator: hourmean
         """
-        operator = CdoOperator(command="hourmean",
+        operator = _CdoOperator(command="hourmean",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5932,7 +5936,7 @@ class CdoOperation:
         r"""
         CDO operator: houravg
         """
-        operator = CdoOperator(command="houravg",
+        operator = _CdoOperator(command="houravg",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5943,7 +5947,7 @@ class CdoOperation:
         r"""
         CDO operator: hourstd
         """
-        operator = CdoOperator(command="hourstd",
+        operator = _CdoOperator(command="hourstd",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5954,7 +5958,7 @@ class CdoOperation:
         r"""
         CDO operator: hourstd1
         """
-        operator = CdoOperator(command="hourstd1",
+        operator = _CdoOperator(command="hourstd1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5965,7 +5969,7 @@ class CdoOperation:
         r"""
         CDO operator: hourvar
         """
-        operator = CdoOperator(command="hourvar",
+        operator = _CdoOperator(command="hourvar",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5976,7 +5980,7 @@ class CdoOperation:
         r"""
         CDO operator: hourvar1
         """
-        operator = CdoOperator(command="hourvar1",
+        operator = _CdoOperator(command="hourvar1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -5989,7 +5993,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="hourpctl",
+        operator = _CdoOperator(command="hourpctl",
                                n_input=3, 
                                n_output=1, 
                                params=['p']) 
@@ -6002,7 +6006,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last day only if it is complete
         """
-        operator = CdoOperator(command="daymin",
+        operator = _CdoOperator(command="daymin",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6015,7 +6019,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last day only if it is complete
         """
-        operator = CdoOperator(command="daymax",
+        operator = _CdoOperator(command="daymax",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6028,7 +6032,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last day only if it is complete
         """
-        operator = CdoOperator(command="dayrange",
+        operator = _CdoOperator(command="dayrange",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6041,7 +6045,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last day only if it is complete
         """
-        operator = CdoOperator(command="daysum",
+        operator = _CdoOperator(command="daysum",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6054,7 +6058,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last day only if it is complete
         """
-        operator = CdoOperator(command="daymean",
+        operator = _CdoOperator(command="daymean",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6067,7 +6071,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last day only if it is complete
         """
-        operator = CdoOperator(command="dayavg",
+        operator = _CdoOperator(command="dayavg",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6080,7 +6084,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last day only if it is complete
         """
-        operator = CdoOperator(command="daystd",
+        operator = _CdoOperator(command="daystd",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6093,7 +6097,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last day only if it is complete
         """
-        operator = CdoOperator(command="daystd1",
+        operator = _CdoOperator(command="daystd1",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6106,7 +6110,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last day only if it is complete
         """
-        operator = CdoOperator(command="dayvar",
+        operator = _CdoOperator(command="dayvar",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6119,7 +6123,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last day only if it is complete
         """
-        operator = CdoOperator(command="dayvar1",
+        operator = _CdoOperator(command="dayvar1",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6132,7 +6136,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="daypctl",
+        operator = _CdoOperator(command="daypctl",
                                n_input=3, 
                                n_output=1, 
                                params=['p']) 
@@ -6145,7 +6149,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last month only if it is complete
         """
-        operator = CdoOperator(command="monmin",
+        operator = _CdoOperator(command="monmin",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6158,7 +6162,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last month only if it is complete
         """
-        operator = CdoOperator(command="monmax",
+        operator = _CdoOperator(command="monmax",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6171,7 +6175,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last month only if it is complete
         """
-        operator = CdoOperator(command="monrange",
+        operator = _CdoOperator(command="monrange",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6184,7 +6188,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last month only if it is complete
         """
-        operator = CdoOperator(command="monsum",
+        operator = _CdoOperator(command="monsum",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6197,7 +6201,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last month only if it is complete
         """
-        operator = CdoOperator(command="monmean",
+        operator = _CdoOperator(command="monmean",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6210,7 +6214,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last month only if it is complete
         """
-        operator = CdoOperator(command="monavg",
+        operator = _CdoOperator(command="monavg",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6223,7 +6227,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last month only if it is complete
         """
-        operator = CdoOperator(command="monstd",
+        operator = _CdoOperator(command="monstd",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6236,7 +6240,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last month only if it is complete
         """
-        operator = CdoOperator(command="monstd1",
+        operator = _CdoOperator(command="monstd1",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6249,7 +6253,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last month only if it is complete
         """
-        operator = CdoOperator(command="monvar",
+        operator = _CdoOperator(command="monvar",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6262,7 +6266,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last month only if it is complete
         """
-        operator = CdoOperator(command="monvar1",
+        operator = _CdoOperator(command="monvar1",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6275,7 +6279,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="monpctl",
+        operator = _CdoOperator(command="monpctl",
                                n_input=3, 
                                n_output=1, 
                                params=['p']) 
@@ -6286,7 +6290,7 @@ class CdoOperation:
         r"""
         CDO operator: yearmonmean
         """
-        operator = CdoOperator(command="yearmonmean",
+        operator = _CdoOperator(command="yearmonmean",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6299,7 +6303,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last year only if it is complete
         """
-        operator = CdoOperator(command="yearmin",
+        operator = _CdoOperator(command="yearmin",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6312,7 +6316,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last year only if it is complete
         """
-        operator = CdoOperator(command="yearmax",
+        operator = _CdoOperator(command="yearmax",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6325,7 +6329,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last year only if it is complete
         """
-        operator = CdoOperator(command="yearminidx",
+        operator = _CdoOperator(command="yearminidx",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6338,7 +6342,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last year only if it is complete
         """
-        operator = CdoOperator(command="yearmaxidx",
+        operator = _CdoOperator(command="yearmaxidx",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6351,7 +6355,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last year only if it is complete
         """
-        operator = CdoOperator(command="yearrange",
+        operator = _CdoOperator(command="yearrange",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6364,7 +6368,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last year only if it is complete
         """
-        operator = CdoOperator(command="yearsum",
+        operator = _CdoOperator(command="yearsum",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6377,7 +6381,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last year only if it is complete
         """
-        operator = CdoOperator(command="yearmean",
+        operator = _CdoOperator(command="yearmean",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6390,7 +6394,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last year only if it is complete
         """
-        operator = CdoOperator(command="yearavg",
+        operator = _CdoOperator(command="yearavg",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6403,7 +6407,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last year only if it is complete
         """
-        operator = CdoOperator(command="yearstd",
+        operator = _CdoOperator(command="yearstd",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6416,7 +6420,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last year only if it is complete
         """
-        operator = CdoOperator(command="yearstd1",
+        operator = _CdoOperator(command="yearstd1",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6429,7 +6433,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last year only if it is complete
         """
-        operator = CdoOperator(command="yearvar",
+        operator = _CdoOperator(command="yearvar",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6442,7 +6446,7 @@ class CdoOperation:
         Parameters:
            complete_only: BOOL - Process the last year only if it is complete
         """
-        operator = CdoOperator(command="yearvar1",
+        operator = _CdoOperator(command="yearvar1",
                                n_input=1, 
                                n_output=1, 
                                params=['complete_only']) 
@@ -6455,7 +6459,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="yearpctl",
+        operator = _CdoOperator(command="yearpctl",
                                n_input=3, 
                                n_output=1, 
                                params=['p']) 
@@ -6466,7 +6470,7 @@ class CdoOperation:
         r"""
         CDO operator: seasmin
         """
-        operator = CdoOperator(command="seasmin",
+        operator = _CdoOperator(command="seasmin",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6477,7 +6481,7 @@ class CdoOperation:
         r"""
         CDO operator: seasmax
         """
-        operator = CdoOperator(command="seasmax",
+        operator = _CdoOperator(command="seasmax",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6488,7 +6492,7 @@ class CdoOperation:
         r"""
         CDO operator: seasrange
         """
-        operator = CdoOperator(command="seasrange",
+        operator = _CdoOperator(command="seasrange",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6499,7 +6503,7 @@ class CdoOperation:
         r"""
         CDO operator: seassum
         """
-        operator = CdoOperator(command="seassum",
+        operator = _CdoOperator(command="seassum",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6510,7 +6514,7 @@ class CdoOperation:
         r"""
         CDO operator: seasmean
         """
-        operator = CdoOperator(command="seasmean",
+        operator = _CdoOperator(command="seasmean",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6521,7 +6525,7 @@ class CdoOperation:
         r"""
         CDO operator: seasavg
         """
-        operator = CdoOperator(command="seasavg",
+        operator = _CdoOperator(command="seasavg",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6532,7 +6536,7 @@ class CdoOperation:
         r"""
         CDO operator: seasstd
         """
-        operator = CdoOperator(command="seasstd",
+        operator = _CdoOperator(command="seasstd",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6543,7 +6547,7 @@ class CdoOperation:
         r"""
         CDO operator: seasstd1
         """
-        operator = CdoOperator(command="seasstd1",
+        operator = _CdoOperator(command="seasstd1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6554,7 +6558,7 @@ class CdoOperation:
         r"""
         CDO operator: seasvar
         """
-        operator = CdoOperator(command="seasvar",
+        operator = _CdoOperator(command="seasvar",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6565,7 +6569,7 @@ class CdoOperation:
         r"""
         CDO operator: seasvar1
         """
-        operator = CdoOperator(command="seasvar1",
+        operator = _CdoOperator(command="seasvar1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6578,7 +6582,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="seaspctl",
+        operator = _CdoOperator(command="seaspctl",
                                n_input=3, 
                                n_output=1, 
                                params=['p']) 
@@ -6589,7 +6593,7 @@ class CdoOperation:
         r"""
         CDO operator: yhourmin
         """
-        operator = CdoOperator(command="yhourmin",
+        operator = _CdoOperator(command="yhourmin",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6600,7 +6604,7 @@ class CdoOperation:
         r"""
         CDO operator: yhourmax
         """
-        operator = CdoOperator(command="yhourmax",
+        operator = _CdoOperator(command="yhourmax",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6611,7 +6615,7 @@ class CdoOperation:
         r"""
         CDO operator: yhourrange
         """
-        operator = CdoOperator(command="yhourrange",
+        operator = _CdoOperator(command="yhourrange",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6622,7 +6626,7 @@ class CdoOperation:
         r"""
         CDO operator: yhoursum
         """
-        operator = CdoOperator(command="yhoursum",
+        operator = _CdoOperator(command="yhoursum",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6633,7 +6637,7 @@ class CdoOperation:
         r"""
         CDO operator: yhourmean
         """
-        operator = CdoOperator(command="yhourmean",
+        operator = _CdoOperator(command="yhourmean",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6644,7 +6648,7 @@ class CdoOperation:
         r"""
         CDO operator: yhouravg
         """
-        operator = CdoOperator(command="yhouravg",
+        operator = _CdoOperator(command="yhouravg",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6655,7 +6659,7 @@ class CdoOperation:
         r"""
         CDO operator: yhourstd
         """
-        operator = CdoOperator(command="yhourstd",
+        operator = _CdoOperator(command="yhourstd",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6666,7 +6670,7 @@ class CdoOperation:
         r"""
         CDO operator: yhourstd1
         """
-        operator = CdoOperator(command="yhourstd1",
+        operator = _CdoOperator(command="yhourstd1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6677,7 +6681,7 @@ class CdoOperation:
         r"""
         CDO operator: yhourvar
         """
-        operator = CdoOperator(command="yhourvar",
+        operator = _CdoOperator(command="yhourvar",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6688,7 +6692,7 @@ class CdoOperation:
         r"""
         CDO operator: yhourvar1
         """
-        operator = CdoOperator(command="yhourvar1",
+        operator = _CdoOperator(command="yhourvar1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6699,7 +6703,7 @@ class CdoOperation:
         r"""
         CDO operator: dhourmin
         """
-        operator = CdoOperator(command="dhourmin",
+        operator = _CdoOperator(command="dhourmin",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6710,7 +6714,7 @@ class CdoOperation:
         r"""
         CDO operator: dhourmax
         """
-        operator = CdoOperator(command="dhourmax",
+        operator = _CdoOperator(command="dhourmax",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6721,7 +6725,7 @@ class CdoOperation:
         r"""
         CDO operator: dhourrange
         """
-        operator = CdoOperator(command="dhourrange",
+        operator = _CdoOperator(command="dhourrange",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6732,7 +6736,7 @@ class CdoOperation:
         r"""
         CDO operator: dhoursum
         """
-        operator = CdoOperator(command="dhoursum",
+        operator = _CdoOperator(command="dhoursum",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6743,7 +6747,7 @@ class CdoOperation:
         r"""
         CDO operator: dhourmean
         """
-        operator = CdoOperator(command="dhourmean",
+        operator = _CdoOperator(command="dhourmean",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6754,7 +6758,7 @@ class CdoOperation:
         r"""
         CDO operator: dhouravg
         """
-        operator = CdoOperator(command="dhouravg",
+        operator = _CdoOperator(command="dhouravg",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6765,7 +6769,7 @@ class CdoOperation:
         r"""
         CDO operator: dhourstd
         """
-        operator = CdoOperator(command="dhourstd",
+        operator = _CdoOperator(command="dhourstd",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6776,7 +6780,7 @@ class CdoOperation:
         r"""
         CDO operator: dhourstd1
         """
-        operator = CdoOperator(command="dhourstd1",
+        operator = _CdoOperator(command="dhourstd1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6787,7 +6791,7 @@ class CdoOperation:
         r"""
         CDO operator: dhourvar
         """
-        operator = CdoOperator(command="dhourvar",
+        operator = _CdoOperator(command="dhourvar",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6798,7 +6802,7 @@ class CdoOperation:
         r"""
         CDO operator: dhourvar1
         """
-        operator = CdoOperator(command="dhourvar1",
+        operator = _CdoOperator(command="dhourvar1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6809,7 +6813,7 @@ class CdoOperation:
         r"""
         CDO operator: dminutemin
         """
-        operator = CdoOperator(command="dminutemin",
+        operator = _CdoOperator(command="dminutemin",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6820,7 +6824,7 @@ class CdoOperation:
         r"""
         CDO operator: dminutemax
         """
-        operator = CdoOperator(command="dminutemax",
+        operator = _CdoOperator(command="dminutemax",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6831,7 +6835,7 @@ class CdoOperation:
         r"""
         CDO operator: dminuterange
         """
-        operator = CdoOperator(command="dminuterange",
+        operator = _CdoOperator(command="dminuterange",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6842,7 +6846,7 @@ class CdoOperation:
         r"""
         CDO operator: dminutesum
         """
-        operator = CdoOperator(command="dminutesum",
+        operator = _CdoOperator(command="dminutesum",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6853,7 +6857,7 @@ class CdoOperation:
         r"""
         CDO operator: dminutemean
         """
-        operator = CdoOperator(command="dminutemean",
+        operator = _CdoOperator(command="dminutemean",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6864,7 +6868,7 @@ class CdoOperation:
         r"""
         CDO operator: dminuteavg
         """
-        operator = CdoOperator(command="dminuteavg",
+        operator = _CdoOperator(command="dminuteavg",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6875,7 +6879,7 @@ class CdoOperation:
         r"""
         CDO operator: dminutestd
         """
-        operator = CdoOperator(command="dminutestd",
+        operator = _CdoOperator(command="dminutestd",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6886,7 +6890,7 @@ class CdoOperation:
         r"""
         CDO operator: dminutestd1
         """
-        operator = CdoOperator(command="dminutestd1",
+        operator = _CdoOperator(command="dminutestd1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6897,7 +6901,7 @@ class CdoOperation:
         r"""
         CDO operator: dminutevar
         """
-        operator = CdoOperator(command="dminutevar",
+        operator = _CdoOperator(command="dminutevar",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6908,7 +6912,7 @@ class CdoOperation:
         r"""
         CDO operator: dminutevar1
         """
-        operator = CdoOperator(command="dminutevar1",
+        operator = _CdoOperator(command="dminutevar1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6919,7 +6923,7 @@ class CdoOperation:
         r"""
         CDO operator: ydaymin
         """
-        operator = CdoOperator(command="ydaymin",
+        operator = _CdoOperator(command="ydaymin",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6930,7 +6934,7 @@ class CdoOperation:
         r"""
         CDO operator: ydaymax
         """
-        operator = CdoOperator(command="ydaymax",
+        operator = _CdoOperator(command="ydaymax",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6941,7 +6945,7 @@ class CdoOperation:
         r"""
         CDO operator: ydayrange
         """
-        operator = CdoOperator(command="ydayrange",
+        operator = _CdoOperator(command="ydayrange",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6952,7 +6956,7 @@ class CdoOperation:
         r"""
         CDO operator: ydaysum
         """
-        operator = CdoOperator(command="ydaysum",
+        operator = _CdoOperator(command="ydaysum",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6963,7 +6967,7 @@ class CdoOperation:
         r"""
         CDO operator: ydaymean
         """
-        operator = CdoOperator(command="ydaymean",
+        operator = _CdoOperator(command="ydaymean",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6974,7 +6978,7 @@ class CdoOperation:
         r"""
         CDO operator: ydayavg
         """
-        operator = CdoOperator(command="ydayavg",
+        operator = _CdoOperator(command="ydayavg",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6985,7 +6989,7 @@ class CdoOperation:
         r"""
         CDO operator: ydaystd
         """
-        operator = CdoOperator(command="ydaystd",
+        operator = _CdoOperator(command="ydaystd",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -6996,7 +7000,7 @@ class CdoOperation:
         r"""
         CDO operator: ydaystd1
         """
-        operator = CdoOperator(command="ydaystd1",
+        operator = _CdoOperator(command="ydaystd1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7007,7 +7011,7 @@ class CdoOperation:
         r"""
         CDO operator: ydayvar
         """
-        operator = CdoOperator(command="ydayvar",
+        operator = _CdoOperator(command="ydayvar",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7018,7 +7022,7 @@ class CdoOperation:
         r"""
         CDO operator: ydayvar1
         """
-        operator = CdoOperator(command="ydayvar1",
+        operator = _CdoOperator(command="ydayvar1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7031,7 +7035,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="ydaypctl",
+        operator = _CdoOperator(command="ydaypctl",
                                n_input=3, 
                                n_output=1, 
                                params=['p']) 
@@ -7042,7 +7046,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonmin
         """
-        operator = CdoOperator(command="ymonmin",
+        operator = _CdoOperator(command="ymonmin",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7053,7 +7057,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonmax
         """
-        operator = CdoOperator(command="ymonmax",
+        operator = _CdoOperator(command="ymonmax",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7064,7 +7068,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonrange
         """
-        operator = CdoOperator(command="ymonrange",
+        operator = _CdoOperator(command="ymonrange",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7075,7 +7079,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonsum
         """
-        operator = CdoOperator(command="ymonsum",
+        operator = _CdoOperator(command="ymonsum",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7086,7 +7090,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonmean
         """
-        operator = CdoOperator(command="ymonmean",
+        operator = _CdoOperator(command="ymonmean",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7097,7 +7101,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonavg
         """
-        operator = CdoOperator(command="ymonavg",
+        operator = _CdoOperator(command="ymonavg",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7108,7 +7112,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonstd
         """
-        operator = CdoOperator(command="ymonstd",
+        operator = _CdoOperator(command="ymonstd",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7119,7 +7123,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonstd1
         """
-        operator = CdoOperator(command="ymonstd1",
+        operator = _CdoOperator(command="ymonstd1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7130,7 +7134,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonvar
         """
-        operator = CdoOperator(command="ymonvar",
+        operator = _CdoOperator(command="ymonvar",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7141,7 +7145,7 @@ class CdoOperation:
         r"""
         CDO operator: ymonvar1
         """
-        operator = CdoOperator(command="ymonvar1",
+        operator = _CdoOperator(command="ymonvar1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7154,7 +7158,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="ymonpctl",
+        operator = _CdoOperator(command="ymonpctl",
                                n_input=3, 
                                n_output=1, 
                                params=['p']) 
@@ -7165,7 +7169,7 @@ class CdoOperation:
         r"""
         CDO operator: yseasmin
         """
-        operator = CdoOperator(command="yseasmin",
+        operator = _CdoOperator(command="yseasmin",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7176,7 +7180,7 @@ class CdoOperation:
         r"""
         CDO operator: yseasmax
         """
-        operator = CdoOperator(command="yseasmax",
+        operator = _CdoOperator(command="yseasmax",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7187,7 +7191,7 @@ class CdoOperation:
         r"""
         CDO operator: yseasrange
         """
-        operator = CdoOperator(command="yseasrange",
+        operator = _CdoOperator(command="yseasrange",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7198,7 +7202,7 @@ class CdoOperation:
         r"""
         CDO operator: yseassum
         """
-        operator = CdoOperator(command="yseassum",
+        operator = _CdoOperator(command="yseassum",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7209,7 +7213,7 @@ class CdoOperation:
         r"""
         CDO operator: yseasmean
         """
-        operator = CdoOperator(command="yseasmean",
+        operator = _CdoOperator(command="yseasmean",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7220,7 +7224,7 @@ class CdoOperation:
         r"""
         CDO operator: yseasavg
         """
-        operator = CdoOperator(command="yseasavg",
+        operator = _CdoOperator(command="yseasavg",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7231,7 +7235,7 @@ class CdoOperation:
         r"""
         CDO operator: yseasstd
         """
-        operator = CdoOperator(command="yseasstd",
+        operator = _CdoOperator(command="yseasstd",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7242,7 +7246,7 @@ class CdoOperation:
         r"""
         CDO operator: yseasstd1
         """
-        operator = CdoOperator(command="yseasstd1",
+        operator = _CdoOperator(command="yseasstd1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7253,7 +7257,7 @@ class CdoOperation:
         r"""
         CDO operator: yseasvar
         """
-        operator = CdoOperator(command="yseasvar",
+        operator = _CdoOperator(command="yseasvar",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7264,7 +7268,7 @@ class CdoOperation:
         r"""
         CDO operator: yseasvar1
         """
-        operator = CdoOperator(command="yseasvar1",
+        operator = _CdoOperator(command="yseasvar1",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7277,7 +7281,7 @@ class CdoOperation:
         Parameters:
            p: FLOAT - Percentile number in \{0, ..., 100\}
         """
-        operator = CdoOperator(command="yseaspctl",
+        operator = _CdoOperator(command="yseaspctl",
                                n_input=3, 
                                n_output=1, 
                                params=['p']) 
@@ -7291,7 +7295,7 @@ class CdoOperation:
            nts: INTEGER - Number of timesteps
            rm_c: STRING - Read method circular
         """
-        operator = CdoOperator(command="ydrunmin",
+        operator = _CdoOperator(command="ydrunmin",
                                n_input=1, 
                                n_output=1, 
                                params=['nts', 'rm_c']) 
@@ -7305,7 +7309,7 @@ class CdoOperation:
            nts: INTEGER - Number of timesteps
            rm_c: STRING - Read method circular
         """
-        operator = CdoOperator(command="ydrunmax",
+        operator = _CdoOperator(command="ydrunmax",
                                n_input=1, 
                                n_output=1, 
                                params=['nts', 'rm_c']) 
@@ -7319,7 +7323,7 @@ class CdoOperation:
            nts: INTEGER - Number of timesteps
            rm_c: STRING - Read method circular
         """
-        operator = CdoOperator(command="ydrunsum",
+        operator = _CdoOperator(command="ydrunsum",
                                n_input=1, 
                                n_output=1, 
                                params=['nts', 'rm_c']) 
@@ -7333,7 +7337,7 @@ class CdoOperation:
            nts: INTEGER - Number of timesteps
            rm_c: STRING - Read method circular
         """
-        operator = CdoOperator(command="ydrunmean",
+        operator = _CdoOperator(command="ydrunmean",
                                n_input=1, 
                                n_output=1, 
                                params=['nts', 'rm_c']) 
@@ -7347,7 +7351,7 @@ class CdoOperation:
            nts: INTEGER - Number of timesteps
            rm_c: STRING - Read method circular
         """
-        operator = CdoOperator(command="ydrunavg",
+        operator = _CdoOperator(command="ydrunavg",
                                n_input=1, 
                                n_output=1, 
                                params=['nts', 'rm_c']) 
@@ -7361,7 +7365,7 @@ class CdoOperation:
            nts: INTEGER - Number of timesteps
            rm_c: STRING - Read method circular
         """
-        operator = CdoOperator(command="ydrunstd",
+        operator = _CdoOperator(command="ydrunstd",
                                n_input=1, 
                                n_output=1, 
                                params=['nts', 'rm_c']) 
@@ -7375,7 +7379,7 @@ class CdoOperation:
            nts: INTEGER - Number of timesteps
            rm_c: STRING - Read method circular
         """
-        operator = CdoOperator(command="ydrunstd1",
+        operator = _CdoOperator(command="ydrunstd1",
                                n_input=1, 
                                n_output=1, 
                                params=['nts', 'rm_c']) 
@@ -7389,7 +7393,7 @@ class CdoOperation:
            nts: INTEGER - Number of timesteps
            rm_c: STRING - Read method circular
         """
-        operator = CdoOperator(command="ydrunvar",
+        operator = _CdoOperator(command="ydrunvar",
                                n_input=1, 
                                n_output=1, 
                                params=['nts', 'rm_c']) 
@@ -7403,7 +7407,7 @@ class CdoOperation:
            nts: INTEGER - Number of timesteps
            rm_c: STRING - Read method circular
         """
-        operator = CdoOperator(command="ydrunvar1",
+        operator = _CdoOperator(command="ydrunvar1",
                                n_input=1, 
                                n_output=1, 
                                params=['nts', 'rm_c']) 
@@ -7419,7 +7423,7 @@ class CdoOperation:
            rm_c: STRING - Read method circular
            pm_r8: STRING - Percentile method rtype8
         """
-        operator = CdoOperator(command="ydrunpctl",
+        operator = _CdoOperator(command="ydrunpctl",
                                n_input=3, 
                                n_output=1, 
                                params=['p', 'nts', 'rm_c', 'pm_r8']) 
@@ -7430,7 +7434,7 @@ class CdoOperation:
         r"""
         CDO operator: fldcor
         """
-        operator = CdoOperator(command="fldcor",
+        operator = _CdoOperator(command="fldcor",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -7441,7 +7445,7 @@ class CdoOperation:
         r"""
         CDO operator: timcor
         """
-        operator = CdoOperator(command="timcor",
+        operator = _CdoOperator(command="timcor",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -7452,7 +7456,7 @@ class CdoOperation:
         r"""
         CDO operator: fldcovar
         """
-        operator = CdoOperator(command="fldcovar",
+        operator = _CdoOperator(command="fldcovar",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -7463,7 +7467,7 @@ class CdoOperation:
         r"""
         CDO operator: timcovar
         """
-        operator = CdoOperator(command="timcovar",
+        operator = _CdoOperator(command="timcovar",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -7476,7 +7480,7 @@ class CdoOperation:
         Parameters:
            equal: BOOL - Set to false for unequal distributed timesteps (default: true)
         """
-        operator = CdoOperator(command="regres",
+        operator = _CdoOperator(command="regres",
                                n_input=1, 
                                n_output=1, 
                                params=['equal']) 
@@ -7489,7 +7493,7 @@ class CdoOperation:
         Parameters:
            equal: BOOL - Set to false for unequal distributed timesteps (default: true)
         """
-        operator = CdoOperator(command="detrend",
+        operator = _CdoOperator(command="detrend",
                                n_input=1, 
                                n_output=1, 
                                params=['equal']) 
@@ -7502,7 +7506,7 @@ class CdoOperation:
         Parameters:
            equal: BOOL - Set to false for unequal distributed timesteps (default: true)
         """
-        operator = CdoOperator(command="trend",
+        operator = _CdoOperator(command="trend",
                                n_input=1, 
                                n_output=2, 
                                params=['equal']) 
@@ -7515,7 +7519,7 @@ class CdoOperation:
         Parameters:
            equal: BOOL - Set to false for unequal distributed timesteps (default: true)
         """
-        operator = CdoOperator(command="addtrend",
+        operator = _CdoOperator(command="addtrend",
                                n_input=3, 
                                n_output=1, 
                                params=['equal']) 
@@ -7528,7 +7532,7 @@ class CdoOperation:
         Parameters:
            equal: BOOL - Set to false for unequal distributed timesteps (default: true)
         """
-        operator = CdoOperator(command="subtrend",
+        operator = _CdoOperator(command="subtrend",
                                n_input=3, 
                                n_output=1, 
                                params=['equal']) 
@@ -7541,7 +7545,7 @@ class CdoOperation:
         Parameters:
            neof: INTEGER - Number of eigen functions
         """
-        operator = CdoOperator(command="eof",
+        operator = _CdoOperator(command="eof",
                                n_input=1, 
                                n_output=2, 
                                params=['neof']) 
@@ -7554,7 +7558,7 @@ class CdoOperation:
         Parameters:
            neof: INTEGER - Number of eigen functions
         """
-        operator = CdoOperator(command="eoftime",
+        operator = _CdoOperator(command="eoftime",
                                n_input=1, 
                                n_output=2, 
                                params=['neof']) 
@@ -7567,7 +7571,7 @@ class CdoOperation:
         Parameters:
            neof: INTEGER - Number of eigen functions
         """
-        operator = CdoOperator(command="eofspatial",
+        operator = _CdoOperator(command="eofspatial",
                                n_input=1, 
                                n_output=2, 
                                params=['neof']) 
@@ -7580,7 +7584,7 @@ class CdoOperation:
         Parameters:
            neof: INTEGER - Number of eigen functions
         """
-        operator = CdoOperator(command="eof3d",
+        operator = _CdoOperator(command="eof3d",
                                n_input=1, 
                                n_output=2, 
                                params=['neof']) 
@@ -7591,7 +7595,7 @@ class CdoOperation:
         r"""
         CDO operator: eofcoeff
         """
-        operator = CdoOperator(command="eofcoeff",
+        operator = _CdoOperator(command="eofcoeff",
                                n_input=2, 
                                n_output=inf, 
                                params=[]) 
@@ -7605,7 +7609,7 @@ class CdoOperation:
            grid: STRING - Target grid description file or name
            map3d: BOOL - Generate all mapfiles of the first 3D field
         """
-        operator = CdoOperator(command="remapbil",
+        operator = _CdoOperator(command="remapbil",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'map3d']) 
@@ -7619,7 +7623,7 @@ class CdoOperation:
            grid: STRING - Target grid description file or name
            map3d: BOOL - Generate all mapfiles of the first 3D field
         """
-        operator = CdoOperator(command="genbil",
+        operator = _CdoOperator(command="genbil",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'map3d']) 
@@ -7633,7 +7637,7 @@ class CdoOperation:
            grid: STRING - Target grid description file or name
            map3d: BOOL - Generate all mapfiles of the first 3D field
         """
-        operator = CdoOperator(command="remapbic",
+        operator = _CdoOperator(command="remapbic",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'map3d']) 
@@ -7647,7 +7651,7 @@ class CdoOperation:
            grid: STRING - Target grid description file or name
            map3d: BOOL - Generate all mapfiles of the first 3D field
         """
-        operator = CdoOperator(command="genbic",
+        operator = _CdoOperator(command="genbic",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'map3d']) 
@@ -7661,7 +7665,7 @@ class CdoOperation:
            grid: STRING - Target grid description file or name
            map3d: BOOL - Generate all mapfiles of the first 3D field
         """
-        operator = CdoOperator(command="remapnn",
+        operator = _CdoOperator(command="remapnn",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'map3d']) 
@@ -7675,7 +7679,7 @@ class CdoOperation:
            grid: STRING - Target grid description file or name
            map3d: BOOL - Generate all mapfiles of the first 3D field
         """
-        operator = CdoOperator(command="gennn",
+        operator = _CdoOperator(command="gennn",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'map3d']) 
@@ -7690,7 +7694,7 @@ class CdoOperation:
            neighbors: INTEGER - Number of nearest neighbors \[default: 4\]
            map3d: BOOL - Generate all mapfiles of the first 3D field
         """
-        operator = CdoOperator(command="remapdis",
+        operator = _CdoOperator(command="remapdis",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'neighbors', 'map3d']) 
@@ -7705,7 +7709,7 @@ class CdoOperation:
            neighbors: INTEGER - Number of nearest neighbors \[default: 4\]
            map3d: BOOL - Generate all mapfiles of the first 3D field
         """
-        operator = CdoOperator(command="gendis",
+        operator = _CdoOperator(command="gendis",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'neighbors', 'map3d']) 
@@ -7719,7 +7723,7 @@ class CdoOperation:
            grid: STRING - Target grid description file or name
            map3d: BOOL - Generate all mapfiles of the first 3D field
         """
-        operator = CdoOperator(command="remapcon",
+        operator = _CdoOperator(command="remapcon",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'map3d']) 
@@ -7733,7 +7737,7 @@ class CdoOperation:
            grid: STRING - Target grid description file or name
            map3d: BOOL - Generate all mapfiles of the first 3D field
         """
-        operator = CdoOperator(command="gencon",
+        operator = _CdoOperator(command="gencon",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'map3d']) 
@@ -7746,7 +7750,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="remaplaf",
+        operator = _CdoOperator(command="remaplaf",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -7759,7 +7763,7 @@ class CdoOperation:
         Parameters:
            grid: STRING - Target grid description file or name
         """
-        operator = CdoOperator(command="genlaf",
+        operator = _CdoOperator(command="genlaf",
                                n_input=1, 
                                n_output=1, 
                                params=['grid']) 
@@ -7773,7 +7777,7 @@ class CdoOperation:
            grid: STRING - Target grid description file or name
            weights: STRING - Interpolation weights (SCRIP NetCDF file)
         """
-        operator = CdoOperator(command="remap",
+        operator = _CdoOperator(command="remap",
                                n_input=1, 
                                n_output=1, 
                                params=['grid', 'weights']) 
@@ -7787,7 +7791,7 @@ class CdoOperation:
            vct: STRING - File name of an ASCII dataset with the vertical coordinate table
            oro: STRING - File name with the orography (surf. geopotential) of the target dataset (optional)
         """
-        operator = CdoOperator(command="remapeta",
+        operator = _CdoOperator(command="remapeta",
                                n_input=1, 
                                n_output=1, 
                                params=['vct', 'oro']) 
@@ -7801,7 +7805,7 @@ class CdoOperation:
            plevels: FLOAT - Pressure levels in pascal
            hlevels: FLOAT - Height levels in meter
         """
-        operator = CdoOperator(command="ml2pl",
+        operator = _CdoOperator(command="ml2pl",
                                n_input=1, 
                                n_output=1, 
                                params=['plevels', 'hlevels']) 
@@ -7815,7 +7819,7 @@ class CdoOperation:
            plevels: FLOAT - Pressure levels in pascal
            hlevels: FLOAT - Height levels in meter
         """
-        operator = CdoOperator(command="ml2hl",
+        operator = _CdoOperator(command="ml2hl",
                                n_input=1, 
                                n_output=1, 
                                params=['plevels', 'hlevels']) 
@@ -7828,7 +7832,7 @@ class CdoOperation:
         Parameters:
            plevels: FLOAT - Comma-separated list of pressure levels in pascal
         """
-        operator = CdoOperator(command="ap2pl",
+        operator = _CdoOperator(command="ap2pl",
                                n_input=1, 
                                n_output=1, 
                                params=['plevels']) 
@@ -7841,7 +7845,7 @@ class CdoOperation:
         Parameters:
            hlevels: FLOAT - Comma-separated list of height levels in meter
         """
-        operator = CdoOperator(command="gh2hl",
+        operator = _CdoOperator(command="gh2hl",
                                n_input=1, 
                                n_output=1, 
                                params=['hlevels']) 
@@ -7857,7 +7861,7 @@ class CdoOperation:
            zvarname: STRING - Use zvarname as the vertical 3D source coordinate instead of the 1D coordinate variable
            extrapolate: BOOL - Fill target layers out of the source layer range with the nearest source layer
         """
-        operator = CdoOperator(command="intlevel",
+        operator = _CdoOperator(command="intlevel",
                                n_input=1, 
                                n_output=1, 
                                params=['level', 'zdescription', 'zvarname', 'extrapolate']) 
@@ -7870,7 +7874,7 @@ class CdoOperation:
         Parameters:
            tgtcoordinate: STRING - filename for 3D vertical target coordinates
         """
-        operator = CdoOperator(command="intlevel3d",
+        operator = _CdoOperator(command="intlevel3d",
                                n_input=2, 
                                n_output=1, 
                                params=['tgtcoordinate']) 
@@ -7883,7 +7887,7 @@ class CdoOperation:
         Parameters:
            tgtcoordinate: STRING - filename for 3D vertical target coordinates
         """
-        operator = CdoOperator(command="intlevelx3d",
+        operator = _CdoOperator(command="intlevelx3d",
                                n_input=2, 
                                n_output=1, 
                                params=['tgtcoordinate']) 
@@ -7899,7 +7903,7 @@ class CdoOperation:
            inc: STRING - Optional increment (seconds, minutes, hours, days, months, years) \[default: 0hour\]
            n: INTEGER - Number of timesteps from one timestep to the next
         """
-        operator = CdoOperator(command="inttime",
+        operator = _CdoOperator(command="inttime",
                                n_input=1, 
                                n_output=1, 
                                params=['date', 'time', 'inc', 'n']) 
@@ -7915,7 +7919,7 @@ class CdoOperation:
            inc: STRING - Optional increment (seconds, minutes, hours, days, months, years) \[default: 0hour\]
            n: INTEGER - Number of timesteps from one timestep to the next
         """
-        operator = CdoOperator(command="intntime",
+        operator = _CdoOperator(command="intntime",
                                n_input=1, 
                                n_output=1, 
                                params=['date', 'time', 'inc', 'n']) 
@@ -7928,7 +7932,7 @@ class CdoOperation:
         Parameters:
            years: INTEGER - Comma-separated list or first/last\[/inc\] range of years
         """
-        operator = CdoOperator(command="intyear",
+        operator = _CdoOperator(command="intyear",
                                n_input=2, 
                                n_output=inf, 
                                params=['years']) 
@@ -7942,7 +7946,7 @@ class CdoOperation:
            type: STRING - Type of the grid: quadratic, linear, cubic (default: type=quadratic)
            trunc: STRING - Triangular truncation
         """
-        operator = CdoOperator(command="sp2gp",
+        operator = _CdoOperator(command="sp2gp",
                                n_input=1, 
                                n_output=1, 
                                params=['type', 'trunc']) 
@@ -7956,7 +7960,7 @@ class CdoOperation:
            type: STRING - Type of the grid: quadratic, linear, cubic (default: type=quadratic)
            trunc: STRING - Triangular truncation
         """
-        operator = CdoOperator(command="gp2sp",
+        operator = _CdoOperator(command="gp2sp",
                                n_input=1, 
                                n_output=1, 
                                params=['type', 'trunc']) 
@@ -7969,7 +7973,7 @@ class CdoOperation:
         Parameters:
            trunc: INTEGER - New spectral resolution
         """
-        operator = CdoOperator(command="sp2sp",
+        operator = _CdoOperator(command="sp2sp",
                                n_input=1, 
                                n_output=1, 
                                params=['trunc']) 
@@ -7980,7 +7984,7 @@ class CdoOperation:
         r"""
         CDO operator: dv2ps
         """
-        operator = CdoOperator(command="dv2ps",
+        operator = _CdoOperator(command="dv2ps",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -7993,7 +7997,7 @@ class CdoOperation:
         Parameters:
            gridtype: STRING - Type of the grid: quadratic, linear, cubic (default: quadratic)
         """
-        operator = CdoOperator(command="dv2uv",
+        operator = _CdoOperator(command="dv2uv",
                                n_input=1, 
                                n_output=1, 
                                params=['gridtype']) 
@@ -8006,7 +8010,7 @@ class CdoOperation:
         Parameters:
            gridtype: STRING - Type of the grid: quadratic, linear, cubic (default: quadratic)
         """
-        operator = CdoOperator(command="uv2dv",
+        operator = _CdoOperator(command="uv2dv",
                                n_input=1, 
                                n_output=1, 
                                params=['gridtype']) 
@@ -8019,7 +8023,7 @@ class CdoOperation:
         Parameters:
            epsilon: INTEGER - -1: forward transformation; 1: backward transformation
         """
-        operator = CdoOperator(command="fourier",
+        operator = _CdoOperator(command="fourier",
                                n_input=1, 
                                n_output=1, 
                                params=['epsilon']) 
@@ -8030,7 +8034,7 @@ class CdoOperation:
         r"""
         CDO operator: import_binary
         """
-        operator = CdoOperator(command="import_binary",
+        operator = _CdoOperator(command="import_binary",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8041,7 +8045,7 @@ class CdoOperation:
         r"""
         CDO operator: import_cmsaf
         """
-        operator = CdoOperator(command="import_cmsaf",
+        operator = _CdoOperator(command="import_cmsaf",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8052,7 +8056,7 @@ class CdoOperation:
         r"""
         CDO operator: import_amsr
         """
-        operator = CdoOperator(command="import_amsr",
+        operator = _CdoOperator(command="import_amsr",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8066,7 +8070,7 @@ class CdoOperation:
            grid: STRING - Grid description file or name
            zaxis: STRING - Z-axis description file
         """
-        operator = CdoOperator(command="input",
+        operator = _CdoOperator(command="input",
                                n_input=0, 
                                n_output=1, 
                                params=['grid', 'zaxis']) 
@@ -8080,7 +8084,7 @@ class CdoOperation:
            grid: STRING - Grid description file or name
            zaxis: STRING - Z-axis description file
         """
-        operator = CdoOperator(command="inputsrv",
+        operator = _CdoOperator(command="inputsrv",
                                n_input=0, 
                                n_output=1, 
                                params=['grid', 'zaxis']) 
@@ -8094,7 +8098,7 @@ class CdoOperation:
            grid: STRING - Grid description file or name
            zaxis: STRING - Z-axis description file
         """
-        operator = CdoOperator(command="inputext",
+        operator = _CdoOperator(command="inputext",
                                n_input=0, 
                                n_output=1, 
                                params=['grid', 'zaxis']) 
@@ -8108,7 +8112,7 @@ class CdoOperation:
            format: STRING - C-style format for one element (e.g. %13.6g)
            nelem: INTEGER - Number of elements for each row (default: nelem = 1)
         """
-        operator = CdoOperator(command="output",
+        operator = _CdoOperator(command="output",
                                n_input=inf, 
                                n_output=0, 
                                params=['format', 'nelem']) 
@@ -8122,7 +8126,7 @@ class CdoOperation:
            format: STRING - C-style format for one element (e.g. %13.6g)
            nelem: INTEGER - Number of elements for each row (default: nelem = 1)
         """
-        operator = CdoOperator(command="outputf",
+        operator = _CdoOperator(command="outputf",
                                n_input=inf, 
                                n_output=0, 
                                params=['format', 'nelem']) 
@@ -8136,7 +8140,7 @@ class CdoOperation:
            format: STRING - C-style format for one element (e.g. %13.6g)
            nelem: INTEGER - Number of elements for each row (default: nelem = 1)
         """
-        operator = CdoOperator(command="outputint",
+        operator = _CdoOperator(command="outputint",
                                n_input=inf, 
                                n_output=0, 
                                params=['format', 'nelem']) 
@@ -8150,7 +8154,7 @@ class CdoOperation:
            format: STRING - C-style format for one element (e.g. %13.6g)
            nelem: INTEGER - Number of elements for each row (default: nelem = 1)
         """
-        operator = CdoOperator(command="outputsrv",
+        operator = _CdoOperator(command="outputsrv",
                                n_input=inf, 
                                n_output=0, 
                                params=['format', 'nelem']) 
@@ -8164,7 +8168,7 @@ class CdoOperation:
            format: STRING - C-style format for one element (e.g. %13.6g)
            nelem: INTEGER - Number of elements for each row (default: nelem = 1)
         """
-        operator = CdoOperator(command="outputext",
+        operator = _CdoOperator(command="outputext",
                                n_input=inf, 
                                n_output=0, 
                                params=['format', 'nelem']) 
@@ -8177,7 +8181,7 @@ class CdoOperation:
         Parameters:
            parameter: STRING - Comma-separated list of keynames, one for each column of the table
         """
-        operator = CdoOperator(command="outputtab",
+        operator = _CdoOperator(command="outputtab",
                                n_input=inf, 
                                n_output=0, 
                                params=['parameter']) 
@@ -8188,7 +8192,7 @@ class CdoOperation:
         r"""
         CDO operator: gmtxyz
         """
-        operator = CdoOperator(command="gmtxyz",
+        operator = _CdoOperator(command="gmtxyz",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -8199,7 +8203,7 @@ class CdoOperation:
         r"""
         CDO operator: gmtcells
         """
-        operator = CdoOperator(command="gmtcells",
+        operator = _CdoOperator(command="gmtcells",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -8212,7 +8216,7 @@ class CdoOperation:
         Parameters:
            mapversion: INTEGER - Format version of the GrADS map file for GRIB1 datasets. Use 1 for a machinespecific version 1 GrADS map file, 2 for a machine independent version 2 GrADS map fileand 4 to support GRIB files >2GB.A version 2 map file can be used only with GrADS version 1.8 or newer.A version 4 map file can be used only with GrADS version 2.0 or newer.The default is 4 for files >2GB, otherwise 2.
         """
-        operator = CdoOperator(command="gradsdes",
+        operator = _CdoOperator(command="gradsdes",
                                n_input=1, 
                                n_output=0, 
                                params=['mapversion']) 
@@ -8225,7 +8229,7 @@ class CdoOperation:
         Parameters:
            vct: STRING - File with VCT in ASCII format
         """
-        operator = CdoOperator(command="after",
+        operator = _CdoOperator(command="after",
                                n_input=inf, 
                                n_output=1, 
                                params=['vct']) 
@@ -8239,7 +8243,7 @@ class CdoOperation:
            fmin: FLOAT	Minimum - frequency per year that passes the filter.
            fmax: FLOAT	Maximum - frequency per year that passes the filter.
         """
-        operator = CdoOperator(command="bandpass",
+        operator = _CdoOperator(command="bandpass",
                                n_input=1, 
                                n_output=1, 
                                params=['fmin', 'fmax']) 
@@ -8253,7 +8257,7 @@ class CdoOperation:
            fmin: FLOAT	Minimum - frequency per year that passes the filter.
            fmax: FLOAT	Maximum - frequency per year that passes the filter.
         """
-        operator = CdoOperator(command="lowpass",
+        operator = _CdoOperator(command="lowpass",
                                n_input=1, 
                                n_output=1, 
                                params=['fmin', 'fmax']) 
@@ -8267,7 +8271,7 @@ class CdoOperation:
            fmin: FLOAT	Minimum - frequency per year that passes the filter.
            fmax: FLOAT	Maximum - frequency per year that passes the filter.
         """
-        operator = CdoOperator(command="highpass",
+        operator = _CdoOperator(command="highpass",
                                n_input=1, 
                                n_output=1, 
                                params=['fmin', 'fmax']) 
@@ -8280,7 +8284,7 @@ class CdoOperation:
         Parameters:
            radius: FLOAT - Planet radius in meter
         """
-        operator = CdoOperator(command="gridarea",
+        operator = _CdoOperator(command="gridarea",
                                n_input=1, 
                                n_output=1, 
                                params=['radius']) 
@@ -8293,7 +8297,7 @@ class CdoOperation:
         Parameters:
            radius: FLOAT - Planet radius in meter
         """
-        operator = CdoOperator(command="gridweights",
+        operator = _CdoOperator(command="gridweights",
                                n_input=1, 
                                n_output=1, 
                                params=['radius']) 
@@ -8311,7 +8315,7 @@ class CdoOperation:
            weight0: FLOAT - Weight at distance 0, default weight0=0.25
            weightR: FLOAT - Weight at the search radius, default weightR=0.25
         """
-        operator = CdoOperator(command="smooth",
+        operator = _CdoOperator(command="smooth",
                                n_input=1, 
                                n_output=1, 
                                params=['nsmooth', 'radius', 'maxpoints', 'weighted', 'weight0', 'weightR']) 
@@ -8329,7 +8333,7 @@ class CdoOperation:
            weight0: FLOAT - Weight at distance 0, default weight0=0.25
            weightR: FLOAT - Weight at the search radius, default weightR=0.25
         """
-        operator = CdoOperator(command="smooth9",
+        operator = _CdoOperator(command="smooth9",
                                n_input=1, 
                                n_output=1, 
                                params=['nsmooth', 'radius', 'maxpoints', 'weighted', 'weight0', 'weightR']) 
@@ -8340,7 +8344,7 @@ class CdoOperation:
         r"""
         CDO operator: deltat
         """
-        operator = CdoOperator(command="deltat",
+        operator = _CdoOperator(command="deltat",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8358,7 +8362,7 @@ class CdoOperation:
            c: FLOAT - New value - inside range
            c2: FLOAT - New value - outside range
         """
-        operator = CdoOperator(command="setvals",
+        operator = _CdoOperator(command="setvals",
                                n_input=1, 
                                n_output=1, 
                                params=['oldval', 'newval', 'rmin', 'rmax', 'c', 'c2']) 
@@ -8376,7 +8380,7 @@ class CdoOperation:
            c: FLOAT - New value - inside range
            c2: FLOAT - New value - outside range
         """
-        operator = CdoOperator(command="setrtoc",
+        operator = _CdoOperator(command="setrtoc",
                                n_input=1, 
                                n_output=1, 
                                params=['oldval', 'newval', 'rmin', 'rmax', 'c', 'c2']) 
@@ -8394,7 +8398,7 @@ class CdoOperation:
            c: FLOAT - New value - inside range
            c2: FLOAT - New value - outside range
         """
-        operator = CdoOperator(command="setrtoc2",
+        operator = _CdoOperator(command="setrtoc2",
                                n_input=1, 
                                n_output=1, 
                                params=['oldval', 'newval', 'rmin', 'rmax', 'c', 'c2']) 
@@ -8408,7 +8412,7 @@ class CdoOperation:
            lon: INTEGER - Longitude of the grid cell in degree
            lat: INTEGER - Latitude of the grid cell in degree
         """
-        operator = CdoOperator(command="gridcellindex",
+        operator = _CdoOperator(command="gridcellindex",
                                n_input=1, 
                                n_output=0, 
                                params=['lon', 'lat']) 
@@ -8427,7 +8431,7 @@ class CdoOperation:
            inc: FLOAT - Increment of the loop \[default: 1\]
            levels: FLOAT - Target levels in metre above surface
         """
-        operator = CdoOperator(command="const",
+        operator = _CdoOperator(command="const",
                                n_input=0, 
                                n_output=1, 
                                params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels']) 
@@ -8446,7 +8450,7 @@ class CdoOperation:
            inc: FLOAT - Increment of the loop \[default: 1\]
            levels: FLOAT - Target levels in metre above surface
         """
-        operator = CdoOperator(command="random",
+        operator = _CdoOperator(command="random",
                                n_input=0, 
                                n_output=1, 
                                params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels']) 
@@ -8465,7 +8469,7 @@ class CdoOperation:
            inc: FLOAT - Increment of the loop \[default: 1\]
            levels: FLOAT - Target levels in metre above surface
         """
-        operator = CdoOperator(command="topo",
+        operator = _CdoOperator(command="topo",
                                n_input=0, 
                                n_output=1, 
                                params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels']) 
@@ -8484,7 +8488,7 @@ class CdoOperation:
            inc: FLOAT - Increment of the loop \[default: 1\]
            levels: FLOAT - Target levels in metre above surface
         """
-        operator = CdoOperator(command="seq",
+        operator = _CdoOperator(command="seq",
                                n_input=0, 
                                n_output=1, 
                                params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels']) 
@@ -8503,7 +8507,7 @@ class CdoOperation:
            inc: FLOAT - Increment of the loop \[default: 1\]
            levels: FLOAT - Target levels in metre above surface
         """
-        operator = CdoOperator(command="stdatm",
+        operator = _CdoOperator(command="stdatm",
                                n_input=0, 
                                n_output=1, 
                                params=['const', 'seed', 'grid', 'start', 'end', 'inc', 'levels']) 
@@ -8514,7 +8518,7 @@ class CdoOperation:
         r"""
         CDO operator: timsort
         """
-        operator = CdoOperator(command="timsort",
+        operator = _CdoOperator(command="timsort",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8528,7 +8532,7 @@ class CdoOperation:
            u: STRING - Pairs of zonal and meridional velocity components (use variable names or code numbers)
            v: STRING - Pairs of zonal and meridional velocity components (use variable names or code numbers)
         """
-        operator = CdoOperator(command="rotuvb",
+        operator = _CdoOperator(command="rotuvb",
                                n_input=1, 
                                n_output=1, 
                                params=['u', 'v']) 
@@ -8539,7 +8543,7 @@ class CdoOperation:
         r"""
         CDO operator: mrotuvb
         """
-        operator = CdoOperator(command="mrotuvb",
+        operator = _CdoOperator(command="mrotuvb",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -8550,7 +8554,7 @@ class CdoOperation:
         r"""
         CDO operator: mastrfu
         """
-        operator = CdoOperator(command="mastrfu",
+        operator = _CdoOperator(command="mastrfu",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8561,7 +8565,7 @@ class CdoOperation:
         r"""
         CDO operator: pressure_half
         """
-        operator = CdoOperator(command="pressure_half",
+        operator = _CdoOperator(command="pressure_half",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8572,7 +8576,7 @@ class CdoOperation:
         r"""
         CDO operator: pressure
         """
-        operator = CdoOperator(command="pressure",
+        operator = _CdoOperator(command="pressure",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8583,7 +8587,7 @@ class CdoOperation:
         r"""
         CDO operator: delta_pressure
         """
-        operator = CdoOperator(command="delta_pressure",
+        operator = _CdoOperator(command="delta_pressure",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8594,7 +8598,7 @@ class CdoOperation:
         r"""
         CDO operator: sealevelpressure
         """
-        operator = CdoOperator(command="sealevelpressure",
+        operator = _CdoOperator(command="sealevelpressure",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8605,7 +8609,7 @@ class CdoOperation:
         r"""
         CDO operator: gheight
         """
-        operator = CdoOperator(command="gheight",
+        operator = _CdoOperator(command="gheight",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8616,7 +8620,7 @@ class CdoOperation:
         r"""
         CDO operator: gheight_half
         """
-        operator = CdoOperator(command="gheight_half",
+        operator = _CdoOperator(command="gheight_half",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8629,7 +8633,7 @@ class CdoOperation:
         Parameters:
            pressure: FLOAT - Pressure in bar (constant value assigned to all levels)
         """
-        operator = CdoOperator(command="adisit",
+        operator = _CdoOperator(command="adisit",
                                n_input=1, 
                                n_output=1, 
                                params=['pressure']) 
@@ -8642,7 +8646,7 @@ class CdoOperation:
         Parameters:
            pressure: FLOAT - Pressure in bar (constant value assigned to all levels)
         """
-        operator = CdoOperator(command="adipot",
+        operator = _CdoOperator(command="adipot",
                                n_input=1, 
                                n_output=1, 
                                params=['pressure']) 
@@ -8655,7 +8659,7 @@ class CdoOperation:
         Parameters:
            pressure: FLOAT - Pressure in bar (constant value assigned to all levels)
         """
-        operator = CdoOperator(command="rhopot",
+        operator = _CdoOperator(command="rhopot",
                                n_input=1, 
                                n_output=1, 
                                params=['pressure']) 
@@ -8668,7 +8672,7 @@ class CdoOperation:
         Parameters:
            bounds: FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)
         """
-        operator = CdoOperator(command="histcount",
+        operator = _CdoOperator(command="histcount",
                                n_input=1, 
                                n_output=1, 
                                params=['bounds']) 
@@ -8681,7 +8685,7 @@ class CdoOperation:
         Parameters:
            bounds: FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)
         """
-        operator = CdoOperator(command="histsum",
+        operator = _CdoOperator(command="histsum",
                                n_input=1, 
                                n_output=1, 
                                params=['bounds']) 
@@ -8694,7 +8698,7 @@ class CdoOperation:
         Parameters:
            bounds: FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)
         """
-        operator = CdoOperator(command="histmean",
+        operator = _CdoOperator(command="histmean",
                                n_input=1, 
                                n_output=1, 
                                params=['bounds']) 
@@ -8707,7 +8711,7 @@ class CdoOperation:
         Parameters:
            bounds: FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)
         """
-        operator = CdoOperator(command="histfreq",
+        operator = _CdoOperator(command="histfreq",
                                n_input=1, 
                                n_output=1, 
                                params=['bounds']) 
@@ -8724,7 +8728,7 @@ class CdoOperation:
            north: INTEGER - North halo
            value: FLOAT - Fill value (default is the missing value)
         """
-        operator = CdoOperator(command="sethalo",
+        operator = _CdoOperator(command="sethalo",
                                n_input=1, 
                                n_output=1, 
                                params=['east', 'west', 'south', 'north', 'value']) 
@@ -8735,7 +8739,7 @@ class CdoOperation:
         r"""
         CDO operator: wct
         """
-        operator = CdoOperator(command="wct",
+        operator = _CdoOperator(command="wct",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -8746,7 +8750,7 @@ class CdoOperation:
         r"""
         CDO operator: fdns
         """
-        operator = CdoOperator(command="fdns",
+        operator = _CdoOperator(command="fdns",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -8759,7 +8763,7 @@ class CdoOperation:
         Parameters:
            v: FLOAT - Horizontal wind speed threshold (m/s, default v = 10.5 m/s)
         """
-        operator = CdoOperator(command="strwin",
+        operator = _CdoOperator(command="strwin",
                                n_input=1, 
                                n_output=1, 
                                params=['v']) 
@@ -8770,7 +8774,7 @@ class CdoOperation:
         r"""
         CDO operator: strbre
         """
-        operator = CdoOperator(command="strbre",
+        operator = _CdoOperator(command="strbre",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8781,7 +8785,7 @@ class CdoOperation:
         r"""
         CDO operator: strgal
         """
-        operator = CdoOperator(command="strgal",
+        operator = _CdoOperator(command="strgal",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8792,7 +8796,7 @@ class CdoOperation:
         r"""
         CDO operator: hurr
         """
-        operator = CdoOperator(command="hurr",
+        operator = _CdoOperator(command="hurr",
                                n_input=1, 
                                n_output=1, 
                                params=[]) 
@@ -8806,7 +8810,7 @@ class CdoOperation:
            table: STRING - Name of the CMOR table as specified from PCMDI
            convert: STRING - Converts the units if necessary
         """
-        operator = CdoOperator(command="cmorlite",
+        operator = _CdoOperator(command="cmorlite",
                                n_input=1, 
                                n_output=1, 
                                params=['table', 'convert']) 
@@ -8817,7 +8821,7 @@ class CdoOperation:
         r"""
         CDO operator: verifygrid
         """
-        operator = CdoOperator(command="verifygrid",
+        operator = _CdoOperator(command="verifygrid",
                                n_input=1, 
                                n_output=0, 
                                params=[]) 
@@ -8832,7 +8836,7 @@ class CdoOperation:
            order: STRING - Pixel ordering of the target healpix ('nested' or 'ring').
            power: FLOAT - If non-zero, divide the result by (nside\[in\]/nside\[out\])**power. power=-2 keeps the sum of the map invariant.
         """
-        operator = CdoOperator(command="hpdegrade",
+        operator = _CdoOperator(command="hpdegrade",
                                n_input=1, 
                                n_output=1, 
                                params=['nside', 'order', 'power']) 
@@ -8847,7 +8851,7 @@ class CdoOperation:
            order: STRING - Pixel ordering of the target healpix ('nested' or 'ring').
            power: FLOAT - If non-zero, divide the result by (nside\[in\]/nside\[out\])**power. power=-2 keeps the sum of the map invariant.
         """
-        operator = CdoOperator(command="hpupgrade",
+        operator = _CdoOperator(command="hpupgrade",
                                n_input=1, 
                                n_output=1, 
                                params=['nside', 'order', 'power']) 
@@ -8863,7 +8867,7 @@ class CdoOperation:
            boundOpt: INTEGER - Boundary condition option (0-3) (default: 0/1 for cyclic grids)
            outMode: STRING - Output mode new/append (default: new)
         """
-        operator = CdoOperator(command="uv2vr_cfd",
+        operator = _CdoOperator(command="uv2vr_cfd",
                                n_input=1, 
                                n_output=1, 
                                params=['u', 'v', 'boundOpt', 'outMode']) 
@@ -8879,7 +8883,7 @@ class CdoOperation:
            boundOpt: INTEGER - Boundary condition option (0-3) (default: 0/1 for cyclic grids)
            outMode: STRING - Output mode new/append (default: new)
         """
-        operator = CdoOperator(command="uv2dv_cfd",
+        operator = _CdoOperator(command="uv2dv_cfd",
                                n_input=1, 
                                n_output=1, 
                                params=['u', 'v', 'boundOpt', 'outMode']) 
@@ -8892,7 +8896,7 @@ class CdoOperation:
         Parameters:
            parameter: STRING - Comma-separated list of plot parameters
         """
-        operator = CdoOperator(command="contour",
+        operator = _CdoOperator(command="contour",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter']) 
@@ -8905,7 +8909,7 @@ class CdoOperation:
         Parameters:
            parameter: STRING - Comma-separated list of plot parameters
         """
-        operator = CdoOperator(command="shaded",
+        operator = _CdoOperator(command="shaded",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter']) 
@@ -8918,7 +8922,7 @@ class CdoOperation:
         Parameters:
            parameter: STRING - Comma-separated list of plot parameters
         """
-        operator = CdoOperator(command="grfill",
+        operator = _CdoOperator(command="grfill",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter']) 
@@ -8931,7 +8935,7 @@ class CdoOperation:
         Parameters:
            parameter: STRING - Comma-separated list of plot parameters
         """
-        operator = CdoOperator(command="vector",
+        operator = _CdoOperator(command="vector",
                                n_input=1, 
                                n_output=1, 
                                params=['parameter']) 
@@ -8944,7 +8948,7 @@ class CdoOperation:
         Parameters:
            parameter: STRING - Comma-separated list of plot parameters
         """
-        operator = CdoOperator(command="graph",
+        operator = _CdoOperator(command="graph",
                                n_input=inf, 
                                n_output=1, 
                                params=['parameter']) 
@@ -8959,7 +8963,7 @@ class CdoOperation:
            N: INTEGER - Minimum number of days exceeded (default: N = 5)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="eca_cdd",
+        operator = _CdoOperator(command="eca_cdd",
                                n_input=1, 
                                n_output=1, 
                                params=['R', 'N', 'freq']) 
@@ -8974,7 +8978,7 @@ class CdoOperation:
            N: INTEGER - Minimum number of days exceeded (default: N = 5)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="etccdi_cdd",
+        operator = _CdoOperator(command="etccdi_cdd",
                                n_input=1, 
                                n_output=1, 
                                params=['R', 'N', 'freq']) 
@@ -8987,7 +8991,7 @@ class CdoOperation:
         Parameters:
            N: INTEGER - Minimum number of days exceeded (default: N = 5)
         """
-        operator = CdoOperator(command="eca_cfd",
+        operator = _CdoOperator(command="eca_cfd",
                                n_input=1, 
                                n_output=1, 
                                params=['N']) 
@@ -9001,7 +9005,7 @@ class CdoOperation:
            T: FLOAT - Temperature threshold (unit: °C; default: T = 25°C)
            N: INTEGER - Minimum number of days exceeded (default: N = 5)
         """
-        operator = CdoOperator(command="eca_csu",
+        operator = _CdoOperator(command="eca_csu",
                                n_input=1, 
                                n_output=1, 
                                params=['T', 'N']) 
@@ -9016,7 +9020,7 @@ class CdoOperation:
            N: INTEGER - Minimum number of days exceeded (default: N = 5)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="eca_cwd",
+        operator = _CdoOperator(command="eca_cwd",
                                n_input=1, 
                                n_output=1, 
                                params=['R', 'N', 'freq']) 
@@ -9031,7 +9035,7 @@ class CdoOperation:
            N: INTEGER - Minimum number of days exceeded (default: N = 5)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="etccdi_cwd",
+        operator = _CdoOperator(command="etccdi_cwd",
                                n_input=1, 
                                n_output=1, 
                                params=['R', 'N', 'freq']) 
@@ -9045,7 +9049,7 @@ class CdoOperation:
            nday: INTEGER - Number of consecutive days (default: nday = 6)
            T: FLOAT - Temperature offset (unit: °C; default: T = 5°C)
         """
-        operator = CdoOperator(command="eca_cwdi",
+        operator = _CdoOperator(command="eca_cwdi",
                                n_input=2, 
                                n_output=1, 
                                params=['nday', 'T']) 
@@ -9059,7 +9063,7 @@ class CdoOperation:
            nday: INTEGER - Number of consecutive days (default: nday = 6)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="eca_cwfi",
+        operator = _CdoOperator(command="eca_cwfi",
                                n_input=2, 
                                n_output=1, 
                                params=['nday', 'freq']) 
@@ -9073,7 +9077,7 @@ class CdoOperation:
            nday: INTEGER - Number of consecutive days (default: nday = 6)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="etccdi_csdi",
+        operator = _CdoOperator(command="etccdi_csdi",
                                n_input=2, 
                                n_output=1, 
                                params=['nday', 'freq']) 
@@ -9084,7 +9088,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_etr
         """
-        operator = CdoOperator(command="eca_etr",
+        operator = _CdoOperator(command="eca_etr",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9097,7 +9101,7 @@ class CdoOperation:
         Parameters:
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="eca_fd",
+        operator = _CdoOperator(command="eca_fd",
                                n_input=1, 
                                n_output=1, 
                                params=['freq']) 
@@ -9110,7 +9114,7 @@ class CdoOperation:
         Parameters:
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="etccdi_fd",
+        operator = _CdoOperator(command="etccdi_fd",
                                n_input=1, 
                                n_output=1, 
                                params=['freq']) 
@@ -9125,7 +9129,7 @@ class CdoOperation:
            T: FLOAT - Temperature threshold (unit: °C; default: T = 5°C)
            fland: FLOAT - Land fraction threshold (default: fland = 0.5)
         """
-        operator = CdoOperator(command="eca_gsl",
+        operator = _CdoOperator(command="eca_gsl",
                                n_input=2, 
                                n_output=1, 
                                params=['nday', 'T', 'fland']) 
@@ -9139,7 +9143,7 @@ class CdoOperation:
            T1: FLOAT - Temperature limit (unit: °C; default: T1 = 17°C)
            T2: FLOAT - Temperature limit (unit: °C; default: T2 = T1)
         """
-        operator = CdoOperator(command="eca_hd",
+        operator = _CdoOperator(command="eca_hd",
                                n_input=1, 
                                n_output=1, 
                                params=['T1', 'T2']) 
@@ -9153,7 +9157,7 @@ class CdoOperation:
            nday: INTEGER - Number of consecutive days (default: nday = 6)
            T: FLOAT - Temperature offset (unit: °C; default: T = 5°C)
         """
-        operator = CdoOperator(command="eca_hwdi",
+        operator = _CdoOperator(command="eca_hwdi",
                                n_input=2, 
                                n_output=1, 
                                params=['nday', 'T']) 
@@ -9167,7 +9171,7 @@ class CdoOperation:
            nday: INTEGER - Number of consecutive days (default: nday = 6)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="eca_hwfi",
+        operator = _CdoOperator(command="eca_hwfi",
                                n_input=2, 
                                n_output=1, 
                                params=['nday', 'freq']) 
@@ -9181,7 +9185,7 @@ class CdoOperation:
            nday: INTEGER - Number of consecutive days (default: nday = 6)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="etccdi_wsdi",
+        operator = _CdoOperator(command="etccdi_wsdi",
                                n_input=2, 
                                n_output=1, 
                                params=['nday', 'freq']) 
@@ -9194,7 +9198,7 @@ class CdoOperation:
         Parameters:
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="eca_id",
+        operator = _CdoOperator(command="eca_id",
                                n_input=1, 
                                n_output=1, 
                                params=['freq']) 
@@ -9207,7 +9211,7 @@ class CdoOperation:
         Parameters:
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="etccdi_id",
+        operator = _CdoOperator(command="etccdi_id",
                                n_input=1, 
                                n_output=1, 
                                params=['freq']) 
@@ -9218,7 +9222,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_r75p
         """
-        operator = CdoOperator(command="eca_r75p",
+        operator = _CdoOperator(command="eca_r75p",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9229,7 +9233,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_r75ptot
         """
-        operator = CdoOperator(command="eca_r75ptot",
+        operator = _CdoOperator(command="eca_r75ptot",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9240,7 +9244,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_r90p
         """
-        operator = CdoOperator(command="eca_r90p",
+        operator = _CdoOperator(command="eca_r90p",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9251,7 +9255,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_r90ptot
         """
-        operator = CdoOperator(command="eca_r90ptot",
+        operator = _CdoOperator(command="eca_r90ptot",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9262,7 +9266,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_r95p
         """
-        operator = CdoOperator(command="eca_r95p",
+        operator = _CdoOperator(command="eca_r95p",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9273,7 +9277,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_r95ptot
         """
-        operator = CdoOperator(command="eca_r95ptot",
+        operator = _CdoOperator(command="eca_r95ptot",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9284,7 +9288,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_r99p
         """
-        operator = CdoOperator(command="eca_r99p",
+        operator = _CdoOperator(command="eca_r99p",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9295,7 +9299,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_r99ptot
         """
-        operator = CdoOperator(command="eca_r99ptot",
+        operator = _CdoOperator(command="eca_r99ptot",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9309,7 +9313,7 @@ class CdoOperation:
            x: FLOAT - Daily precipitation amount threshold in \[mm\]
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="eca_pd",
+        operator = _CdoOperator(command="eca_pd",
                                n_input=1, 
                                n_output=1, 
                                params=['x', 'freq']) 
@@ -9323,7 +9327,7 @@ class CdoOperation:
            x: FLOAT - Daily precipitation amount threshold in \[mm\]
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="eca_r10mm",
+        operator = _CdoOperator(command="eca_r10mm",
                                n_input=1, 
                                n_output=1, 
                                params=['x', 'freq']) 
@@ -9337,7 +9341,7 @@ class CdoOperation:
            x: FLOAT - Daily precipitation amount threshold in \[mm\]
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="eca_r20mm",
+        operator = _CdoOperator(command="eca_r20mm",
                                n_input=1, 
                                n_output=1, 
                                params=['x', 'freq']) 
@@ -9351,7 +9355,7 @@ class CdoOperation:
            x: FLOAT - Daily precipitation amount threshold in \[mm\]
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="etccdi_r1mm",
+        operator = _CdoOperator(command="etccdi_r1mm",
                                n_input=1, 
                                n_output=1, 
                                params=['x', 'freq']) 
@@ -9364,7 +9368,7 @@ class CdoOperation:
         Parameters:
            R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
         """
-        operator = CdoOperator(command="eca_rr1",
+        operator = _CdoOperator(command="eca_rr1",
                                n_input=1, 
                                n_output=1, 
                                params=['R']) 
@@ -9377,7 +9381,7 @@ class CdoOperation:
         Parameters:
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="eca_rx1day",
+        operator = _CdoOperator(command="eca_rx1day",
                                n_input=1, 
                                n_output=1, 
                                params=['freq']) 
@@ -9390,7 +9394,7 @@ class CdoOperation:
         Parameters:
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="etccdi_rx1day",
+        operator = _CdoOperator(command="etccdi_rx1day",
                                n_input=1, 
                                n_output=1, 
                                params=['freq']) 
@@ -9404,7 +9408,7 @@ class CdoOperation:
            x: FLOAT - Precipitation threshold (unit: mm; default: x = 50 mm)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="eca_rx5day",
+        operator = _CdoOperator(command="eca_rx5day",
                                n_input=1, 
                                n_output=1, 
                                params=['x', 'freq']) 
@@ -9418,7 +9422,7 @@ class CdoOperation:
            x: FLOAT - Precipitation threshold (unit: mm; default: x = 50 mm)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="etccdi_rx5day",
+        operator = _CdoOperator(command="etccdi_rx5day",
                                n_input=1, 
                                n_output=1, 
                                params=['x', 'freq']) 
@@ -9431,7 +9435,7 @@ class CdoOperation:
         Parameters:
            R: FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
         """
-        operator = CdoOperator(command="eca_sdii",
+        operator = _CdoOperator(command="eca_sdii",
                                n_input=1, 
                                n_output=1, 
                                params=['R']) 
@@ -9445,7 +9449,7 @@ class CdoOperation:
            T: FLOAT - Temperature threshold (unit: °C; default: T = 25°C)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="eca_su",
+        operator = _CdoOperator(command="eca_su",
                                n_input=1, 
                                n_output=1, 
                                params=['T', 'freq']) 
@@ -9459,7 +9463,7 @@ class CdoOperation:
            T: FLOAT - Temperature threshold (unit: °C; default: T = 25°C)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="etccdi_su",
+        operator = _CdoOperator(command="etccdi_su",
                                n_input=1, 
                                n_output=1, 
                                params=['T', 'freq']) 
@@ -9470,7 +9474,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_tg10p
         """
-        operator = CdoOperator(command="eca_tg10p",
+        operator = _CdoOperator(command="eca_tg10p",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9481,7 +9485,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_tg90p
         """
-        operator = CdoOperator(command="eca_tg90p",
+        operator = _CdoOperator(command="eca_tg90p",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9492,7 +9496,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_tn10p
         """
-        operator = CdoOperator(command="eca_tn10p",
+        operator = _CdoOperator(command="eca_tn10p",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9503,7 +9507,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_tn90p
         """
-        operator = CdoOperator(command="eca_tn90p",
+        operator = _CdoOperator(command="eca_tn90p",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9517,7 +9521,7 @@ class CdoOperation:
            T: FLOAT - Temperature threshold (unit: °C; default: T = 20°C)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="eca_tr",
+        operator = _CdoOperator(command="eca_tr",
                                n_input=1, 
                                n_output=1, 
                                params=['T', 'freq']) 
@@ -9531,7 +9535,7 @@ class CdoOperation:
            T: FLOAT - Temperature threshold (unit: °C; default: T = 20°C)
            freq: STRING - Output frequency (year, month)
         """
-        operator = CdoOperator(command="etccdi_tr",
+        operator = _CdoOperator(command="etccdi_tr",
                                n_input=1, 
                                n_output=1, 
                                params=['T', 'freq']) 
@@ -9542,7 +9546,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_tx10p
         """
-        operator = CdoOperator(command="eca_tx10p",
+        operator = _CdoOperator(command="eca_tx10p",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 
@@ -9553,7 +9557,7 @@ class CdoOperation:
         r"""
         CDO operator: eca_tx90p
         """
-        operator = CdoOperator(command="eca_tx90p",
+        operator = _CdoOperator(command="eca_tx90p",
                                n_input=2, 
                                n_output=1, 
                                params=[]) 

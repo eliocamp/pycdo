@@ -42,7 +42,7 @@ TEMPLATE='''
         r"""
         {docstring}
         """
-        operator = CdoOperator(command="{command}",
+        operator = _CdoOperator(command="{command}",
                                n_input={n_input}, 
                                n_output={n_output}, 
                                params={params_list}) 

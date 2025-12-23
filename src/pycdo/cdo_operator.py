@@ -1,4 +1,4 @@
-class CdoOperator:
+class _CdoOperator:
     def __init__(self, command, n_input=1, n_output=1, params=None):
         """
         Represents a CDO operator.
@@ -14,7 +14,7 @@ class CdoOperator:
         self.params = params or []
 
     def __repr__(self):
-        return (f"CdoOperator(command='{self.command}', "
+        return (f"_CdoOperator(command='{self.command}', "
                 f"n_input={self.n_input}, "
                 f"n_output={self.n_output}, "
                 f"params={self.params})")
