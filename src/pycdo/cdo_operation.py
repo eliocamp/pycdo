@@ -214,9 +214,8 @@ class CdoOperation:
         cmd = f"{self._build(options = options, options_replace = options_replace)} {output_str}"
 
         _DEBUG_SKIP_RUN = os.environ.get("_DEBUG_SKIP_RUN", "").lower() == "true"
-
         if not _DEBUG_SKIP_RUN:
-            result = subprocess.run(cmd, shell = True, capture_output = True)
+            result = subprocess.run(cmd, shell = True, capture_output = n_files == 0,  universal_newlines=True)
         else:
             if n_files == 0:
                 result = debug.MockResult(text_output = "Test Output")
@@ -225,8 +224,9 @@ class CdoOperation:
 
         if result.returncode != 0:
             raise subprocess.CalledProcessError(result.returncode, cmd)
+        
         if n_files == 0:
-            return result.stdout
+            output = str(result.stdout).splitlines()
         
         if isinstance(output, list) and len(output) == 1:
             output = output[0]

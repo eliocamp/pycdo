@@ -2,7 +2,6 @@ from pycdo import cdo, cdo_cache
 import os
 from pathlib import Path
 import tempfile
-import pytest
 import shutil
 
 if shutil.which("cdo") is None:
@@ -41,3 +40,9 @@ def test_cache():
 def test_noop():
     test_file = str(Path(__file__).parent.parent / "data" / "test.nc")
     assert cdo(test_file).execute() == test_file
+
+def test_nooutput():
+    test_file = str(Path(__file__).parent.parent / "data" / "test.nc")
+    assert cdo(test_file).griddes().execute()[1] == "# gridID 1"
+    
+    
