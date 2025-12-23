@@ -1,5 +1,7 @@
 ---
 format: gfm
+execute:
+  daemon: false
 ---
 
 # Welcome to pycdo
@@ -74,12 +76,6 @@ Temporary files are deleted when the variables holding them are garbage collecte
 For long-running operations, you can set up a cache. 
 
 ```{python}
-#| include: false
-import os
-os.system("rm -r data/pycdo/*")
-```
-
-```{python}
 cdo_cache.set("data/pycdo")
 ```
 
@@ -107,11 +103,12 @@ cdo_options.set("-Z")  # Compress result
 sh_geopotential
 ```
 
-
 ```{python}
-#| include: false
-os.system("rm -r data/pycdo/*")
+import shutil
+shutil.rmtree("data/pycdo")
 ```
+
+
 
 ## Copyright
 

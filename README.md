@@ -35,7 +35,7 @@ cdo(geopotential).ymonmean()
 ```
 
     CDO operation.
-    cdo -Z -ymonmean [ /home/user1/Documents/python/pycdo/src/pycdo/data/geopotential.nc ] {output}
+    cdo -ymonmean [ /home/user1/Documents/python/pycdo/src/pycdo/data/geopotential.nc ] {output}
 
 The output just prints the command with a place holder output. Use
 `.execute()` to actually run the command. If no output file is
@@ -45,7 +45,7 @@ specified, then the result is saved in a tempfile.
 cdo(geopotential).ymonmean().execute()
 ```
 
-    'data/pycdo/0c0a0266756e38030d8b79951f43651f'
+    '/tmp/tmpio8g3urm'
 
 Operators can be chained. Lets select just the Southern Hemisphere
 first.
@@ -59,7 +59,7 @@ first.
 )
 ```
 
-    'data/pycdo/e84e35ae09335bdd4c8fa3585279b722'
+    '/tmp/tmpnojlbike'
 
 We can save operations to execute later or as input for other operations
 
@@ -74,7 +74,7 @@ sh_geopotential = (
 cdo(sh_geopotential).ymonmean().execute()
 ```
 
-    'data/pycdo/fe3e3dbfe5ee9d93c21b9824c81173ba'
+    '/tmp/tmpfj30dnfe'
 
 Temporary files are deleted when the variables holding them are garbage
 collected to prevent blowing up disk space when iterating over the same
@@ -86,7 +86,7 @@ For long-running operations, you can set up a cache.
 cdo_cache.set("data/pycdo")
 ```
 
-    <pycdo.cdo_cache.CdoCache at 0x79ad1c6dae10>
+    <pycdo.cdo_cache.CdoCache at 0x708498224710>
 
 This turns off the automatic deletion and returns existing files instead
 of re-runing CDO operators.
@@ -99,7 +99,7 @@ sh_geopotential.execute()
 time.time() - start
 ```
 
-    0.06971979141235352
+    0.060179710388183594
 
 ``` python
 # Second run just returns the existing file
@@ -108,7 +108,7 @@ sh_geopotential.execute()
 time.time() - start
 ```
 
-    0.0008301734924316406
+    0.0006704330444335938
 
 You can set global options that will apply to all operations.
 
@@ -119,6 +119,11 @@ sh_geopotential
 
     CDO operation.
     cdo -Z -ymonmean [ -sellevel,300 [ -sellonlatbox,0,360,-90,0 [ /home/user1/Documents/python/pycdo/src/pycdo/data/geopotential.nc ] ] ] {output}
+
+``` python
+import shutil
+shutil.rmtree("data/pycdo")
+```
 
 ## Copyright
 
