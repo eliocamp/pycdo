@@ -219,9 +219,9 @@ class CdoOperation:
             result = subprocess.run(cmd, shell = True, capture_output = True)
         else:
             if n_files == 0:
-                result = debug.MockResult(output = "Test Output")
+                result = debug.MockResult(text_output = "Test Output")
             else:
-                result = debug.MockResult(output = output)
+                result = debug.MockResult(file_output = output)
 
         if result.returncode != 0:
             raise subprocess.CalledProcessError(result.returncode, cmd)
