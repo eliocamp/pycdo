@@ -1,4 +1,4 @@
-from pycdo import cdo, cdo_cache
+from pycdo import cdo, cdo_cache, debug
 import os
 from pathlib import Path
 import tempfile
@@ -6,6 +6,7 @@ import shutil
 
 if shutil.which("cdo") is None:
     os.environ["_DEBUG_SKIP_RUN"] = "true"
+
 
 
 def test_no_cache():
@@ -42,6 +43,7 @@ def test_noop():
     assert cdo(test_file).execute() == test_file
 
 def test_nooutput():
+    debug.mockoutput.output = "\n# gridID 1"
     test_file = str(Path(__file__).parent.parent / "data" / "test.nc")
     assert cdo(test_file).griddes().execute()[1] == "# gridID 1"
     

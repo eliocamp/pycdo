@@ -218,7 +218,7 @@ class CdoOperation:
             result = subprocess.run(cmd, shell = True, capture_output = n_files == 0,  universal_newlines=True)
         else:
             if n_files == 0:
-                result = debug.MockResult(text_output = "Test Output")
+                result = debug.MockResult(text_output = debug.mockoutput.output)
             else:
                 result = debug.MockResult(file_output = output)
 
