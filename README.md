@@ -45,7 +45,7 @@ specified, then the result is saved in a tempfile.
 cdo(geopotential).ymonmean().execute()
 ```
 
-    '/tmp/tmp_v6j9iii'
+    '/tmp/tmpd7dxufn9'
 
 Operators can be chained. Lets select just the Southern Hemisphere
 first.
@@ -59,7 +59,7 @@ first.
 )
 ```
 
-    '/tmp/tmphgu_ynz8'
+    '/tmp/tmpcyp8c0lq'
 
 We can save operations to execute later or as input for other operations
 
@@ -74,7 +74,7 @@ sh_geopotential = (
 cdo(sh_geopotential).ymonmean().execute()
 ```
 
-    '/tmp/tmprz881j79'
+    '/tmp/tmp1h57_e3e'
 
 Temporary files are deleted when the variables holding them are garbage
 collected to prevent blowing up disk space when iterating over the same
@@ -86,7 +86,7 @@ For long-running operations, you can set up a cache.
 cdo_cache.set("data/pycdo")
 ```
 
-    <pycdo.cdo_cache.CdoCache at 0x7fe94ea83da0>
+    <pycdo.cdo_cache.CdoCache at 0x7d4ce864f950>
 
 This turns off the automatic deletion and returns existing files instead
 of re-runing CDO operators.
@@ -98,7 +98,7 @@ sh_geopotential.execute()
 time.time() - start
 ```
 
-    0.05309128761291504
+    0.04410266876220703
 
 The second run just returns the existing file, so it’s faster.
 
@@ -108,7 +108,7 @@ sh_geopotential.execute()
 time.time() - start
 ```
 
-    0.0008449554443359375
+    0.00032782554626464844
 
 ``` python
 cdo_cache.forget() # Cleanup cache
@@ -123,6 +123,51 @@ sh_geopotential
 
     CDO operation.
     cdo -Z -ymonmean [ -sellevel,300 [ -sellonlatbox,0,360,-90,0 [ /home/user1/Documents/python/pycdo/src/pycdo/data/geopotential.nc ] ] ] {output}
+
+## Prior art
+
+There is [another python wrapper around
+cdo](https://github.com/Try2Code/cdo-bindings).
+
+The biggest difference between the cdo and pycdo packages are the
+delayed execution and chaining syntax.
+
+For example, this is how chaining works in the cdo package
+
+``` python
+cdo.seltimestep('1/10', input='-selvar,u10,v10 '+infile, output=outfile)
+```
+
+Instead of using the pythonic `selvar("u10", "v10")`, the input switches
+to the command line syntax `-selvar,u10,v10` passed as a string. By
+writing strings instead of cose, the user loses autocomplete, syntax
+checking and discoverabilty. It also requires the user to understand and
+be able to write using two different languages. Plus, the order of
+operations is reversed: we read `seltimestep` first and `selvar` next
+even through the order of operations is first to select the variable and
+then to select the timestep.
+
+The equivalent using pycdo would be this
+
+``` python
+(
+   cdo("infile")
+   .selvar("u10", "v10")
+   .seltimestep("1/10")
+   .execute(output = outfile)
+)
+```
+
+Which, is more readable. Each step is it’s own element in a chain and is
+written in order. Plus autocomplete prevents typos, saves on keystrokes
+and helps with discoverability.
+
+On the other hand, the cdo package has an extremely robust logging
+system. pycdo doesn’t do logging yet.
+
+pycdo also is not integrated with xarray; it just returns paths to
+files. The cdo package, on the other hand, can load data directly as
+xarray. This makes pycdo much simpler and with fewer dependencies.
 
 ## Copyright
 

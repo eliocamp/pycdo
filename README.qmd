@@ -108,6 +108,44 @@ sh_geopotential
 ```
 
 
+## Prior art
+
+There is [another python wrapper around cdo](https://github.com/Try2Code/cdo-bindings). 
+
+The biggest difference between the cdo and pycdo packages are the delayed execution and chaining syntax. 
+
+For example, this is how chaining works in the cdo package
+
+```python
+cdo.seltimestep('1/10', input='-selvar,u10,v10 '+infile, output=outfile)
+```
+
+Instead of using the pythonic `selvar("u10", "v10")`, the input switches to the command line syntax `-selvar,u10,v10` passed as a string.
+By writing strings instead of cose, the user loses autocomplete, syntax checking and discoverabilty.
+It also requires the user to understand and be able to write using two different languages. 
+Plus, the order of operations is reversed: we read `seltimestep` first and `selvar` next even through the order of operations is first to select the variable and then to select the timestep. 
+
+The equivalent using pycdo would be this 
+
+```python
+(
+   cdo("infile")
+   .selvar("u10", "v10")
+   .seltimestep("1/10")
+   .execute(output = outfile)
+)
+```
+
+Which, is more readable.
+Each step is it's own element in a chain and is written in order.
+Plus autocomplete prevents typos, saves on keystrokes and helps with discoverability.
+
+On the other hand, the cdo package has an extremely robust logging system.
+pycdo doesn't do logging yet. 
+
+pycdo also is not integrated with xarray; it just returns paths to files.
+The cdo package, on the other hand, can load data directly as xarray.
+This makes pycdo much simpler and with fewer dependencies. 
 
 
 ## Copyright
