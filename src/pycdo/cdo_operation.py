@@ -205,11 +205,11 @@ class CdoOperation:
             output_str = " ".join(output)
             for out in output:
                 if not Path(os.path.dirname(out)).is_dir():
-                    os.mkdir(os.path.dirname(out))
+                    os.makedirs(os.path.dirname(out))
         else:
             output_str = output
             if not Path(os.path.dirname(output)).is_dir():
-                os.mkdir(os.path.dirname(output))
+                os.makedirs(os.path.dirname(output))
         
         cmd = f"{self._build(options = options, options_replace = options_replace)} {output_str}"
 

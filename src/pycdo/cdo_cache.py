@@ -84,13 +84,10 @@ class CdoCache:
     def _hash_store(self, file: str, hash: str):
         hash_file = file + ".hash"
         if not Path(os.path.dirname(hash_file)).exists:
-            os.mkdir(os.path.dirname(hash_file))
+            os.makedirs(os.path.dirname(hash_file))
 
         with open(hash_file, "w") as f:
             f.write(hash)
-
-
-
 
 
 # Global cache to use by the package
