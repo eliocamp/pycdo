@@ -83,17 +83,21 @@ This turns off the automatic deletion and returns existing files instead of re-r
 
 ```{python}
 import time
-# First run. 
+start = time.time()
+sh_geopotential.execute()
+time.time() - start
+```
+
+The second run just returns the existing file, so it's faster. 
+
+```{python}
 start = time.time()
 sh_geopotential.execute()
 time.time() - start
 ```
 
 ```{python}
-# Second run just returns the existing file
-start = time.time()
-sh_geopotential.execute()
-time.time() - start
+cdo_cache.forget() # Cleanup cache
 ```
 
 You can set global options that will apply to all operations. 
@@ -103,10 +107,6 @@ cdo_options.set("-Z")  # Compress result
 sh_geopotential
 ```
 
-```{python}
-import shutil
-shutil.rmtree("data/pycdo")
-```
 
 
 
