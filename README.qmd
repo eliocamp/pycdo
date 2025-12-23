@@ -21,6 +21,97 @@ You can install this package into your preferred Python environment using pip:
 pip install pycdo
 ```
 
+## Example
+
+```{python}
+from pycdo import cdo, cdo_options, cdo_cache, geopotential
+```
+
+
+The ymonmean operator computes monthly annual cycle. The pycdo function
+is `cdo_ymonmean()`
+
+```{python}
+cdo(geopotential).ymonmean()
+```
+
+The output just prints the command with a place holder output. Use
+`.execute()` to actually run the command. If no output file is
+specified, then the result is saved in a tempfile.
+
+```{python}
+cdo(geopotential).ymonmean().execute()
+```
+
+Operators can be chained. Lets select just the Southern Hemisphere
+first.
+
+```{python}
+(
+    cdo(geopotential)
+    .sellonlatbox(0, 360, -90, 0)
+    .ymonmean()
+    .execute()
+)
+```
+
+We can save operations to execute later or as input for other operations 
+
+```{python}
+
+sh_geopotential = (
+    cdo(geopotential)
+    .sellonlatbox(0, 360, -90, 0)
+    .sellevel(300)
+    .ymonmean()
+) 
+
+cdo(sh_geopotential).ymonmean().execute()
+```
+
+Temporary files are deleted when the variables holding them are garbage collected to prevent blowing up disk space when iterating over the same code. 
+
+For long-running operations, you can set up a cache. 
+
+```{python}
+#| include: false
+import os
+os.system("rm -r data/pycdo/*")
+```
+
+```{python}
+cdo_cache.set("data/pycdo")
+```
+
+This turns off the automatic deletion and returns existing files instead of re-runing CDO operators. 
+
+```{python}
+import time
+# First run. 
+start = time.time()
+sh_geopotential.execute()
+time.time() - start
+```
+
+```{python}
+# Second run just returns the existing file
+start = time.time()
+sh_geopotential.execute()
+time.time() - start
+```
+
+You can set global options that will apply to all operations. 
+
+```{python}
+cdo_options.set("-Z")  # Compress result
+sh_geopotential
+```
+
+
+```{python}
+#| include: false
+os.system("rm -r data/pycdo/*")
+```
 
 ## Copyright
 
