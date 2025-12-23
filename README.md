@@ -45,7 +45,7 @@ specified, then the result is saved in a tempfile.
 cdo(geopotential).ymonmean().execute()
 ```
 
-    '/tmp/tmpd7dxufn9'
+    '/tmp/tmp29b4p96k'
 
 Operators can be chained. Lets select just the Southern Hemisphere
 first.
@@ -59,7 +59,7 @@ first.
 )
 ```
 
-    '/tmp/tmpcyp8c0lq'
+    '/tmp/tmpfbhdirsx'
 
 We can save operations to execute later or as input for other operations
 
@@ -74,7 +74,7 @@ sh_geopotential = (
 cdo(sh_geopotential).ymonmean().execute()
 ```
 
-    '/tmp/tmp1h57_e3e'
+    '/tmp/tmp83xoi0ul'
 
 Temporary files are deleted when the variables holding them are garbage
 collected to prevent blowing up disk space when iterating over the same
@@ -86,7 +86,7 @@ For long-running operations, you can set up a cache.
 cdo_cache.set("data/pycdo")
 ```
 
-    <pycdo.cdo_cache.CdoCache at 0x7d4ce864f950>
+    <pycdo.cdo_cache.CdoCache at 0x7999b29ec470>
 
 This turns off the automatic deletion and returns existing files instead
 of re-runing CDO operators.
@@ -98,7 +98,7 @@ sh_geopotential.execute()
 time.time() - start
 ```
 
-    0.04410266876220703
+    0.04888272285461426
 
 The second run just returns the existing file, so it’s faster.
 
@@ -108,7 +108,7 @@ sh_geopotential.execute()
 time.time() - start
 ```
 
-    0.00032782554626464844
+    0.0004525184631347656
 
 ``` python
 cdo_cache.forget() # Cleanup cache
@@ -140,7 +140,7 @@ cdo.seltimestep('1/10', input='-selvar,u10,v10 '+infile, output=outfile)
 
 Instead of using the pythonic `selvar("u10", "v10")`, the input switches
 to the command line syntax `-selvar,u10,v10` passed as a string. By
-writing strings instead of cose, the user loses autocomplete, syntax
+writing strings instead of code, the user loses autocomplete, syntax
 checking and discoverabilty. It also requires the user to understand and
 be able to write using two different languages. Plus, the order of
 operations is reversed: we read `seltimestep` first and `selvar` next
