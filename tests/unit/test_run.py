@@ -38,3 +38,7 @@ def test_cache():
     assert Path(temp).is_file()    
 
     op.execute(output = temp)
+
+def test_noop():
+    test_file = str(Path(__file__).parent.parent / "data" / "test.nc")
+    assert cdo(test_file).execute() == test_file

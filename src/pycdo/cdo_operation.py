@@ -168,7 +168,10 @@ class CdoOperation:
         """
 
         if (self.operator.command == "noop"):
-            return self.input
+            input = self.input
+            if isinstance(input, list) and len(input) == 1:
+                return self.input[0]
+            return input
         
         n_files = self.operator.n_output
 
