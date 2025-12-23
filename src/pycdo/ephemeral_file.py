@@ -39,10 +39,8 @@ class EphemeralFile(str):
         return instance
        
     def __del__(self):
-        print("removing " + self.path)
         dir = os.path.dirname(self.path)
         if Path(self.path).exists():
-          
             os.remove(self.path)
         
         if Path(dir).exists():
