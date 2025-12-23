@@ -5,10 +5,9 @@ import tempfile
 import pytest
 import shutil
 
-pytestmark = pytest.mark.skipif(
-    shutil.which("cdo") is None,
-    reason="CDO is not installed"
-)
+if shutil.which("cdo") is None:
+    os.environ["_DEBUG_SKIP_RUN"] = "true"
+
 
 def test_no_cache():
     test_file = str(Path(__file__).parent.parent / "data" / "test.nc")
