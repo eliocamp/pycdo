@@ -93,7 +93,8 @@ only-packages = true
 # Read more about src layouts here: https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html
 [tool.hatch.build.targets.wheel]
 packages = ["src/pycdo"]
-
+[tool.hatch.build.targets.wheel.force-include]
+data = "src/pycdo/data"
 
 
 ######## Configure pytest for your test suite ########
